@@ -19,7 +19,6 @@ class MainActivity : Activity() {
     private fun setupAdapter() {
         val adapter = CustomListAdapter(this@MainActivity, R.layout.custom_list, resources.getStringArray(R.array.prayer_title))
         listViewMainScreen.adapter = adapter
-
         listClickAction()
     }
 
