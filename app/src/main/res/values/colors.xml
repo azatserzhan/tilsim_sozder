@@ -2,12 +2,12 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#d0f2f8</color>
 
     <color name="text_blackMode">#ffffff</color>
     <color name="bg_blackMode">#75000000</color>
 
-    <color name="text_whiteMode">#214446</color>
+    <color name="text_whiteMode">#f9f9f9</color>
     <color name="bg_whiteMode">#72ffffff</color>
 
     <color name="menu_text_white">#ffffff</color>
