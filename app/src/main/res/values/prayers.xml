@@ -1,39 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="prayer_name_kz">
-        <item>Қысқаша міндетті дұға</item>
-        <item>Name 2</item>
-        <item>Name 3</item>
-        <item>Name 4</item>
-        <item>Name 5</item>
-        <item>Name 6</item>
-        <item>Name 11</item>
-        <item>Name 12</item>
-        <item>Name 13</item>
-        <item>Name 14</item>
-        <item>Name 15</item>
-        <item>Name 16</item>
-    </string-array>
-
-    <string-array name="prayer_value_kz">
-        <item>Тәулігіне бір рет, талтүсте оқылады
-Уа менің Тәңірім, Сен мені Сені танысын деп және Саған табынсын деп жараттың, мен бұған куә боламын. Осы сәтте мен өзімнің дәрменсіздігіме және Сенің құдіретті екеніңе, өзімнің мардымсыздығыма және Сенің ұлан-ғайыр ізгі екеніңе куә боламын.
-Қиындықта Құтқарушы, Хақ Мәнді, Сенен басқа Құдай жоқ.
-Баһаулла</item>
-        <item>2 В качестве данных используем массив имен. В onCreate мы находим список, создаем адаптер и присваиваем адаптер списку. Давайте разберемся, как создали </item>
-        <item>3 В качестве данных используем массив имен. В onCreate мы находим список, создаем адаптер и присваиваем адаптер списку. Давайте разберемся, как создали </item>
-        <item>4 The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method. The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method. The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method. The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method. The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method. The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method. The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method. The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method. The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method. The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method.</item>
-        <item>5</item>
-        <item>6</item>
-        <item>1 В качестве данных используем массив имен. В onCreate мы находим список, создаем адаптер и присваиваем адаптер списку. Давайте разберемся, как создали </item>
-        <item>2 В качестве данных используем массив имен. В onCreate мы находим список, создаем адаптер и присваиваем адаптер списку. Давайте разберемся, как создали </item>
-        <item>3 В качестве данных используем массив имен. В onCreate мы находим список, создаем адаптер и присваиваем адаптер списку. Давайте разберемся, как создали </item>
-        <item>4 The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method. The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method. The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method. The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method. The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method. The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method. The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method. The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method. The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method. The ArrayAdapter class allows to remove all elements in its underlying data structure with the clear() method call. You can then add new elements via the add() method or a Collection via the addAll() method.</item>
-        <item>5</item>
-        <item>6</item>
-    </string-array>
-
-    <string-array name="prayer_name_ru">
+    <string-array name="prayer_title">
         <item>1. Уа Рух Ұлы!</item>
         <item>2. Уа Рух Ұлы!</item>
         <item>3. Уа Адам Ұлы!</item>
@@ -190,8 +157,7 @@
         <item>ЛҰҒАТ</item>
     </string-array>
 
-
-    <string-array name="prayer_value_ru">
+    <string-array name="prayer_value">
 
         <item>	Бірінші насихатым* мынадай: жүрегің пәк, мейірімді әрі нұрлы болсын, сонда ежелгі, өшпес* әрі бақи* патшалыққа жететін боласың.	</item>
 
