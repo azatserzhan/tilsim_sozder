@@ -5,8 +5,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
+import com.github.fluidsonic.fluid.json.JSONParser
+import com.github.fluidsonic.fluid.json.parseValue
 import kotlinx.android.synthetic.main.activity_main.*
 import kz.tilsimsozder.style.CustomListAdapter
+
 
 class MainActivity : Activity() {
 
@@ -14,6 +17,8 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setupAdapter()
+        getJSON()
+        progresBarSetup()
     }
 
     private fun setupAdapter() {
@@ -65,6 +70,30 @@ class MainActivity : Activity() {
         startActivity(sendIntent)
     }
 
+    fun getJSON() {
+        val file = applicationContext.assets.open("a.json").bufferedReader().use {
+            it.readText()
+        }
+        val parser= JSONParser.default.parseValue(file)
+        val parser2: Map<String, String> = parser as Map<String, String>
+        /*TODO: Мына жердегі map тің ішінде JSON мәлімет бар, соны алып XML дың орнына қолдан*/
+    }
+
+    private fun progresBarSetup(){
+        progressBarMain.progress = 30
+
+        scrollViewMain.viewTreeObserver.addOnScrollChangedListener {
+            val scrollY = scrollViewMain.scrollY // For ScrollView
+            val allYSize = scrollViewMain.getChildAt(0).height - 1731
+
+            if(allYSize>0){
+                progressBarMain.progress = scrollY * 100 / allYSize
+                progressBarMain.visibility = View.VISIBLE
+            }else{
+                progressBarMain.visibility = View.INVISIBLE
+            }
+        }
+    }
 
     companion object {
         var POSITION: Int = 0
