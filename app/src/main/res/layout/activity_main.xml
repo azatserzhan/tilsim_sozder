@@ -6,9 +6,9 @@
     tools:context="kz.tilsimsozder.MainActivity"
     android:background="@drawable/main_bg">
 
-    <ProgressBar
+    <SeekBar
         style="?android:attr/progressBarStyleHorizontal"
-        android:id="@+id/progressBarMain"
+        android:id="@+id/seekBarMain"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"

@@ -5,10 +5,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
-import com.github.fluidsonic.fluid.json.JSONParser
+import com.github.fluidsonic.fluid.json.*
 import com.github.fluidsonic.fluid.json.parseValue
 import kotlinx.android.synthetic.main.activity_main.*
 import kz.tilsimsozder.style.CustomListAdapter
+import android.util.DisplayMetrics
 
 
 class MainActivity : Activity() {
@@ -16,24 +17,24 @@ class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        getJSONData()
+        getJSONLugat()
         setupAdapter()
-        getJSON()
-        progresBarSetup()
+        seekBarSetup()
+        setNotes()
     }
 
     private fun setupAdapter() {
-        val adapter = CustomListAdapter(this@MainActivity, R.layout.custom_list, resources.getStringArray(R.array.prayer_title))
+        val adapter = CustomListAdapter(this@MainActivity, R.layout.custom_list, LIST_TITLE_DATA.toTypedArray())
         listViewMainScreen.adapter = adapter
         listClickAction()
     }
 
     private fun listClickAction() {
-        val listHeader = resources.getStringArray(R.array.prayer_title)
-        val listContext = resources.getStringArray(R.array.prayer_value)
-
         listViewMainScreen.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
-            TextViewHeader.text = listHeader[position].toUpperCase() + ""
-            TextViewContent.text = listContext[position] + ""
+            TextViewHeader.text = LIST_TITLE_DATA[position].toUpperCase() + ""
+            TextViewContent.text = LIST_CONTENT_DATA[position] + ""
             slidingDrawer.animateClose()
             MainActivity.POSITION = position
         }
@@ -49,13 +50,12 @@ class MainActivity : Activity() {
     }
 
     fun nextText(view: View) {
-        val listHeader = resources.getStringArray(R.array.prayer_title)
-        val listContext = resources.getStringArray(R.array.prayer_value)
-
-        if (POSITION != listHeader.size) {
-            TextViewHeader.text = listHeader[POSITION].toUpperCase() + ""
-            TextViewContent.text = listContext[POSITION] + ""
+        if (POSITION != LIST_TITLE_DATA.size) {
+            TextViewHeader.text = LIST_TITLE_DATA[POSITION].toUpperCase() + ""
+            TextViewContent.text = LIST_CONTENT_DATA[POSITION] + ""
             POSITION++
+
+            setNotes()
         } else {
             POSITION = 0
         }
@@ -70,27 +70,81 @@ class MainActivity : Activity() {
         startActivity(sendIntent)
     }
 
-    fun getJSON() {
-        val file = applicationContext.assets.open("a.json").bufferedReader().use {
+    private fun getJSONData() {
+        val file = applicationContext.assets.open("data.json").bufferedReader().use {
             it.readText()
         }
-        val parser= JSONParser.default.parseValue(file)
-        val parser2: Map<String, String> = parser as Map<String, String>
-        /*TODO: Мына жердегі map тің ішінде JSON мәлімет бар, соны алып XML дың орнына қолдан*/
+        val parser = JSONParser.default
+        val parseJson = parser.parseValue(file)
+        val parseList: List<Map<String, String>> = parseJson as List<Map<String, String>>
+
+        val titleInJSON = "title"
+        val contentInJSON = "content"
+
+        parseList.forEach { map ->
+            map.forEach {
+                when (it.key) {
+                    titleInJSON -> LIST_TITLE_DATA.add(it.value)
+                    contentInJSON -> LIST_CONTENT_DATA.add(it.value)
+                }
+            }
+        }
     }
 
-    private fun progresBarSetup(){
-        progressBarMain.progress = 30
+    private fun getJSONLugat() {
+        val file = applicationContext.assets.open("lugat.json").bufferedReader().use {
+            it.readText()
+        }
+        val parser = JSONParser.default
+        val parseJson = parser.parseValue(file)
+        val parseList: List<Map<String, String>> = parseJson as List<Map<String, String>>
+
+        val titleInJSON = "title"
+        val contentInJSON = "value"
+
+        parseList.forEach { map ->
+            map.forEach {
+                when (it.key) {
+                    titleInJSON -> LIST_TITLE_NOTES.add(it.value)
+                    contentInJSON -> LIST_CONTENT_NOTES.add(it.value)
+                }
+            }
+        }
+    }
+
+    private fun setNotes() {
+        val data: MutableList<String> = TextViewContent.text.split(" ").toMutableList()
+        val pattern = "[*]".toRegex()
+
+        TextViewContent.append("\n\n\n")
+        data.forEach { data ->
+            if (pattern.containsMatchIn(data)) {
+                var count = 0
+                LIST_TITLE_NOTES.forEach { title ->
+                    if (data.substringBeforeLast("*").toLowerCase() == title.toLowerCase()) {
+                        TextViewContent.append("$title - " + LIST_CONTENT_NOTES[count])
+                    }
+                    count++
+                }
+            }
+        }
+    }
+
+    private fun seekBarSetup() {
+        seekBarMain.progress = 30
+        val displayMetrics = DisplayMetrics()
+        windowManager.defaultDisplay.getMetrics(displayMetrics)
+        val displayHeight = displayMetrics.heightPixels
 
         scrollViewMain.viewTreeObserver.addOnScrollChangedListener {
-            val scrollY = scrollViewMain.scrollY // For ScrollView
-            val allYSize = scrollViewMain.getChildAt(0).height - 1731
+            val scrollY = scrollViewMain.scrollY
+            val allYSize = scrollViewMain.getChildAt(0).height - displayHeight
 
-            if(allYSize>0){
-                progressBarMain.progress = scrollY * 100 / allYSize
-                progressBarMain.visibility = View.VISIBLE
-            }else{
-                progressBarMain.visibility = View.INVISIBLE
+            if (allYSize > 0) {
+                seekBarMain.progress = scrollY * 100 / allYSize
+                seekBarMain.visibility = View.VISIBLE
+            } else {
+                seekBarMain.visibility = View.INVISIBLE
             }
         }
     }
@@ -98,5 +152,9 @@ class MainActivity : Activity() {
     companion object {
         var POSITION: Int = 0
         var TEXT_SIZE = 15
+        var LIST_TITLE_DATA: MutableList<String> = mutableListOf()
+        var LIST_CONTENT_DATA: MutableList<String> = mutableListOf()
+        var LIST_TITLE_NOTES: MutableList<String> = mutableListOf()
+        var LIST_CONTENT_NOTES: MutableList<String> = mutableListOf()
     }
 }
