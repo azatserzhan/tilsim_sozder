@@ -1,16 +1,25 @@
 package kz.tilsimsozder
 
+import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
-import com.github.fluidsonic.fluid.json.*
-import com.github.fluidsonic.fluid.json.parseValue
 import kotlinx.android.synthetic.main.activity_main.*
 import kz.tilsimsozder.style.CustomListAdapter
 import android.util.DisplayMetrics
-
+import android.widget.RemoteViews
+import com.tapadoo.alerter.Alerter
+import kz.tilsimsozder.service.MyService
 
 class MainActivity : Activity() {
 
@@ -23,12 +32,20 @@ class MainActivity : Activity() {
         setupAdapter()
         seekBarSetup()
         setNotes()
+        showNotification()
+        setupService()
     }
 
     private fun setupAdapter() {
         val adapter = CustomListAdapter(this@MainActivity, R.layout.custom_list, LIST_TITLE_DATA.toTypedArray())
         listViewMainScreen.adapter = adapter
         listClickAction()
+    }
+
+    private fun setupService(){
+        val service = Intent(this, MyService::class.java)
+        stopService(service)
+        startService(service)
     }
 
     private fun listClickAction() {
@@ -71,7 +88,11 @@ class MainActivity : Activity() {
     }
 
     private fun getJSONData() {
-        val file = applicationContext.assets.open("data.json").bufferedReader().use {
+        /*TODO: Все такуи попробуй JSON прочитать, на данный момент ты XML используешь для хранения данных*/
+        LIST_TITLE_DATA = this.resources.getStringArray(R.array.prayer_title).toMutableList()
+        LIST_CONTENT_DATA = this.resources.getStringArray(R.array.prayer_value).toMutableList()
+
+        /*val file = applicationContext.assets.open("data.json").bufferedReader().use {
             it.readText()
         }
         val parser = JSONParser.default
@@ -88,11 +109,14 @@ class MainActivity : Activity() {
                     contentInJSON -> LIST_CONTENT_DATA.add(it.value)
                 }
             }
-        }
+        }*/
     }
 
     private fun getJSONLugat() {
-        val file = applicationContext.assets.open("lugat.json").bufferedReader().use {
+        LIST_TITLE_NOTES = this.resources.getStringArray(R.array.notes_title).toMutableList()
+        LIST_CONTENT_NOTES = this.resources.getStringArray(R.array.notes_value).toMutableList()
+
+        /*val file = applicationContext.assets.open("lugat.json").bufferedReader().use {
             it.readText()
         }
         val parser = JSONParser.default
@@ -109,7 +133,7 @@ class MainActivity : Activity() {
                     contentInJSON -> LIST_CONTENT_NOTES.add(it.value)
                 }
             }
-        }
+        }*/
     }
 
     private fun setNotes() {
@@ -149,6 +173,16 @@ class MainActivity : Activity() {
         }
     }
 
+    private fun showNotification(){
+        if(MainActivity.START_NOTIFICATION){
+            Alerter.create(this)
+                .setTitle("Бұл жолығы жаңартылымдар")
+                .setText("Үш сағат сайын сізге кездейсоқ тылсым сөз келіп отырады")
+                .setBackgroundColorRes(R.color.colorNotification)
+                .show()
+        }
+    }
+
     companion object {
         var POSITION: Int = 0
         var TEXT_SIZE = 15
@@ -156,5 +190,6 @@ class MainActivity : Activity() {
         var LIST_CONTENT_DATA: MutableList<String> = mutableListOf()
         var LIST_TITLE_NOTES: MutableList<String> = mutableListOf()
         var LIST_CONTENT_NOTES: MutableList<String> = mutableListOf()
+        var START_NOTIFICATION = true
     }
 }

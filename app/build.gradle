@@ -8,8 +8,8 @@ android {
         applicationId 'kz.tilsimsozder'
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 1
-        versionName '1.1'
+        versionCode 4
+        versionName '1.4'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -32,6 +32,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.github.fluidsonic:fluid-json:0.+'
+    implementation 'com.tapadoo.android:alerter:3.0.2'
 }
 repositories {
     mavenCentral()

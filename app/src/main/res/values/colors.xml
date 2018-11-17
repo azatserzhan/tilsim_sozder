@@ -3,6 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#d0f2f8</color>
+    <color name="colorNotification">#ed731c</color>
 
     <color name="text_blackMode">#ffffff</color>
     <color name="bg_blackMode">#75000000</color>
