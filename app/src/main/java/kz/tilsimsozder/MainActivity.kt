@@ -1,23 +1,13 @@
 package kz.tilsimsozder
 
-import android.annotation.SuppressLint
 import android.app.Activity
-import android.app.Notification
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
-import android.content.Context
 import android.content.Intent
-import android.graphics.BitmapFactory
-import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import kotlinx.android.synthetic.main.activity_main.*
 import kz.tilsimsozder.style.CustomListAdapter
 import android.util.DisplayMetrics
-import android.widget.RemoteViews
 import com.tapadoo.alerter.Alerter
 import kz.tilsimsozder.service.MyService
 
@@ -32,7 +22,7 @@ class MainActivity : Activity() {
         setupAdapter()
         seekBarSetup()
         setNotes()
-        showNotification()
+        setupStartNotification()
         setupService()
     }
 
@@ -54,6 +44,7 @@ class MainActivity : Activity() {
             TextViewContent.text = LIST_CONTENT_DATA[position] + ""
             slidingDrawer.animateClose()
             MainActivity.POSITION = position
+            setNotes()
         }
     }
 
@@ -173,7 +164,7 @@ class MainActivity : Activity() {
         }
     }
 
-    private fun showNotification(){
+    private fun setupStartNotification(){
         if(MainActivity.START_NOTIFICATION){
             Alerter.create(this)
                 .setTitle("Бұл жолығы жаңартылымдар")

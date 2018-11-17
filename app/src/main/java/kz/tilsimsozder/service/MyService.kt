@@ -22,19 +22,12 @@ import kz.tilsimsozder.R
 class MyService : Service() {
 
     override fun onBind(intent: Intent): IBinder? {
-        Log.d("azat", "+")
         return null
     }
 
     override fun onCreate() {
-        Log.d("azat", "onCreate")
         MainActivity.START_NOTIFICATION = false
         super.onCreate()
-    }
-
-    override fun onDestroy() {
-        Log.d("azat", "onDestroy")
-        super.onDestroy()
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
