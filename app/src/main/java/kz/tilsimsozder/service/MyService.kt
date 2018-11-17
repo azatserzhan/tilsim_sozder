@@ -13,9 +13,7 @@ import android.graphics.Color
 import android.os.Build
 import android.os.Handler
 import android.os.IBinder
-import android.util.Log
 import android.widget.RemoteViews
-import com.tapadoo.alerter.Alerter
 import kz.tilsimsozder.MainActivity
 import kz.tilsimsozder.R
 
@@ -31,14 +29,12 @@ class MyService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        Log.d("azat", "onStartCommand")
         setupService()
         return super.onStartCommand(intent, flags, startId)
     }
 
     private fun setupService(){
         Handler().postDelayed({
-            Log.d("azat", "+2")
             showNotification(this@MyService)
             setupService()
         }, 1000*60*3)
