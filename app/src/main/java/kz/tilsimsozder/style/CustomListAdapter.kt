@@ -19,8 +19,7 @@ import kz.tilsimsozder.R
  */
 class CustomListAdapter(var mContext: Activity, private val id: Int, private val items: Array<String>)//tr = Typeface.createFromAsset(context.getAssets(), "font/kz_r.ttf");
     : ArrayAdapter<String>(mContext, id, items) {
-    internal var tl: Typeface? = null
-    internal var tr: Typeface? = null
+    private var tl: Typeface? = Typeface.createFromAsset(context.getAssets(), "font/kz_r.ttf");
 
     override fun getView(position: Int, v: View?, parent: ViewGroup): View {
         var mView = v
@@ -35,10 +34,11 @@ class CustomListAdapter(var mContext: Activity, private val id: Int, private val
             text.text = Html.fromHtml(items[position])
             text.typeface = tl
         }
-
-        val imageView = mView.findViewById<View>(R.id.imageView15) as ImageView
-        imageView.setImageResource(R.drawable.circle)
         text.setTextColor(Color.parseColor("#ffffff"))
+
+        val textViewFirstNumber = mView!!.findViewById<View>(R.id.textViewFirstNumber) as TextView
+        textViewFirstNumber.text = position.toString()
+
 
         return mView
     }

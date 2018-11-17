@@ -156,7 +156,6 @@
         <item>82. Уа Пендем!</item>
         <item>ЛҰҒАТ</item>
     </string-array>
-
     <string-array name="prayer_value">
 
         <item>	Бірінші насихатым* мынадай: жүрегің пәк, мейірімді әрі нұрлы болсын, сонда ежелгі, өшпес* әрі бақи* патшалыққа жететін боласың.	</item>
@@ -636,5 +635,213 @@
                 І \n
                 Іздеу - талпыну, асығу seek \n
                 Ізет - даңқ glory \n</item>
+    </string-array>
+    <string-array name="notes_title">
+        <item>Абһа</item>
+        <item>Адалдық шыңы</item>
+        <item>Айып</item>
+        <item>Аңқа құсы</item>
+        <item>Асыл</item>
+        <item>Ашкөз</item>
+        <item>Аяғына таяды</item>
+        <item>Әуен</item>
+        <item>Әшекейлеу</item>
+        <item>Бағалау</item>
+        <item>Бақи</item>
+        <item>Барлық жағдайда</item>
+        <item>Баян</item>
+        <item>Безу</item>
+        <item>Биігі</item>
+        <item>Бәйтерек</item>
+        <item>Бұлақ</item>
+        <item>Бүлікшілер</item>
+        <item>Гүлбақ</item>
+        <item>Ғапіл - (азер. гофиль) немқұрайлы, careless, sleeping, negligent ғапілдік</item>
+        <item>Ғашықтық</item>
+        <item>Ғибрат</item>
+        <item>Даңқымның мөрімен мөрлеу</item>
+        <item>Данышпан</item>
+        <item>Дидар</item>
+        <item>Дидарласу</item>
+        <item>Дос тұту</item>
+        <item>Есу</item>
+        <item>Жақындасу</item>
+        <item>Жамал</item>
+        <item>Жар</item>
+        <item>Жарылқаған</item>
+        <item>Жұрдай</item>
+        <item>Зейнет</item>
+        <item>Зұлмат</item>
+        <item>Игі істер</item>
+        <item>Иззат</item>
+        <item>Имансыз</item>
+        <item>Киелі</item>
+        <item>Қақпа</item>
+        <item>Қапас</item>
+        <item>Қасиеттілік</item>
+        <item>Қауым</item>
+        <item>Қосын</item>
+        <item>Қош тұту</item>
+        <item>Құмай құсы</item>
+        <item>Қымбат</item>
+        <item>Қырмызы</item>
+        <item>Лағынет</item>
+        <item>Мейірімділік</item>
+        <item>Мекендеу</item>
+        <item>Мекенсіздік</item>
+        <item>Мемлекет</item>
+        <item>Мехнат</item>
+        <item>Мүбәрак</item>
+        <item>Налу</item>
+        <item>Насихат</item>
+        <item>Нәпсі</item>
+        <item>Несібе</item>
+        <item>Өсиет</item>
+        <item>Пана</item>
+        <item>Пана іздеу</item>
+        <item>Перде</item>
+        <item>Пердесіз</item>
+        <item>Разылық</item>
+        <item>Рақат төсегі</item>
+        <item>Рақымды</item>
+        <item>Ризалық</item>
+        <item>Ризашылық</item>
+        <item>Ризван</item>
+        <item>Сәжде ету</item>
+        <item>Сүйкімділік</item>
+        <item>Сүйікті</item>
+        <item>Сүйініш</item>
+        <item>Сүлейменнің жаршысы</item>
+        <item>Сый</item>
+        <item>Талассыз</item>
+        <item>Тақуа</item>
+        <item>Тас тақта</item>
+        <item>Тауап ету</item>
+        <item>Тәңірі</item>
+        <item>Тәрк ету</item>
+        <item>Тостаған</item>
+        <item>Толық жойылу</item>
+        <item>Шақыру</item>
+        <item>Уәжіп</item>
+        <item>Ұланның шырайы</item>
+        <item>Үлпәт</item>
+        <item>Үміт үзу</item>
+        <item>Хақы</item>
+        <item>Хикмет</item>
+        <item>Хикметтердің</item>
+        <item>Хикмет иелері</item>
+        <item>Шағылу</item>
+        <item>Шеба (Саба)</item>
+        <item>Шеңбер</item>
+        <item>Ширк</item>
+        <item>Шырай</item>
+        <item>Ынсап</item>
+        <item>Ықтияр ету</item>
+        <item>Іздеу</item>
+        <item>Ізет</item>
+    </string-array>
+    <string-array name="notes_value">
+        <item>даңқ, Баһа сөзінің күшейтпелі түрі, glory</item>
+        <item>феникс құсы мекендеген жер mount of faithfulness(phoenix)</item>
+        <item>кемшілік, fault</item>
+        <item>Қап тауын мекен еткен аңыздағы құс</item>
+        <item>жасырын, тылсым hidden</item>
+        <item>хасис (азер.) – бергісі келмейді; харис, херс – анағұрлым көбірек алғанды қалайды</item>
+        <item>аяқталды, бітті ended</item>
+        <item>күй, әуез melody</item>
+        <item>безендіру, әрлеу adorn</item>
+        <item>қымбат нәрсе ретінде сақтау, ерекше қарау treasure</item>
+        <item>мәңгі, мәңгі өлмейтін, өшпес</item>
+        <item>қандайда жағдай болмасын ever</item>
+        <item>сөз, utterance</item>
+        <item>бас тарту, қашу, жақындамау shun</item>
+        <item>бұл жерде шыңы, дәрежесі height</item>
+        <item>ағаш, аңыздағы самұрық құсы мекендеген алып ағаш</item>
+        <item>ағыс stream</item>
+        <item>дүрбелең тудырушылар, көтерілісшілер, қарсыласушылар rebellious</item>
+        <item>гүлстан, гүлдер мекені, гүлдер өсетін бақ rose garden цветник</item>
+        <item>(азер. гофиль) немқұрайлы, careless, sleeping, negligent ғапілдік - немқұрайлылық heedlessness, (азер. жоһиль – ignorant, illiterate)</item>
+        <item>махаббат (өзб.ишқ) love</item>
+        <item>мысал, үлгі</item>
+        <item>даңқыммен мөрлеу</item>
+        <item>дана, данагөй, оқымысты learned</item>
+        <item>келбет, жүз countenance</item>
+        <item>кездесу, жолығу, тілдесу</item>
+        <item>дос қылу, дос ету, достасу make friend</item>
+        <item>желдің есуі waft</item>
+        <item>шын достасу</item>
+        <item>сұлулық, әсемдік</item>
+        <item>Сүйікті, Дос</item>
+        <item>ақ баталы, батаға кенелген, Құдай жарылқаған blessed</item>
+        <item>құр бос, бос void, empty</item>
+        <item>әшекей adorning</item>
+        <item>қараңғылық, қапас, түнек darkness</item>
+        <item>сауаптар</item>
+        <item>ізет, даңқ, glory</item>
+        <item>құдайсыз, Құдайдан безген, Құдайға сенбейтін, Құдайдан қорықпайтын адам ungodly</item>
+        <item>қасиетті мұқаддас</item>
+        <item>дарбаза, есік gate</item>
+        <item>тор, cage</item>
+        <item>киелілік sanctity</item>
+        <item>мекендеуші, тұрғын dweller</item>
+        <item>сарбаз, жасақ, әскер, concourse</item>
+        <item>қош көру, артық көру, артық санау, қалау prefer</item>
+        <item>сиқырлы көрегендік феникс құсы, бақыт құсы. Ол кімге өзінің көлеңкесін түсірсе, сол адамды патша етеді деп есептелген.</item>
+        <item>бағалы, теңдессіз, асыл precious</item>
+        <item>қызылдың бір реңкі</item>
+        <item>қарғыс ату, accurse</item>
+        <item>(азер. лютф) kindness</item>
+        <item>бір жерде өмір сүру, тұру, паналау dwell</item>
+        <item>ғайыптық, басы да, аяғы да жоқ жер, placeless, (азер. ломачон), Құдай</item>
+        <item>ел, патшалық, орда realm</item>
+        <item>арабша еңбек сөзі</item>
+        <item>киелі, hallowed</item>
+        <item>назалану, қамығу, қапалану bewail</item>
+        <item>кеңес, advice</item>
+        <item>құмарлық desire, self</item>
+        <item>үлес, portion</item>
+        <item>аһд Covenant</item>
+        <item>баспана, үй shelter, abode</item>
+        <item>мекендеу abide</item>
+        <item>бүркеніш veil</item>
+        <item>бүркеусіз, хиджабсыз veilless</item>
+        <item>pleasure</item>
+        <item>құр бекер жату, ештеңе істемеу, рақаттанып жату bed of ease</item>
+        <item>қайырымды, мейірімді merciful</item>
+        <item>ерік will</item>
+        <item>good pleasure</item>
+        <item>жәннат бағы</item>
+        <item>бас ию, prostrate</item>
+        <item>әсерлік, әсемділік charm</item>
+        <item>басқаша жар, дос</item>
+        <item>қуаныш, шаттық joy</item>
+        <item>оның сүйіктісіне хат тасыған бәбісек құсы</item>
+        <item>favor, grace</item>
+        <item>айқын irrevocably</item>
+        <item>тура жолдағы адам, құдайшыл, праведный, righteous</item>
+        <item>шарғы tablet</item>
+        <item>айналып жүру circle round</item>
+        <item>Құдай, Жаратушы, Билеуші Ие (Lord)</item>
+        <item>теріс айналу, бас тарту</item>
+        <item>кесе, пиала cup</item>
+        <item>құру, жоқ болу, құрдымға кету utter loss</item>
+        <item>уаһи, аян (call)</item>
+        <item>міндетті түрде орындау, binding</item>
+        <item>Жігіттің, Жастың сымбаттылығы, сұлулығы</item>
+        <item>бауыр басу, байлану привязанность affection</item>
+        <item>сенім артпау, сенімін жоғалу put no trust</item>
+        <item>құқы, claim</item>
+        <item>даналық wisdom</item>
+        <item>даналықтар wisdoms</item>
+        <item>даналар, данышпан, данагөй адамдар wise</item>
+        <item>Күн көзі айна бетінде шағылады, көріну, бейнесі түсу reflection</item>
+        <item>Шеба патшайымы мекен еткен жер, Сүлеймен патша сүйген патшайымның елі; қазіргі Йемен еліндегі қала.</item>
+        <item>атырап precincts</item>
+        <item>екі нәрсені тең қылу, бұл жерде Құдайға серік қосу: Құдай жалғыз емес, Оның жанында басқа да күштер бар misbelief</item>
+        <item>жамал, әсемдік, сұлулық</item>
+        <item>әділдік, әділеттік justice</item>
+        <item>таңдау choose</item>
+        <item>талпыну, асығу seek</item>
+        <item>даңқ glory</item>
     </string-array>
 </resources>
