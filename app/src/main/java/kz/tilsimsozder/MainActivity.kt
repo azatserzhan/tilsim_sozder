@@ -32,7 +32,7 @@ class MainActivity : Activity() {
         listClickAction()
     }
 
-    private fun setupService(){
+    private fun setupService() {
         val service = Intent(this, MyService::class.java)
         stopService(service)
         startService(service)
@@ -68,7 +68,6 @@ class MainActivity : Activity() {
             POSITION = 0
         }
     }
-
 
     fun share(view: View) {
         val sendIntent = Intent()
@@ -164,8 +163,8 @@ class MainActivity : Activity() {
         }
     }
 
-    private fun setupStartNotification(){
-        if(MainActivity.START_NOTIFICATION){
+    private fun setupStartNotification() {
+        if (MainActivity.START_NOTIFICATION) {
             Alerter.create(this)
                 .setTitle("Бұл жолығы жаңартылымдар")
                 .setText("Үш сағат сайын сізге кездейсоқ тылсым сөз келіп отырады")
