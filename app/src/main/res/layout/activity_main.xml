@@ -43,12 +43,13 @@
             tools:fontFamily="monospace" />
 
         <TextView
-            android:background="#72ffffff"
+            android:id="@+id/TextViewContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/main_text"
             android:clickable="true"
             android:gravity="center"
-            android:id="@+id/TextViewContent"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
             android:onClick="zoomText"
             android:padding="20dp"
             android:text="@string/p_text"
