@@ -53,9 +53,9 @@ class MyService : Service() {
         val pendingIntent = PendingIntent.getActivity(context,0,intent, PendingIntent.FLAG_UPDATE_CURRENT)
         val contentView = RemoteViews(packageName, R.layout.notification_layout)
         val listLength = MainActivity.LIST_CONTENT_DATA_TILSIM.size - 1
-
-        contentView.setTextViewText(R.id.tv_title, MainActivity.LIST_TITLE_DATA_TILSIM[(0..listLength).shuffled().last()])
-        contentView.setTextViewText(R.id.tv_content, MainActivity.LIST_CONTENT_DATA_TILSIM[(0..listLength).shuffled().last()])
+        val randomNumber: Int = (0..listLength).shuffled().last()
+        contentView.setTextViewText(R.id.tv_title, MainActivity.LIST_TITLE_DATA_TILSIM[randomNumber])
+        contentView.setTextViewText(R.id.tv_content, MainActivity.LIST_CONTENT_DATA_TILSIM[randomNumber])
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             notificationChannel = NotificationChannel(channelId,description, NotificationManager.IMPORTANCE_HIGH)
