@@ -7,6 +7,7 @@ import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.DisplayMetrics
+import android.util.Log
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
@@ -48,6 +49,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setupStartNotification()
         setupService()
         fontSizeSeekBarSetup()
+        firstStartSetup()
     }
 
     override fun onBackPressed() {
@@ -110,6 +112,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
+    private fun firstStartSetup() {
+        if (MyService.RANDOM_TILSIM != 0) {
+            TextViewHeader.text = LIST_TITLE_DATA_TILSIM[MyService.RANDOM_TILSIM]
+            TextViewContent.text = LIST_CONTENT_DATA_TILSIM[MyService.RANDOM_TILSIM]
+        }
+    }
+
     private fun setup(listTitle: MutableList<String>, listData: MutableList<String>) {
         setupAdapter(listTitle, listData)
     }
@@ -159,7 +168,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     fun baptau(view: View) {
         view.visibility = View.GONE
     }
-
 
     private fun fontSizeSeekBarSetup() {
         val seekBar = FontSizeSeek()
