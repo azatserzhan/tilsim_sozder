@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:title="Кітапшалар">
+            <menu>
+                <item
+                    android:id="@+id/nav_prayer"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="Дұғалар" />
+                <item
+                    android:id="@+id/nav_tilsim_sozder"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="Тылсым сөздер" />
+            </menu>
+        </item>
+    </group>
+
+    <item android:title="Байланыс">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Достармен бөлісу" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Қате туралы хабар беру" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/nav_manage"
+        android:icon="@drawable/ic_menu_manage"
+        android:title="Баптау" />
+
+</menu>
