@@ -36,7 +36,7 @@ class CustomListAdapter(var mContext: Activity, private val id: Int, private val
         }
         text.setTextColor(Color.parseColor("#ffffff"))
 
-        val textViewFirstNumber = mView!!.findViewById<View>(R.id.textViewFirstNumber) as TextView
+        val textViewFirstNumber = mView.findViewById<View>(R.id.textViewFirstNumber) as TextView
         textViewFirstNumber.text = position.toString()
 
 
