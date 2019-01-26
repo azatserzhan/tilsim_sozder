@@ -16,7 +16,7 @@ class CardStackAdapter(private var title: MutableList<String>, private var conte
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         context = parent.context
-        return ViewHolder(inflater.inflate(R.layout.item_recommendation_interests_spot, parent, false))
+        return ViewHolder(inflater.inflate(R.layout.item_card_spot, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

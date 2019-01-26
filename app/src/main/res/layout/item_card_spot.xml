@@ -41,10 +41,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Музыка"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
             android:textColor="#214446"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -52,7 +51,8 @@
         android:id="@+id/left_overlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#6F98EEFA">
+        android:background="#6F98EEFA"
+        android:visibility="visible">
 
     </FrameLayout>
 
@@ -60,18 +60,21 @@
         android:id="@+id/right_overlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#6FFF7000">
+        android:background="#6FFF7000"
+        android:visibility="visible">
 
     </FrameLayout>
 
     <FrameLayout
         android:id="@+id/top_overlay"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></FrameLayout>
+        android:layout_height="match_parent"
+        android:visibility="visible"></FrameLayout>
 
     <FrameLayout
         android:id="@+id/bottom_overlay"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></FrameLayout>
+        android:layout_height="match_parent"
+        android:visibility="visible"></FrameLayout>
 
 </android.support.v7.widget.CardView>
