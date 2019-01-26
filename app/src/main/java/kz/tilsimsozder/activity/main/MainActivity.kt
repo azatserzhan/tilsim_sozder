@@ -159,18 +159,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    fun nextText(view: View) {
-        if (POSITION != LIST_TITLE_DATA_TILSIM.size) {
-            TextViewHeader.text = LIST_TITLE_DATA_TILSIM[POSITION].toUpperCase() + ""
-            TextViewContent.text = LIST_CONTENT_DATA_TILSIM[POSITION] + ""
-            POSITION++
-
-            setNotes()
-        } else {
-            POSITION = 0
-        }
-    }
-
     fun share(view: View) {
         val sendIntent = Intent()
         sendIntent.action = Intent.ACTION_SEND
