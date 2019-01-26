@@ -282,7 +282,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (START_NOTIFICATION) {
             Alerter.create(this)
                 .setTitle("Бұл жолығы жаңартылымдар")
-                .setText("Дұғалар мен мәзір қосылды")
+                .setText("Асыл сөздер карточка ретінде көрсетіледі")
                 .setBackgroundColorRes(R.color.colorNotification)
                 .show()
         }
