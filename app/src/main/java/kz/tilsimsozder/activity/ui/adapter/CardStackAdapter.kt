@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import kz.tilsimsozder.R
+import kz.tilsimsozder.service.MyService
 
 class CardStackAdapter(private var title: MutableList<String>, private var content: MutableList<String>) :
     RecyclerView.Adapter<CardStackAdapter.ViewHolder>() {
@@ -21,13 +22,17 @@ class CardStackAdapter(private var title: MutableList<String>, private var conte
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.titleTextView.text = title[position]
-        holder.contentTextView.text = content[position]
-        holder.cardCounterTextView.text = position.toString() + " / " + title.size
+        var newPosiotion = MyService.RANDOM_TILSIM + position
+        if(newPosiotion > title.size){
+            newPosiotion = MyService.RANDOM_TILSIM - position
+        }
+        holder.titleTextView.text = title[newPosiotion]
+        holder.contentTextView.text = content[newPosiotion]
+        holder.cardCounterTextView.text = newPosiotion.toString() + " / " + title.size
         holder.shareImageView.setOnClickListener { v ->
             val sendIntent = Intent()
             sendIntent.action = Intent.ACTION_SEND
-            sendIntent.putExtra(Intent.EXTRA_TEXT, title[position] + "\n" + content[position])
+            sendIntent.putExtra(Intent.EXTRA_TEXT, title[newPosiotion] + "\n" + content[newPosiotion])
             sendIntent.type = "text/plain"
             context.startActivity(sendIntent)
         }
