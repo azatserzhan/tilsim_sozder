@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.fluidsonic:fluid-json:0.9.6@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.fluidsonic/fluid-json/0.9.6/abcfae4664f5f69208d54ccba377d29cc114ea34/fluid-json-0.9.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.fluidsonic/fluid-json/0.9.6/bbe638d08ba8267e46820a1f4758d02294771a8f/fluid-json-0.9.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

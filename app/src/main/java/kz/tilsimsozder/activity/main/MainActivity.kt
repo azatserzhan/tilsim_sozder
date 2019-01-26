@@ -6,30 +6,40 @@ import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.DefaultItemAnimator
 import android.util.DisplayMetrics
+import android.util.Log
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import com.tapadoo.alerter.Alerter
-import kotlinx.android.synthetic.main.activity_main.*
+import com.yuyakaido.android.cardstackview.CardStackLayoutManager
+import com.yuyakaido.android.cardstackview.CardStackListener
+import com.yuyakaido.android.cardstackview.Direction
+import com.yuyakaido.android.cardstackview.StackFrom
+import kotlinx.android.synthetic.main.activity_main.drawer_layout
+import kotlinx.android.synthetic.main.activity_main.nav_view
 import kotlinx.android.synthetic.main.activity_tilsim_sozder.TextViewContent
 import kotlinx.android.synthetic.main.activity_tilsim_sozder.TextViewHeader
 import kotlinx.android.synthetic.main.activity_tilsim_sozder.listViewMainScreen
 import kotlinx.android.synthetic.main.activity_tilsim_sozder.scrollViewMain
 import kotlinx.android.synthetic.main.activity_tilsim_sozder.seekBarMain
 import kotlinx.android.synthetic.main.activity_tilsim_sozder.slidingDrawer
-import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.app_bar_main.toolbar
+import kotlinx.android.synthetic.main.content_main.baptau_menu
+import kotlinx.android.synthetic.main.content_main.cardStackRelativeLayout
+import kotlinx.android.synthetic.main.content_main.card_stack_view
+import kotlinx.android.synthetic.main.content_main.prayerRecyclerView
+import kotlinx.android.synthetic.main.content_main.seekBarFontSize
 import kz.tilsimsozder.R
+import kz.tilsimsozder.activity.seek.FontSizeSeek
+import kz.tilsimsozder.activity.ui.adapter.CardStackAdapter
 import kz.tilsimsozder.service.MyService
 import kz.tilsimsozder.style.CustomListAdapter
-import kotlinx.android.synthetic.main.content_main.baptau_menu
-import kotlinx.android.synthetic.main.content_main.seekBarFontSize
-import kz.tilsimsozder.activity.seek.FontSizeSeek
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, CardStackListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -49,6 +59,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setupService()
         fontSizeSeekBarSetup()
         pushNotificationNumber()
+        setupCardStackView()
     }
 
     override fun onBackPressed() {
@@ -82,11 +93,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 setup(LIST_TITLE_DATA_PRAYER, LIST_CONTENT_DATA_PRAYER)
                 TextViewHeader.text = resources.getString(R.string.prayer_title)
                 TextViewContent.text = resources.getString(R.string.prayer_content)
+                prayerRecyclerView.visibility = View.VISIBLE
+                cardStackRelativeLayout.visibility = View.GONE
             }
             R.id.nav_tilsim_sozder -> {
-                setup(LIST_TITLE_DATA_TILSIM, LIST_CONTENT_DATA_TILSIM)
+                // setup(LIST_TITLE_DATA_TILSIM, LIST_CONTENT_DATA_TILSIM)
                 TextViewHeader.text = resources.getString(R.string.tilsim_sozder_title)
-                TextViewContent.text = resources.getString(R.string.tilsim_sozder_content)
+                // TextViewContent.text = resources.getString(R.string.tilsim_sozder_content)
+                prayerRecyclerView.visibility = View.GONE
+                cardStackRelativeLayout.visibility = View.VISIBLE
             }
             R.id.nav_share -> {
                 val sendIntent = Intent()
@@ -144,18 +159,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    fun nextText(view: View) {
-        if (POSITION != LIST_TITLE_DATA_TILSIM.size) {
-            TextViewHeader.text = LIST_TITLE_DATA_TILSIM[POSITION].toUpperCase() + ""
-            TextViewContent.text = LIST_CONTENT_DATA_TILSIM[POSITION] + ""
-            POSITION++
-
-            setNotes()
-        } else {
-            POSITION = 0
-        }
-    }
-
     fun share(view: View) {
         val sendIntent = Intent()
         sendIntent.action = Intent.ACTION_SEND
@@ -201,8 +204,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val parseJson = parser.parseValue(file)
         val parseList: List<Map<String, String>> = parseJson as List<Map<String, String>>
 
-        val titleInJSON = "title"
-        val contentInJSON = "content"
+        val titleInJSON = "titleTextView"
+        val contentInJSON = "contentTextView"
 
         parseList.forEach { map ->
             map.forEach {
@@ -225,7 +228,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val parseJson = parser.parseValue(file)
         val parseList: List<Map<String, String>> = parseJson as List<Map<String, String>>
 
-        val titleInJSON = "title"
+        val titleInJSON = "titleTextView"
         val contentInJSON = "value"
 
         parseList.forEach { map ->
@@ -285,6 +288,52 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
+    override fun onCardDisappeared(view: View?, position: Int) {
+        Log.d("azat", "setupStartNotification")
+    }
+
+    override fun onCardDragging(direction: Direction?, ratio: Float) {
+        Log.d("azat", "onCardDragging")
+    }
+
+    override fun onCardSwiped(direction: Direction?) {
+        Log.d("azat", "onCardSwiped")
+    }
+
+    override fun onCardCanceled() {
+        Log.d("azat", "onCardCanceled")
+    }
+
+    override fun onCardAppeared(view: View?, position: Int) {
+        Log.d("azat", "onCardAppeared")
+    }
+
+    override fun onCardRewound() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    private val cardManager by lazy { CardStackLayoutManager(this) }
+    private val cardAdapter by lazy { CardStackAdapter(LIST_TITLE_DATA_TILSIM, LIST_CONTENT_DATA_TILSIM) }
+
+    private fun setupCardStackView() {
+        cardManager.setStackFrom(StackFrom.Top)
+        cardManager.setVisibleCount(MainActivity.CARD_VISIBLE_ITEM_COUNT)
+        cardManager.setTranslationInterval(MainActivity.CARD_TRANSLATION_INTERVAL)
+        cardManager.setScaleInterval(MainActivity.CARD_SCALE_INTERVAL)
+        cardManager.setSwipeThreshold(MainActivity.CARD_SWIPE_THRESHOLD)
+        cardManager.setMaxDegree(MainActivity.CARD_MAX_DEGREE)
+        cardManager.setDirections(Direction.HORIZONTAL)
+        cardManager.setCanScrollHorizontal(true)
+        cardManager.setCanScrollVertical(true)
+        card_stack_view.layoutManager = cardManager
+        card_stack_view.adapter = cardAdapter
+        card_stack_view.itemAnimator.apply {
+            if (this is DefaultItemAnimator) {
+                supportsChangeAnimations = true
+            }
+        }
+    }
+
     companion object {
         var POSITION: Int = 0
         var TEXT_SIZE = 15
@@ -298,5 +347,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         var LIST_TITLE_NOTES: MutableList<String> = mutableListOf()
         var LIST_CONTENT_NOTES: MutableList<String> = mutableListOf()
         var START_NOTIFICATION = true
+
+        private const val CARD_VISIBLE_ITEM_COUNT = 3
+        private const val CARD_TRANSLATION_INTERVAL = 4.0f
+        private const val CARD_SCALE_INTERVAL = 0.95f
+        private const val CARD_SWIPE_THRESHOLD = 0.3f
+        private const val CARD_MAX_DEGREE = -30.0f
+        var CARD_COUNTER = 0
     }
 }
