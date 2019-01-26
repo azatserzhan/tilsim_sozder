@@ -90,8 +90,8 @@ class TilsimSozderActivity : Activity() {
         val parseJson = parser.parseValue(file)
         val parseList: List<Map<String, String>> = parseJson as List<Map<String, String>>
 
-        val titleInJSON = "title"
-        val contentInJSON = "content"
+        val titleInJSON = "titleTextView"
+        val contentInJSON = "contentTextView"
 
         parseList.forEach { map ->
             map.forEach {
@@ -114,7 +114,7 @@ class TilsimSozderActivity : Activity() {
         val parseJson = parser.parseValue(file)
         val parseList: List<Map<String, String>> = parseJson as List<Map<String, String>>
 
-        val titleInJSON = "title"
+        val titleInJSON = "titleTextView"
         val contentInJSON = "value"
 
         parseList.forEach { map ->

@@ -8,6 +8,7 @@ import android.support.v4.view.GravityCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DefaultItemAnimator
 import android.util.DisplayMetrics
+import android.util.Log
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
@@ -215,8 +216,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val parseJson = parser.parseValue(file)
         val parseList: List<Map<String, String>> = parseJson as List<Map<String, String>>
 
-        val titleInJSON = "title"
-        val contentInJSON = "content"
+        val titleInJSON = "titleTextView"
+        val contentInJSON = "contentTextView"
 
         parseList.forEach { map ->
             map.forEach {
@@ -239,7 +240,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val parseJson = parser.parseValue(file)
         val parseList: List<Map<String, String>> = parseJson as List<Map<String, String>>
 
-        val titleInJSON = "title"
+        val titleInJSON = "titleTextView"
         val contentInJSON = "value"
 
         parseList.forEach { map ->
@@ -300,44 +301,44 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onCardDisappeared(view: View?, position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.d("azat", "setupStartNotification")
     }
 
     override fun onCardDragging(direction: Direction?, ratio: Float) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.d("azat", "onCardDragging")
     }
 
     override fun onCardSwiped(direction: Direction?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.d("azat", "onCardSwiped")
     }
 
     override fun onCardCanceled() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.d("azat", "onCardCanceled")
     }
 
     override fun onCardAppeared(view: View?, position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.d("azat", "onCardAppeared")
     }
 
     override fun onCardRewound() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    private val manager by lazy { CardStackLayoutManager(this) }
-    private val adapter by lazy { CardStackAdapter(LIST_TITLE_DATA_TILSIM, LIST_CONTENT_DATA_TILSIM) }
+    private val cardManager by lazy { CardStackLayoutManager(this) }
+    private val cardAdapter by lazy { CardStackAdapter(LIST_TITLE_DATA_TILSIM, LIST_CONTENT_DATA_TILSIM) }
 
     private fun setupCardStackView() {
-        manager.setStackFrom(StackFrom.Top)
-        manager.setVisibleCount(MainActivity.CARD_VISIBLE_ITEM_COUNT)
-        manager.setTranslationInterval(MainActivity.CARD_TRANSLATION_INTERVAL)
-        manager.setScaleInterval(MainActivity.CARD_SCALE_INTERVAL)
-        manager.setSwipeThreshold(MainActivity.CARD_SWIPE_THRESHOLD)
-        manager.setMaxDegree(MainActivity.CARD_MAX_DEGREE)
-        manager.setDirections(Direction.HORIZONTAL)
-        manager.setCanScrollHorizontal(true)
-        manager.setCanScrollVertical(true)
-        card_stack_view.layoutManager = manager
-        card_stack_view.adapter = adapter
+        cardManager.setStackFrom(StackFrom.Top)
+        cardManager.setVisibleCount(MainActivity.CARD_VISIBLE_ITEM_COUNT)
+        cardManager.setTranslationInterval(MainActivity.CARD_TRANSLATION_INTERVAL)
+        cardManager.setScaleInterval(MainActivity.CARD_SCALE_INTERVAL)
+        cardManager.setSwipeThreshold(MainActivity.CARD_SWIPE_THRESHOLD)
+        cardManager.setMaxDegree(MainActivity.CARD_MAX_DEGREE)
+        cardManager.setDirections(Direction.HORIZONTAL)
+        cardManager.setCanScrollHorizontal(true)
+        cardManager.setCanScrollVertical(true)
+        card_stack_view.layoutManager = cardManager
+        card_stack_view.adapter = cardAdapter
         card_stack_view.itemAnimator.apply {
             if (this is DefaultItemAnimator) {
                 supportsChangeAnimations = true
@@ -364,5 +365,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         private const val CARD_SCALE_INTERVAL = 0.95f
         private const val CARD_SWIPE_THRESHOLD = 0.3f
         private const val CARD_MAX_DEGREE = -30.0f
+        var CARD_COUNTER = 0
     }
 }

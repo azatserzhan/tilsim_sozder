@@ -8,8 +8,10 @@
     android:background="@drawable/main_bg">
 
     <RelativeLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         android:id="@+id/prayerRecyclerView">
         <SeekBar
 
@@ -172,14 +174,14 @@
     </RelativeLayout>
 
 
-    <RelativeLayout
+    <android.support.constraint.ConstraintLayout
         android:id="@+id/cardStackRelativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipChildren="false"
         android:clipToPadding="false"
         android:gravity="center"
-        android:visibility="gone"
+        android:visibility="visible"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
@@ -193,6 +195,6 @@
             android:layout_marginBottom="122dp"
             android:layout_marginRight="32dp"
             tools:background="@tools:sample/avatars"></com.yuyakaido.android.cardstackview.CardStackView>
-    </RelativeLayout>
+    </android.support.constraint.ConstraintLayout>
 
     </RelativeLayout>
