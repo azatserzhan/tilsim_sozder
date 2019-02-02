@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import kz.tilsimsozder.R
+import kz.tilsimsozder.activity.main.MainActivity
 import kz.tilsimsozder.service.MyService
 
 class CardStackAdapter(private var title: MutableList<String>, private var content: MutableList<String>) :
@@ -21,13 +22,38 @@ class CardStackAdapter(private var title: MutableList<String>, private var conte
         return ViewHolder(inflater.inflate(R.layout.item_card_spot, parent, false))
     }
 
+    fun setNewPosition() {
+        val listLength = title.size - 2
+        MyService.RANDOM_TILSIM = (0..listLength).shuffled().last()
+        notifyDataSetChanged()
+    }
+
+    private fun setNotes(TextViewContent: TextView) {
+        val data: MutableList<String> = TextViewContent.text.split(" ").toMutableList()
+        val pattern = "[*]".toRegex()
+
+        TextViewContent.append("\n\n\n")
+        data.forEach { data ->
+            if (pattern.containsMatchIn(data)) {
+                var count = 0
+                MainActivity.LIST_TITLE_NOTES.forEach { title ->
+                    if (data.substringBeforeLast("*").toLowerCase() == title.toLowerCase()) {
+                        TextViewContent.append("$title - " + MainActivity.LIST_CONTENT_NOTES[count])
+                    }
+                    count++
+                }
+            }
+        }
+    }
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var newPosiotion = MyService.RANDOM_TILSIM + position
-        if(newPosiotion > title.size){
+        if (newPosiotion > title.size) {
             newPosiotion = MyService.RANDOM_TILSIM - position
         }
         holder.titleTextView.text = title[newPosiotion]
         holder.contentTextView.text = content[newPosiotion]
+        setNotes(holder.contentTextView)
         holder.cardCounterTextView.text = newPosiotion.toString() + " / " + title.size
         holder.shareImageView.setOnClickListener { v ->
             val sendIntent = Intent()

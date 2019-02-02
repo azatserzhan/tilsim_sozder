@@ -21,18 +21,19 @@ import com.yuyakaido.android.cardstackview.Direction
 import com.yuyakaido.android.cardstackview.StackFrom
 import kotlinx.android.synthetic.main.activity_main.drawer_layout
 import kotlinx.android.synthetic.main.activity_main.nav_view
-import kotlinx.android.synthetic.main.activity_tilsim_sozder.TextViewContent
-import kotlinx.android.synthetic.main.activity_tilsim_sozder.TextViewHeader
-import kotlinx.android.synthetic.main.activity_tilsim_sozder.listViewMainScreen
-import kotlinx.android.synthetic.main.activity_tilsim_sozder.scrollViewMain
-import kotlinx.android.synthetic.main.activity_tilsim_sozder.seekBarMain
-import kotlinx.android.synthetic.main.activity_tilsim_sozder.slidingDrawer
 import kotlinx.android.synthetic.main.app_bar_main.toolbar
+import kotlinx.android.synthetic.main.content_main.TextViewContent
+import kotlinx.android.synthetic.main.content_main.TextViewHeader
 import kotlinx.android.synthetic.main.content_main.baptau_menu
 import kotlinx.android.synthetic.main.content_main.cardStackRelativeLayout
 import kotlinx.android.synthetic.main.content_main.card_stack_view
+import kotlinx.android.synthetic.main.content_main.listViewMainScreen
 import kotlinx.android.synthetic.main.content_main.prayerRecyclerView
+import kotlinx.android.synthetic.main.content_main.randomButton
+import kotlinx.android.synthetic.main.content_main.scrollViewMain
 import kotlinx.android.synthetic.main.content_main.seekBarFontSize
+import kotlinx.android.synthetic.main.content_main.seekBarMain
+import kotlinx.android.synthetic.main.content_main.slidingDrawer
 import kz.tilsimsozder.R
 import kz.tilsimsozder.activity.seek.FontSizeSeek
 import kz.tilsimsozder.activity.ui.adapter.CardStackAdapter
@@ -60,6 +61,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         fontSizeSeekBarSetup()
         pushNotificationNumber()
         setupCardStackView()
+        setupButton()
     }
 
     override fun onBackPressed() {
@@ -282,7 +284,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (START_NOTIFICATION) {
             Alerter.create(this)
                 .setTitle("Бұл жолығы жаңартылымдар")
-                .setText("Асыл сөздер карточка ретінде көрсетіледі")
+                .setText("Кездейсоқ батырмасы қосылды. Карточкаларды төменге қарай тарту арқылы өзгертуге болады")
                 .setBackgroundColorRes(R.color.colorNotification)
                 .show()
         }
@@ -322,7 +324,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         cardManager.setScaleInterval(MainActivity.CARD_SCALE_INTERVAL)
         cardManager.setSwipeThreshold(MainActivity.CARD_SWIPE_THRESHOLD)
         cardManager.setMaxDegree(MainActivity.CARD_MAX_DEGREE)
-        cardManager.setDirections(Direction.HORIZONTAL)
+        cardManager.setDirections(Direction.FREEDOM)
         cardManager.setCanScrollHorizontal(true)
         cardManager.setCanScrollVertical(true)
         card_stack_view.layoutManager = cardManager
@@ -331,6 +333,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             if (this is DefaultItemAnimator) {
                 supportsChangeAnimations = true
             }
+        }
+    }
+
+    private fun setupButton() {
+        randomButton.setOnClickListener {
+            cardAdapter.setNewPosition()
         }
     }
 
@@ -353,6 +361,5 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         private const val CARD_SCALE_INTERVAL = 0.95f
         private const val CARD_SWIPE_THRESHOLD = 0.3f
         private const val CARD_MAX_DEGREE = -30.0f
-        var CARD_COUNTER = 0
     }
 }
