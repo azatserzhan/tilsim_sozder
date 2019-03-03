@@ -3,12 +3,10 @@ package kz.tilsimsozder.activity.ui.adapter
 import android.content.Context
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.ScrollView
 import android.widget.TextView
 import kz.tilsimsozder.R
 import kz.tilsimsozder.activity.main.MainActivity
@@ -63,11 +61,6 @@ class CardStackAdapter(private var title: MutableList<String>, private var conte
             sendIntent.putExtra(Intent.EXTRA_TEXT, title[newPosiotion] + "\n" + content[newPosiotion])
             sendIntent.type = "text/plain"
             context.startActivity(sendIntent)
-        }
-        holder.contentTextView.setOnClickListener {
-            (it as TextView).apply {
-                this.gravity = Gravity.BOTTOM
-            }
         }
     }
 
