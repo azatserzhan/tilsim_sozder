@@ -4,7 +4,6 @@
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:foreground="?attr/selectableItemBackground"
@@ -20,63 +19,6 @@
         android:background="@drawable/card_view_bg"
         android:scaleType="centerCrop" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <TextView
-            android:id="@+id/titleTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Музыка"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#214446"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/contentTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Музыка"
-            android:textAppearance="?android:attr/textAppearanceListItemSmall"
-            android:textColor="#214446"
-            android:textSize="18sp" />
-
-    </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/left_overlay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#6F98EEFA"
-        android:visibility="visible">
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/right_overlay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#6FFF7000"
-        android:visibility="visible">
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/top_overlay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="visible"></FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/bottom_overlay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="visible"></FrameLayout>
-
     <android.support.constraint.ConstraintLayout
         android:id="@+id/cardStackRelativeLayout"
         android:layout_width="match_parent"
@@ -85,6 +27,40 @@
         android:clipToPadding="false"
         android:gravity="center"
         android:visibility="visible">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Музыка"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#214446"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/contentTextView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="Музыка"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            android:textColor="#214446"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/cardCounterTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
 
         <TextView
             android:id="@+id/cardCounterTextView"
