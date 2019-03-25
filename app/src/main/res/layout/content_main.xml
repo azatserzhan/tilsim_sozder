@@ -113,7 +113,7 @@
                 android:id="@+id/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/menu_bg_white"
+                android:background="@drawable/bubble_navigation_button"
                 android:text="        Батырма        "
                 android:textColor="@color/menu_text_white" />
         </SlidingDrawer>
