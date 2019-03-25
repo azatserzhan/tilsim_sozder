@@ -62,6 +62,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         pushNotificationNumber()
         setupCardStackView()
         setupButton()
+        Log.d("azat", "onCreate")
     }
 
     override fun onBackPressed() {
