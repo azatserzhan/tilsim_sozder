@@ -8,6 +8,7 @@ import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.LinearLayoutManager
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.Gravity
@@ -29,6 +30,7 @@ import kotlinx.android.synthetic.main.content_main.baptau_menu
 import kotlinx.android.synthetic.main.content_main.cardStackRelativeLayout
 import kotlinx.android.synthetic.main.content_main.card_stack_view
 import kotlinx.android.synthetic.main.content_main.listViewMainScreen
+import kotlinx.android.synthetic.main.content_main.prayerListRecyclerView
 import kotlinx.android.synthetic.main.content_main.prayerRecyclerView
 import kotlinx.android.synthetic.main.content_main.randomButton
 import kotlinx.android.synthetic.main.content_main.scrollViewMain
@@ -39,7 +41,7 @@ import kz.tilsimsozder.R
 import kz.tilsimsozder.activity.seek.FontSizeSeek
 import kz.tilsimsozder.activity.ui.adapter.CardStackAdapter
 import kz.tilsimsozder.service.MyService
-import kz.tilsimsozder.style.CustomListAdapter
+import kz.tilsimsozder.style.SelectPrayerAdapter
 
 class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener, CardStackListener {
 
@@ -154,13 +156,21 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
     }
 
     private fun setup(listTitle: MutableList<String>, listData: MutableList<String>) {
-        setupAdapter(listTitle, listData)
+        // setupAdapter(listTitle, listData)
+        val selectPrayerAdapter = SelectPrayerAdapter()
+        val selectPrayerManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        prayerListRecyclerView.apply {
+            layoutManager = selectPrayerManager
+            adapter = selectPrayerAdapter
+        }
+
+        selectPrayerAdapter.addItems(listTitle)
     }
 
     private fun setupAdapter(listTitle: MutableList<String>, listData: MutableList<String>) {
-        val adapter = CustomListAdapter(activity?.parent!!, R.layout.custom_list, listTitle.toTypedArray())
-        listViewMainScreen.adapter = adapter
-        listClickAction(listTitle, listData)
+        // val adapter = SelectPrayerAdapter(activity?.parent!!, R.layout.custom_list, listTitle.toTypedArray())
+        // listViewMainScreen.adapter = adapter
+        // listClickAction(listTitle, listData)
     }
 
     private fun listClickAction(listTitle: MutableList<String>, listData: MutableList<String>) {

@@ -7,15 +7,15 @@
 
     <TextView
         android:gravity="right|center"
-        android:id="@+id/textViewFirstNumber"
+        android:id="@+id/prayerNumberTextView"
         android:layout_gravity="right|center"
         android:layout_height="50dp"
         android:layout_width="40dp"
         android:text="1"
-        android:textColor="#ffffff"></TextView>
+        android:textColor="#ffffff" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/prayerNameTextView"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_width="match_parent"

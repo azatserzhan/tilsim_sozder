@@ -38,7 +38,7 @@ import kz.tilsimsozder.R
 import kz.tilsimsozder.activity.seek.FontSizeSeek
 import kz.tilsimsozder.activity.ui.adapter.CardStackAdapter
 import kz.tilsimsozder.service.MyService
-import kz.tilsimsozder.style.CustomListAdapter
+import kz.tilsimsozder.style.SelectPrayerAdapter
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, CardStackListener {
 
@@ -142,9 +142,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun setupAdapter(listTitle: MutableList<String>, listData: MutableList<String>) {
-        val adapter = CustomListAdapter(this@MainActivity, R.layout.custom_list, listTitle.toTypedArray())
+        /*val adapter = SelectPrayerAdapter(this@MainActivity, R.layout.custom_list, listTitle.toTypedArray())
         listViewMainScreen.adapter = adapter
-        listClickAction(listTitle, listData)
+        listClickAction(listTitle, listData)*/
     }
 
     private fun setupService() {
