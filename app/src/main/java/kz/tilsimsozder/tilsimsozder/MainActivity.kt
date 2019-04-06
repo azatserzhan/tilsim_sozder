@@ -1,6 +1,5 @@
 package kz.tilsimsozder.tilsimsozder
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -42,7 +41,7 @@ import kz.tilsimsozder.service.MyService
 import kz.tilsimsozder.style.CustomListAdapter
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, CardStackListener {
-    @SuppressLint("CommitTransaction", "ResourceType")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -65,7 +64,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         pushNotificationNumber()
         setupCardStackView()
         setupButton()
-        Log.d("azat", "onCreate")
     }
 
     override fun onBackPressed() {
