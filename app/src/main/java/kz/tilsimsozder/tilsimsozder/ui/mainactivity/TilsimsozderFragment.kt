@@ -1,5 +1,6 @@
 package kz.tilsimsozder.tilsimsozder.ui.mainactivity
 
+import android.annotation.SuppressLint
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.net.Uri
@@ -41,7 +42,7 @@ import kz.tilsimsozder.R
 import kz.tilsimsozder.activity.seek.FontSizeSeek
 import kz.tilsimsozder.activity.ui.adapter.CardStackAdapter
 import kz.tilsimsozder.service.MyService
-import kz.tilsimsozder.style.SelectPrayerAdapter
+import kz.tilsimsozder.tilsimsozder.ui.mainactivity.adapter.SelectPrayerAdapter
 
 class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener, CardStackListener {
 
@@ -94,7 +95,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_prayer -> {
-                setup(LIST_TITLE_DATA_PRAYER, LIST_CONTENT_DATA_PRAYER)
+                setupSelectPrayerAdapter()
                 TextViewHeader.text = resources.getString(R.string.prayer_title)
                 TextViewContent.text = resources.getString(R.string.prayer_content)
                 prayerRecyclerView.visibility = View.VISIBLE
@@ -155,20 +156,34 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         }
     }
 
-    private fun setup(listTitle: MutableList<String>, listData: MutableList<String>) {
+    private fun setupSelectPrayerAdapter() {
         // setupAdapter(listTitle, listData)
-        val selectPrayerAdapter = SelectPrayerAdapter()
+        val selectPrayerAdapter = SelectPrayerAdapter(
+            clickListener = {
+                selectPrayer(it)
+            }
+        )
         val selectPrayerManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         prayerListRecyclerView.apply {
             layoutManager = selectPrayerManager
             adapter = selectPrayerAdapter
         }
 
-        selectPrayerAdapter.addItems(listTitle)
+        selectPrayerAdapter.addItems(LIST_TITLE_DATA_PRAYER)
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun selectPrayer(position: Int) {
+        TextViewHeader.text = LIST_TITLE_DATA_PRAYER[position].toUpperCase() + ""
+        TextViewContent.text = LIST_CONTENT_DATA_PRAYER[position] + ""
+        slidingDrawer.animateClose()
+        POSITION = position
+        setNotes()
     }
 
     private fun setupAdapter(listTitle: MutableList<String>, listData: MutableList<String>) {
-        // val adapter = SelectPrayerAdapter(activity?.parent!!, R.layout.select_prayer, listTitle.toTypedArray())
+        // val adapter = SelectPrayerAdapter(activity?.parent!!, R.layout.select_prayer,
+        // .toTypedArray())
         // listViewMainScreen.adapter = adapter
         // listClickAction(listTitle, listData)
     }

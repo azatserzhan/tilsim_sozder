@@ -38,7 +38,6 @@ import kz.tilsimsozder.R
 import kz.tilsimsozder.activity.seek.FontSizeSeek
 import kz.tilsimsozder.activity.ui.adapter.CardStackAdapter
 import kz.tilsimsozder.service.MyService
-import kz.tilsimsozder.style.SelectPrayerAdapter
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, CardStackListener {
 

@@ -1,4 +1,4 @@
-package kz.tilsimsozder.style
+package kz.tilsimsozder.tilsimsozder.ui.mainactivity.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -10,7 +10,9 @@ import kz.tilsimsozder.R
 /**
  * Created by azatserzhanov on 13.12.15.
  */
-class SelectPrayerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class SelectPrayerAdapter(
+    private val clickListener: (position: Int) -> Unit
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val prayers = mutableListOf<String>()
 
@@ -22,7 +24,7 @@ class SelectPrayerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemCount(): Int = prayers.size
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        (holder as SelectPrayerViewHolder).bind(prayers[position])
+        (holder as SelectPrayerViewHolder).bind(prayers[position], clickListener)
     }
 
     fun addItems(list: List<String>) {
@@ -35,8 +37,11 @@ class SelectPrayerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         private val prayerNumberTextView = itemView.prayerNumberTextView
         private val prayerNameTextView = itemView.prayerNameTextView
 
-        fun bind(text: String) {
+        fun bind(text: String, clickListener: (position: Int) -> Unit) {
             prayerNameTextView.text = text
+            prayerNameTextView.setOnClickListener {
+                clickListener(adapterPosition)
+            }
         }
     }
     /*private var typeface: Typeface? = Typeface.createFromAsset(context.getAssets(), "font/kz_r.ttf");
