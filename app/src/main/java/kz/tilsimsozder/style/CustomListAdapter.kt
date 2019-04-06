@@ -9,22 +9,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.ImageView
 import android.widget.TextView
-
 import kz.tilsimsozder.R
 
 /**
  * Created by azatserzhanov on 13.12.15.
  */
-class CustomListAdapter(var mContext: Activity, private val id: Int, private val items: Array<String>)//tr = Typeface.createFromAsset(context.getAssets(), "font/kz_r.ttf");
-    : ArrayAdapter<String>(mContext, id, items) {
-    private var tl: Typeface? = Typeface.createFromAsset(context.getAssets(), "font/kz_r.ttf");
+class CustomListAdapter(
+    var activity: Activity,
+    private val id: Int,
+    private val items: Array<String>
+) : ArrayAdapter<String>(activity, id, items) {
+    private var tl: Typeface? = Typeface.createFromAsset(context.getAssets(), "font/kz_r.ttf")
 
     override fun getView(position: Int, v: View?, parent: ViewGroup): View {
         var mView = v
         if (mView == null) {
-            val vi = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            val vi = activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             mView = vi.inflate(id, null)
         }
 
@@ -42,5 +43,4 @@ class CustomListAdapter(var mContext: Activity, private val id: Int, private val
 
         return mView
     }
-
 }
