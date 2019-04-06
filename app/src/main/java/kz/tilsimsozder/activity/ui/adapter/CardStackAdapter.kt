@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import kz.tilsimsozder.R
-import kz.tilsimsozder.activity.main.MainActivity
+import kz.tilsimsozder.tilsimsozder.MainActivity
 import kz.tilsimsozder.service.MyService
 
 class CardStackAdapter(private var title: MutableList<String>, private var content: MutableList<String>) :

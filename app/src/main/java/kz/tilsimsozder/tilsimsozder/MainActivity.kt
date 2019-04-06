@@ -1,5 +1,6 @@
-package kz.tilsimsozder.activity.main
+package kz.tilsimsozder.tilsimsozder
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -41,9 +42,11 @@ import kz.tilsimsozder.service.MyService
 import kz.tilsimsozder.style.CustomListAdapter
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, CardStackListener {
+    @SuppressLint("CommitTransaction", "ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         setSupportActionBar(toolbar)
 
         nav_view.setNavigationItemSelectedListener(this)
@@ -320,11 +323,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private fun setupCardStackView() {
         cardManager.setStackFrom(StackFrom.Top)
-        cardManager.setVisibleCount(MainActivity.CARD_VISIBLE_ITEM_COUNT)
-        cardManager.setTranslationInterval(MainActivity.CARD_TRANSLATION_INTERVAL)
-        cardManager.setScaleInterval(MainActivity.CARD_SCALE_INTERVAL)
-        cardManager.setSwipeThreshold(MainActivity.CARD_SWIPE_THRESHOLD)
-        cardManager.setMaxDegree(MainActivity.CARD_MAX_DEGREE)
+        cardManager.setVisibleCount(CARD_VISIBLE_ITEM_COUNT)
+        cardManager.setTranslationInterval(CARD_TRANSLATION_INTERVAL)
+        cardManager.setScaleInterval(CARD_SCALE_INTERVAL)
+        cardManager.setSwipeThreshold(CARD_SWIPE_THRESHOLD)
+        cardManager.setMaxDegree(CARD_MAX_DEGREE)
         cardManager.setDirections(Direction.FREEDOM)
         cardManager.setCanScrollHorizontal(true)
         cardManager.setCanScrollVertical(true)

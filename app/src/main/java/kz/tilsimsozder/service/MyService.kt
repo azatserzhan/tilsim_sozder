@@ -15,7 +15,7 @@ import android.os.Handler
 import android.os.IBinder
 import android.widget.RemoteViews
 import kz.tilsimsozder.R
-import kz.tilsimsozder.activity.main.MainActivity
+import kz.tilsimsozder.tilsimsozder.MainActivity
 
 @Suppress("DEPRECATION")
 class MyService : Service() {

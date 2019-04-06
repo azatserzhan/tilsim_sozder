@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main_bg"
-    tools:context="kz.tilsimsozder.activity.main.MainActivity">
+    tools:context="kz.tilsimsozder.tilsimsozder.MainActivity">
 
     <RelativeLayout
 
@@ -15,7 +15,6 @@
         android:layout_height="match_parent"
         android:visibility="gone"
         tools:visibility="visible">
-
 
 
         <ScrollView
@@ -50,8 +49,8 @@
                     android:layout_margin="10dp"
                     android:background="@drawable/main_text"
                     android:clickable="true"
-                    android:gravity="center"
                     android:elevation="10dp"
+                    android:gravity="center"
                     android:padding="20dp"
                     android:text="@string/tilsim_sozder_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -67,6 +66,7 @@
 
             </LinearLayout>
         </ScrollView>
+
         <SeekBar
 
             android:id="@+id/seekBarMain"
