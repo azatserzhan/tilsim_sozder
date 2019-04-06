@@ -3,8 +3,8 @@ package kz.tilsimsozder.style
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.custom_list.view.prayerNameTextView
-import kotlinx.android.synthetic.main.custom_list.view.prayerNumberTextView
+import kotlinx.android.synthetic.main.select_prayer.view.prayerNameTextView
+import kotlinx.android.synthetic.main.select_prayer.view.prayerNumberTextView
 import kz.tilsimsozder.R
 
 /**
@@ -31,7 +31,7 @@ class SelectPrayerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     private class SelectPrayerViewHolder(val inflater: LayoutInflater, parent: ViewGroup) :
-        RecyclerView.ViewHolder(inflater.inflate(R.layout.custom_list, parent, false)) {
+        RecyclerView.ViewHolder(inflater.inflate(R.layout.select_prayer, parent, false)) {
         private val prayerNumberTextView = itemView.prayerNumberTextView
         private val prayerNameTextView = itemView.prayerNameTextView
 

@@ -120,8 +120,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bubble_navigation_button"
-                android:text="        Батырма        "
-                android:textColor="@color/menu_text_white" />
+                android:text="        Батырма        " />
         </SlidingDrawer>
 
         <RelativeLayout

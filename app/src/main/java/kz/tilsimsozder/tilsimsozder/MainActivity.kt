@@ -142,7 +142,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun setupAdapter(listTitle: MutableList<String>, listData: MutableList<String>) {
-        /*val adapter = SelectPrayerAdapter(this@MainActivity, R.layout.custom_list, listTitle.toTypedArray())
+        /*val adapter = SelectPrayerAdapter(this@MainActivity, R.layout.select_prayer, listTitle.toTypedArray())
         listViewMainScreen.adapter = adapter
         listClickAction(listTitle, listData)*/
     }

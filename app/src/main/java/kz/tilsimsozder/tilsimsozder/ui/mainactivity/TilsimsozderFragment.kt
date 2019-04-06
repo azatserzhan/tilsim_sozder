@@ -168,7 +168,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
     }
 
     private fun setupAdapter(listTitle: MutableList<String>, listData: MutableList<String>) {
-        // val adapter = SelectPrayerAdapter(activity?.parent!!, R.layout.custom_list, listTitle.toTypedArray())
+        // val adapter = SelectPrayerAdapter(activity?.parent!!, R.layout.select_prayer, listTitle.toTypedArray())
         // listViewMainScreen.adapter = adapter
         // listClickAction(listTitle, listData)
     }
