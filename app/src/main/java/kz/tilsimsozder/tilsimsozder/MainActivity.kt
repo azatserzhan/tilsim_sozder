@@ -36,7 +36,7 @@ import kotlinx.android.synthetic.main.content_main.seekBarMain
 import kotlinx.android.synthetic.main.content_main.slidingDrawer
 import kz.tilsimsozder.R
 import kz.tilsimsozder.activity.seek.FontSizeSeek
-import kz.tilsimsozder.activity.ui.adapter.CardStackAdapter
+import kz.tilsimsozder.tilsimsozder.ui.adapter.CardStackAdapter
 import kz.tilsimsozder.service.MyService
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, CardStackListener {

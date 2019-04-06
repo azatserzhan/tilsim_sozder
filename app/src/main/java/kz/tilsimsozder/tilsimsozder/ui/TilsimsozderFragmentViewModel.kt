@@ -1,4 +1,4 @@
-package kz.tilsimsozder.tilsimsozder.ui.mainactivity
+package kz.tilsimsozder.tilsimsozder.ui
 
 import android.arch.lifecycle.ViewModel
 

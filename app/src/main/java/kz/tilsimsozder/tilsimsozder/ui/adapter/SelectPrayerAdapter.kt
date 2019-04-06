@@ -1,4 +1,4 @@
-package kz.tilsimsozder.tilsimsozder.ui.mainactivity.adapter
+package kz.tilsimsozder.tilsimsozder.ui.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater

@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.app_bar_main.toolbar
 import kotlinx.android.synthetic.main.tilsim_sozder_fragment.drawer_layout
 import kz.tilsimsozder.R
 import kz.tilsimsozder.service.MyService
-import kz.tilsimsozder.tilsimsozder.ui.mainactivity.TilsimsozderFragment
+import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
 
 class TilsimSozderActivity : AppCompatActivity() {
 

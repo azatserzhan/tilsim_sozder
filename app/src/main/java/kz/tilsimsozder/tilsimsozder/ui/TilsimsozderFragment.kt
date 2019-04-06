@@ -1,4 +1,4 @@
-package kz.tilsimsozder.tilsimsozder.ui.mainactivity
+package kz.tilsimsozder.tilsimsozder.ui
 
 import android.annotation.SuppressLint
 import android.arch.lifecycle.ViewModelProviders
@@ -17,7 +17,6 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import com.tapadoo.alerter.Alerter
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
@@ -30,7 +29,6 @@ import kotlinx.android.synthetic.main.content_main.TextViewHeader
 import kotlinx.android.synthetic.main.content_main.baptau_menu
 import kotlinx.android.synthetic.main.content_main.cardStackRelativeLayout
 import kotlinx.android.synthetic.main.content_main.card_stack_view
-import kotlinx.android.synthetic.main.content_main.listViewMainScreen
 import kotlinx.android.synthetic.main.content_main.prayerListRecyclerView
 import kotlinx.android.synthetic.main.content_main.prayerRecyclerView
 import kotlinx.android.synthetic.main.content_main.randomButton
@@ -40,9 +38,9 @@ import kotlinx.android.synthetic.main.content_main.seekBarMain
 import kotlinx.android.synthetic.main.content_main.slidingDrawer
 import kz.tilsimsozder.R
 import kz.tilsimsozder.activity.seek.FontSizeSeek
-import kz.tilsimsozder.activity.ui.adapter.CardStackAdapter
 import kz.tilsimsozder.service.MyService
-import kz.tilsimsozder.tilsimsozder.ui.mainactivity.adapter.SelectPrayerAdapter
+import kz.tilsimsozder.tilsimsozder.ui.adapter.CardStackAdapter
+import kz.tilsimsozder.tilsimsozder.ui.adapter.SelectPrayerAdapter
 
 class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener, CardStackListener {
 
@@ -186,16 +184,6 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         // .toTypedArray())
         // listViewMainScreen.adapter = adapter
         // listClickAction(listTitle, listData)
-    }
-
-    private fun listClickAction(listTitle: MutableList<String>, listData: MutableList<String>) {
-        listViewMainScreen.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
-            TextViewHeader.text = listTitle[position].toUpperCase() + ""
-            TextViewContent.text = listData[position] + ""
-            slidingDrawer.animateClose()
-            POSITION = position
-            setNotes()
-        }
     }
 
     fun share(view: View) {

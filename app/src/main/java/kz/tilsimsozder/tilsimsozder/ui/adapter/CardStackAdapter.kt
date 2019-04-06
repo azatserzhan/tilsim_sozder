@@ -1,4 +1,4 @@
-package kz.tilsimsozder.activity.ui.adapter
+package kz.tilsimsozder.tilsimsozder.ui.adapter
 
 import android.content.Context
 import android.content.Intent
