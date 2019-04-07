@@ -13,9 +13,11 @@ import android.graphics.Color
 import android.os.Build
 import android.os.Handler
 import android.os.IBinder
+import android.util.Log
 import android.widget.RemoteViews
 import kz.tilsimsozder.R
-import kz.tilsimsozder.tilsimsozder.MainActivity
+import kz.tilsimsozder.tilsimsozder.TilsimSozderActivity
+import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
 
 @Suppress("DEPRECATION")
 class MyService : Service() {
@@ -24,8 +26,12 @@ class MyService : Service() {
         return null
     }
 
+    override fun onDestroy() {
+        Log.d("service", "destroy")
+        super.onDestroy()
+    }
     override fun onCreate() {
-        MainActivity.START_NOTIFICATION = false
+        TilsimsozderFragment.START_NOTIFICATION = false
         super.onCreate()
     }
 
@@ -38,10 +44,10 @@ class MyService : Service() {
         Handler().postDelayed({
             showNotification(this@MyService)
             setupService()
-        }, 1000*60*3)
+        }, 1000 * 1 * 3)
     }
 
-    private fun getData(){
+    private fun getData() {
         LIST_TITLE_DATA_TILSIM = this.resources.getStringArray(R.array.tilsim_sozder_title).toMutableList()
         LIST_CONTENT_DATA_TILSIM = this.resources.getStringArray(R.array.tilsim_sozder_content).toMutableList()
     }
@@ -56,11 +62,17 @@ class MyService : Service() {
         val channelId = "kz.tilsimsozder"
         val description = "Уведомления"
 
-        val intent = Intent(context, MainActivity::class.java)
-        val pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        val intent = Intent(context, TilsimSozderActivity::class.java)
+        val pendingIntent = PendingIntent.getActivity(
+            context,
+            0,
+            intent,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        )
         val contentView = RemoteViews(packageName, R.layout.notification_layout)
         val listLength = LIST_CONTENT_DATA_TILSIM.size - 1
         RANDOM_TILSIM = (0..listLength).shuffled().last()
+        Log.d("azat random service: ", "${MyService.RANDOM_TILSIM}")
 
         contentView.setTextViewText(R.id.tv_title, LIST_TITLE_DATA_TILSIM[RANDOM_TILSIM])
         contentView.setTextViewText(R.id.tv_content, LIST_CONTENT_DATA_TILSIM[RANDOM_TILSIM])

@@ -3,14 +3,15 @@ package kz.tilsimsozder.tilsimsozder.ui.adapter
 import android.content.Context
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import kz.tilsimsozder.R
-import kz.tilsimsozder.tilsimsozder.MainActivity
 import kz.tilsimsozder.service.MyService
+import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
 
 class CardStackAdapter(private var title: MutableList<String>, private var content: MutableList<String>) :
     RecyclerView.Adapter<CardStackAdapter.ViewHolder>() {
@@ -36,9 +37,9 @@ class CardStackAdapter(private var title: MutableList<String>, private var conte
         data.forEach { data ->
             if (pattern.containsMatchIn(data)) {
                 var count = 0
-                MainActivity.LIST_TITLE_NOTES.forEach { title ->
+                TilsimsozderFragment.LIST_TITLE_NOTES.forEach { title ->
                     if (data.substringBeforeLast("*").toLowerCase() == title.toLowerCase()) {
-                        TextViewContent.append("$title - " + MainActivity.LIST_CONTENT_NOTES[count])
+                        TextViewContent.append("$title - " + TilsimsozderFragment.LIST_CONTENT_NOTES[count])
                     }
                     count++
                 }

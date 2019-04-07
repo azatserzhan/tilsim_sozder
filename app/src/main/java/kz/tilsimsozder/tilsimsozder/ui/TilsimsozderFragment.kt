@@ -77,6 +77,8 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(TilsimsozderFragmentViewModel::class.java)
         setupView()
+
+        setupService()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -360,6 +362,13 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
                 supportsChangeAnimations = true
             }
         }
+    }
+
+    private fun setupService() {
+        val service = Intent(activity, MyService::class.java)
+        // bindService(service, connection, Context.BIND_AUTO_CREATE)
+        activity?.stopService(service)
+        activity?.startService(service)
     }
 
     private fun setupButton() {
