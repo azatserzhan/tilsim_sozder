@@ -20,7 +20,7 @@ import kz.tilsimsozder.tilsimsozder.TilsimSozderActivity
 import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
 
 @Suppress("DEPRECATION")
-class MyService : Service() {
+class TilsimService : Service() {
 
     override fun onBind(intent: Intent): IBinder? {
         return null
@@ -42,7 +42,7 @@ class MyService : Service() {
 
     private fun setupService() {
         Handler().postDelayed({
-            showNotification(this@MyService)
+            showNotification(this@TilsimService)
             setupService()
         }, 1000 * 60 * 3)
     }
@@ -72,7 +72,7 @@ class MyService : Service() {
         val contentView = RemoteViews(packageName, R.layout.notification_layout)
         val listLength = LIST_CONTENT_DATA_TILSIM.size - 1
         RANDOM_TILSIM = (0..listLength).shuffled().last()
-        Log.d("azat random service: ", "${MyService.RANDOM_TILSIM}")
+        Log.d("azat random service: ", "${TilsimService.RANDOM_TILSIM}")
 
         contentView.setTextViewText(R.id.tv_title, LIST_TITLE_DATA_TILSIM[RANDOM_TILSIM])
         contentView.setTextViewText(R.id.tv_content, LIST_CONTENT_DATA_TILSIM[RANDOM_TILSIM])

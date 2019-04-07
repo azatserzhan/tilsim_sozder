@@ -38,7 +38,7 @@ import kotlinx.android.synthetic.main.content_main.seekBarMain
 import kotlinx.android.synthetic.main.content_main.slidingDrawer
 import kz.tilsimsozder.R
 import kz.tilsimsozder.activity.seek.FontSizeSeek
-import kz.tilsimsozder.service.MyService
+import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsimsozder.ui.adapter.CardStackAdapter
 import kz.tilsimsozder.tilsimsozder.ui.adapter.SelectPrayerAdapter
 
@@ -66,7 +66,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         private const val CARD_MAX_DEGREE = -30.0f
     }
 
-    private lateinit var viewModel: TilsimsozderFragmentViewModel
+    private lateinit var viewModel: TilsimsozderViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -75,7 +75,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(TilsimsozderFragmentViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(TilsimsozderViewModel::class.java)
         setupView()
 
         setupService()
@@ -150,9 +150,9 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
     }
 
     private fun pushNotificationNumber() {
-        if (MyService.RANDOM_TILSIM != 0) {
-            TextViewHeader.text = LIST_TITLE_DATA_TILSIM[MyService.RANDOM_TILSIM]
-            TextViewContent.text = LIST_CONTENT_DATA_TILSIM[MyService.RANDOM_TILSIM]
+        if (TilsimService.RANDOM_TILSIM != 0) {
+            TextViewHeader.text = LIST_TITLE_DATA_TILSIM[TilsimService.RANDOM_TILSIM]
+            TextViewContent.text = LIST_CONTENT_DATA_TILSIM[TilsimService.RANDOM_TILSIM]
         }
     }
 
@@ -365,7 +365,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
     }
 
     private fun setupService() {
-        val service = Intent(activity, MyService::class.java)
+        val service = Intent(activity, TilsimService::class.java)
         // bindService(service, connection, Context.BIND_AUTO_CREATE)
         activity?.stopService(service)
         activity?.startService(service)

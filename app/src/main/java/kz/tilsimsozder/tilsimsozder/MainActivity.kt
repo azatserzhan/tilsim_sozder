@@ -37,7 +37,7 @@ import kotlinx.android.synthetic.main.content_main.slidingDrawer
 import kz.tilsimsozder.R
 import kz.tilsimsozder.activity.seek.FontSizeSeek
 import kz.tilsimsozder.tilsimsozder.ui.adapter.CardStackAdapter
-import kz.tilsimsozder.service.MyService
+import kz.tilsimsozder.service.TilsimService
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, CardStackListener {
 
@@ -130,9 +130,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun pushNotificationNumber() {
-        if (MyService.RANDOM_TILSIM != 0) {
-            TextViewHeader.text = LIST_TITLE_DATA_TILSIM[MyService.RANDOM_TILSIM]
-            TextViewContent.text = LIST_CONTENT_DATA_TILSIM[MyService.RANDOM_TILSIM]
+        if (TilsimService.RANDOM_TILSIM != 0) {
+            TextViewHeader.text = LIST_TITLE_DATA_TILSIM[TilsimService.RANDOM_TILSIM]
+            TextViewContent.text = LIST_CONTENT_DATA_TILSIM[TilsimService.RANDOM_TILSIM]
         }
     }
 
@@ -147,7 +147,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun setupService() {
-        val service = Intent(this, MyService::class.java)
+        val service = Intent(this, TilsimService::class.java)
         stopService(service)
         startService(service)
     }

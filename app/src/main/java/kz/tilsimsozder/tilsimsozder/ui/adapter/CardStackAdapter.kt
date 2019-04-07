@@ -3,14 +3,13 @@ package kz.tilsimsozder.tilsimsozder.ui.adapter
 import android.content.Context
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import kz.tilsimsozder.R
-import kz.tilsimsozder.service.MyService
+import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
 
 class CardStackAdapter(private var title: MutableList<String>, private var content: MutableList<String>) :
@@ -25,7 +24,7 @@ class CardStackAdapter(private var title: MutableList<String>, private var conte
 
     fun setNewPosition() {
         val listLength = title.size - 2
-        MyService.RANDOM_TILSIM = (0..listLength).shuffled().last()
+        TilsimService.RANDOM_TILSIM = (0..listLength).shuffled().last()
         notifyDataSetChanged()
     }
 
@@ -48,9 +47,9 @@ class CardStackAdapter(private var title: MutableList<String>, private var conte
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        var newPosiotion = MyService.RANDOM_TILSIM + position
+        var newPosiotion = TilsimService.RANDOM_TILSIM + position
         if (newPosiotion > title.size) {
-            newPosiotion = MyService.RANDOM_TILSIM - position
+            newPosiotion = TilsimService.RANDOM_TILSIM - position
         }
         holder.titleTextView.text = title[newPosiotion]
         holder.contentTextView.text = content[newPosiotion]

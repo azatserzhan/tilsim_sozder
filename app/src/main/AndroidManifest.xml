@@ -14,7 +14,7 @@
         <activity android:name=".tilsimsozder.MainActivity" />
 
         <service
-            android:name=".service.MyService"
+            android:name=".service.TilsimService"
             android:enabled="true"
             android:exported="true" />
 
