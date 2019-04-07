@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.select_prayer.view.prayerNameTextView
 import kotlinx.android.synthetic.main.select_prayer.view.prayerNumberTextView
 import kz.tilsimsozder.R
-import kz.tilsimsozder.tilsimsozder.`package`.Prayer
+import kz.tilsimsozder.tilsimsozder.model.Prayer
 
 /**
  * Created by azatserzhanov on 13.12.15.

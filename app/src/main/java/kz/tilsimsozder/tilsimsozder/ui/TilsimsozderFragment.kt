@@ -39,7 +39,7 @@ import kotlinx.android.synthetic.main.content_main.slidingDrawer
 import kz.tilsimsozder.R
 import kz.tilsimsozder.activity.seek.FontSizeSeek
 import kz.tilsimsozder.service.TilsimService
-import kz.tilsimsozder.tilsimsozder.`package`.Prayer
+import kz.tilsimsozder.tilsimsozder.model.Prayer
 import kz.tilsimsozder.tilsimsozder.ui.adapter.CardStackAdapter
 import kz.tilsimsozder.tilsimsozder.ui.adapter.SelectPrayerAdapter
 

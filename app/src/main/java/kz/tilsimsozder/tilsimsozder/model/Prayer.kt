@@ -1,4 +1,4 @@
-package kz.tilsimsozder.tilsimsozder.`package`
+package kz.tilsimsozder.tilsimsozder.model
 
 class Prayer(
     val title: String,
