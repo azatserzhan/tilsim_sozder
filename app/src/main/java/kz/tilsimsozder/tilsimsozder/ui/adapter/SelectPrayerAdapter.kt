@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.select_prayer.view.prayerNameTextView
 import kotlinx.android.synthetic.main.select_prayer.view.prayerNumberTextView
 import kz.tilsimsozder.R
+import kz.tilsimsozder.tilsimsozder.`package`.Prayer
 
 /**
  * Created by azatserzhanov on 13.12.15.
@@ -14,7 +15,7 @@ class SelectPrayerAdapter(
     private val clickListener: (position: Int) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private val prayers = mutableListOf<String>()
+    private val prayers = mutableListOf<Prayer>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -27,7 +28,7 @@ class SelectPrayerAdapter(
         (holder as SelectPrayerViewHolder).bind(prayers[position], clickListener)
     }
 
-    fun addItems(list: List<String>) {
+    fun addItems(list: List<Prayer>) {
         prayers.addAll(list)
         notifyItemRangeInserted(prayers.size + 1, prayers.size)
     }
@@ -37,8 +38,8 @@ class SelectPrayerAdapter(
         private val prayerNumberTextView = itemView.prayerNumberTextView
         private val prayerNameTextView = itemView.prayerNameTextView
 
-        fun bind(text: String, clickListener: (position: Int) -> Unit) {
-            prayerNameTextView.text = text
+        fun bind(prayer: Prayer, clickListener: (position: Int) -> Unit) {
+            prayerNameTextView.text = prayer.title
             prayerNameTextView.setOnClickListener {
                 clickListener(adapterPosition)
             }

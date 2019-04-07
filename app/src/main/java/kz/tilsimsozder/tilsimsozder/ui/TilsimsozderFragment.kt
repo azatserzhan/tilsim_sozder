@@ -39,6 +39,7 @@ import kotlinx.android.synthetic.main.content_main.slidingDrawer
 import kz.tilsimsozder.R
 import kz.tilsimsozder.activity.seek.FontSizeSeek
 import kz.tilsimsozder.service.TilsimService
+import kz.tilsimsozder.tilsimsozder.`package`.Prayer
 import kz.tilsimsozder.tilsimsozder.ui.adapter.CardStackAdapter
 import kz.tilsimsozder.tilsimsozder.ui.adapter.SelectPrayerAdapter
 
@@ -67,6 +68,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
     }
 
     private lateinit var viewModel: TilsimsozderViewModel
+    private var prayerList = listOf<Prayer>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -169,13 +171,22 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
             adapter = selectPrayerAdapter
         }
 
-        selectPrayerAdapter.addItems(LIST_TITLE_DATA_PRAYER)
+        prayerList = LIST_TITLE_DATA_PRAYER
+            .map { Prayer(it, "") }
+            .toList()
+            .apply {
+                this.forEachIndexed { index, tilsimsoz ->
+                    tilsimsoz.content = LIST_CONTENT_DATA_PRAYER[index]
+                }
+            }
+
+        selectPrayerAdapter.addItems(prayerList)
     }
 
     @SuppressLint("SetTextI18n")
     private fun selectPrayer(position: Int) {
-        TextViewHeader.text = LIST_TITLE_DATA_PRAYER[position].toUpperCase() + ""
-        TextViewContent.text = LIST_CONTENT_DATA_PRAYER[position] + ""
+        TextViewHeader.text = prayerList[position].title.toUpperCase()
+        TextViewContent.text = prayerList[position].content
         slidingDrawer.animateClose()
         POSITION = position
         setNotes()
