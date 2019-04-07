@@ -44,7 +44,7 @@ class MyService : Service() {
         Handler().postDelayed({
             showNotification(this@MyService)
             setupService()
-        }, 1000 * 1 * 3)
+        }, 1000 * 60 * 3)
     }
 
     private fun getData() {
