@@ -16,6 +16,7 @@ import android.os.IBinder
 import android.util.Log
 import android.widget.RemoteViews
 import kz.tilsimsozder.R
+import kz.tilsimsozder.tilsimsozder.SharedPreference
 import kz.tilsimsozder.tilsimsozder.TilsimSozderActivity
 import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
 
@@ -30,6 +31,7 @@ class TilsimService : Service() {
         Log.d("service", "destroy")
         super.onDestroy()
     }
+
     override fun onCreate() {
         TilsimsozderFragment.START_NOTIFICATION = false
         super.onCreate()
@@ -42,9 +44,13 @@ class TilsimService : Service() {
 
     private fun setupService() {
         Handler().postDelayed({
-            showNotification(this@TilsimService)
+            val isTilsimPageActive = SharedPreference(this@TilsimService).getIsTilsimPage()
+            if (!isTilsimPageActive) {
+                showNotification(this@TilsimService)
+            }
             setupService()
-        }, 1000 * 60 * 3)
+
+        }, 1000 * 3)
     }
 
     private fun getData() {
@@ -56,7 +62,7 @@ class TilsimService : Service() {
     fun showNotification(context: Context) {
         getData()
 
-        var notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         lateinit var notificationChannel: NotificationChannel
         lateinit var builder: Notification.Builder
         val channelId = "kz.tilsimsozder"
@@ -72,7 +78,6 @@ class TilsimService : Service() {
         val contentView = RemoteViews(packageName, R.layout.notification_layout)
         val listLength = LIST_CONTENT_DATA_TILSIM.size - 1
         RANDOM_TILSIM = (0..listLength).shuffled().last()
-        Log.d("azat random service: ", "${TilsimService.RANDOM_TILSIM}")
 
         contentView.setTextViewText(R.id.tv_title, LIST_TITLE_DATA_TILSIM[RANDOM_TILSIM])
         contentView.setTextViewText(R.id.tv_content, LIST_CONTENT_DATA_TILSIM[RANDOM_TILSIM])
