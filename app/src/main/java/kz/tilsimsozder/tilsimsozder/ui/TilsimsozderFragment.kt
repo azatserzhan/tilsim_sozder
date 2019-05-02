@@ -39,6 +39,7 @@ import kotlinx.android.synthetic.main.content_main.slidingDrawer
 import kz.tilsimsozder.R
 import kz.tilsimsozder.activity.seek.FontSizeSeek
 import kz.tilsimsozder.service.TilsimService
+import kz.tilsimsozder.tilsimsozder.SharedPreference
 import kz.tilsimsozder.tilsimsozder.model.Prayer
 import kz.tilsimsozder.tilsimsozder.ui.adapter.CardStackAdapter
 import kz.tilsimsozder.tilsimsozder.ui.adapter.SelectPrayerAdapter
@@ -131,6 +132,16 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
 
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        context?.let { SharedPreference(it).setIsTilsimPage(false) }
+    }
+
+    override fun onDestroy() {
+        context?.let { SharedPreference(it).setIsTilsimPage(false) }
+        super.onDestroy()
     }
 
     private fun setupView() {
@@ -380,6 +391,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         // bindService(service, connection, Context.BIND_AUTO_CREATE)
         activity?.stopService(service)
         activity?.startService(service)
+        context?.let { SharedPreference(it).setIsTilsimPage(true) }
     }
 
     private fun setupButton() {
