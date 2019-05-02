@@ -1,4 +1,4 @@
-package kz.tilsimsozder.activity.main
+package kz.tilsimsozder.tilsimsozder
 
 import android.content.Intent
 import android.net.Uri
@@ -36,14 +36,15 @@ import kotlinx.android.synthetic.main.content_main.seekBarMain
 import kotlinx.android.synthetic.main.content_main.slidingDrawer
 import kz.tilsimsozder.R
 import kz.tilsimsozder.activity.seek.FontSizeSeek
-import kz.tilsimsozder.activity.ui.adapter.CardStackAdapter
-import kz.tilsimsozder.service.MyService
-import kz.tilsimsozder.style.CustomListAdapter
+import kz.tilsimsozder.tilsimsozder.ui.adapter.CardStackAdapter
+import kz.tilsimsozder.service.TilsimService
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, CardStackListener {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         setSupportActionBar(toolbar)
 
         nav_view.setNavigationItemSelectedListener(this)
@@ -62,7 +63,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         pushNotificationNumber()
         setupCardStackView()
         setupButton()
-        Log.d("azat", "onCreate")
     }
 
     override fun onBackPressed() {
@@ -130,9 +130,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun pushNotificationNumber() {
-        if (MyService.RANDOM_TILSIM != 0) {
-            TextViewHeader.text = LIST_TITLE_DATA_TILSIM[MyService.RANDOM_TILSIM]
-            TextViewContent.text = LIST_CONTENT_DATA_TILSIM[MyService.RANDOM_TILSIM]
+        if (TilsimService.RANDOM_TILSIM != 0) {
+            TextViewHeader.text = LIST_TITLE_DATA_TILSIM[TilsimService.RANDOM_TILSIM]
+            TextViewContent.text = LIST_CONTENT_DATA_TILSIM[TilsimService.RANDOM_TILSIM]
         }
     }
 
@@ -141,13 +141,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun setupAdapter(listTitle: MutableList<String>, listData: MutableList<String>) {
-        val adapter = CustomListAdapter(this@MainActivity, R.layout.custom_list, listTitle.toTypedArray())
+        /*val adapter = SelectPrayerAdapter(this@MainActivity, R.layout.select_prayer, listTitle.toTypedArray())
         listViewMainScreen.adapter = adapter
-        listClickAction(listTitle, listData)
+        listClickAction(listTitle, listData)*/
     }
 
     private fun setupService() {
-        val service = Intent(this, MyService::class.java)
+        val service = Intent(this, TilsimService::class.java)
         stopService(service)
         startService(service)
     }
@@ -320,11 +320,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private fun setupCardStackView() {
         cardManager.setStackFrom(StackFrom.Top)
-        cardManager.setVisibleCount(MainActivity.CARD_VISIBLE_ITEM_COUNT)
-        cardManager.setTranslationInterval(MainActivity.CARD_TRANSLATION_INTERVAL)
-        cardManager.setScaleInterval(MainActivity.CARD_SCALE_INTERVAL)
-        cardManager.setSwipeThreshold(MainActivity.CARD_SWIPE_THRESHOLD)
-        cardManager.setMaxDegree(MainActivity.CARD_MAX_DEGREE)
+        cardManager.setVisibleCount(CARD_VISIBLE_ITEM_COUNT)
+        cardManager.setTranslationInterval(CARD_TRANSLATION_INTERVAL)
+        cardManager.setScaleInterval(CARD_SCALE_INTERVAL)
+        cardManager.setSwipeThreshold(CARD_SWIPE_THRESHOLD)
+        cardManager.setMaxDegree(CARD_MAX_DEGREE)
         cardManager.setDirections(Direction.FREEDOM)
         cardManager.setCanScrollHorizontal(true)
         cardManager.setCanScrollVertical(true)

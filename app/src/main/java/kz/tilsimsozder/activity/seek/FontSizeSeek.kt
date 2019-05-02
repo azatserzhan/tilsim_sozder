@@ -3,7 +3,7 @@ package kz.tilsimsozder.activity.seek
 import android.annotation.SuppressLint
 import android.widget.SeekBar
 import android.widget.TextView
-import kz.tilsimsozder.activity.main.MainActivity
+import kz.tilsimsozder.tilsimsozder.MainActivity
 
 class FontSizeSeek {
     @SuppressLint("NewApi")

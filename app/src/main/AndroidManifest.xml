@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="kz.tilsimsozder">
 
     <application
@@ -8,14 +9,17 @@
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".tilsimsozder.MainActivity" />
+
         <service
-            android:name=".service.MyService"
+            android:name=".service.TilsimService"
             android:enabled="true"
             android:exported="true" />
 
         <activity
-            android:name=".activity.main.MainActivity"
+            android:name=".tilsimsozder.TilsimSozderActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

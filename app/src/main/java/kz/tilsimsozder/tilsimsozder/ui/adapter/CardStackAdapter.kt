@@ -1,4 +1,4 @@
-package kz.tilsimsozder.activity.ui.adapter
+package kz.tilsimsozder.tilsimsozder.ui.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import kz.tilsimsozder.R
-import kz.tilsimsozder.activity.main.MainActivity
-import kz.tilsimsozder.service.MyService
+import kz.tilsimsozder.service.TilsimService
+import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
 
 class CardStackAdapter(private var title: MutableList<String>, private var content: MutableList<String>) :
     RecyclerView.Adapter<CardStackAdapter.ViewHolder>() {
@@ -24,7 +24,7 @@ class CardStackAdapter(private var title: MutableList<String>, private var conte
 
     fun setNewPosition() {
         val listLength = title.size - 2
-        MyService.RANDOM_TILSIM = (0..listLength).shuffled().last()
+        TilsimService.RANDOM_TILSIM = (0..listLength).shuffled().last()
         notifyDataSetChanged()
     }
 
@@ -36,9 +36,9 @@ class CardStackAdapter(private var title: MutableList<String>, private var conte
         data.forEach { data ->
             if (pattern.containsMatchIn(data)) {
                 var count = 0
-                MainActivity.LIST_TITLE_NOTES.forEach { title ->
+                TilsimsozderFragment.LIST_TITLE_NOTES.forEach { title ->
                     if (data.substringBeforeLast("*").toLowerCase() == title.toLowerCase()) {
-                        TextViewContent.append("$title - " + MainActivity.LIST_CONTENT_NOTES[count])
+                        TextViewContent.append("$title - " + TilsimsozderFragment.LIST_CONTENT_NOTES[count])
                     }
                     count++
                 }
@@ -47,9 +47,9 @@ class CardStackAdapter(private var title: MutableList<String>, private var conte
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        var newPosiotion = MyService.RANDOM_TILSIM + position
+        var newPosiotion = TilsimService.RANDOM_TILSIM + position
         if (newPosiotion > title.size) {
-            newPosiotion = MyService.RANDOM_TILSIM - position
+            newPosiotion = TilsimService.RANDOM_TILSIM - position
         }
         holder.titleTextView.text = title[newPosiotion]
         holder.contentTextView.text = content[newPosiotion]
