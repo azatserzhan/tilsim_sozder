@@ -24,18 +24,7 @@ import com.yuyakaido.android.cardstackview.Direction
 import com.yuyakaido.android.cardstackview.StackFrom
 import kotlinx.android.synthetic.main.activity_main.drawer_layout
 import kotlinx.android.synthetic.main.activity_main.nav_view
-import kotlinx.android.synthetic.main.content_main.TextViewContent
-import kotlinx.android.synthetic.main.content_main.TextViewHeader
-import kotlinx.android.synthetic.main.content_main.baptau_menu
-import kotlinx.android.synthetic.main.content_main.cardStackRelativeLayout
-import kotlinx.android.synthetic.main.content_main.card_stack_view
-import kotlinx.android.synthetic.main.content_main.prayerListRecyclerView
-import kotlinx.android.synthetic.main.content_main.prayerRecyclerView
-import kotlinx.android.synthetic.main.content_main.randomButton
-import kotlinx.android.synthetic.main.content_main.scrollViewMain
-import kotlinx.android.synthetic.main.content_main.seekBarFontSize
-import kotlinx.android.synthetic.main.content_main.seekBarMain
-import kotlinx.android.synthetic.main.content_main.slidingDrawer
+import kotlinx.android.synthetic.main.content_main.*
 import kz.tilsimsozder.R
 import kz.tilsimsozder.activity.seek.FontSizeSeek
 import kz.tilsimsozder.service.TilsimService
@@ -120,7 +109,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
             }
             R.id.nav_send -> {
                 val emailIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                    "mailto", "azatserzhan@gmail.com", null))
+                        "mailto", "azatserzhan@gmail.com", null))
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Бахаи дұғалары жайлы пікір")
                 emailIntent.putExtra(Intent.EXTRA_TEXT, "Осында хатыңызды жазыңыз")
                 startActivity(Intent.createChooser(emailIntent, "Хат жазу..."))
@@ -172,9 +161,9 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
     private fun setupSelectPrayerAdapter() {
         // setupAdapter(listTitle, listData)
         val selectPrayerAdapter = SelectPrayerAdapter(
-            clickListener = {
-                selectPrayer(it)
-            }
+                clickListener = {
+                    selectPrayer(it)
+                }
         )
         val selectPrayerManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         prayerListRecyclerView.apply {
@@ -183,13 +172,13 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         }
 
         prayerList = LIST_TITLE_DATA_PRAYER
-            .map { Prayer(it, "") }
-            .toList()
-            .apply {
-                this.forEachIndexed { index, tilsimsoz ->
-                    tilsimsoz.content = LIST_CONTENT_DATA_PRAYER[index]
+                .map { Prayer(it, "") }
+                .toList()
+                .apply {
+                    this.forEachIndexed { index, tilsimsoz ->
+                        tilsimsoz.content = LIST_CONTENT_DATA_PRAYER[index]
+                    }
                 }
-            }
 
         selectPrayerAdapter.addItems(prayerList)
     }
@@ -208,14 +197,6 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         // .toTypedArray())
         // listViewMainScreen.adapter = adapter
         // listClickAction(listTitle, listData)
-    }
-
-    fun share(view: View) {
-        val sendIntent = Intent()
-        sendIntent.action = Intent.ACTION_SEND
-        sendIntent.putExtra(Intent.EXTRA_TEXT, TextViewHeader.text.toString() + "\n" + TextViewContent.text)
-        sendIntent.type = "text/plain"
-        startActivity(sendIntent)
     }
 
     fun baptau(view: View) {
@@ -333,10 +314,10 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
     private fun setupStartNotification() {
         if (START_NOTIFICATION) {
             Alerter.create(activity)
-                .setTitle("Бұл жолығы жаңартылымдар")
-                .setText("Кездейсоқ батырмасы қосылды. Карточкаларды төменге қарай тарту арқылы өзгертуге болады")
-                .setBackgroundColorRes(R.color.colorNotification)
-                .show()
+                    .setTitle("Бұл жолығы жаңартылымдар")
+                    .setText("Кездейсоқ батырмасы қосылды. Карточкаларды төменге қарай тарту арқылы өзгертуге болады")
+                    .setBackgroundColorRes(R.color.colorNotification)
+                    .show()
         }
     }
 
@@ -397,6 +378,15 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
     private fun setupButton() {
         randomButton.setOnClickListener {
             cardAdapter.setNewPosition()
+        }
+
+        shareImageView.setOnClickListener {
+            val urlApp = "https://play.google.com/store/apps/details?id=kz.tilsimsozder"
+            val sendIntent = Intent()
+            sendIntent.action = Intent.ACTION_SEND
+            sendIntent.putExtra(Intent.EXTRA_TEXT, urlApp + "\n\n" + TextViewHeader.text.toString() + "\n" + TextViewContent.text)
+            sendIntent.type = "text/plain"
+            startActivity(sendIntent)
         }
     }
 }
