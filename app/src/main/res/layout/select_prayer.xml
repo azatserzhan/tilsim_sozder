@@ -29,7 +29,6 @@
         android:paddingTop="20dp"
         android:paddingRight="30dp"
         android:paddingBottom="20dp"
-        android:shadowColor="#2c41e3"
         android:text="@string/prayer_title"
         android:textSize="17sp" />
 
