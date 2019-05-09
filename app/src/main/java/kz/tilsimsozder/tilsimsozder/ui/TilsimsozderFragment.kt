@@ -388,5 +388,23 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
             sendIntent.type = "text/plain"
             startActivity(sendIntent)
         }
+
+        prayerNextImageButton.setOnClickListener {
+            if (POSITION < LIST_CONTENT_DATA_PRAYER.size - 1) {
+                POSITION++
+            }
+
+            TextViewHeader.text = LIST_TITLE_DATA_PRAYER[POSITION]
+            TextViewContent.text = LIST_CONTENT_DATA_PRAYER[POSITION]
+        }
+
+        prayerBackImageButton.setOnClickListener {
+            if (POSITION > 0) {
+                POSITION--
+            }
+
+            TextViewHeader.text = LIST_TITLE_DATA_PRAYER[POSITION]
+            TextViewContent.text = LIST_CONTENT_DATA_PRAYER[POSITION]
+        }
     }
 }
