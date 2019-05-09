@@ -30,7 +30,6 @@
         android:id="@+id/left_overlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#6F98EEFA"
         android:visibility="visible">
 
     </FrameLayout>
@@ -39,7 +38,6 @@
         android:id="@+id/right_overlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#6FFF7000"
         android:visibility="visible">
 
     </FrameLayout>
@@ -75,7 +73,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:paddingTop="5dp"
-            android:text="Музыка"
+            android:text="Header"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#214446"
             android:textSize="22sp"
@@ -95,7 +93,7 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="8dp"
             android:paddingTop="5dp"
-            android:text="Музыка"
+            android:text="Content"
             android:textAppearance="?android:attr/textAppearanceListItemSmall"
             android:textColor="#214446"
             android:textSize="18sp"
