@@ -38,13 +38,15 @@ import kotlinx.android.synthetic.main.content_main.seekBarMain
 import kotlinx.android.synthetic.main.content_main.slidingDrawer
 import kz.tilsimsozder.R
 import kz.tilsimsozder.activity.seek.FontSizeSeek
+import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsimsozder.SharedPreference
 import kz.tilsimsozder.tilsimsozder.model.Prayer
 import kz.tilsimsozder.tilsimsozder.ui.adapter.CardStackAdapter
 import kz.tilsimsozder.tilsimsozder.ui.adapter.SelectPrayerAdapter
 
-class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener, CardStackListener {
+class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener,
+        CardStackListener {
 
     companion object {
         fun newInstance() = TilsimsozderFragment()
@@ -70,6 +72,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
 
     private lateinit var viewModel: TilsimsozderViewModel
     private var prayerList = listOf<Prayer>()
+    private val analytics = Analytics()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -82,6 +85,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         setupView()
 
         setupService()
+        context?.let { analytics.setup(it) }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -117,10 +121,11 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
                 sendIntent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=kz.tilsimsozder")
                 sendIntent.type = "text/plain"
                 startActivity(sendIntent)
+                analytics.sendShareTilsim("tilsim", LIST_TITLE_DATA_TILSIM[POSITION])
             }
             R.id.nav_send -> {
                 val emailIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                    "mailto", "azatserzhan@gmail.com", null))
+                        "mailto", "azatserzhan@gmail.com", null))
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Бахаи дұғалары жайлы пікір")
                 emailIntent.putExtra(Intent.EXTRA_TEXT, "Осында хатыңызды жазыңыз")
                 startActivity(Intent.createChooser(emailIntent, "Хат жазу..."))
@@ -172,9 +177,9 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
     private fun setupSelectPrayerAdapter() {
         // setupAdapter(listTitle, listData)
         val selectPrayerAdapter = SelectPrayerAdapter(
-            clickListener = {
-                selectPrayer(it)
-            }
+                clickListener = {
+                    selectPrayer(it)
+                }
         )
         val selectPrayerManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         prayerListRecyclerView.apply {
@@ -183,13 +188,13 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         }
 
         prayerList = LIST_TITLE_DATA_PRAYER
-            .map { Prayer(it, "") }
-            .toList()
-            .apply {
-                this.forEachIndexed { index, tilsimsoz ->
-                    tilsimsoz.content = LIST_CONTENT_DATA_PRAYER[index]
+                .map { Prayer(it, "") }
+                .toList()
+                .apply {
+                    this.forEachIndexed { index, tilsimsoz ->
+                        tilsimsoz.content = LIST_CONTENT_DATA_PRAYER[index]
+                    }
                 }
-            }
 
         selectPrayerAdapter.addItems(prayerList)
     }
@@ -203,41 +208,9 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         setNotes()
     }
 
-    private fun setupAdapter(listTitle: MutableList<String>, listData: MutableList<String>) {
-        // val adapter = SelectPrayerAdapter(activity?.parent!!, R.layout.select_prayer,
-        // .toTypedArray())
-        // listViewMainScreen.adapter = adapter
-        // listClickAction(listTitle, listData)
-    }
-
-    fun share(view: View) {
-        val sendIntent = Intent()
-        sendIntent.action = Intent.ACTION_SEND
-        sendIntent.putExtra(Intent.EXTRA_TEXT, TextViewHeader.text.toString() + "\n" + TextViewContent.text)
-        sendIntent.type = "text/plain"
-        startActivity(sendIntent)
-    }
-
-    fun baptau(view: View) {
-        view.visibility = View.GONE
-    }
-
     private fun fontSizeSeekBarSetup() {
         val seekBar = FontSizeSeek()
         seekBar.setup(seekBarFontSize, TextViewContent)
-        /*seekBarFontSize.progress = TEXT_SIZE
-        seekBarFontSize.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-
-            override fun onProgressChanged(seekBar: SeekBar, progress: Int, b: Boolean) {
-                TEXT_SIZE = progress
-            }
-
-            override fun onStartTrackingTouch(seekBar: SeekBar) {}
-
-            override fun onStopTrackingTouch(seekBar: SeekBar) {
-                TextViewContent.textSize = TEXT_SIZE.toFloat()
-            }
-        })*/
     }
 
     private fun getJSONData() {
@@ -247,49 +220,11 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
 
         LIST_TITLE_DATA_PRAYER = this.resources.getStringArray(R.array.prayer_name).toMutableList()
         LIST_CONTENT_DATA_PRAYER = this.resources.getStringArray(R.array.prayer_value).toMutableList()
-
-        /*val file = applicationContext.assets.open("data.json").bufferedReader().use {
-            it.readText()
-        }
-        val parser = JSONParser.default
-        val parseJson = parser.parseValue(file)
-        val parseList: List<Map<String, String>> = parseJson as List<Map<String, String>>
-
-        val titleInJSON = "titleTextView"
-        val contentInJSON = "contentTextView"
-
-        parseList.forEach { map ->
-            map.forEach {
-                when (it.key) {
-                    titleInJSON -> LIST_TITLE_DATA_TILSIM.add(it.value)
-                    contentInJSON -> LIST_CONTENT_DATA_TILSIM.add(it.value)
-                }
-            }
-        }*/
     }
 
     private fun getJSONLugat() {
         LIST_TITLE_NOTES = this.resources.getStringArray(R.array.notes_title).toMutableList()
         LIST_CONTENT_NOTES = this.resources.getStringArray(R.array.notes_value).toMutableList()
-
-        /*val file = applicationContext.assets.open("lugat.json").bufferedReader().use {
-            it.readText()
-        }
-        val parser = JSONParser.default
-        val parseJson = parser.parseValue(file)
-        val parseList: List<Map<String, String>> = parseJson as List<Map<String, String>>
-
-        val titleInJSON = "titleTextView"
-        val contentInJSON = "value"
-
-        parseList.forEach { map ->
-            map.forEach {
-                when (it.key) {
-                    titleInJSON -> LIST_TITLE_NOTES.add(it.value)
-                    contentInJSON -> LIST_CONTENT_NOTES.add(it.value)
-                }
-            }
-        }*/
     }
 
     private fun setNotes() {
@@ -333,10 +268,10 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
     private fun setupStartNotification() {
         if (START_NOTIFICATION) {
             Alerter.create(activity)
-                .setTitle("Бұл жолығы жаңартылымдар")
-                .setText("Кездейсоқ батырмасы қосылды. Карточкаларды төменге қарай тарту арқылы өзгертуге болады")
-                .setBackgroundColorRes(R.color.colorNotification)
-                .show()
+                    .setTitle("Бұл жолығы жаңартылымдар")
+                    .setText("Кездейсоқ батырмасы қосылды. Карточкаларды төменге қарай тарту арқылы өзгертуге болады")
+                    .setBackgroundColorRes(R.color.colorNotification)
+                    .show()
         }
     }
 
@@ -350,6 +285,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
 
     override fun onCardSwiped(direction: Direction?) {
         Log.d("azat", "onCardSwiped")
+        analytics.showTilsim()
     }
 
     override fun onCardCanceled() {
