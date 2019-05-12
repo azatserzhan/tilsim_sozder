@@ -24,18 +24,7 @@ import com.yuyakaido.android.cardstackview.Direction
 import com.yuyakaido.android.cardstackview.StackFrom
 import kotlinx.android.synthetic.main.activity_main.drawer_layout
 import kotlinx.android.synthetic.main.activity_main.nav_view
-import kotlinx.android.synthetic.main.content_main.TextViewContent
-import kotlinx.android.synthetic.main.content_main.TextViewHeader
-import kotlinx.android.synthetic.main.content_main.baptau_menu
-import kotlinx.android.synthetic.main.content_main.cardStackRelativeLayout
-import kotlinx.android.synthetic.main.content_main.card_stack_view
-import kotlinx.android.synthetic.main.content_main.prayerListRecyclerView
-import kotlinx.android.synthetic.main.content_main.prayerRecyclerView
-import kotlinx.android.synthetic.main.content_main.randomButton
-import kotlinx.android.synthetic.main.content_main.scrollViewMain
-import kotlinx.android.synthetic.main.content_main.seekBarFontSize
-import kotlinx.android.synthetic.main.content_main.seekBarMain
-import kotlinx.android.synthetic.main.content_main.slidingDrawer
+import kotlinx.android.synthetic.main.content_main.*
 import kz.tilsimsozder.R
 import kz.tilsimsozder.activity.seek.FontSizeSeek
 import kz.tilsimsozder.firebase.Analytics
@@ -208,6 +197,25 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         setNotes()
     }
 
+    private fun setupAdapter(listTitle: MutableList<String>, listData: MutableList<String>) {
+        // val adapter = SelectPrayerAdapter(activity?.parent!!, R.layout.select_prayer,
+        // .toTypedArray())
+        // listViewMainScreen.adapter = adapter
+        // listClickAction(listTitle, listData)
+    }
+
+    fun share(view: View) {
+        val sendIntent = Intent()
+        sendIntent.action = Intent.ACTION_SEND
+        sendIntent.putExtra(Intent.EXTRA_TEXT, TextViewHeader.text.toString() + "\n" + TextViewContent.text)
+        sendIntent.type = "text/plain"
+        startActivity(sendIntent)
+    }
+
+    fun baptau(view: View) {
+        view.visibility = View.GONE
+    }
+
     private fun fontSizeSeekBarSetup() {
         val seekBar = FontSizeSeek()
         seekBar.setup(seekBarFontSize, TextViewContent)
@@ -333,6 +341,33 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
     private fun setupButton() {
         randomButton.setOnClickListener {
             cardAdapter.setNewPosition()
+        }
+
+        shareImageView.setOnClickListener {
+            val urlApp = "https://play.google.com/store/apps/details?id=kz.tilsimsozder"
+            val sendIntent = Intent()
+            sendIntent.action = Intent.ACTION_SEND
+            sendIntent.putExtra(Intent.EXTRA_TEXT, urlApp + "\n\n" + TextViewHeader.text.toString() + "\n" + TextViewContent.text)
+            sendIntent.type = "text/plain"
+            startActivity(sendIntent)
+        }
+
+        prayerNextImageButton.setOnClickListener {
+            if (POSITION < LIST_CONTENT_DATA_PRAYER.size - 1) {
+                POSITION++
+            }
+
+            TextViewHeader.text = LIST_TITLE_DATA_PRAYER[POSITION]
+            TextViewContent.text = LIST_CONTENT_DATA_PRAYER[POSITION]
+        }
+
+        prayerBackImageButton.setOnClickListener {
+            if (POSITION > 0) {
+                POSITION--
+            }
+
+            TextViewHeader.text = LIST_TITLE_DATA_PRAYER[POSITION]
+            TextViewContent.text = LIST_CONTENT_DATA_PRAYER[POSITION]
         }
     }
 }
