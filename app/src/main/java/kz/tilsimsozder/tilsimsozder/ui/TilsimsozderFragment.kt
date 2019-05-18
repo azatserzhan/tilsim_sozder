@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.net.Uri
-import android.opengl.Visibility
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
@@ -158,34 +157,9 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         pushNotificationNumber()
         setupCardStackView()
         setupButton()
-        setupChangeTilsim()
+        bubbleSeekBarSetup()
         nav_view.setNavigationItemSelectedListener(this)
         drawer_layout.openDrawer(Gravity.LEFT)
-    }
-
-    private fun setupChangeTilsim() {
-        changeTilsimBubbleSeekBar.configBuilder
-                .max(LIST_TITLE_DATA_TILSIM.size.toFloat())
-                .progress(POSITION.toFloat())
-
-        changeTilsimBubbleSeekBar.onProgressChangedListener = object : BubbleSeekBar.OnProgressChangedListener {
-            override fun getProgressOnActionUp(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float) {
-                Log.d("azat OnActionUp", progress.toString())
-                changeTilsimLinearLayout.visibility = View.GONE
-            }
-
-            override fun getProgressOnFinally(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float, fromUser: Boolean) {
-                Log.d("azat OnFinally", progress.toString())
-            }
-
-            override fun onProgressChanged(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float, fromUser: Boolean) {
-                cardAdapter.setPosition(progress)
-            }
-        }
-
-        changeTilsimLinearLayout.setOnClickListener {
-            it.visibility = View.GONE
-        }
     }
 
     private fun pushNotificationNumber() {
@@ -232,6 +206,32 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
     private fun fontSizeSeekBarSetup() {
         val seekBar = FontSizeSeek()
         seekBar.setup(seekBarFontSize, TextViewContent)
+    }
+
+    private fun bubbleSeekBarSetup() {
+        changeTilsimBubbleSeekBar.configBuilder
+                .max(LIST_TITLE_DATA_TILSIM.size.toFloat())
+                .progress(POSITION.toFloat())
+                .build()
+
+        changeTilsimBubbleSeekBar.onProgressChangedListener = object : BubbleSeekBar.OnProgressChangedListener {
+            override fun getProgressOnActionUp(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float) {
+                Log.d("azat OnActionUp", progress.toString())
+                changeTilsimLinearLayout.visibility = View.GONE
+            }
+
+            override fun getProgressOnFinally(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float, fromUser: Boolean) {
+                Log.d("azat OnFinally", progress.toString())
+            }
+
+            override fun onProgressChanged(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float, fromUser: Boolean) {
+                cardAdapter.setPosition(progress)
+            }
+        }
+
+        changeTilsimLinearLayout.setOnClickListener {
+            it.visibility = View.GONE
+        }
     }
 
     private fun getJSONData() {
@@ -360,6 +360,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         randomButton.setOnClickListener {
             cardAdapter.setRandomPosition()
             analytics.randomButtonClicked()
+            changeTilsimBubbleSeekBar.setProgress(TilsimService.RANDOM_TILSIM.toFloat())
         }
 
         shareImageView.setOnClickListener {
