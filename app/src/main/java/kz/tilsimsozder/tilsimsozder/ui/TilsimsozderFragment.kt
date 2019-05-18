@@ -125,9 +125,9 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
                 emailIntent.putExtra(Intent.EXTRA_TEXT, "Осында хатыңызды жазыңыз")
                 startActivity(Intent.createChooser(emailIntent, "Хат жазу..."))
             }
-            R.id.nav_manage -> {
+            /*R.id.nav_manage -> {
                 baptau_menu.visibility = View.VISIBLE
-            }
+            }*/
         }
 
         drawer_layout.closeDrawer(GravityCompat.START)

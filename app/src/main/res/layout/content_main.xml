@@ -12,8 +12,9 @@
         android:id="@+id/prayerRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/menu_text_white"
         android:visibility="gone"
-        tools:visibility="gone">
+        tools:visibility="visible">
 
 
         <ScrollView
@@ -38,7 +39,7 @@
                     android:paddingBottom="10dp"
                     android:text="@string/tilsim_sozder_title"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="#ffffff"
+                    android:textColor="#214446"
                     tools:fontFamily="monospace" />
 
                 <TextView
@@ -220,7 +221,7 @@
         android:visibility="visible"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp"
-        tools:visibility="visible">
+        tools:visibility="gone">
 
         <android.support.constraint.Guideline
             android:id="@+id/guidelineTop"
@@ -261,6 +262,7 @@
             app:layout_constraintStart_toStartOf="@id/guidelineLeft"
             app:layout_constraintTop_toBottomOf="@id/guidelineTop"
             tools:background="@tools:sample/avatars" />
+
         <include
             android:layout_width="match_parent"
             android:layout_height="match_parent"

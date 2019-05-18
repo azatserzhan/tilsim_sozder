@@ -120,9 +120,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 emailIntent.putExtra(Intent.EXTRA_TEXT, "Осында хатыңызды жазыңыз")
                 startActivity(Intent.createChooser(emailIntent, "Хат жазу..."))
             }
-            R.id.nav_manage -> {
-                baptau_menu.visibility = View.VISIBLE
-            }
         }
 
         drawer_layout.closeDrawer(GravityCompat.START)
