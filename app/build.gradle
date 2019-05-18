@@ -9,8 +9,8 @@ android {
         applicationId 'kz.tilsimsozder'
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 8
-        versionName '1.8'
+        versionCode 12
+        versionName '1.1.12'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

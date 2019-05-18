@@ -289,8 +289,8 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
     private fun setupStartNotification() {
         if (START_NOTIFICATION) {
             Alerter.create(activity)
-                    .setTitle("Бұл жолығы жаңартылымдар")
-                    .setText("Кездейсоқ батырмасы қосылды. Карточкаларды төменге қарай тарту арқылы өзгертуге болады")
+                    .setTitle("Бұл жолғы жаңартылымдар")
+                    .setText("Таңдалған тылсым сөзге өту функциясы қосылды")
                     .setBackgroundColorRes(R.color.colorNotification)
                     .show()
         }
