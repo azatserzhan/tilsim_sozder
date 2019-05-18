@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.net.Uri
+import android.opengl.Visibility
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
@@ -18,6 +19,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import com.tapadoo.alerter.Alerter
+import com.xw.repo.BubbleSeekBar
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.Direction
@@ -25,6 +27,7 @@ import com.yuyakaido.android.cardstackview.StackFrom
 import kotlinx.android.synthetic.main.activity_main.drawer_layout
 import kotlinx.android.synthetic.main.activity_main.nav_view
 import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.item_change_tilsim.*
 import kz.tilsimsozder.R
 import kz.tilsimsozder.activity.seek.FontSizeSeek
 import kz.tilsimsozder.firebase.Analytics
@@ -155,8 +158,34 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         pushNotificationNumber()
         setupCardStackView()
         setupButton()
+        setupChangeTilsim()
         nav_view.setNavigationItemSelectedListener(this)
         drawer_layout.openDrawer(Gravity.LEFT)
+    }
+
+    private fun setupChangeTilsim() {
+        changeTilsimBubbleSeekBar.configBuilder
+                .max(LIST_TITLE_DATA_TILSIM.size.toFloat())
+                .progress(POSITION.toFloat())
+
+        changeTilsimBubbleSeekBar.onProgressChangedListener = object : BubbleSeekBar.OnProgressChangedListener {
+            override fun getProgressOnActionUp(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float) {
+                Log.d("azat OnActionUp", progress.toString())
+                changeTilsimLinearLayout.visibility = View.GONE
+            }
+
+            override fun getProgressOnFinally(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float, fromUser: Boolean) {
+                Log.d("azat OnFinally", progress.toString())
+            }
+
+            override fun onProgressChanged(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float, fromUser: Boolean) {
+                cardAdapter.setPosition(progress)
+            }
+        }
+
+        changeTilsimLinearLayout.setOnClickListener {
+            it.visibility = View.GONE
+        }
     }
 
     private fun pushNotificationNumber() {
@@ -167,7 +196,6 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
     }
 
     private fun setupSelectPrayerAdapter() {
-        // setupAdapter(listTitle, listData)
         val selectPrayerAdapter = SelectPrayerAdapter(
                 clickListener = {
                     selectPrayer(it)
@@ -294,7 +322,13 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
     }
 
     private val cardManager by lazy { CardStackLayoutManager(activity) }
-    private val cardAdapter by lazy { CardStackAdapter(LIST_TITLE_DATA_TILSIM, LIST_CONTENT_DATA_TILSIM) }
+    private val cardAdapter by lazy {
+        CardStackAdapter(LIST_TITLE_DATA_TILSIM, LIST_CONTENT_DATA_TILSIM, changeTilsim())
+    }
+
+    private fun changeTilsim(): (position: Int) -> Unit = {
+        changeTilsimLinearLayout.visibility = View.VISIBLE
+    }
 
     private fun setupCardStackView() {
         cardManager.setStackFrom(StackFrom.Top)
@@ -317,7 +351,6 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
 
     private fun setupService() {
         val service = Intent(activity, TilsimService::class.java)
-        // bindService(service, connection, Context.BIND_AUTO_CREATE)
         activity?.stopService(service)
         activity?.startService(service)
         context?.let { SharedPreference(it).setIsTilsimPage(true) }
@@ -325,7 +358,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
 
     private fun setupButton() {
         randomButton.setOnClickListener {
-            cardAdapter.setNewPosition()
+            cardAdapter.setRandomPosition()
             analytics.randomButtonClicked()
         }
 

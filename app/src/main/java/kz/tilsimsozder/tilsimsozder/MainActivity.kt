@@ -316,7 +316,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private val cardManager by lazy { CardStackLayoutManager(this) }
-    private val cardAdapter by lazy { CardStackAdapter(LIST_TITLE_DATA_TILSIM, LIST_CONTENT_DATA_TILSIM) }
+    private val cardAdapter by lazy { CardStackAdapter(LIST_TITLE_DATA_TILSIM, LIST_CONTENT_DATA_TILSIM, {}) }
 
     private fun setupCardStackView() {
         cardManager.setStackFrom(StackFrom.Top)
@@ -339,7 +339,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private fun setupButton() {
         randomButton.setOnClickListener {
-            cardAdapter.setNewPosition()
+            cardAdapter.setRandomPosition()
         }
     }
 
