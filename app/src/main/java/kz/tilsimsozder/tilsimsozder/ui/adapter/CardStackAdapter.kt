@@ -3,17 +3,23 @@ package kz.tilsimsozder.tilsimsozder.ui.adapter
 import android.content.Context
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import kotlinx.android.synthetic.main.item_change_tilsim.*
 import kz.tilsimsozder.R
 import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
 
-class CardStackAdapter(private var title: MutableList<String>, private var content: MutableList<String>) :
-    RecyclerView.Adapter<CardStackAdapter.ViewHolder>() {
+class CardStackAdapter(
+        private var title: MutableList<String>,
+        private var content: MutableList<String>,
+        val changeTilsimListener: (position: Int) -> Unit
+) :
+        RecyclerView.Adapter<CardStackAdapter.ViewHolder>() {
     private lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -22,10 +28,19 @@ class CardStackAdapter(private var title: MutableList<String>, private var conte
         return ViewHolder(inflater.inflate(R.layout.item_card_spot, parent, false))
     }
 
-    fun setNewPosition() {
+    fun setRandomPosition() {
         val listLength = title.size - 2
         TilsimService.RANDOM_TILSIM = (0..listLength).shuffled().last()
         notifyDataSetChanged()
+    }
+
+    fun setPosition(position: Int) {
+        if (position < title.size - 1) {
+            TilsimService.RANDOM_TILSIM = position
+            notifyDataSetChanged()
+        }else{
+            Log.d("error", "Position is bigges: $position")
+        }
     }
 
     private fun setNotes(TextViewContent: TextView) {
@@ -48,7 +63,7 @@ class CardStackAdapter(private var title: MutableList<String>, private var conte
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var newPosiotion = TilsimService.RANDOM_TILSIM + position
-        if (newPosiotion > title.size) {
+        if (newPosiotion >= title.size) {
             newPosiotion = TilsimService.RANDOM_TILSIM - position
         }
         holder.titleTextView.text = title[newPosiotion]
@@ -61,6 +76,9 @@ class CardStackAdapter(private var title: MutableList<String>, private var conte
             sendIntent.putExtra(Intent.EXTRA_TEXT, title[newPosiotion] + "\n" + content[newPosiotion])
             sendIntent.type = "text/plain"
             context.startActivity(sendIntent)
+        }
+        holder.cardCounterTextView.setOnClickListener {
+            changeTilsimListener(position)
         }
     }
 

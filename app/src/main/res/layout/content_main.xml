@@ -12,6 +12,7 @@
         android:id="@+id/prayerRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/menu_text_white"
         android:visibility="gone"
         tools:visibility="visible">
 
@@ -38,7 +39,7 @@
                     android:paddingBottom="10dp"
                     android:text="@string/tilsim_sozder_title"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="#ffffff"
+                    android:textColor="#214446"
                     tools:fontFamily="monospace" />
 
                 <TextView
@@ -227,7 +228,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.1" />
+            app:layout_constraintGuide_percent="0.05" />
 
         <android.support.constraint.Guideline
             android:id="@+id/guidelineBottom"
@@ -241,14 +242,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.9" />
+            app:layout_constraintGuide_percent="0.95" />
 
         <android.support.constraint.Guideline
             android:id="@+id/guidelineLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.1" />
+            app:layout_constraintGuide_percent="0.05" />
 
         <com.yuyakaido.android.cardstackview.CardStackView
             android:id="@+id/card_stack_view"
@@ -261,6 +262,14 @@
             app:layout_constraintStart_toStartOf="@id/guidelineLeft"
             app:layout_constraintTop_toBottomOf="@id/guidelineTop"
             tools:background="@tools:sample/avatars" />
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/item_change_tilsim"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/card_stack_view"
+            app:layout_constraintTop_toTopOf="@+id/card_stack_view" />
 
         <Button
             android:id="@+id/randomButton"

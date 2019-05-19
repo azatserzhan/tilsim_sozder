@@ -120,9 +120,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 emailIntent.putExtra(Intent.EXTRA_TEXT, "Осында хатыңызды жазыңыз")
                 startActivity(Intent.createChooser(emailIntent, "Хат жазу..."))
             }
-            R.id.nav_manage -> {
-                baptau_menu.visibility = View.VISIBLE
-            }
         }
 
         drawer_layout.closeDrawer(GravityCompat.START)
@@ -316,7 +313,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private val cardManager by lazy { CardStackLayoutManager(this) }
-    private val cardAdapter by lazy { CardStackAdapter(LIST_TITLE_DATA_TILSIM, LIST_CONTENT_DATA_TILSIM) }
+    private val cardAdapter by lazy { CardStackAdapter(LIST_TITLE_DATA_TILSIM, LIST_CONTENT_DATA_TILSIM, {}) }
 
     private fun setupCardStackView() {
         cardManager.setStackFrom(StackFrom.Top)
@@ -339,7 +336,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private fun setupButton() {
         randomButton.setOnClickListener {
-            cardAdapter.setNewPosition()
+            cardAdapter.setRandomPosition()
         }
     }
 
