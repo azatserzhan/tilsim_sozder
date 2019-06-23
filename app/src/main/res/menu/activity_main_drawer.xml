@@ -9,12 +9,16 @@
             <menu>
                 <item
                     android:id="@+id/nav_prayer"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/prayer"
                     android:title="Дұғалар" />
                 <item
                     android:id="@+id/nav_tilsim_sozder"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/paper"
                     android:title="Тылсым сөздер" />
+                <item
+                    android:id="@+id/nav_news"
+                    android:icon="@drawable/newspaper"
+                    android:title="Жаңалықтар" />
             </menu>
         </item>
     </group>
@@ -32,9 +36,9 @@
         </menu>
     </item>
 
-    <item
+    <!--<item
         android:id="@+id/nav_manage"
         android:icon="@drawable/ic_menu_manage"
-        android:title="Баптау" />
+        android:title="Баптау" />-->
 
 </menu>

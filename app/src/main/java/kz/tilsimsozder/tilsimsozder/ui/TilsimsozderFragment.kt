@@ -17,6 +17,7 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebViewClient
 import com.tapadoo.alerter.Alerter
 import com.xw.repo.BubbleSeekBar
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
@@ -74,6 +75,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(TilsimsozderViewModel::class.java)
         setupView()
+        setupNews()
 
         setupService()
         context?.let { analytics.setup(it) }
@@ -100,6 +102,8 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
                 prayerRecyclerView.visibility = View.VISIBLE
                 cardStackRelativeLayout.visibility = View.GONE
                 analytics.openPrayerPage()
+
+                hideNews()
             }
             R.id.nav_tilsim_sozder -> {
                 // setup(LIST_TITLE_DATA_TILSIM, LIST_CONTENT_DATA_TILSIM)
@@ -108,6 +112,8 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
                 prayerRecyclerView.visibility = View.GONE
                 cardStackRelativeLayout.visibility = View.VISIBLE
                 analytics.openTilsimPage()
+
+                hideNews()
             }
             R.id.nav_share -> {
                 val sendIntent = Intent()
@@ -123,6 +129,9 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Бахаи дұғалары жайлы пікір")
                 emailIntent.putExtra(Intent.EXTRA_TEXT, "Осында хатыңызды жазыңыз")
                 startActivity(Intent.createChooser(emailIntent, "Хат жазу..."))
+            }
+            R.id.nav_news -> {
+                showNews()
             }
             /*R.id.nav_manage -> {
                 baptau_menu.visibility = View.VISIBLE
@@ -290,7 +299,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         if (START_NOTIFICATION) {
             Alerter.create(activity)
                     .setTitle("Бұл жолғы жаңартылымдар")
-                    .setText("Таңдалған тылсым сөзге өту функциясы қосылды")
+                    .setText("Жаңалықтар бөлімі қосылды")
                     .setBackgroundColorRes(R.color.colorNotification)
                     .show()
         }
@@ -396,5 +405,20 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
 
             analytics.showPrayer(LIST_TITLE_DATA_PRAYER[POSITION])
         }
+    }
+
+    /*NEWS*/
+    private fun setupNews(){
+        newsWebView.loadUrl("http://bahai.kz/?page_id=19&lang=kk")
+        newsWebView.settings.javaScriptEnabled = true
+        newsWebView.webViewClient = WebViewClient()
+    }
+
+    private fun showNews(){
+        newsWebView.visibility = View.VISIBLE
+    }
+
+    private fun hideNews(){
+        newsWebView.visibility = View.GONE
     }
 }

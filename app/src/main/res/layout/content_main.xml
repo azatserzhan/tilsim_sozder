@@ -7,6 +7,7 @@
     android:background="@drawable/main_bg"
     tools:context="kz.tilsimsozder.tilsimsozder.MainActivity">
 
+    <!--Prayers-->
     <RelativeLayout
 
         android:id="@+id/prayerRecyclerView"
@@ -211,6 +212,7 @@
     </RelativeLayout>
 
 
+    <!--Tilsim Sozder-->
     <android.support.constraint.ConstraintLayout
         android:id="@+id/cardStackRelativeLayout"
         android:layout_width="match_parent"
@@ -264,9 +266,9 @@
             tools:background="@tools:sample/avatars" />
 
         <include
+            layout="@layout/item_change_tilsim"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            layout="@layout/item_change_tilsim"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/card_stack_view"
             app:layout_constraintTop_toTopOf="@+id/card_stack_view" />
@@ -286,5 +288,12 @@
             app:layout_constraintTop_toBottomOf="@+id/card_stack_view" />
 
     </android.support.constraint.ConstraintLayout>
+
+    <!--NEWS-->
+    <WebView
+        android:id="@+id/newsWebView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"></WebView>
 
 </RelativeLayout>
