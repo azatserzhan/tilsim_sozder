@@ -9,8 +9,8 @@ import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.Gravity
@@ -435,16 +435,22 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
                     showBot(botAdapter.getItem(it))
                 }
         )
-        val botManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val botManager = GridLayoutManager(context, 2)
         botRecyclerView.apply {
             layoutManager = botManager
             adapter = botAdapter
         }
 
         botAdapter.addItems(listOf(
-                Bot("asd", "asd", R.drawable.share_image),
-                Bot("asd", "asd", R.drawable.logo),
-                Bot("asd", "asd", R.drawable.ic_menu_camera))
+                Bot("Астана(Nur-Sultan)", "https://t.me/Astana_bahai_bot", R.drawable.bot),
+                Bot("Алматы", "https://t.me/bahai_almaty_bot", R.drawable.bot),
+                Bot("Медиа Канал Бахаи", "https://t.me/mediabahai", R.drawable.bot),
+                Bot("Цитаты Бахаи", "https://t.me/bahaiwisdom", R.drawable.bot),
+                Bot("Астана(Nur-Sultan)", "https://t.me/Astana_bahai_bot", R.drawable.bot),
+                Bot("Алматы", "https://t.me/bahai_almaty_bot", R.drawable.bot),
+                Bot("Медиа Канал Бахаи", "https://t.me/mediabahai", R.drawable.bot),
+                Bot("Цитаты Бахаи", "https://t.me/bahaiwisdom", R.drawable.bot)
+        )
         )
     }
 
