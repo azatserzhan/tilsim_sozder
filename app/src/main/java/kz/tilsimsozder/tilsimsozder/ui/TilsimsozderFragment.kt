@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.Gravity
@@ -33,7 +34,9 @@ import kz.tilsimsozder.activity.seek.FontSizeSeek
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsimsozder.SharedPreference
+import kz.tilsimsozder.tilsimsozder.model.Bot
 import kz.tilsimsozder.tilsimsozder.model.Prayer
+import kz.tilsimsozder.tilsimsozder.ui.adapter.BotAdapter
 import kz.tilsimsozder.tilsimsozder.ui.adapter.CardStackAdapter
 import kz.tilsimsozder.tilsimsozder.ui.adapter.SelectPrayerAdapter
 
@@ -76,6 +79,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         viewModel = ViewModelProviders.of(this).get(TilsimsozderViewModel::class.java)
         setupView()
         setupNews()
+        setupBot()
 
         setupService()
         context?.let { analytics.setup(it) }
@@ -408,17 +412,44 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
     }
 
     /*NEWS*/
-    private fun setupNews(){
+    private fun setupNews() {
         newsWebView.loadUrl("http://bahai.kz/?page_id=19&lang=kk")
         newsWebView.settings.javaScriptEnabled = true
         newsWebView.webViewClient = WebViewClient()
     }
 
-    private fun showNews(){
+    private fun showNews() {
         newsWebView.visibility = View.VISIBLE
     }
 
-    private fun hideNews(){
+    private fun hideNews() {
         newsWebView.visibility = View.GONE
+    }
+
+    /*BOT*/
+    private lateinit var botAdapter: BotAdapter
+
+    private fun setupBot() {
+        botAdapter = BotAdapter(
+                clickListener = {
+                    showBot(botAdapter.getItem(it))
+                }
+        )
+        val botManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        botRecyclerView.apply {
+            layoutManager = botManager
+            adapter = botAdapter
+        }
+
+        botAdapter.addItems(listOf(
+                Bot("asd", "asd", R.drawable.share_image),
+                Bot("asd", "asd", R.drawable.logo),
+                Bot("asd", "asd", R.drawable.ic_menu_camera))
+        )
+    }
+
+    private fun showBot(bot: Bot) {
+        val telegram = Intent(Intent.ACTION_VIEW, Uri.parse(bot.url))
+        startActivity(telegram)
     }
 }
