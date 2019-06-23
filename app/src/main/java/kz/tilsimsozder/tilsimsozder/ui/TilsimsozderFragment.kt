@@ -9,6 +9,7 @@ import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.util.DisplayMetrics
 import android.util.Log
@@ -33,7 +34,9 @@ import kz.tilsimsozder.activity.seek.FontSizeSeek
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsimsozder.SharedPreference
+import kz.tilsimsozder.tilsimsozder.model.Bot
 import kz.tilsimsozder.tilsimsozder.model.Prayer
+import kz.tilsimsozder.tilsimsozder.ui.adapter.BotAdapter
 import kz.tilsimsozder.tilsimsozder.ui.adapter.CardStackAdapter
 import kz.tilsimsozder.tilsimsozder.ui.adapter.SelectPrayerAdapter
 
@@ -76,6 +79,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         viewModel = ViewModelProviders.of(this).get(TilsimsozderViewModel::class.java)
         setupView()
         setupNews()
+        setupBot()
 
         setupService()
         context?.let { analytics.setup(it) }
@@ -104,6 +108,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
                 analytics.openPrayerPage()
 
                 hideNews()
+                hideBot()
             }
             R.id.nav_tilsim_sozder -> {
                 // setup(LIST_TITLE_DATA_TILSIM, LIST_CONTENT_DATA_TILSIM)
@@ -114,6 +119,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
                 analytics.openTilsimPage()
 
                 hideNews()
+                hideBot()
             }
             R.id.nav_share -> {
                 val sendIntent = Intent()
@@ -132,6 +138,10 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
             }
             R.id.nav_news -> {
                 showNews()
+                hideBot()
+            }
+            R.id.nav_bots -> {
+                showBot()
             }
             /*R.id.nav_manage -> {
                 baptau_menu.visibility = View.VISIBLE
@@ -408,17 +418,56 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
     }
 
     /*NEWS*/
-    private fun setupNews(){
+    private fun setupNews() {
         newsWebView.loadUrl("http://bahai.kz/?page_id=19&lang=kk")
         newsWebView.settings.javaScriptEnabled = true
         newsWebView.webViewClient = WebViewClient()
     }
 
-    private fun showNews(){
+    private fun showNews() {
         newsWebView.visibility = View.VISIBLE
     }
 
-    private fun hideNews(){
+    private fun hideNews() {
         newsWebView.visibility = View.GONE
+    }
+
+    /*BOT*/
+    private lateinit var botAdapter: BotAdapter
+
+    private fun setupBot() {
+        botAdapter = BotAdapter(
+                clickListener = {
+                    openBot(botAdapter.getItem(it))
+                }
+        )
+        val botManager = GridLayoutManager(context, 2)
+        botRecyclerView.apply {
+            layoutManager = botManager
+            adapter = botAdapter
+        }
+
+        botAdapter.addItems(listOf(
+                Bot("Бот: Астана", "https://t.me/Astana_bahai_bot", R.drawable.astana_bot),
+                Bot("Бот: Алматы", "https://t.me/bahai_almaty_bot", R.drawable.almaty_bot),
+                Bot("YouTube: Бахаи Казахстана", "https://www.youtube.com/channel/UCSOVNuKVx_HovSbTpRZnt3Q", R.drawable.youtube_bahai_channel),
+                Bot("Telegram: Медиа Канал Бахаи", "https://t.me/mediabahai", R.drawable.bot),
+                Bot("Telegram: Цитаты Бахаи", "https://t.me/bahaiwisdom", R.drawable.bot),
+                Bot("Instagram: kazakhstan_bahai", "https://www.instagram.com/kazakhstan_bahai/", R.drawable.insta_bahai_channel)
+            ))
+    }
+
+    private fun openBot(bot: Bot) {
+        val telegram = Intent(Intent.ACTION_VIEW, Uri.parse(bot.url))
+        startActivity(telegram)
+    }
+
+    private fun showBot() {
+        newsWebView.visibility = View.GONE
+        botRecyclerView.visibility = View.VISIBLE
+    }
+
+    private fun hideBot() {
+        botRecyclerView.visibility = View.GONE
     }
 }

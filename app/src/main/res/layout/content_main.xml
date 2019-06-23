@@ -296,4 +296,14 @@
         android:layout_height="match_parent"
         android:visibility="gone"></WebView>
 
+    <!--BOTS-->
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/botRecyclerView"
+        android:background="#ffffff"
+        tools:listitem="@layout/item_bot"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
 </RelativeLayout>
