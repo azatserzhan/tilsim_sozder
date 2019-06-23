@@ -108,6 +108,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
                 analytics.openPrayerPage()
 
                 hideNews()
+                hideBot()
             }
             R.id.nav_tilsim_sozder -> {
                 // setup(LIST_TITLE_DATA_TILSIM, LIST_CONTENT_DATA_TILSIM)
@@ -118,6 +119,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
                 analytics.openTilsimPage()
 
                 hideNews()
+                hideBot()
             }
             R.id.nav_share -> {
                 val sendIntent = Intent()
@@ -136,6 +138,10 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
             }
             R.id.nav_news -> {
                 showNews()
+                hideBot()
+            }
+            R.id.nav_bots -> {
+                showBot()
             }
             /*R.id.nav_manage -> {
                 baptau_menu.visibility = View.VISIBLE
@@ -432,7 +438,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
     private fun setupBot() {
         botAdapter = BotAdapter(
                 clickListener = {
-                    showBot(botAdapter.getItem(it))
+                    openBot(botAdapter.getItem(it))
                 }
         )
         val botManager = GridLayoutManager(context, 2)
@@ -442,20 +448,26 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         }
 
         botAdapter.addItems(listOf(
-                Bot("Астана(Nur-Sultan)", "https://t.me/Astana_bahai_bot", R.drawable.bot),
-                Bot("Алматы", "https://t.me/bahai_almaty_bot", R.drawable.bot),
-                Bot("Медиа Канал Бахаи", "https://t.me/mediabahai", R.drawable.bot),
-                Bot("Цитаты Бахаи", "https://t.me/bahaiwisdom", R.drawable.bot),
-                Bot("Астана(Nur-Sultan)", "https://t.me/Astana_bahai_bot", R.drawable.bot),
-                Bot("Алматы", "https://t.me/bahai_almaty_bot", R.drawable.bot),
-                Bot("Медиа Канал Бахаи", "https://t.me/mediabahai", R.drawable.bot),
-                Bot("Цитаты Бахаи", "https://t.me/bahaiwisdom", R.drawable.bot)
-        )
-        )
+                Bot("Бот: Астана", "https://t.me/Astana_bahai_bot", R.drawable.astana_bot),
+                Bot("Бот: Алматы", "https://t.me/bahai_almaty_bot", R.drawable.almaty_bot),
+                Bot("YouTube: Бахаи Казахстана", "https://www.youtube.com/channel/UCSOVNuKVx_HovSbTpRZnt3Q", R.drawable.youtube_bahai_channel),
+                Bot("Telegram: Медиа Канал Бахаи", "https://t.me/mediabahai", R.drawable.bot),
+                Bot("Telegram: Цитаты Бахаи", "https://t.me/bahaiwisdom", R.drawable.bot),
+                Bot("Instagram: kazakhstan_bahai", "https://www.instagram.com/kazakhstan_bahai/", R.drawable.insta_bahai_channel)
+            ))
     }
 
-    private fun showBot(bot: Bot) {
+    private fun openBot(bot: Bot) {
         val telegram = Intent(Intent.ACTION_VIEW, Uri.parse(bot.url))
         startActivity(telegram)
+    }
+
+    private fun showBot() {
+        newsWebView.visibility = View.GONE
+        botRecyclerView.visibility = View.VISIBLE
+    }
+
+    private fun hideBot() {
+        botRecyclerView.visibility = View.GONE
     }
 }
