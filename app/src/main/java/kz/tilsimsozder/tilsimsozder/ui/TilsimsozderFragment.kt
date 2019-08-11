@@ -9,8 +9,8 @@ import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.Gravity
@@ -19,6 +19,9 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
+import com.google.android.flexbox.FlexDirection
+import com.google.android.flexbox.FlexboxLayoutManager
+import com.google.android.flexbox.JustifyContent
 import com.tapadoo.alerter.Alerter
 import com.xw.repo.BubbleSeekBar
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
@@ -441,11 +444,16 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
                     openBot(botAdapter.getItem(it))
                 }
         )
-        val botManager = GridLayoutManager(context, 2)
+
+        var botManager = FlexboxLayoutManager(context)
+        botManager.flexDirection = FlexDirection.ROW
+        botManager.justifyContent = JustifyContent.CENTER
+
         botRecyclerView.apply {
-            layoutManager = botManager
+            layoutManager = botManager as RecyclerView.LayoutManager
             adapter = botAdapter
         }
+
 
         botAdapter.addItems(listOf(
                 Bot("Бот: Астана", "https://t.me/Astana_bahai_bot", R.drawable.astana_bot),
