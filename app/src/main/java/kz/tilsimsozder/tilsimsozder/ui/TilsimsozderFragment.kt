@@ -45,18 +45,6 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
 
     companion object {
         fun newInstance() = TilsimsozderFragment()
-        var POSITION: Int = 0
-        var TEXT_SIZE = 15
-
-        var LIST_TITLE_DATA_TILSIM: MutableList<String> = mutableListOf()
-        var LIST_CONTENT_DATA_TILSIM: MutableList<String> = mutableListOf()
-
-        var LIST_TITLE_DATA_PRAYER: MutableList<String> = mutableListOf()
-        var LIST_CONTENT_DATA_PRAYER: MutableList<String> = mutableListOf()
-
-        var LIST_TITLE_NOTES: MutableList<String> = mutableListOf()
-        var LIST_CONTENT_NOTES: MutableList<String> = mutableListOf()
-        var START_NOTIFICATION = true
 
         private const val CARD_VISIBLE_ITEM_COUNT = 3
         private const val CARD_TRANSLATION_INTERVAL = 4.0f
@@ -64,6 +52,18 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         private const val CARD_SWIPE_THRESHOLD = 0.3f
         private const val CARD_MAX_DEGREE = -30.0f
     }
+
+    private var position: Int = 0
+
+    private var tilsimsTitle: MutableList<String> = mutableListOf()
+    private var tilsimsBidy: MutableList<String> = mutableListOf()
+
+    private var prayersTitle: MutableList<String> = mutableListOf()
+    private var prayersBody: MutableList<String> = mutableListOf()
+
+    private var notesTitle: MutableList<String> = mutableListOf()
+    private var notesBody: MutableList<String> = mutableListOf()
+    private var startNotification = true
 
     private var prayerList = listOf<Prayer>()
     private val analytics = Analytics()
@@ -109,7 +109,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
                 hideBot()
             }
             R.id.nav_tilsim_sozder -> {
-                // setup(LIST_TITLE_DATA_TILSIM, LIST_CONTENT_DATA_TILSIM)
+                // setup(tilsimsTitle, tilsimsBidy)
                 TextViewHeader.text = resources.getString(R.string.tilsim_sozder_title)
                 // TextViewContent.text = resources.getString(R.string.tilsim_sozder_content)
                 prayerRecyclerView.visibility = View.GONE
@@ -125,7 +125,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
                 sendIntent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=kz.tilsimsozder")
                 sendIntent.type = "text/plain"
                 startActivity(sendIntent)
-                analytics.shareTilsim(LIST_TITLE_DATA_TILSIM[POSITION])
+                analytics.shareTilsim(tilsimsTitle[position])
             }
             R.id.nav_send -> {
                 val emailIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts(
@@ -165,7 +165,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         getJSONLugat()
 
         //TODO: расскрой коммент
-        // setup(MainActivity.LIST_TITLE_DATA_TILSIM, MainActivity.LIST_CONTENT_DATA_TILSIM)
+        // setup(MainActivity.tilsimsTitle, MainActivity.tilsimsBidy)
 
         seekBarSetup()
         setNotes()
@@ -180,8 +180,8 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
 
     private fun pushNotificationNumber() {
         if (TilsimService.RANDOM_TILSIM != 0) {
-            TextViewHeader.text = LIST_TITLE_DATA_TILSIM[TilsimService.RANDOM_TILSIM]
-            TextViewContent.text = LIST_CONTENT_DATA_TILSIM[TilsimService.RANDOM_TILSIM]
+            TextViewHeader.text = tilsimsTitle[TilsimService.RANDOM_TILSIM]
+            TextViewContent.text = tilsimsBidy[TilsimService.RANDOM_TILSIM]
         }
     }
 
@@ -197,12 +197,12 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
             adapter = selectPrayerAdapter
         }
 
-        prayerList = LIST_TITLE_DATA_PRAYER
+        prayerList = prayersTitle
                 .map { Prayer(it, "") }
                 .toList()
                 .apply {
                     this.forEachIndexed { index, tilsimsoz ->
-                        tilsimsoz.content = LIST_CONTENT_DATA_PRAYER[index]
+                        tilsimsoz.content = prayersBody[index]
                     }
                 }
 
@@ -214,15 +214,15 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         TextViewHeader.text = prayerList[position].title.toUpperCase()
         TextViewContent.text = prayerList[position].content
         slidingDrawer.animateClose()
-        POSITION = position
+        this.position = position
         setNotes()
-        analytics.showPrayer(LIST_TITLE_DATA_PRAYER[position])
+        analytics.showPrayer(prayersTitle[position])
     }
 
     private fun bubbleSeekBarSetup() {
         changeTilsimBubbleSeekBar.configBuilder
-                .max(LIST_TITLE_DATA_TILSIM.size.toFloat())
-                .progress(POSITION.toFloat())
+                .max(tilsimsTitle.size.toFloat())
+                .progress(position.toFloat())
                 .build()
 
         changeTilsimBubbleSeekBar.onProgressChangedListener = object : BubbleSeekBar.OnProgressChangedListener {
@@ -247,16 +247,16 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
 
     private fun getJSONData() {
         /*TODO: Все такуи попробуй JSON прочитать, на данный момент ты XML используешь для хранения данных*/
-        LIST_TITLE_DATA_TILSIM = this.resources.getStringArray(R.array.tilsim_sozder_title).toMutableList()
-        LIST_CONTENT_DATA_TILSIM = this.resources.getStringArray(R.array.tilsim_sozder_content).toMutableList()
+        tilsimsTitle = this.resources.getStringArray(R.array.tilsim_sozder_title).toMutableList()
+        tilsimsBidy = this.resources.getStringArray(R.array.tilsim_sozder_content).toMutableList()
 
-        LIST_TITLE_DATA_PRAYER = this.resources.getStringArray(R.array.prayer_name).toMutableList()
-        LIST_CONTENT_DATA_PRAYER = this.resources.getStringArray(R.array.prayer_value).toMutableList()
+        prayersTitle = this.resources.getStringArray(R.array.prayer_name).toMutableList()
+        prayersBody = this.resources.getStringArray(R.array.prayer_value).toMutableList()
     }
 
     private fun getJSONLugat() {
-        LIST_TITLE_NOTES = this.resources.getStringArray(R.array.notes_title).toMutableList()
-        LIST_CONTENT_NOTES = this.resources.getStringArray(R.array.notes_value).toMutableList()
+        notesTitle = this.resources.getStringArray(R.array.notes_title).toMutableList()
+        notesBody = this.resources.getStringArray(R.array.notes_value).toMutableList()
     }
 
     private fun setNotes() {
@@ -267,9 +267,9 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         data.forEach { text ->
             if (pattern.containsMatchIn(text)) {
                 var count = 0
-                LIST_TITLE_NOTES.forEach { title ->
+                notesTitle.forEach { title ->
                     if (text.substringBeforeLast("*").toLowerCase() == title.toLowerCase()) {
-                        TextViewContent.append("$title - " + LIST_CONTENT_NOTES[count])
+                        TextViewContent.append("$title - " + notesBody[count])
                     }
                     count++
                 }
@@ -298,7 +298,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
     }
 
     private fun setupStartNotification() {
-        if (START_NOTIFICATION) {
+        if (startNotification) {
             Alerter.create(activity)
                     .setTitle("Бұл жолғы жаңартылымдар")
                     .setText("Жаңалықтар бөлімі қосылды")
@@ -334,7 +334,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
 
     private val cardManager by lazy { CardStackLayoutManager(activity) }
     private val cardAdapter by lazy {
-        CardStackAdapter(LIST_TITLE_DATA_TILSIM, LIST_CONTENT_DATA_TILSIM, changeTilsim())
+        CardStackAdapter(tilsimsTitle, tilsimsBidy, changeTilsim())
     }
 
     private fun changeTilsim(): (position: Int) -> Unit = {
@@ -378,7 +378,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
             val urlApp = "https://play.google.com/store/apps/details?id=kz.tilsimsozder"
             val sendIntent = Intent()
 
-            analytics.sharePrayer(LIST_TITLE_DATA_PRAYER[POSITION])
+            analytics.sharePrayer(prayersTitle[position])
 
             sendIntent.action = Intent.ACTION_SEND
             sendIntent.putExtra(Intent.EXTRA_TEXT, urlApp + "\n\n" + TextViewHeader.text.toString() + "\n" + TextViewContent.text)
@@ -387,25 +387,25 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         }
 
         prayerNextImageButton.setOnClickListener {
-            if (POSITION < LIST_CONTENT_DATA_PRAYER.size - 1) {
-                POSITION++
+            if (position < prayersBody.size - 1) {
+                position++
             }
 
-            TextViewHeader.text = LIST_TITLE_DATA_PRAYER[POSITION]
-            TextViewContent.text = LIST_CONTENT_DATA_PRAYER[POSITION]
+            TextViewHeader.text = prayersTitle[position]
+            TextViewContent.text = prayersBody[position]
 
-            analytics.showPrayer(LIST_TITLE_DATA_PRAYER[POSITION])
+            analytics.showPrayer(prayersTitle[position])
         }
 
         prayerBackImageButton.setOnClickListener {
-            if (POSITION > 0) {
-                POSITION--
+            if (position > 0) {
+                position--
             }
 
-            TextViewHeader.text = LIST_TITLE_DATA_PRAYER[POSITION]
-            TextViewContent.text = LIST_CONTENT_DATA_PRAYER[POSITION]
+            TextViewHeader.text = prayersTitle[position]
+            TextViewContent.text = prayersBody[position]
 
-            analytics.showPrayer(LIST_TITLE_DATA_PRAYER[POSITION])
+            analytics.showPrayer(prayersTitle[position])
         }
     }
 
