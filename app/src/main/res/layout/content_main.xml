@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main_bg"
-    tools:context="kz.tilsimsozder.tilsimsozder.MainActivity">
+    tools:context="kz.tilsimsozder.TilsimSozderActivity">
 
     <!--Prayers-->
     <RelativeLayout
@@ -61,7 +61,6 @@
                     android:id="@+id/shareImageView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="share"
                     android:paddingBottom="50dp"
                     android:src="@drawable/lotus" />
 
@@ -129,7 +128,7 @@
                     android:src="@drawable/logo"
                     android:foregroundGravity="center_vertical|center_horizontal" />-->
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/prayerListRecyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -159,7 +158,7 @@
             android:visibility="invisible"
             tools:ignore="OnClick">
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:background="@color/alert_default_icon_color">
@@ -207,13 +206,13 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </RelativeLayout>
     </RelativeLayout>
 
 
     <!--Tilsim Sozder-->
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cardStackRelativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -225,28 +224,28 @@
         tools:layout_editor_absoluteY="0dp"
         tools:visibility="gone">
 
-        <android.support.constraint.Guideline
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.05" />
 
-        <android.support.constraint.Guideline
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineBottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.9" />
 
-        <android.support.constraint.Guideline
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineRight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.95" />
 
-        <android.support.constraint.Guideline
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -287,7 +286,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card_stack_view" />
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--NEWS-->
     <WebView
@@ -297,13 +296,13 @@
         android:visibility="gone"></WebView>
 
     <!--BOTS-->
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:id="@+id/botRecyclerView"
         android:background="#ffffff"
         tools:listitem="@layout/item_bot"
         android:layout_height="match_parent">
 
-    </android.support.v7.widget.RecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

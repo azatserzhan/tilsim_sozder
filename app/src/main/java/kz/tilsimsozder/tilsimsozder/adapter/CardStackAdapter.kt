@@ -1,15 +1,14 @@
-package kz.tilsimsozder.tilsimsozder.ui.adapter
+package kz.tilsimsozder.tilsimsozder.adapter
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import kotlinx.android.synthetic.main.item_change_tilsim.*
+import androidx.recyclerview.widget.RecyclerView
 import kz.tilsimsozder.R
 import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
@@ -48,11 +47,11 @@ class CardStackAdapter(
         val pattern = "[*]".toRegex()
 
         TextViewContent.append("\n\n\n")
-        data.forEach { data ->
-            if (pattern.containsMatchIn(data)) {
+        data.forEach { text ->
+            if (pattern.containsMatchIn(text)) {
                 var count = 0
                 TilsimsozderFragment.LIST_TITLE_NOTES.forEach { title ->
-                    if (data.substringBeforeLast("*").toLowerCase() == title.toLowerCase()) {
+                    if (text.substringBeforeLast("*").toLowerCase() == title.toLowerCase()) {
                         TextViewContent.append("$title - " + TilsimsozderFragment.LIST_CONTENT_NOTES[count])
                     }
                     count++
@@ -70,7 +69,7 @@ class CardStackAdapter(
         holder.contentTextView.text = content[newPosiotion]
         setNotes(holder.contentTextView)
         holder.cardCounterTextView.text = newPosiotion.toString() + " / " + title.size
-        holder.shareImageView.setOnClickListener { v ->
+        holder.shareImageView.setOnClickListener {
             val sendIntent = Intent()
             sendIntent.action = Intent.ACTION_SEND
             sendIntent.putExtra(Intent.EXTRA_TEXT, title[newPosiotion] + "\n" + content[newPosiotion])

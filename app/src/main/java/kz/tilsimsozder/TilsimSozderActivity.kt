@@ -1,25 +1,25 @@
-package kz.tilsimsozder.tilsimsozder
+package kz.tilsimsozder
 
 import android.os.Bundle
-import android.support.v4.view.GravityCompat
-import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
 import kotlinx.android.synthetic.main.app_bar_main.toolbar
 import kotlinx.android.synthetic.main.tilsim_sozder_fragment.drawer_layout
+import kz.azatserzhanov.test.common.BaseActivity
 import kz.tilsimsozder.R
-import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
 
-class TilsimSozderActivity : AppCompatActivity() {
+class TilsimSozderActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tilsim_sozder_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, TilsimsozderFragment.newInstance())
-                .commitNow()
+                    .replace(R.id.container, TilsimsozderFragment.newInstance())
+                    .commitNow()
         }
 
         setSupportActionBar(toolbar)

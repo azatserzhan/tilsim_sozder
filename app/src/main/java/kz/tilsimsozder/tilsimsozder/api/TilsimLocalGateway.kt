@@ -1,4 +1,4 @@
-package kz.tilsimsozder.tilsimsozder.gateway
+package kz.tilsimsozder.tilsimsozder.api
 
 interface TilsimLocalGateway {
     fun getTilsimContent(): List<String>

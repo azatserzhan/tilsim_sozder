@@ -1,16 +1,9 @@
 package kz.tilsimsozder.tilsimsozder.ui
 
 import android.annotation.SuppressLint
-import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.support.design.widget.NavigationView
-import android.support.v4.app.Fragment
-import android.support.v4.view.GravityCompat
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.Gravity
@@ -19,9 +12,14 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
+import androidx.core.view.GravityCompat
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexboxLayoutManager
 import com.google.android.flexbox.JustifyContent
+import com.google.android.material.navigation.NavigationView
 import com.tapadoo.alerter.Alerter
 import com.xw.repo.BubbleSeekBar
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
@@ -33,15 +31,14 @@ import kotlinx.android.synthetic.main.activity_main.nav_view
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.item_change_tilsim.*
 import kz.tilsimsozder.R
-import kz.tilsimsozder.activity.seek.FontSizeSeek
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsimsozder.SharedPreference
 import kz.tilsimsozder.tilsimsozder.model.Bot
 import kz.tilsimsozder.tilsimsozder.model.Prayer
-import kz.tilsimsozder.tilsimsozder.ui.adapter.BotAdapter
-import kz.tilsimsozder.tilsimsozder.ui.adapter.CardStackAdapter
-import kz.tilsimsozder.tilsimsozder.ui.adapter.SelectPrayerAdapter
+import kz.tilsimsozder.tilsimsozder.adapter.BotAdapter
+import kz.tilsimsozder.tilsimsozder.adapter.CardStackAdapter
+import kz.tilsimsozder.tilsimsozder.adapter.SelectPrayerAdapter
 
 class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener,
         CardStackListener {
@@ -68,7 +65,6 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         private const val CARD_MAX_DEGREE = -30.0f
     }
 
-    private lateinit var viewModel: TilsimsozderViewModel
     private var prayerList = listOf<Prayer>()
     private val analytics = Analytics()
 
@@ -79,7 +75,6 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(TilsimsozderViewModel::class.java)
         setupView()
         setupNews()
         setupBot()
@@ -175,7 +170,6 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         seekBarSetup()
         setNotes()
         setupStartNotification()
-        fontSizeSeekBarSetup()
         pushNotificationNumber()
         setupCardStackView()
         setupButton()
@@ -197,7 +191,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
                     selectPrayer(it)
                 }
         )
-        val selectPrayerManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        val selectPrayerManager = LinearLayoutManager(context)
         prayerListRecyclerView.apply {
             layoutManager = selectPrayerManager
             adapter = selectPrayerAdapter
@@ -223,11 +217,6 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         POSITION = position
         setNotes()
         analytics.showPrayer(LIST_TITLE_DATA_PRAYER[position])
-    }
-
-    private fun fontSizeSeekBarSetup() {
-        val seekBar = FontSizeSeek()
-        seekBar.setup(seekBarFontSize, TextViewContent)
     }
 
     private fun bubbleSeekBarSetup() {
@@ -450,7 +439,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         botManager.justifyContent = JustifyContent.CENTER
 
         botRecyclerView.apply {
-            layoutManager = botManager as RecyclerView.LayoutManager
+            layoutManager = botManager
             adapter = botAdapter
         }
 

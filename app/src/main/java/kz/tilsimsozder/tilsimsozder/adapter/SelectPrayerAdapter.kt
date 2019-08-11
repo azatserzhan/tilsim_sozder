@@ -1,8 +1,8 @@
-package kz.tilsimsozder.tilsimsozder.ui.adapter
+package kz.tilsimsozder.tilsimsozder.adapter
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.select_prayer.view.*
 import kz.tilsimsozder.R
 import kz.tilsimsozder.tilsimsozder.model.Prayer

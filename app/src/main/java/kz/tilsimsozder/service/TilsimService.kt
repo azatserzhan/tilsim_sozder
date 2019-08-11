@@ -17,7 +17,7 @@ import android.util.Log
 import android.widget.RemoteViews
 import kz.tilsimsozder.R
 import kz.tilsimsozder.tilsimsozder.SharedPreference
-import kz.tilsimsozder.tilsimsozder.TilsimSozderActivity
+import kz.tilsimsozder.TilsimSozderActivity
 import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
 
 @Suppress("DEPRECATION")
