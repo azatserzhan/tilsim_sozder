@@ -33,7 +33,8 @@ class TilsimService : Service() {
     }
 
     override fun onCreate() {
-        TilsimsozderFragment.START_NOTIFICATION = false
+        // TilsimsozderFragment.START_NOTIFICATION = false
+        // TODO: раскрой коммент выше
         super.onCreate()
     }
 

@@ -42,7 +42,8 @@ class CardStackAdapter(
         }
     }
 
-    private fun setNotes(TextViewContent: TextView) {
+    // TODO: сделай setNotes
+    /*private fun setNotes(TextViewContent: TextView) {
         val data: MutableList<String> = TextViewContent.text.split(" ").toMutableList()
         val pattern = "[*]".toRegex()
 
@@ -58,7 +59,7 @@ class CardStackAdapter(
                 }
             }
         }
-    }
+    }*/
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var newPosiotion = TilsimService.RANDOM_TILSIM + position
@@ -67,7 +68,7 @@ class CardStackAdapter(
         }
         holder.titleTextView.text = title[newPosiotion]
         holder.contentTextView.text = content[newPosiotion]
-        setNotes(holder.contentTextView)
+        //setNotes(holder.contentTextView)
         holder.cardCounterTextView.text = newPosiotion.toString() + " / " + title.size
         holder.shareImageView.setOnClickListener {
             val sendIntent = Intent()

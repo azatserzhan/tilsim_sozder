@@ -26,8 +26,6 @@ import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.Direction
 import com.yuyakaido.android.cardstackview.StackFrom
-import kotlinx.android.synthetic.main.activity_main.drawer_layout
-import kotlinx.android.synthetic.main.activity_main.nav_view
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.item_change_tilsim.*
 import kz.tilsimsozder.R
@@ -40,8 +38,7 @@ import kz.tilsimsozder.tilsimsozder.adapter.BotAdapter
 import kz.tilsimsozder.tilsimsozder.adapter.CardStackAdapter
 import kz.tilsimsozder.tilsimsozder.adapter.SelectPrayerAdapter
 
-class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener,
-        CardStackListener {
+class TilsimsozderFragment : Fragment(), CardStackListener {
 
     companion object {
         fun newInstance() = TilsimsozderFragment()
@@ -73,8 +70,9 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         return inflater.inflate(R.layout.tilsim_sozder_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
         setupView()
         setupNews()
         setupBot()
@@ -92,62 +90,6 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
-        when (item.itemId) {
-            R.id.nav_prayer -> {
-                setupSelectPrayerAdapter()
-                TextViewHeader.text = resources.getString(R.string.prayer_title)
-                TextViewContent.text = resources.getString(R.string.prayer_content)
-                prayerRecyclerView.visibility = View.VISIBLE
-                cardStackRelativeLayout.visibility = View.GONE
-                analytics.openPrayerPage()
-
-                hideNews()
-                hideBot()
-            }
-            R.id.nav_tilsim_sozder -> {
-                // setup(tilsimsTitle, tilsimsBidy)
-                TextViewHeader.text = resources.getString(R.string.tilsim_sozder_title)
-                // TextViewContent.text = resources.getString(R.string.tilsim_sozder_content)
-                prayerRecyclerView.visibility = View.GONE
-                cardStackRelativeLayout.visibility = View.VISIBLE
-                analytics.openTilsimPage()
-
-                hideNews()
-                hideBot()
-            }
-            R.id.nav_share -> {
-                val sendIntent = Intent()
-                sendIntent.action = Intent.ACTION_SEND
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=kz.tilsimsozder")
-                sendIntent.type = "text/plain"
-                startActivity(sendIntent)
-                analytics.shareTilsim(tilsimsTitle[position])
-            }
-            R.id.nav_send -> {
-                val emailIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                        "mailto", "azatserzhan@gmail.com", null))
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Бахаи дұғалары жайлы пікір")
-                emailIntent.putExtra(Intent.EXTRA_TEXT, "Осында хатыңызды жазыңыз")
-                startActivity(Intent.createChooser(emailIntent, "Хат жазу..."))
-            }
-            R.id.nav_news -> {
-                showNews()
-                hideBot()
-            }
-            R.id.nav_bots -> {
-                showBot()
-            }
-            /*R.id.nav_manage -> {
-                baptau_menu.visibility = View.VISIBLE
-            }*/
-        }
-
-        drawer_layout.closeDrawer(GravityCompat.START)
-        return true
     }
 
     override fun onDestroyView() {
@@ -174,8 +116,8 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         setupCardStackView()
         setupButton()
         bubbleSeekBarSetup()
-        nav_view.setNavigationItemSelectedListener(this)
-        drawer_layout.openDrawer(Gravity.LEFT)
+        // nav_view.setNavigationItemSelectedListener(this)
+        // drawer_layout.openDrawer(Gravity.LEFT)
     }
 
     private fun pushNotificationNumber() {
@@ -284,7 +226,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
         // windowManager.defaultDisplay.getMetrics(displayMetrics)
         val displayHeight = displayMetrics.heightPixels
 
-        scrollViewMain.viewTreeObserver.addOnScrollChangedListener {
+        /*scrollViewMain.viewTreeObserver.addOnScrollChangedListener {
             val scrollY = scrollViewMain.scrollY
             val allYSize = scrollViewMain.getChildAt(0).height - displayHeight
 
@@ -294,7 +236,7 @@ class TilsimsozderFragment : Fragment(), NavigationView.OnNavigationItemSelected
             } else {
                 seekBarMain.visibility = View.INVISIBLE
             }
-        }
+        }*/
     }
 
     private fun setupStartNotification() {
