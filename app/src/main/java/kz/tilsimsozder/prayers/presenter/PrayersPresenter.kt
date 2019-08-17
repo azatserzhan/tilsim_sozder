@@ -1,16 +1,13 @@
 package kz.azatserzhanov.test.currency.presenter
 
 import android.content.Context
-import android.content.Intent
-import androidx.core.content.ContextCompat.startActivity
-import kotlinx.android.synthetic.main.fragment_prayers.*
 import kz.azatserzhanov.test.common.BasePresenter
 import kz.azatserzhanov.test.currency.contract.PrayersContract
 import kz.tilsimsozder.R
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.tilsimsozder.model.Prayer
 
-const private val URL_APP = "https://play.google.com/store/apps/details?id=kz.tilsimsozder"
+private const val URL_APP = "https://play.google.com/store/apps/details?id=kz.tilsimsozder"
 
 class PrayersPresenter(private val analytics: Analytics, val context: Context) : BasePresenter<PrayersContract.View>(),
         PrayersContract.Presenter {
