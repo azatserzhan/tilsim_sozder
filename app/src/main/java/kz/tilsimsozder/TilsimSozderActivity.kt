@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.tilsim_sozder_activity.nav_view
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.tilsimDrawerLayout
 import kz.azatserzhanov.test.common.BaseActivity
 import kz.tilsimsozder.prayers.ui.PrayersFragment
+import kz.tilsimsozder.tilsim.ui.TilsimFragment
 import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
 
 class TilsimSozderActivity : BaseActivity() {
@@ -21,7 +22,7 @@ class TilsimSozderActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tilsim_sozder_activity)
 
-        replaceFragment(PrayersFragment.create())
+        replaceFragment(TilsimFragment.create())
 
         nav_view.setNavigationItemSelectedListener { item ->
             when (item.itemId) {
@@ -50,7 +51,7 @@ class TilsimSozderActivity : BaseActivity() {
 
                     hideNews()
                     hideBot()*/
-                    replaceFragment(TilsimsozderFragment.newInstance())
+                    replaceFragment(TilsimFragment.create())
                 }
                 /*R.id.nav_share -> {
                     val sendIntent = Intent()

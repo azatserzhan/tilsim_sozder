@@ -5,28 +5,29 @@ import kz.azatserzhanov.test.common.BasePresenter
 import kz.tilsimsozder.R
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.tilsim.contract.TilsimContract
+import kz.tilsimsozder.tilsim.model.Tilsim
 import kz.tilsimsozder.tilsimsozder.model.Prayer
 
 
-class TilsimPresenter(private val context: Context, private val analytics: Analytics) : BasePresenter<TilsimContract.View>(),
+class TilsimPresenter(private val context: Context) : BasePresenter<TilsimContract.View>(),
         TilsimContract.Presenter {
 
     private var tilsimTitle = listOf<String>()
     private var tilsimBody = listOf<String>()
     private var positionTilsim = 0
 
-    override fun loadPrayers() {
+    override fun loadTilsim() {
         tilsimTitle = context.applicationContext.resources.getStringArray(R.array.prayer_name).toList()
         tilsimBody = context.applicationContext.resources.getStringArray(R.array.prayer_value).toList()
 
-        val prayers = tilsimTitle
-                .map { Prayer(it, "") }
+        val tilsimList = tilsimTitle
+                .map { Tilsim(it, "") }
                 .toList()
                 .apply {
                     this.forEachIndexed { index, tilsimsoz ->
-                        tilsimsoz.content = tilsimBody[index]
+                        tilsimsoz.body = tilsimBody[index]
                     }
                 }
-        view?.showPrayers(prayers)
+        view?.showTilsim(tilsimList)
     }
 }
