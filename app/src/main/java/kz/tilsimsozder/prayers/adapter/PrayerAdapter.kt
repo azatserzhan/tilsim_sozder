@@ -31,7 +31,6 @@ class PrayerAdapter(
 
     fun addItems(list: List<Prayer>) {
         prayers.addAll(list)
-        // notifyItemRangeInserted(prayers.size + 1, prayers.size)
         notifyDataSetChanged()
     }
 

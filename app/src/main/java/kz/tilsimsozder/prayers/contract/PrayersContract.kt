@@ -1,6 +1,5 @@
 package kz.azatserzhanov.test.currency.contract
 
-import android.content.Context
 import kz.azatserzhanov.test.common.MvpPresenter
 import kz.azatserzhanov.test.common.MvpView
 import kz.tilsimsozder.tilsimsozder.model.Prayer

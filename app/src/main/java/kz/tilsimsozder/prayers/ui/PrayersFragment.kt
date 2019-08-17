@@ -41,12 +41,15 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
     }
 
     private fun setupView() {
-        analytics.setup(requireContext())
+        context?.let {
+            analytics.setup(it)
+        }
 
 
-        prayerAdapter = PrayerAdapter(clickListener = {
-            selectPrayer(it)
-        })
+        prayerAdapter = PrayerAdapter(
+                clickListener = {
+                    selectPrayer(it)
+                })
 
         val selectPrayerManager = LinearLayoutManager(context)
         prayerListRecyclerView.apply {
