@@ -14,7 +14,7 @@ import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsim.model.Tilsim
 
 class TilsimAdapter(
-        val changeTilsimListener: (position: Int) -> Unit
+        val changeTilsimListener: () -> Unit
 ) : RecyclerView.Adapter<TilsimAdapter.TilsimViewHolder>() {
 
     private lateinit var context: Context
@@ -44,7 +44,7 @@ class TilsimAdapter(
             context.startActivity(sendIntent)
         }
         holder.cardCounterTextView.setOnClickListener {
-            changeTilsimListener(position)
+            changeTilsimListener()
         }
     }
 

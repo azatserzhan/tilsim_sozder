@@ -5,7 +5,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DefaultItemAnimator
+import com.xw.repo.BubbleSeekBar
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.Direction
@@ -118,7 +120,7 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
         cardManager.setCanScrollVertical(true)
 
         cardAdapter = TilsimAdapter(changeTilsimListener = {
-            changeTilsim()
+            changeTilsimLinearLayout.isVisible = true
         })
         card_stack_view.adapter = cardAdapter
         card_stack_view.layoutManager = cardManager
@@ -137,10 +139,12 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
     }*/
 
     private fun bubbleSeekBarSetup() {
-        /*changeTilsimBubbleSeekBar.configBuilder
-                .max(tilsimsTitle.size.toFloat())
-                .progress(position.toFloat())
-                .build()
+        cardAdapter?.itemCount?.toFloat()?.let {
+            changeTilsimBubbleSeekBar.configBuilder
+                    .max(it)
+                    .progress(TilsimService.RANDOM_TILSIM.toFloat())
+                    .build()
+        }
 
         changeTilsimBubbleSeekBar.onProgressChangedListener = object : BubbleSeekBar.OnProgressChangedListener {
             override fun getProgressOnActionUp(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float) {
@@ -153,13 +157,13 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
             }
 
             override fun onProgressChanged(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float, fromUser: Boolean) {
-                cardAdapter.setPosition(progress)
+                cardAdapter?.setPosition(progress)
             }
         }
 
         changeTilsimLinearLayout.setOnClickListener {
             it.visibility = View.GONE
-        }*/
+        }
     }
 
     private fun setNotes() {
@@ -200,7 +204,4 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
         }*/
     }
 
-    private fun changeTilsim(): (position: Int) -> Unit = {
-        changeTilsimLinearLayout.visibility = View.VISIBLE
-    }
 }
