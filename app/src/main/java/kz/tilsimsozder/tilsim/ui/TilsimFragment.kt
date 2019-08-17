@@ -134,8 +134,6 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
     override fun onCardRewound() {}
 
     private fun setupView() {
-        seekBarSetup()
-        setNotes()
         setupCardStackView()
 
         randomButton.setOnClickListener {
@@ -175,43 +173,5 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
             TextViewContent.text = tilsimsBidy[TilsimService.RANDOM_TILSIM]
         }
     }*/
-
-    private fun setNotes() {
-        /*val data: MutableList<String> = TextViewContent.text.split(" ").toMutableList()
-        val pattern = "[*]".toRegex()
-
-        TextViewContent.append("\n\n\n")
-        data.forEach { text ->
-            if (pattern.containsMatchIn(text)) {
-                var count = 0
-                notesTitle.forEach { title ->
-                    if (text.substringBeforeLast("*").toLowerCase() == title.toLowerCase()) {
-                        TextViewContent.append("$title - " + notesBody[count])
-                    }
-                    count++
-                }
-            }
-        }*/
-    }
-
-    private fun seekBarSetup() {
-        /*seekBarMain.progress = 30
-        val displayMetrics = DisplayMetrics()
-        //TODO: открой windowManager
-        // windowManager.defaultDisplay.getMetrics(displayMetrics)
-        val displayHeight = displayMetrics.heightPixels*/
-
-        /*scrollViewMain.viewTreeObserver.addOnScrollChangedListener {
-            val scrollY = scrollViewMain.scrollY
-            val allYSize = scrollViewMain.getChildAt(0).height - displayHeight
-
-            if (allYSize > 0) {
-                seekBarMain.progress = scrollY * 100 / allYSize
-                seekBarMain.visibility = View.VISIBLE
-            } else {
-                seekBarMain.visibility = View.INVISIBLE
-            }
-        }*/
-    }
 
 }
