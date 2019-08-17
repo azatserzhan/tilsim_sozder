@@ -12,11 +12,11 @@ import kotlinx.android.synthetic.main.fragment_prayers.prayerListRecyclerView
 import kotlinx.android.synthetic.main.fragment_prayers.shareImageView
 import kotlinx.android.synthetic.main.fragment_prayers.slidingDrawer
 import kz.azatserzhanov.test.common.BaseFragment
-import kz.azatserzhanov.test.currency.contract.PrayersContract
-import kz.azatserzhanov.test.currency.presenter.PrayersPresenter
 import kz.tilsimsozder.R
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.prayers.adapter.PrayerAdapter
+import kz.tilsimsozder.prayers.contract.PrayersContract
+import kz.tilsimsozder.prayers.presenter.PrayersPresenter
 import kz.tilsimsozder.tilsimsozder.model.Prayer
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

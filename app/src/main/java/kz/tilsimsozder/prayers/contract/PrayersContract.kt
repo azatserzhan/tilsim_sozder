@@ -1,4 +1,4 @@
-package kz.azatserzhanov.test.currency.contract
+package kz.tilsimsozder.prayers.contract
 
 import kz.azatserzhanov.test.common.MvpPresenter
 import kz.azatserzhanov.test.common.MvpView
