@@ -1,12 +1,16 @@
 package kz.tilsimsozder.prayers.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.fragment_prayers.*
+import kotlinx.android.synthetic.main.fragment_prayers.TextViewContent
+import kotlinx.android.synthetic.main.fragment_prayers.TextViewHeader
+import kotlinx.android.synthetic.main.fragment_prayers.prayerListRecyclerView
+import kotlinx.android.synthetic.main.fragment_prayers.shareImageView
+import kotlinx.android.synthetic.main.fragment_prayers.slidingDrawer
 import kz.azatserzhanov.test.common.BaseFragment
 import kz.azatserzhanov.test.currency.contract.PrayersContract
 import kz.azatserzhanov.test.currency.presenter.PrayersPresenter
@@ -14,7 +18,6 @@ import kz.tilsimsozder.R
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.prayers.adapter.PrayerAdapter
 import kz.tilsimsozder.tilsimsozder.model.Prayer
-import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Presenter>(),
@@ -56,6 +59,10 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
             layoutManager = selectPrayerManager
             adapter = prayerAdapter
         }
+
+        shareImageView.setOnClickListener {
+            presenter.sharePrayer()
+        }
     }
 
     private fun selectPrayer(position: Int) {
@@ -71,5 +78,13 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
     override fun updatePrayer(title: String, body: String) {
         TextViewHeader.text = title.toUpperCase()
         TextViewContent.text = body
+    }
+
+    override fun sharePrayer(urlApp: String, title: String, body: String) {
+        val shareIntent = Intent()
+        shareIntent.action = Intent.ACTION_SEND
+        shareIntent.putExtra(Intent.EXTRA_TEXT, "$urlApp \n\n $title \n $body")
+        shareIntent.type = "text/plain"
+        context?.startActivity(shareIntent)
     }
 }

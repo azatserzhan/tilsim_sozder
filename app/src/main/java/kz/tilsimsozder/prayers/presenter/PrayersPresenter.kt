@@ -1,17 +1,23 @@
 package kz.azatserzhanov.test.currency.presenter
 
 import android.content.Context
+import android.content.Intent
+import androidx.core.content.ContextCompat.startActivity
+import kotlinx.android.synthetic.main.fragment_prayers.*
 import kz.azatserzhanov.test.common.BasePresenter
 import kz.azatserzhanov.test.currency.contract.PrayersContract
 import kz.tilsimsozder.R
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.tilsimsozder.model.Prayer
 
+const private val URL_APP = "https://play.google.com/store/apps/details?id=kz.tilsimsozder"
+
 class PrayersPresenter(private val analytics: Analytics, val context: Context) : BasePresenter<PrayersContract.View>(),
         PrayersContract.Presenter {
 
     private var prayersTitle = listOf<String>()
     private var prayersBody = listOf<String>()
+    private var positionPrayer = 0
 
     override fun loadPrayers() {
         prayersTitle = context.applicationContext.resources.getStringArray(R.array.prayer_name).toList()
@@ -31,10 +37,16 @@ class PrayersPresenter(private val analytics: Analytics, val context: Context) :
     override fun selectedPrayer(position: Int) {
         view?.updatePrayer(prayersTitle[position], prayersBody[position])
         analytics.showPrayer(prayersTitle[position])
+        positionPrayer = position
     }
 
     override fun setAdapter(prayers: List<Prayer>) {
 
+    }
+
+    override fun sharePrayer() {
+        analytics.sharePrayer(prayersTitle[positionPrayer])
+        view?.sharePrayer(URL_APP, prayersTitle[positionPrayer], prayersBody[positionPrayer])
     }
 
 }
