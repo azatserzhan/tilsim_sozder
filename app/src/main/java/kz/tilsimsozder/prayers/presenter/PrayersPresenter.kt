@@ -1,6 +1,7 @@
 package kz.tilsimsozder.prayers.presenter
 
 import android.content.Context
+import kotlinx.android.synthetic.main.fragment_prayers.*
 import kz.azatserzhanov.test.common.BasePresenter
 import kz.tilsimsozder.R
 import kz.tilsimsozder.firebase.Analytics
@@ -44,6 +45,24 @@ class PrayersPresenter(private val analytics: Analytics, val context: Context) :
     override fun sharePrayer() {
         analytics.sharePrayer(prayersTitle[positionPrayer])
         view?.sharePrayer(URL_APP, prayersTitle[positionPrayer], prayersBody[positionPrayer])
+    }
+
+    override fun nextPrayer() {
+        if (positionPrayer < prayersBody.size - 1) {
+            positionPrayer++
+        }
+
+        view?.showPrayer(prayersTitle[positionPrayer], prayersBody[positionPrayer])
+        analytics.showPrayer(prayersTitle[positionPrayer])
+    }
+
+    override fun prevPrayer() {
+        if (positionPrayer > 0) {
+            positionPrayer--
+        }
+
+        view?.showPrayer(prayersTitle[positionPrayer], prayersBody[positionPrayer])
+        analytics.showPrayer(prayersTitle[positionPrayer])
     }
 
 }

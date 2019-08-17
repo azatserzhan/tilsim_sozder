@@ -103,7 +103,7 @@
         android:layout_alignParentTop="true"
         android:content="@+id/linearLayout"
         android:handle="@+id/button"
-        android:visibility="visible">
+        tools:visibility="gone">
 
         <LinearLayout
             android:id="@+id/linearLayout"

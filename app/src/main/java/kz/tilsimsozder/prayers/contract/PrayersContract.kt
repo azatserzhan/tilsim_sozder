@@ -10,6 +10,7 @@ interface PrayersContract {
         fun showPrayers(prayers: List<Prayer>)
         fun updatePrayer(title: String, body: String)
         fun sharePrayer(urlApp: String, title: String, body: String)
+        fun showPrayer(title: String, body: String)
     }
 
     interface Presenter : MvpPresenter<View> {
@@ -17,5 +18,7 @@ interface PrayersContract {
         fun selectedPrayer(position: Int)
         fun setAdapter(prayers: List<Prayer>)
         fun sharePrayer()
+        fun nextPrayer()
+        fun prevPrayer()
     }
 }

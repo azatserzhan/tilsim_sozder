@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_prayers.TextViewContent
 import kotlinx.android.synthetic.main.fragment_prayers.TextViewHeader
 import kotlinx.android.synthetic.main.fragment_prayers.prayerListRecyclerView
@@ -63,6 +64,14 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
         shareImageView.setOnClickListener {
             presenter.sharePrayer()
         }
+
+        prayerNextImageButton.setOnClickListener {
+            presenter.nextPrayer()
+        }
+
+        prayerBackImageButton.setOnClickListener {
+            presenter.prevPrayer()
+        }
     }
 
     private fun selectPrayer(position: Int) {
@@ -86,5 +95,10 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
         shareIntent.putExtra(Intent.EXTRA_TEXT, "$urlApp \n\n $title \n $body")
         shareIntent.type = "text/plain"
         context?.startActivity(shareIntent)
+    }
+
+    override fun showPrayer(title: String, body: String) {
+        TextViewHeader.text = title
+        TextViewContent.text = body
     }
 }
