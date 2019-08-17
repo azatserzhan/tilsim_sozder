@@ -33,17 +33,31 @@ class TilsimPresenter(private val context: Context) : BasePresenter<TilsimContra
                         })
 
         tilsimList.map {
-            val data: MutableList<String> = it.body.split(" ").toMutableList()
+            val bodyText: MutableList<String> = it.body.split(" ").toMutableList()
+            val titleText: MutableList<String> = it.title.split(" ").toMutableList()
             val pattern = "[*]".toRegex()
             var resultText = ""
 
-            data.forEach { text ->
+            bodyText.forEach { text ->
                 if (pattern.containsMatchIn(text)) {
                     var count = 0
 
                     notesTitle.forEach { title ->
                         if (text.substringBeforeLast("*").toLowerCase() == title.toLowerCase()) {
-                            resultText = "$title - " + notesBody[count]
+                            resultText = "\n $title - " + notesBody[count]
+                        }
+                        count++
+                    }
+                }
+            }
+
+            titleText.forEach { text ->
+                if (pattern.containsMatchIn(text)) {
+                    var count = 0
+
+                    notesTitle.forEach { title ->
+                        if (text.substringBeforeLast("*").toLowerCase() == title.toLowerCase()) {
+                            resultText += "\n $title - " + notesBody[count]
                         }
                         count++
                     }

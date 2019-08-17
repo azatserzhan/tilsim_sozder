@@ -32,7 +32,7 @@ class TilsimAdapter(
             newPosiotion = TilsimService.RANDOM_TILSIM - position
         }
         holder.titleTextView.text = tilsimData[newPosiotion].title
-        holder.contentTextView.text = tilsimData[newPosiotion].body + "\n\n" + tilsimData[newPosiotion].note
+        holder.contentTextView.text = tilsimData[newPosiotion].body + "\n" + tilsimData[newPosiotion].note
         //setNotes(holder.contentTextView)
         holder.cardCounterTextView.text = newPosiotion.toString() + " / " + tilsimData.size
 
