@@ -11,7 +11,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kz.tilsimsozder.R
 import kz.tilsimsozder.service.TilsimService
-import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
 
 class CardStackAdapter(
         private var title: MutableList<String>,
@@ -24,7 +23,7 @@ class CardStackAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         context = parent.context
-        return ViewHolder(inflater.inflate(R.layout.item_card_spot, parent, false))
+        return ViewHolder(inflater.inflate(R.layout.item_tilsim, parent, false))
     }
 
     fun setRandomPosition() {

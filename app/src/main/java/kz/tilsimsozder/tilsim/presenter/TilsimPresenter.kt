@@ -1,6 +1,7 @@
 package kz.tilsimsozder.tilsim.presenter
 
 import android.content.Context
+import android.content.Intent
 import kz.azatserzhanov.test.common.BasePresenter
 import kz.tilsimsozder.R
 import kz.tilsimsozder.tilsim.contract.TilsimContract
@@ -73,5 +74,9 @@ class TilsimPresenter(private val context: Context) : BasePresenter<TilsimContra
 
     override fun setupBubbleSeekBar() {
         view?.showBubbleSeekBar(tilsimBody.size)
+    }
+
+    override fun shareTilsim(position: Int) {
+        view?.showShare(tilsimList[position].title, tilsimList[position].body)
     }
 }

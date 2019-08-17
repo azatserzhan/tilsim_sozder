@@ -10,10 +10,12 @@ interface TilsimContract {
     interface View : MvpView {
         fun showTilsim(tilsimList: List<Tilsim>)
         fun showBubbleSeekBar(max: Int)
+        fun showShare(title: String, body: String)
     }
 
     interface Presenter : MvpPresenter<View> {
         fun loadTilsim()
         fun setupBubbleSeekBar()
+        fun shareTilsim(position: Int)
     }
 }

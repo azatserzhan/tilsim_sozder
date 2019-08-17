@@ -1,68 +1,52 @@
 package kz.tilsimsozder.tilsim.adapter
 
-import android.content.Context
-import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.item_tilsim.view.*
 import kz.tilsimsozder.R
 import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsim.model.Tilsim
 
 class TilsimAdapter(
-        val changeTilsimListener: (position: Int) -> Unit
-) : RecyclerView.Adapter<TilsimAdapter.TilsimViewHolder>() {
+        val counterListener: () -> Unit,
+        val bodyListner: (position: Int) -> Unit,
+        val shareListner: (position: Int) -> Unit
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private lateinit var context: Context
-    private var tilsimData = mutableListOf<Tilsim>()
+    private var tilsimList = mutableListOf<Tilsim>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TilsimViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        context = parent.context
-        return TilsimViewHolder(inflater.inflate(R.layout.item_card_spot, parent, false))
+        return TilsimViewHolder(inflater, parent)
     }
 
-    override fun onBindViewHolder(holder: TilsimViewHolder, position: Int) {
-        var newPosiotion = TilsimService.RANDOM_TILSIM + position
-        if (newPosiotion >= tilsimData.size) {
-            newPosiotion = TilsimService.RANDOM_TILSIM - position
-        }
-        holder.titleTextView.text = tilsimData[newPosiotion].title
-        holder.contentTextView.text = tilsimData[newPosiotion].body + "\n" + tilsimData[newPosiotion].note
-        //setNotes(holder.contentTextView)
-        holder.cardCounterTextView.text = newPosiotion.toString() + " / " + tilsimData.size
-
-        holder.shareImageView.setOnClickListener {
-            val sendIntent = Intent()
-            sendIntent.action = Intent.ACTION_SEND
-            sendIntent.putExtra(Intent.EXTRA_TEXT, tilsimData[newPosiotion].title + "\n" + tilsimData[newPosiotion].body)
-            sendIntent.type = "text/plain"
-            context.startActivity(sendIntent)
-        }
-        holder.cardCounterTextView.setOnClickListener {
-            changeTilsimListener(position)
-        }
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        (holder as TilsimViewHolder).bind(
+                tilsimList[position],
+                bodyListner,
+                counterListener,
+                shareListner,
+                tilsimList.size
+        )
     }
 
-    override fun getItemCount(): Int = tilsimData.size
+    override fun getItemCount(): Int = tilsimList.size
 
     fun addItems(list: List<Tilsim>) {
-        tilsimData.addAll(list)
+        tilsimList.addAll(list)
         notifyDataSetChanged()
     }
 
     fun setRandomPosition() {
-        val listLength = tilsimData.size - 2
+        val listLength = tilsimList.size - 2
         TilsimService.RANDOM_TILSIM = (0..listLength).shuffled().last()
         notifyDataSetChanged()
     }
 
     fun setPosition(position: Int) {
-        if (position < tilsimData.size - 1) {
+        if (position < tilsimList.size - 1) {
             TilsimService.RANDOM_TILSIM = position
             notifyDataSetChanged()
         } else {
@@ -70,29 +54,29 @@ class TilsimAdapter(
         }
     }
 
-    // TODO: сделай setNotes
-    /*private fun setNotes(TextViewContent: TextView) {
-        val data: MutableList<String> = TextViewContent.text.split(" ").toMutableList()
-        val pattern = "[*]".toRegex()
+    private class TilsimViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
+            RecyclerView.ViewHolder(inflater.inflate(R.layout.item_tilsim, parent, false)) {
 
-        TextViewContent.append("\n\n\n")
-        data.forEach { text ->
-            if (pattern.containsMatchIn(text)) {
-                var count = 0
-                TilsimsozderFragment.LIST_TITLE_NOTES.forEach { title ->
-                    if (text.substringBeforeLast("*").toLowerCase() == title.toLowerCase()) {
-                        TextViewContent.append("$title - " + TilsimsozderFragment.LIST_CONTENT_NOTES[count])
-                    }
-                    count++
-                }
-            }
+        private val titleTextView = itemView.titleTextView
+        private val contentTextView = itemView.contentTextView
+        private val cardCounterTextView = itemView.cardCounterTextView
+        private val shareImageView = itemView.shareImageView
+
+        fun bind(
+                tilsim: Tilsim,
+                bodyListner: (position: Int) -> Unit,
+                counterListener: () -> Unit,
+                shareListner: (position: Int) -> Unit,
+                tilsimSize: Int
+        ) {
+            titleTextView.text = tilsim.title
+            contentTextView.text = tilsim.body + "\n" + tilsim.note
+            cardCounterTextView.text = "${tilsim.position} / $tilsimSize"
+            cardCounterTextView.setOnClickListener { counterListener() }
+            shareImageView.setOnClickListener { shareListner(adapterPosition) }
+            contentTextView.setOnClickListener { bodyListner(adapterPosition) }
+
+            // cardCounterTextView.text = newPosiotion.toString() + " / " + tilsimList.size
         }
-    }*/
-
-    class TilsimViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val titleTextView: TextView = view.findViewById(R.id.titleTextView)
-        val contentTextView: TextView = view.findViewById(R.id.contentTextView)
-        val cardCounterTextView: TextView = view.findViewById(R.id.cardCounterTextView)
-        val shareImageView: ImageView = view.findViewById(R.id.shareImageView)
     }
 }

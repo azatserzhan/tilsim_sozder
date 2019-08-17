@@ -1,5 +1,6 @@
 package kz.tilsimsozder.tilsim.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -118,6 +119,14 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
         }
     }
 
+    override fun showShare(title: String, body: String) {
+        val sendIntent = Intent()
+        sendIntent.action = Intent.ACTION_SEND
+        sendIntent.putExtra(Intent.EXTRA_TEXT, title + "\n" + body)
+        sendIntent.type = "text/plain"
+        requireContext().startActivity(sendIntent)
+    }
+
     /*Care Stack*/
     override fun onCardDisappeared(view: View?, position: Int) {}
 
@@ -155,9 +164,17 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
         cardManager.setCanScrollHorizontal(true)
         cardManager.setCanScrollVertical(true)
 
-        cardAdapter = TilsimAdapter(changeTilsimListener = {
-            changeTilsimLinearLayout.isVisible = true
-        })
+        cardAdapter = TilsimAdapter(
+                counterListener = {
+                    changeTilsimLinearLayout.isVisible = true
+                },
+                bodyListner = {
+
+                },
+                shareListner = {
+                    presenter.shareTilsim(it)
+                })
+
         card_stack_view.adapter = cardAdapter
         card_stack_view.layoutManager = cardManager
         card_stack_view.itemAnimator.apply {
