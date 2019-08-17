@@ -17,8 +17,8 @@ class TilsimPresenter(private val context: Context) : BasePresenter<TilsimContra
     private var positionTilsim = 0
 
     override fun loadTilsim() {
-        tilsimTitle = context.applicationContext.resources.getStringArray(R.array.prayer_name).toList()
-        tilsimBody = context.applicationContext.resources.getStringArray(R.array.prayer_value).toList()
+        tilsimTitle = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_title).toList()
+        tilsimBody = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_content).toList()
 
         val tilsimList = tilsimTitle
                 .map { Tilsim(it, "") }

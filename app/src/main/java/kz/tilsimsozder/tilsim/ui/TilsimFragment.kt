@@ -10,17 +10,18 @@ import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.Direction
 import com.yuyakaido.android.cardstackview.StackFrom
+import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_tilsim.card_stack_view
-import kotlinx.android.synthetic.main.item_change_tilsim.changeTilsimLinearLayout
+import kotlinx.android.synthetic.main.item_change_tilsim.*
 import kz.azatserzhanov.test.common.BaseFragment
 import kz.tilsimsozder.R
 import kz.tilsimsozder.firebase.Analytics
+import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsim.contract.TilsimContract
 import kz.tilsimsozder.tilsim.model.Tilsim
 import kz.tilsimsozder.tilsim.presenter.TilsimPresenter
 import kz.tilsimsozder.tilsimsozder.SharedPreference
 import kz.tilsimsozder.tilsim.adapter.TilsimAdapter
-import kz.tilsimsozder.tilsimsozder.model.Prayer
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 private const val CARD_VISIBLE_ITEM_COUNT = 3
@@ -96,6 +97,12 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
         setNotes()
         setupCardStackView()
         bubbleSeekBarSetup()
+
+        randomButton.setOnClickListener {
+            cardAdapter?.setRandomPosition()
+            analytics.randomButtonClicked()
+            changeTilsimBubbleSeekBar.setProgress(TilsimService.RANDOM_TILSIM.toFloat())
+        }
     }
 
     private fun setupCardStackView() {
