@@ -6,8 +6,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DefaultItemAnimator
+import com.afollestad.materialdialogs.MaterialDialog
+import com.afollestad.materialdialogs.bottomsheets.BottomSheet
+import com.afollestad.materialdialogs.list.listItems
 import com.xw.repo.BubbleSeekBar
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
@@ -134,6 +138,18 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
         requireContext().startActivity(sendIntent)
     }
 
+    override fun showDialog(tilsim: Tilsim) {
+        MaterialDialog(requireContext(), BottomSheet()).show {
+            title(text = tilsim.title)
+            message(text = "${tilsim.body} \n ${tilsim.note}")
+
+            positiveButton(text = "Бөлісу")
+            positiveButton {
+                showShare(tilsim.title, tilsim.body)
+            }
+        }
+    }
+
     /*Care Stack*/
     override fun onCardDisappeared(view: View?, position: Int) {}
 
@@ -166,7 +182,7 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
                     changeTilsimLinearLayout.isVisible = true
                 },
                 bodyListner = {
-
+                    presenter.setBottomSheetDialog(it)
                 },
                 shareListner = {
                     presenter.shareTilsim(it)

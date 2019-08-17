@@ -2,6 +2,8 @@ package kz.tilsimsozder.tilsim.presenter
 
 import android.content.Context
 import android.content.Intent
+import com.afollestad.materialdialogs.MaterialDialog
+import com.afollestad.materialdialogs.bottomsheets.BottomSheet
 import kz.azatserzhanov.test.common.BasePresenter
 import kz.tilsimsozder.R
 import kz.tilsimsozder.tilsim.contract.TilsimContract
@@ -78,5 +80,9 @@ class TilsimPresenter(private val context: Context) : BasePresenter<TilsimContra
 
     override fun shareTilsim(position: Int) {
         view?.showShare(tilsimList[position].title, tilsimList[position].body)
+    }
+
+    override fun setBottomSheetDialog(position: Int) {
+        view?.showDialog(tilsimList[position])
     }
 }
