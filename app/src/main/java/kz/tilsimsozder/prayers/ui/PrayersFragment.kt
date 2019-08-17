@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.fragment_prayers.*
 import kz.azatserzhanov.test.common.BaseFragment
 import kz.azatserzhanov.test.currency.contract.PrayersContract
 import kz.azatserzhanov.test.currency.presenter.PrayersPresenter
@@ -17,9 +17,7 @@ import kz.tilsimsozder.tilsimsozder.model.Prayer
 import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class PrayersFragment :
-        BaseFragment<PrayersContract.View,
-                PrayersContract.Presenter>(),
+class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Presenter>(),
         PrayersContract.View {
 
     companion object {
@@ -29,7 +27,7 @@ class PrayersFragment :
     private val presenterImpl: PrayersPresenter by viewModel()
     override val presenter: PrayersContract.Presenter
         get() = presenterImpl
-    private var adapter: PrayerAdapter? = null
+    private var prayerAdapter: PrayerAdapter? = null
     private val analytics = Analytics()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
@@ -37,19 +35,24 @@ class PrayersFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        setupView()
+        presenter.loadPrayers()
+    }
+
+    private fun setupView() {
         analytics.setup(requireContext())
 
 
-        adapter = PrayerAdapter(clickListener = {
+        prayerAdapter = PrayerAdapter(clickListener = {
             selectPrayer(it)
         })
+
         val selectPrayerManager = LinearLayoutManager(context)
         prayerListRecyclerView.apply {
             layoutManager = selectPrayerManager
-            adapter = adapter
+            adapter = prayerAdapter
         }
-
-
     }
 
     private fun selectPrayer(position: Int) {
@@ -59,7 +62,7 @@ class PrayersFragment :
     }
 
     override fun showPrayers(prayers: List<Prayer>) {
-        adapter?.addItems(prayers)
+        prayerAdapter?.addItems(prayers)
     }
 
     override fun updatePrayer(title: String, body: String) {

@@ -8,7 +8,7 @@ import org.koin.dsl.module
 
 object PrayerModule : InjectionModule {
     override fun create() = module {
-        single { PrayersPresenter(get()) }
+        single { PrayersPresenter(get(), get()) }
         single { Analytics() }
     }
 }

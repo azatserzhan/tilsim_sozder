@@ -21,6 +21,8 @@ class TilsimSozderActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tilsim_sozder_activity)
 
+        replaceFragment(PrayersFragment.create())
+
         nav_view.setNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_prayer -> {
@@ -38,8 +40,8 @@ class TilsimSozderActivity : BaseActivity() {
                     replaceFragment(PrayersFragment.create())
 
                 }
-                /*R.id.nav_tilsim_sozder -> {
-                    // setup(tilsimsTitle, tilsimsBidy)
+                R.id.nav_tilsim_sozder -> {
+                    /*// setup(tilsimsTitle, tilsimsBidy)
                     TextViewHeader.text = resources.getString(R.string.tilsim_sozder_title)
                     // TextViewContent.text = resources.getString(R.string.tilsim_sozder_content)
                     prayerRecyclerView.visibility = View.GONE
@@ -47,9 +49,10 @@ class TilsimSozderActivity : BaseActivity() {
                     analytics.openTilsimPage()
 
                     hideNews()
-                    hideBot()
+                    hideBot()*/
+                    replaceFragment(TilsimsozderFragment.newInstance())
                 }
-                R.id.nav_share -> {
+                /*R.id.nav_share -> {
                     val sendIntent = Intent()
                     sendIntent.action = Intent.ACTION_SEND
                     sendIntent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=kz.tilsimsozder")
@@ -84,11 +87,9 @@ class TilsimSozderActivity : BaseActivity() {
 
     override fun onCreateView(name: String?, context: Context?, attrs: AttributeSet?): View? {
         return super.onCreateView(name, context, attrs)
+
         setSupportActionBar(toolbar)
-
-
         tilsimDrawerLayout.openDrawer(Gravity.LEFT)
-
         addFragment(TilsimsozderFragment.newInstance())
     }
 

@@ -3,7 +3,9 @@ package kz.tilsimsozder.prayers.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.select_prayer.view.*
+import kotlinx.android.synthetic.main.select_prayer.view.prayerNameTextView
+import kotlinx.android.synthetic.main.select_prayer.view.prayerNumberTextView
+import kotlinx.android.synthetic.main.select_prayer.view.selectPrayerLinearLayout
 import kz.tilsimsozder.R
 import kz.tilsimsozder.tilsimsozder.model.Prayer
 
@@ -29,7 +31,8 @@ class PrayerAdapter(
 
     fun addItems(list: List<Prayer>) {
         prayers.addAll(list)
-        notifyItemRangeInserted(prayers.size + 1, prayers.size)
+        // notifyItemRangeInserted(prayers.size + 1, prayers.size)
+        notifyDataSetChanged()
     }
 
     private class SelectPrayerViewHolder(inflater: LayoutInflater, parent: ViewGroup) :

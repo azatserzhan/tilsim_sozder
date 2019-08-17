@@ -13,7 +13,7 @@ interface PrayersContract {
     }
 
     interface Presenter : MvpPresenter<View> {
-        fun loadPrayers(context: Context)
+        fun loadPrayers()
         fun selectedPrayer(position: Int)
         fun setAdapter(prayers: List<Prayer>)
     }
