@@ -59,10 +59,17 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
         super.onViewCreated(view, savedInstanceState)
 
 
-        setupView()
+        setupCardStackView()
         // analytics.openTilsimPage()
         presenter.loadTilsim()
         presenter.setupBubbleSeekBar()
+
+        randomButton.setOnClickListener {
+            cardAdapter?.setRandomPosition()
+            analytics.randomButtonClicked()
+            changeTilsimBubbleSeekBar.setProgress(TilsimService.RANDOM_TILSIM.toFloat())
+        }
+
     }
 
     override fun onDestroyView() {
@@ -110,7 +117,7 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
                     progressFloat: Float,
                     fromUser: Boolean
             ) {
-                cardAdapter?.setPosition(progress)
+                card_stack_view.scrollToPosition(progress)
             }
         }
 
@@ -141,16 +148,6 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
     override fun onCardAppeared(view: View?, position: Int) {}
 
     override fun onCardRewound() {}
-
-    private fun setupView() {
-        setupCardStackView()
-
-        randomButton.setOnClickListener {
-            cardAdapter?.setRandomPosition()
-            analytics.randomButtonClicked()
-            changeTilsimBubbleSeekBar.setProgress(TilsimService.RANDOM_TILSIM.toFloat())
-        }
-    }
 
     private fun setupCardStackView() {
         val cardManager = CardStackLayoutManager(requireActivity())
