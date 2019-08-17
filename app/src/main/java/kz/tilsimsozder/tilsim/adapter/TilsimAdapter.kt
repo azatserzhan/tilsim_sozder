@@ -10,9 +10,9 @@ import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsim.model.Tilsim
 
 class TilsimAdapter(
-        val counterListener: () -> Unit,
-        val bodyListner: (position: Int) -> Unit,
-        val shareListner: (position: Int) -> Unit
+        private val counterListener: () -> Unit,
+        private val bodyListner: (position: Int) -> Unit,
+        private val shareListner: (position: Int) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var tilsimList = mutableListOf<Tilsim>()
@@ -75,8 +75,6 @@ class TilsimAdapter(
             cardCounterTextView.setOnClickListener { counterListener() }
             shareImageView.setOnClickListener { shareListner(adapterPosition) }
             contentTextView.setOnClickListener { bodyListner(adapterPosition) }
-
-            // cardCounterTextView.text = newPosiotion.toString() + " / " + tilsimList.size
         }
     }
 }
