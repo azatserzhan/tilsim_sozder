@@ -61,6 +61,7 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
         setupView()
         // analytics.openTilsimPage()
         presenter.loadTilsim()
+        presenter.setupBubbleSeekBar()
     }
 
     override fun onDestroyView() {
@@ -77,6 +78,44 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
     override fun showTilsim(tilsimList: List<Tilsim>) {
         cardAdapter?.addItems(tilsimList)
         Log.d("azat", "showTilsim")
+    }
+
+    override fun showBubbleSeekBar(max: Int) {
+        changeTilsimBubbleSeekBar.configBuilder
+                .max(max.toFloat())
+                .progress(TilsimService.RANDOM_TILSIM.toFloat())
+                .build()
+
+        changeTilsimBubbleSeekBar.onProgressChangedListener = object : BubbleSeekBar.OnProgressChangedListener {
+            override fun getProgressOnActionUp(
+                    bubbleSeekBar: BubbleSeekBar?,
+                    progress: Int,
+                    progressFloat: Float
+            ) {
+                changeTilsimLinearLayout.visibility = View.GONE
+            }
+
+            override fun getProgressOnFinally(
+                    bubbleSeekBar: BubbleSeekBar?,
+                    progress: Int,
+                    progressFloat: Float,
+                    fromUser: Boolean
+            ) {
+            }
+
+            override fun onProgressChanged(
+                    bubbleSeekBar: BubbleSeekBar?,
+                    progress: Int,
+                    progressFloat: Float,
+                    fromUser: Boolean
+            ) {
+                cardAdapter?.setPosition(progress)
+            }
+        }
+
+        changeTilsimLinearLayout.setOnClickListener {
+            it.visibility = View.GONE
+        }
     }
 
     /*Care Stack*/
@@ -98,7 +137,6 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
         seekBarSetup()
         setNotes()
         setupCardStackView()
-        bubbleSeekBarSetup()
 
         randomButton.setOnClickListener {
             cardAdapter?.setRandomPosition()
@@ -137,34 +175,6 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
             TextViewContent.text = tilsimsBidy[TilsimService.RANDOM_TILSIM]
         }
     }*/
-
-    private fun bubbleSeekBarSetup() {
-        cardAdapter?.itemCount?.toFloat()?.let {
-            changeTilsimBubbleSeekBar.configBuilder
-                    .max(it)
-                    .progress(TilsimService.RANDOM_TILSIM.toFloat())
-                    .build()
-        }
-
-        changeTilsimBubbleSeekBar.onProgressChangedListener = object : BubbleSeekBar.OnProgressChangedListener {
-            override fun getProgressOnActionUp(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float) {
-                Log.d("azat OnActionUp", progress.toString())
-                changeTilsimLinearLayout.visibility = View.GONE
-            }
-
-            override fun getProgressOnFinally(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float, fromUser: Boolean) {
-                Log.d("azat OnFinally", progress.toString())
-            }
-
-            override fun onProgressChanged(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float, fromUser: Boolean) {
-                cardAdapter?.setPosition(progress)
-            }
-        }
-
-        changeTilsimLinearLayout.setOnClickListener {
-            it.visibility = View.GONE
-        }
-    }
 
     private fun setNotes() {
         /*val data: MutableList<String> = TextViewContent.text.split(" ").toMutableList()

@@ -3,10 +3,8 @@ package kz.tilsimsozder.tilsim.presenter
 import android.content.Context
 import kz.azatserzhanov.test.common.BasePresenter
 import kz.tilsimsozder.R
-import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.tilsim.contract.TilsimContract
 import kz.tilsimsozder.tilsim.model.Tilsim
-import kz.tilsimsozder.tilsimsozder.model.Prayer
 
 
 class TilsimPresenter(private val context: Context) : BasePresenter<TilsimContract.View>(),
@@ -29,5 +27,9 @@ class TilsimPresenter(private val context: Context) : BasePresenter<TilsimContra
                     }
                 }
         view?.showTilsim(tilsimList)
+    }
+
+    override fun setupBubbleSeekBar() {
+        view?.showBubbleSeekBar(tilsimBody.size)
     }
 }
