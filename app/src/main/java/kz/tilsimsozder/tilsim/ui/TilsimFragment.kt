@@ -49,10 +49,6 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
         get() = presenterImpl
 
     private var cardAdapter: TilsimAdapter? = null
-
-    private var notesTitle: MutableList<String> = mutableListOf()
-    private var notesBody: MutableList<String> = mutableListOf()
-
     private val analytics = Analytics()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -64,7 +60,6 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
 
 
         setupCardStackView()
-        // analytics.openTilsimPage()
         presenter.loadTilsim()
         presenter.setupBubbleSeekBar()
 
@@ -74,6 +69,8 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
             changeTilsimBubbleSeekBar.setProgress(TilsimService.RANDOM_TILSIM.toFloat())
         }
 
+        context?.let { analytics.setup(it) }
+        analytics.openTilsimPage()
     }
 
     override fun onDestroyView() {
@@ -140,6 +137,7 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
 
     override fun showDialog(tilsim: Tilsim) {
         MaterialDialog(requireContext(), BottomSheet()).show {
+            cornerRadius(16f)
             title(text = tilsim.title)
             message(text = "${tilsim.body} \n ${tilsim.note}")
 
@@ -156,7 +154,7 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
     override fun onCardDragging(direction: Direction?, ratio: Float) {}
 
     override fun onCardSwiped(direction: Direction?) {
-        // analytics.showTilsim()
+        analytics.showTilsim()
     }
 
     override fun onCardCanceled() {}
@@ -196,12 +194,4 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
             }
         }
     }
-
-    /*private fun pushNotificationNumber() {
-        if (TilsimService.RANDOM_TILSIM != 0) {
-            TextViewHeader.text = tilsimsTitle[TilsimService.RANDOM_TILSIM]
-            TextViewContent.text = tilsimsBidy[TilsimService.RANDOM_TILSIM]
-        }
-    }*/
-
 }

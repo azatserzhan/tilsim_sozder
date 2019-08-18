@@ -45,9 +45,7 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
     }
 
     private fun setupView() {
-        context?.let {
-            analytics.setup(it)
-        }
+        context?.let { analytics.setup(it) }
 
 
         prayerAdapter = PrayerAdapter(
