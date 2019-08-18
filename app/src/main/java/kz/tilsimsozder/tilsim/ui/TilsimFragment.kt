@@ -25,7 +25,6 @@ import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsim.contract.TilsimContract
 import kz.tilsimsozder.tilsim.model.Tilsim
 import kz.tilsimsozder.tilsim.presenter.TilsimPresenter
-import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.tilsim.adapter.TilsimAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -71,16 +70,6 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
         context?.let { analytics.setup(it) }
         analytics.openTilsimPage()
         presenter.openServiceTilsimPosition()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        context?.let { SharedPreference(it).setIsTilsimPage(false) }
-    }
-
-    override fun onDestroy() {
-        context?.let { SharedPreference(it).setIsTilsimPage(false) }
-        super.onDestroy()
     }
 
     /*Tilsim*/
@@ -203,6 +192,5 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
         val service = Intent(activity, TilsimService::class.java)
         activity?.stopService(service)
         activity?.startService(service)
-        context?.let { SharedPreference(it).setIsTilsimPage(true) }
     }
 }

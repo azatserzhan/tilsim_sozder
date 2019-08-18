@@ -12,6 +12,8 @@ private const val OPEN_PRAYER_PAGE_COUNT = "open_prayer_page_count"
 private const val SHOW_PRAYER = "show_prayer"
 private const val TITLE = "title"
 private const val SHARE_PRAYER = "share_prayer"
+private const val SHARE_APP = "share_app"
+private const val SEND_EMAIL = "send_email"
 
 class Analytics {
 
@@ -58,5 +60,15 @@ class Analytics {
         val bundle = Bundle()
         bundle.putString(TITLE, prayerTitle)
         firebaseAnalytics?.logEvent(SHARE_PRAYER, bundle)
+    }
+
+    fun shareApp() {
+        val bundle = Bundle()
+        firebaseAnalytics?.logEvent(SHARE_APP, bundle)
+    }
+
+    fun sendEmail() {
+        val bundle = Bundle()
+        firebaseAnalytics?.logEvent(SEND_EMAIL, bundle)
     }
 }
