@@ -50,7 +50,7 @@ class TilsimService : Service() {
             }
             setupService()
 
-        }, 1000 * 3)
+        }, 1000 * 3 * 60)
     }
 
     private fun getData() {
