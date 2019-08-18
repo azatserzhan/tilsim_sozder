@@ -58,6 +58,7 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
 
 
         setupCardStackView()
+        setupService()
         presenter.loadTilsim()
         presenter.setupBubbleSeekBar()
 
@@ -69,6 +70,7 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
 
         context?.let { analytics.setup(it) }
         analytics.openTilsimPage()
+        presenter.openServiceTilsimPosition()
     }
 
     override fun onDestroyView() {
@@ -85,6 +87,10 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
     override fun showTilsim(tilsimList: List<Tilsim>) {
         cardAdapter?.addItems(tilsimList)
         Log.d("azat", "showTilsim")
+    }
+
+    override fun showTilsim(position: Int) {
+        card_stack_view.scrollToPosition(position)
     }
 
     override fun showBubbleSeekBar(max: Int) {
@@ -191,5 +197,12 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
                 supportsChangeAnimations = true
             }
         }
+    }
+
+    private fun setupService() {
+        val service = Intent(activity, TilsimService::class.java)
+        activity?.stopService(service)
+        activity?.startService(service)
+        context?.let { SharedPreference(it).setIsTilsimPage(true) }
     }
 }

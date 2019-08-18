@@ -9,6 +9,7 @@ interface TilsimContract {
 
     interface View : MvpView {
         fun showTilsim(tilsimList: List<Tilsim>)
+        fun showTilsim(position: Int)
         fun showBubbleSeekBar(max: Int)
         fun showShare(title: String, body: String)
         fun showDialog(tilsim: Tilsim)
@@ -19,5 +20,6 @@ interface TilsimContract {
         fun setupBubbleSeekBar()
         fun shareTilsim(position: Int)
         fun setBottomSheetDialog(position: Int)
+        fun openServiceTilsimPosition()
     }
 }

@@ -6,6 +6,7 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.bottomsheets.BottomSheet
 import kz.azatserzhanov.test.common.BasePresenter
 import kz.tilsimsozder.R
+import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsim.contract.TilsimContract
 import kz.tilsimsozder.tilsim.model.Tilsim
 
@@ -84,5 +85,9 @@ class TilsimPresenter(private val context: Context) : BasePresenter<TilsimContra
 
     override fun setBottomSheetDialog(position: Int) {
         view?.showDialog(tilsimList[position])
+    }
+
+    override fun openServiceTilsimPosition() {
+        view?.showTilsim(TilsimService.RANDOM_TILSIM)
     }
 }
