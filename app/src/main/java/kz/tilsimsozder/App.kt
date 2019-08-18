@@ -1,6 +1,7 @@
 package kz.tilsimsozder
 
 import android.app.Application
+import kz.tilsimsozder.bots.BotModule
 import kz.tilsimsozder.news.NewsModule
 import kz.tilsimsozder.prayers.PrayerModule
 import kz.tilsimsozder.tilsim.TilsimModule
@@ -17,6 +18,7 @@ class App : Application() {
             modules(PrayerModule.create())
             modules(TilsimModule.create())
             modules(NewsModule.create())
+            modules(BotModule.create())
         }
     }
 }

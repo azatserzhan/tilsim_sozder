@@ -2,10 +2,9 @@ package kz.tilsimsozder.news.presenter
 
 import android.content.Context
 import kz.azatserzhanov.test.common.BasePresenter
-import kz.tilsimsozder.R
 import kz.tilsimsozder.firebase.Analytics
+import kz.tilsimsozder.bots.contract.BotContract
 import kz.tilsimsozder.news.contract.NewsContract
-import kz.tilsimsozder.tilsimsozder.model.Prayer
 
 private const val URL_NEWS = "http://bahai.kz/?page_id=19&lang=kk"
 

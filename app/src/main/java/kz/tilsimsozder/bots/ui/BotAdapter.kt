@@ -1,4 +1,4 @@
-package kz.tilsimsozder.tilsimsozder.adapter
+package kz.tilsimsozder.bots.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -27,6 +27,7 @@ class BotAdapter(
 
     fun addItems(list: List<Bot>) {
         bots.addAll(list)
+        // notifyItemRangeInserted(bots.size + 1, bots.size)
         notifyDataSetChanged()
     }
 
