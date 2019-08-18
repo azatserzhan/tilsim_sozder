@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.app_bar_main.toolbar
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.nav_view
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.tilsimDrawerLayout
 import kz.azatserzhanov.test.common.BaseActivity
+import kz.tilsimsozder.news.ui.NewsFragment
 import kz.tilsimsozder.prayers.ui.PrayersFragment
 import kz.tilsimsozder.tilsim.ui.TilsimFragment
 import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
@@ -53,6 +54,9 @@ class TilsimSozderActivity : BaseActivity() {
                     hideBot()*/
                     replaceFragment(TilsimFragment.create())
                 }
+                R.id.nav_news -> {
+                    replaceFragment(NewsFragment.create())
+                }
                 /*R.id.nav_share -> {
                     val sendIntent = Intent()
                     sendIntent.action = Intent.ACTION_SEND
@@ -68,10 +72,7 @@ class TilsimSozderActivity : BaseActivity() {
                     emailIntent.putExtra(Intent.EXTRA_TEXT, "Осында хатыңызды жазыңыз")
                     startActivity(Intent.createChooser(emailIntent, "Хат жазу..."))
                 }
-                R.id.nav_news -> {
-                    showNews()
-                    hideBot()
-                }
+
                 R.id.nav_bots -> {
                     showBot()
                 }

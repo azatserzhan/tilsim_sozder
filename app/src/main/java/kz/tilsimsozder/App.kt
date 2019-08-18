@@ -1,6 +1,7 @@
 package kz.tilsimsozder
 
 import android.app.Application
+import kz.tilsimsozder.news.NewsModule
 import kz.tilsimsozder.prayers.PrayerModule
 import kz.tilsimsozder.tilsim.TilsimModule
 import org.koin.android.ext.koin.androidContext
@@ -15,6 +16,7 @@ class App : Application() {
             androidContext(this@App)
             modules(PrayerModule.create())
             modules(TilsimModule.create())
+            modules(NewsModule.create())
         }
     }
 }
