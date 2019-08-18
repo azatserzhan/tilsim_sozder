@@ -28,7 +28,7 @@ import kotlinx.android.synthetic.main.item_change_tilsim.*
 import kz.tilsimsozder.R
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.service.TilsimService
-import kz.tilsimsozder.tilsimsozder.SharedPreference
+import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.bots.model.Bot
 import kz.tilsimsozder.tilsimsozder.model.Prayer
 import kz.tilsimsozder.tilsimsozder.adapter.BotAdapter

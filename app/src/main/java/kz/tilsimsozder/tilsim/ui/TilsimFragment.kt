@@ -6,12 +6,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DefaultItemAnimator
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.bottomsheets.BottomSheet
-import com.afollestad.materialdialogs.list.listItems
 import com.xw.repo.BubbleSeekBar
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
@@ -27,7 +25,7 @@ import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsim.contract.TilsimContract
 import kz.tilsimsozder.tilsim.model.Tilsim
 import kz.tilsimsozder.tilsim.presenter.TilsimPresenter
-import kz.tilsimsozder.tilsimsozder.SharedPreference
+import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.tilsim.adapter.TilsimAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

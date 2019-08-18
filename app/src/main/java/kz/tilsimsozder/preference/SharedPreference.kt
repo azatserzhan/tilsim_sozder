@@ -1,4 +1,4 @@
-package kz.tilsimsozder.tilsimsozder
+package kz.tilsimsozder.preference
 
 import android.content.Context
 import android.preference.PreferenceManager

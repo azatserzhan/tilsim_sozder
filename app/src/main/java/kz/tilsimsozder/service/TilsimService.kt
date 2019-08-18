@@ -16,9 +16,8 @@ import android.os.IBinder
 import android.util.Log
 import android.widget.RemoteViews
 import kz.tilsimsozder.R
-import kz.tilsimsozder.tilsimsozder.SharedPreference
+import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.TilsimSozderActivity
-import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
 
 @Suppress("DEPRECATION")
 class TilsimService : Service() {
