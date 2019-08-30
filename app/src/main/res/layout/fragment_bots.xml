@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/prayerRecyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/bg_primary"
+    android:orientation="vertical"
+    tools:context="kz.tilsimsozder.TilsimSozderActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Пайдалы сервистер"
+        android:textAlignment="center"
+        android:background="?attr/bg_active"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="?attr/text_header"
+        android:elevation="10dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/botRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/bg_primary"
+        tools:listitem="@layout/item_bot" />
+</LinearLayout>

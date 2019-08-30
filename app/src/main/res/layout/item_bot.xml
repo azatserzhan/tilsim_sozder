@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_width="170dp"
+    android:layout_height="170dp"
     android:layout_margin="12dp"
+    android:background="?attr/bg_primary"
     app:cardCornerRadius="12dp">
 
     <ImageView
@@ -21,11 +22,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="#AD020E50"
+        android:background="?attr/bg_active"
         android:fontFamily="sans-serif"
         android:padding="10dp"
         android:text="Astana"
-        android:textColor="#ffffff"
+        android:textColor="?attr/text_body"
         android:textSize="18sp" />
 
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>

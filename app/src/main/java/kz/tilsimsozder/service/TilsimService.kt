@@ -16,9 +16,8 @@ import android.os.IBinder
 import android.util.Log
 import android.widget.RemoteViews
 import kz.tilsimsozder.R
-import kz.tilsimsozder.tilsimsozder.SharedPreference
-import kz.tilsimsozder.tilsimsozder.TilsimSozderActivity
-import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
+import kz.tilsimsozder.preference.SharedPreference
+import kz.tilsimsozder.TilsimSozderActivity
 
 @Suppress("DEPRECATION")
 class TilsimService : Service() {
@@ -30,11 +29,6 @@ class TilsimService : Service() {
     override fun onDestroy() {
         Log.d("service", "destroy")
         super.onDestroy()
-    }
-
-    override fun onCreate() {
-        TilsimsozderFragment.START_NOTIFICATION = false
-        super.onCreate()
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
