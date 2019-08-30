@@ -62,7 +62,6 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
         super.onViewCreated(view, savedInstanceState)
 
         setupCardStackView()
-        setupService()
         presenter.loadTilsim()
         presenter.setupBubbleSeekBar()
 
@@ -191,11 +190,5 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
                 supportsChangeAnimations = true
             }
         }
-    }
-
-    private fun setupService() {
-        val service = Intent(activity, TilsimService::class.java)
-        activity?.stopService(service)
-        activity?.startService(service)
     }
 }

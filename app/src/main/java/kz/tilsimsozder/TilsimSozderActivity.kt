@@ -17,6 +17,7 @@ import kz.tilsimsozder.news.ui.NewsFragment
 import kz.tilsimsozder.prayers.ui.PrayersFragment
 import kz.tilsimsozder.preference.FragmentName
 import kz.tilsimsozder.preference.SharedPreference
+import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsim.ui.TilsimFragment
 
 class TilsimSozderActivity : BaseActivity() {
@@ -27,6 +28,9 @@ class TilsimSozderActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tilsim_sozder_activity)
+
+        SharedPreference(baseContext).setIsTilsimPage(true)
+        setupService()
 
         when (SharedPreference(baseContext).getCurrentFragmentName()){
             FragmentName.PRAYER.ordinal -> replaceFragment(PrayersFragment.create())
@@ -46,7 +50,6 @@ class TilsimSozderActivity : BaseActivity() {
 
         // setSupportActionBar(toolbar)
         tilsimDrawerLayout.openDrawer(Gravity.LEFT)
-        SharedPreference(baseContext).setIsTilsimPage(true)
     }
 
     override fun onBackPressed() {
@@ -68,6 +71,12 @@ class TilsimSozderActivity : BaseActivity() {
         } else {
             this.setTheme(R.style.CustomThemeLight)
         }
+    }
+
+    private fun setupService(){
+        val service = Intent(baseContext, TilsimService::class.java)
+        stopService(service)
+        startService(service)
     }
 
     private fun setupNavMenu(){

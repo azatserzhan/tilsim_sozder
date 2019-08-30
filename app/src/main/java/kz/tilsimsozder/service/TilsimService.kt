@@ -31,12 +31,6 @@ class TilsimService : Service() {
         super.onDestroy()
     }
 
-    override fun onCreate() {
-        // TilsimsozderFragment.START_NOTIFICATION = false
-        // TODO: раскрой коммент выше
-        super.onCreate()
-    }
-
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         setupService()
         return super.onStartCommand(intent, flags, startId)
