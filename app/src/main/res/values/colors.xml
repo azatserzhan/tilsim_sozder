@@ -16,4 +16,7 @@
 
     <color name="menu_text_black">#4e8285</color>
     <color name="menu_bg_black">#ffffff</color>
+
+    <color name="bg_primary_light">#FFFFFF</color>
+    <color name="bg_primary_dark">#404D61</color>
 </resources>

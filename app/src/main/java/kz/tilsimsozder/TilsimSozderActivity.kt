@@ -2,6 +2,7 @@ package kz.tilsimsozder
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.net.Uri
 import android.os.Bundle
 import android.util.AttributeSet
@@ -23,49 +24,18 @@ import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
 class TilsimSozderActivity : BaseActivity() {
 
     private val analytics = Analytics()
+    private var isThemeDark: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tilsim_sozder_activity)
 
-        replaceFragment(TilsimFragment.create())
+        isThemeDark = SharedPreference(this).getIsThemeDark()
+        setupStyle()
+        setupNavMenu()
 
-        nav_view.setNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_prayer -> {
-                    replaceFragment(PrayersFragment.create())
-                }
-                R.id.nav_tilsim_sozder -> {
-                    replaceFragment(TilsimFragment.create())
-                }
-                R.id.nav_news -> {
-                    replaceFragment(NewsFragment.create())
-                }
-                R.id.nav_bots -> {
-                    replaceFragment(BotFragment.create())
-                }
-                R.id.nav_share -> {
-                    val sendIntent = Intent()
-                    sendIntent.action = Intent.ACTION_SEND
-                    sendIntent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=kz.tilsimsozder")
-                    sendIntent.type = "text/plain"
-                    startActivity(sendIntent)
-                    analytics.shareApp()
-                }
-                R.id.nav_send -> {
-                    val emailIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                            "mailto", "azatserzhan@gmail.com", null))
-                    emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Бахаи дұғалары жайлы пікір")
-                    emailIntent.putExtra(Intent.EXTRA_TEXT, "Осында хатыңызды жазыңыз")
-                    startActivity(Intent.createChooser(emailIntent, "Хат жазу..."))
-                    analytics.sendEmail()
-                }
-            }
-            tilsimDrawerLayout.closeDrawer(GravityCompat.START)
-            item.isChecked = true
-            true
+        replaceFragment(PrayersFragment.create())
 
-        }
     }
 
     override fun onCreateView(name: String?, context: Context?, attrs: AttributeSet?): View? {
@@ -88,5 +58,65 @@ class TilsimSozderActivity : BaseActivity() {
     override fun onDestroy() {
         super.onDestroy()
         SharedPreference(baseContext).setIsTilsimPage(false)
+    }
+
+    private fun setupStyle() {
+        if (isThemeDark) {
+            this?.setTheme(R.style.CustomThemeDark)
+        } else {
+            this?.setTheme(R.style.CustomThemeLight)
+        }
+    }
+
+    private fun setupNavMenu(){
+        nav_view.setNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_prayer -> {
+                    replaceFragment(PrayersFragment.create())
+                }
+                R.id.nav_tilsim_sozder -> {
+                    replaceFragment(TilsimFragment.create())
+                }
+                R.id.nav_news -> {
+                    replaceFragment(NewsFragment.create())
+                }
+                R.id.nav_bots -> {
+                    replaceFragment(BotFragment.create())
+                }
+                R.id.nav_share -> {
+                    val sendIntent = Intent()
+                    sendIntent.action = Intent.ACTION_SEND
+                    sendIntent.putExtra(
+                            Intent.EXTRA_TEXT,
+                            "https://play.google.com/store/apps/details?id=kz.tilsimsozder"
+                    )
+                    sendIntent.type = "text/plain"
+                    startActivity(sendIntent)
+                    analytics.shareApp()
+                }
+                R.id.nav_send -> {
+                    val emailIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                            "mailto", "azatserzhan@gmail.com", null))
+                    emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Бахаи дұғалары жайлы пікір")
+                    emailIntent.putExtra(Intent.EXTRA_TEXT, "Осында хатыңызды жазыңыз")
+                    startActivity(Intent.createChooser(emailIntent, "Хат жазу..."))
+                    analytics.sendEmail()
+                }
+                R.id.nav_change_theme -> {
+                    if (isThemeDark) {
+                        SharedPreference(this.baseContext).setTheme(false)
+                    } else {
+                        SharedPreference(this.baseContext).setTheme(true)
+                    }
+
+                    finish()
+                    startActivity(intent)
+                }
+            }
+            tilsimDrawerLayout.closeDrawer(GravityCompat.START)
+            item.isChecked = true
+            true
+
+        }
     }
 }

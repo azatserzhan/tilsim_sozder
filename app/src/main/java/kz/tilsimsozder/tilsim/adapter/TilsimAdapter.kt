@@ -16,9 +16,11 @@ class TilsimAdapter(
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var tilsimList = mutableListOf<Tilsim>()
+    private var tilsimListSize = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
+        tilsimListSize = tilsimList.size
         return TilsimViewHolder(inflater, parent)
     }
 
@@ -28,7 +30,7 @@ class TilsimAdapter(
                 bodyListner,
                 counterListener,
                 shareListner,
-                tilsimList.size
+                tilsimListSize
         )
     }
 
