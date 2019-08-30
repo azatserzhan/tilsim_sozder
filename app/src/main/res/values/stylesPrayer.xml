@@ -21,10 +21,30 @@
 
     <style name="CustomThemeDark" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="bg_primary">@color/bg_primary_dark</item>
+        <item name="bg_active">@color/bg_active_dark</item>
+        <item name="text_body">@color/text_body_dark</item>
+        <item name="divider_style">@color/divider_style_dark</item>
+        <item name="seek_bar_style">@color/seek_bar_style_dark</item>
+
+
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="CustomThemeLight" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="bg_primary">@color/bg_primary_light</item>
+        <item name="bg_active">@color/bg_active_light</item>
+        <item name="text_body">@color/text_body_light</item>
+        <item name="divider_style">@color/divider_style_light</item>
+        <item name="seek_bar_style">@color/seek_bar_style_light</item>
+
+
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
 </resources>
