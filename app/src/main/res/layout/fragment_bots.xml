@@ -5,7 +5,7 @@
     android:id="@+id/prayerRecyclerView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/menu_text_white"
+    android:background="?attr/bg_primary"
     android:orientation="vertical"
     tools:context="kz.tilsimsozder.TilsimSozderActivity">
 
@@ -15,15 +15,15 @@
         android:padding="16dp"
         android:text="Пайдалы сервистер"
         android:textAlignment="center"
-        android:background="@drawable/main_text"
+        android:background="?attr/bg_active"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#214446"
+        android:textColor="?attr/text_header"
         android:elevation="10dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/botRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffffff"
+        android:background="?attr/bg_primary"
         tools:listitem="@layout/item_bot" />
 </LinearLayout>
