@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
-import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.fragment_news.*
 import kz.azatserzhanov.test.common.BaseFragment
 import kz.tilsimsozder.R
 import kz.tilsimsozder.news.contract.NewsContract

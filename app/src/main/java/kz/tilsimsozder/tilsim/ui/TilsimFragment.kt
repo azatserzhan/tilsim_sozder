@@ -15,8 +15,7 @@ import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.Direction
 import com.yuyakaido.android.cardstackview.StackFrom
-import kotlinx.android.synthetic.main.content_main.*
-import kotlinx.android.synthetic.main.fragment_tilsim.card_stack_view
+import kotlinx.android.synthetic.main.fragment_tilsim.*
 import kotlinx.android.synthetic.main.item_change_tilsim.*
 import kz.azatserzhanov.test.common.BaseFragment
 import kz.tilsimsozder.R

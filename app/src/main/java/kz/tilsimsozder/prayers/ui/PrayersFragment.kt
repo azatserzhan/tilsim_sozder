@@ -5,10 +5,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.content_main.*
-import kotlinx.android.synthetic.main.fragment_prayers.TextViewContent
+import kotlinx.android.synthetic.main.fragment_prayers.*
 import kotlinx.android.synthetic.main.fragment_prayers.TextViewHeader
+import kotlinx.android.synthetic.main.fragment_prayers.bodyTextView
 import kotlinx.android.synthetic.main.fragment_prayers.prayerListRecyclerView
 import kotlinx.android.synthetic.main.fragment_prayers.shareImageView
 import kotlinx.android.synthetic.main.fragment_prayers.slidingDrawer
@@ -17,10 +18,10 @@ import kz.tilsimsozder.R
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.prayers.adapter.PrayerAdapter
 import kz.tilsimsozder.prayers.contract.PrayersContract
+import kz.tilsimsozder.prayers.model.Prayer
 import kz.tilsimsozder.prayers.presenter.PrayersPresenter
 import kz.tilsimsozder.preference.FragmentName
 import kz.tilsimsozder.preference.SharedPreference
-import kz.tilsimsozder.tilsimsozder.model.Prayer
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Presenter>(),
@@ -77,6 +78,12 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
         prayerBackImageButton.setOnClickListener {
             presenter.prevPrayer()
         }
+
+        bodyTextView.setOnClickListener {
+            navigationFrameLayout.isVisible = !navigationFrameLayout.isVisible
+            bottomMenuButton.isVisible = !bottomMenuButton.isVisible
+            seekBarMain.isVisible = !seekBarMain.isVisible
+        }
     }
 
     private fun selectPrayer(position: Int) {
@@ -91,7 +98,7 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
 
     override fun updatePrayer(title: String, body: String) {
         TextViewHeader.text = title.toUpperCase()
-        TextViewContent.text = body
+        bodyTextView.text = body
     }
 
     override fun sharePrayer(urlApp: String, title: String, body: String) {
@@ -104,6 +111,6 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
 
     override fun showPrayer(title: String, body: String) {
         TextViewHeader.text = title
-        TextViewContent.text = body
+        bodyTextView.text = body
     }
 }

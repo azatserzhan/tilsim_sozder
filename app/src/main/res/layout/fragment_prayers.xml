@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/bg_primary"
+
     tools:context="kz.tilsimsozder.TilsimSozderActivity">
 
 
@@ -17,23 +18,39 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="top"
+
+            android:paddingBottom="56dp"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/TextViewHeader"
-                android:layout_width="fill_parent"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingTop="30dp"
-                android:paddingBottom="10dp"
-                android:text="@string/prayer_title"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="?attr/text_body"
-                tools:fontFamily="monospace" />
+                android:orientation="horizontal"
+                android:paddingTop="30dp">
+
+                <TextView
+                    android:id="@+id/TextViewHeader"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:text="@string/prayer_title"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="?attr/text_body"
+                    tools:fontFamily="monospace" />
+
+                <ImageView
+                    android:id="@+id/shareImageView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_share" />
+            </LinearLayout>
+
 
             <TextView
-                android:id="@+id/TextViewContent"
+                android:id="@+id/bodyTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -46,14 +63,6 @@
                 android:text="@string/tilsim_sozder_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="?attr/text_body" />
-
-            <ImageView
-                android:id="@+id/shareImageView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="50dp"
-                android:src="@drawable/lotus" />
-
         </LinearLayout>
     </ScrollView>
 
@@ -72,24 +81,26 @@
 
     <FrameLayout
         android:layout_width="match_parent"
+        android:id="@+id/navigationFrameLayout"
         android:layout_height="match_parent">
 
         <ImageButton
             android:id="@+id/prayerBackImageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="center_vertical"
-            android:layout_margin="2dp"
-            android:background="@mipmap/ic_back"
+            android:layout_margin="20dp"
+            android:background="@drawable/ic_prayer_back"
             tools:ignore="MissingConstraints" />
 
         <ImageButton
             android:id="@+id/prayerNextImageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="center|right"
-            android:layout_margin="2dp"
-            android:background="@mipmap/ic_next"
+            android:layout_margin="20dp"
+            android:background="@drawable/ic_prayer_back"
+            android:rotation="180"
             tools:ignore="MissingConstraints" />
     </FrameLayout>
 
@@ -101,7 +112,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:content="@+id/linearLayout"
-        android:handle="@+id/button"
+        android:handle="@+id/bottomMenuButton"
         tools:visibility="gone">
 
         <LinearLayout
@@ -123,7 +134,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/bottomMenuButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/bubble_navigation_button"

@@ -8,7 +8,6 @@ import android.util.AttributeSet
 import android.view.Gravity
 import android.view.View
 import androidx.core.view.GravityCompat
-import kotlinx.android.synthetic.main.app_bar_main.toolbar
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.nav_view
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.tilsimDrawerLayout
 import kz.azatserzhanov.test.common.BaseActivity
@@ -18,9 +17,7 @@ import kz.tilsimsozder.news.ui.NewsFragment
 import kz.tilsimsozder.prayers.ui.PrayersFragment
 import kz.tilsimsozder.preference.FragmentName
 import kz.tilsimsozder.preference.SharedPreference
-import kz.tilsimsozder.tilsim.model.Tilsim
 import kz.tilsimsozder.tilsim.ui.TilsimFragment
-import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
 
 class TilsimSozderActivity : BaseActivity() {
 
@@ -31,11 +28,7 @@ class TilsimSozderActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tilsim_sozder_activity)
 
-        isThemeDark = SharedPreference(this).getIsThemeDark()
-        setupStyle()
-        setupNavMenu()
-
-        when (SharedPreference(this).getCurrentFragmentName()){
+        when (SharedPreference(baseContext).getCurrentFragmentName()){
             FragmentName.PRAYER.ordinal -> replaceFragment(PrayersFragment.create())
             FragmentName.TILSIM.ordinal -> replaceFragment(TilsimFragment.create())
             FragmentName.BOT.ordinal -> replaceFragment(BotFragment.create())
@@ -43,12 +36,15 @@ class TilsimSozderActivity : BaseActivity() {
             else -> replaceFragment(TilsimFragment.create())
         }
 
+        isThemeDark = SharedPreference(this).getIsThemeDark()
+        setupStyle()
+        setupNavMenu()
     }
 
     override fun onCreateView(name: String?, context: Context?, attrs: AttributeSet?): View? {
         return super.onCreateView(name, context, attrs)
 
-        setSupportActionBar(toolbar)
+        // setSupportActionBar(toolbar)
         tilsimDrawerLayout.openDrawer(Gravity.LEFT)
         SharedPreference(baseContext).setIsTilsimPage(true)
     }

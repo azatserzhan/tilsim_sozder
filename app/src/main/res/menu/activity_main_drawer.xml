@@ -9,7 +9,7 @@
             <menu>
                 <item
                     android:id="@+id/nav_prayer"
-                    android:icon="@drawable/prayer"
+                    android:icon="@drawable/ic_prayer"
                     android:title="Дұғалар" />
                 <item
                     android:id="@+id/nav_tilsim_sozder"
@@ -43,10 +43,5 @@
                 android:title="Стильді өзгерту" />
         </menu>
     </item>
-
-    <!--<item
-        android:id="@+id/nav_manage"
-        android:icon="@drawable/ic_menu_manage"
-        android:title="Баптау" />-->
 
 </menu>

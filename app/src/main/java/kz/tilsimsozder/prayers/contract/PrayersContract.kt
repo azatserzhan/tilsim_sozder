@@ -2,7 +2,7 @@ package kz.tilsimsozder.prayers.contract
 
 import kz.azatserzhanov.test.common.MvpPresenter
 import kz.azatserzhanov.test.common.MvpView
-import kz.tilsimsozder.tilsimsozder.model.Prayer
+import kz.tilsimsozder.prayers.model.Prayer
 
 interface PrayersContract {
 

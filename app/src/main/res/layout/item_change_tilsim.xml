@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
     android:id="@+id/changeTilsimLinearLayout"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:gravity="bottom"
     android:orientation="vertical"
     android:paddingLeft="30dp"
-    android:paddingRight="30dp"
-    android:gravity="bottom">
+    android:paddingRight="30dp">
 
     <com.xw.repo.BubbleSeekBar
         android:id="@+id/changeTilsimBubbleSeekBar"
@@ -18,12 +18,13 @@
         android:layout_marginBottom="75dp"
         android:background="?attr/bg_active"
         app:bsb_bubble_color="?attr/seek_bar_active_style"
-        app:bsb_bubble_text_color="@color/menu_text_white"
-        app:bsb_min="0"
+        app:bsb_bubble_text_color="?attr/bg_primary"
         app:bsb_max="153"
+        app:bsb_min="0"
         app:bsb_second_track_color="?attr/seek_bar_active_style"
         app:bsb_section_text_position="bottom_sides"
         app:bsb_show_progress_in_float="false"
+        app:bsb_section_text_color="?attr/seek_bar_active_style"
         app:bsb_show_section_mark="false"
         app:bsb_show_section_text="true"
         app:bsb_show_thumb_text="true"
