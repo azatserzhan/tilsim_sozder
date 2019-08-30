@@ -16,6 +16,8 @@ import kz.tilsimsozder.R
 import kz.tilsimsozder.bots.contract.BotContract
 import kz.tilsimsozder.bots.model.Bot
 import kz.tilsimsozder.bots.presenter.BotPresenter
+import kz.tilsimsozder.preference.FragmentName
+import kz.tilsimsozder.preference.SharedPreference
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class BotFragment : BaseFragment<BotContract.View, BotContract.Presenter>(),
@@ -29,6 +31,11 @@ class BotFragment : BaseFragment<BotContract.View, BotContract.Presenter>(),
     override val presenter: BotContract.Presenter
         get() = presenterImpl
     private var botAdapter: BotAdapter? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        context?.let { SharedPreference(it).setCurrentFragmentName(FragmentName.BOT.ordinal) }
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
             inflater.inflate(R.layout.fragment_bots, container, false)

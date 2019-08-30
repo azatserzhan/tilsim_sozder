@@ -21,6 +21,8 @@ import kotlinx.android.synthetic.main.item_change_tilsim.*
 import kz.azatserzhanov.test.common.BaseFragment
 import kz.tilsimsozder.R
 import kz.tilsimsozder.firebase.Analytics
+import kz.tilsimsozder.preference.FragmentName
+import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsim.contract.TilsimContract
 import kz.tilsimsozder.tilsim.model.Tilsim
@@ -48,13 +50,17 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
     private var cardAdapter: TilsimAdapter? = null
     private val analytics = Analytics()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        context?.let { SharedPreference(it).setCurrentFragmentName(FragmentName.TILSIM.ordinal) }
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return inflater.inflate(R.layout.fragment_tilsim, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         setupCardStackView()
         setupService()

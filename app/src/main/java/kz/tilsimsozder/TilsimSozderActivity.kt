@@ -2,7 +2,6 @@ package kz.tilsimsozder
 
 import android.content.Context
 import android.content.Intent
-import android.content.res.Resources
 import android.net.Uri
 import android.os.Bundle
 import android.util.AttributeSet
@@ -17,7 +16,9 @@ import kz.tilsimsozder.bots.ui.BotFragment
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.news.ui.NewsFragment
 import kz.tilsimsozder.prayers.ui.PrayersFragment
+import kz.tilsimsozder.preference.FragmentName
 import kz.tilsimsozder.preference.SharedPreference
+import kz.tilsimsozder.tilsim.model.Tilsim
 import kz.tilsimsozder.tilsim.ui.TilsimFragment
 import kz.tilsimsozder.tilsimsozder.ui.TilsimsozderFragment
 
@@ -34,7 +35,13 @@ class TilsimSozderActivity : BaseActivity() {
         setupStyle()
         setupNavMenu()
 
-        replaceFragment(PrayersFragment.create())
+        when (SharedPreference(this).getCurrentFragmentName()){
+            FragmentName.PRAYER.ordinal -> replaceFragment(PrayersFragment.create())
+            FragmentName.TILSIM.ordinal -> replaceFragment(TilsimFragment.create())
+            FragmentName.BOT.ordinal -> replaceFragment(BotFragment.create())
+            FragmentName.NEWS.ordinal -> replaceFragment(NewsFragment.create())
+            else -> replaceFragment(TilsimFragment.create())
+        }
 
     }
 
@@ -44,7 +51,6 @@ class TilsimSozderActivity : BaseActivity() {
         setSupportActionBar(toolbar)
         tilsimDrawerLayout.openDrawer(Gravity.LEFT)
         SharedPreference(baseContext).setIsTilsimPage(true)
-        addFragment(TilsimsozderFragment.newInstance())
     }
 
     override fun onBackPressed() {
@@ -62,9 +68,9 @@ class TilsimSozderActivity : BaseActivity() {
 
     private fun setupStyle() {
         if (isThemeDark) {
-            this?.setTheme(R.style.CustomThemeDark)
+            this.setTheme(R.style.CustomThemeDark)
         } else {
-            this?.setTheme(R.style.CustomThemeLight)
+            this.setTheme(R.style.CustomThemeLight)
         }
     }
 

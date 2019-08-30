@@ -10,6 +10,8 @@ import kz.azatserzhanov.test.common.BaseFragment
 import kz.tilsimsozder.R
 import kz.tilsimsozder.news.contract.NewsContract
 import kz.tilsimsozder.news.presenter.NewsPresenter
+import kz.tilsimsozder.preference.FragmentName
+import kz.tilsimsozder.preference.SharedPreference
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class NewsFragment : BaseFragment<NewsContract.View, NewsContract.Presenter>(),
@@ -22,6 +24,11 @@ class NewsFragment : BaseFragment<NewsContract.View, NewsContract.Presenter>(),
     private val presenterImpl: NewsPresenter by viewModel()
     override val presenter: NewsContract.Presenter
         get() = presenterImpl
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        context?.let { SharedPreference(it).setCurrentFragmentName(FragmentName.NEWS.ordinal) }
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
             inflater.inflate(R.layout.fragment_news, container, false)

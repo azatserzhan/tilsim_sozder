@@ -38,7 +38,7 @@ import kz.tilsimsozder.tilsimsozder.adapter.SelectPrayerAdapter
 class TilsimsozderFragment : Fragment(), CardStackListener {
 
     companion object {
-        fun newInstance() = TilsimsozderFragment()
+        fun create() = TilsimsozderFragment()
 
         private const val CARD_VISIBLE_ITEM_COUNT = 3
         private const val CARD_TRANSLATION_INTERVAL = 4.0f

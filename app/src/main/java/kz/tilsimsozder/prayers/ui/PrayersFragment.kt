@@ -18,6 +18,8 @@ import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.prayers.adapter.PrayerAdapter
 import kz.tilsimsozder.prayers.contract.PrayersContract
 import kz.tilsimsozder.prayers.presenter.PrayersPresenter
+import kz.tilsimsozder.preference.FragmentName
+import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.tilsimsozder.model.Prayer
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -39,6 +41,7 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        context?.let { SharedPreference(it).setCurrentFragmentName(FragmentName.PRAYER.ordinal) }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
