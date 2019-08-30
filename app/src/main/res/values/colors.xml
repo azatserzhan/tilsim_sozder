@@ -23,6 +23,9 @@
     <color name="bg_active_light">#FFFFFF</color>
     <color name="bg_active_dark">#004d40</color>
 
+    <color name="text_header_light">#214446</color>
+    <color name="text_header_dark">#ffffff</color>
+
     <color name="text_body_light">#000000</color>
     <color name="text_body_dark">#ffffff</color>
 
@@ -31,4 +34,7 @@
 
     <color name="seek_bar_style_light">#303F9F</color>
     <color name="seek_bar_style_dark">#004d40</color>
+
+    <color name="seek_bar_active_style_light">#ed731c</color>
+    <color name="seek_bar_active_style_dark">#39796b</color>
 </resources>
