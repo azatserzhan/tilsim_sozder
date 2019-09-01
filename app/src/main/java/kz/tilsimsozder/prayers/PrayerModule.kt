@@ -1,6 +1,6 @@
 package kz.tilsimsozder.prayers
 
-import kz.azatserzhanov.test.common.InjectionModule
+import kz.tilsimsozder.common.InjectionModule
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.prayers.presenter.PrayersPresenter
 import org.koin.dsl.module

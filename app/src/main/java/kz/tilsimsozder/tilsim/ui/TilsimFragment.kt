@@ -8,8 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DefaultItemAnimator
-import com.afollestad.materialdialogs.MaterialDialog
-import com.afollestad.materialdialogs.bottomsheets.BottomSheet
 import com.xw.repo.BubbleSeekBar
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
@@ -17,8 +15,9 @@ import com.yuyakaido.android.cardstackview.Direction
 import com.yuyakaido.android.cardstackview.StackFrom
 import kotlinx.android.synthetic.main.fragment_tilsim.*
 import kotlinx.android.synthetic.main.item_change_tilsim.*
-import kz.azatserzhanov.test.common.BaseFragment
+import kz.tilsimsozder.common.BaseFragment
 import kz.tilsimsozder.R
+import kz.tilsimsozder.common.BaseBottomSheetDialog
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.preference.FragmentName
 import kz.tilsimsozder.preference.SharedPreference
@@ -34,6 +33,7 @@ private const val CARD_TRANSLATION_INTERVAL = 4.0f
 private const val CARD_SCALE_INTERVAL = 0.95f
 private const val CARD_SWIPE_THRESHOLD = 0.3f
 private const val CARD_MAX_DEGREE = -30.0f
+private const val TILSIM_DIALOG_FRAGMENT = "TILSIM_DIALOG_FRAGMENT"
 
 class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presenter>(),
         TilsimContract.View, CardStackListener {
@@ -133,16 +133,12 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
     }
 
     override fun showDialog(tilsim: Tilsim) {
-        MaterialDialog(requireContext(), BottomSheet()).show {
-            cornerRadius(16f)
-            title(text = tilsim.title)
-            message(text = "${tilsim.body} \n ${tilsim.note}")
-
-            positiveButton(text = "Бөлісу")
-            positiveButton {
-                showShare(tilsim.title, tilsim.body)
-            }
-        }
+        val bottomSheetDialogFragment =
+                BaseBottomSheetDialog.create(TilsimDialogFragment.create(
+                        tilsim.title,
+                        tilsim.body + "\n" + tilsim.note
+                ))
+        bottomSheetDialogFragment.show(childFragmentManager, TILSIM_DIALOG_FRAGMENT)
     }
 
     /*Care Stack*/

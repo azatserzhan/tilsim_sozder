@@ -1,7 +1,7 @@
 package kz.tilsimsozder.prayers.contract
 
-import kz.azatserzhanov.test.common.MvpPresenter
-import kz.azatserzhanov.test.common.MvpView
+import kz.tilsimsozder.common.MvpPresenter
+import kz.tilsimsozder.common.MvpView
 import kz.tilsimsozder.prayers.model.Prayer
 
 interface PrayersContract {

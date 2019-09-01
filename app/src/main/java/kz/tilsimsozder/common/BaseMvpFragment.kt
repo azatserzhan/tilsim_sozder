@@ -1,4 +1,4 @@
-package kz.azatserzhanov.test.common
+package kz.tilsimsozder.common
 
 import android.os.Bundle
 import android.view.View

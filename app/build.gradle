@@ -7,17 +7,28 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "kz.tilsimsozder"
-        minSdkVersion 26
+        minSdkVersion 21
         targetSdkVersion 28
-        versionCode 13
-        versionName '1.1.13'
+        versionCode 17
+        versionName '1.1.16'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled = true
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    androidExtensions {
+        experimental = true
     }
 }
 

@@ -1,4 +1,4 @@
-package kz.azatserzhanov.test.common
+package kz.tilsimsozder.common
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable

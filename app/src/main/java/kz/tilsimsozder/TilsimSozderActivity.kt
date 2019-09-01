@@ -10,7 +10,7 @@ import android.view.View
 import androidx.core.view.GravityCompat
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.nav_view
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.tilsimDrawerLayout
-import kz.azatserzhanov.test.common.BaseActivity
+import kz.tilsimsozder.common.BaseActivity
 import kz.tilsimsozder.bots.ui.BotFragment
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.news.ui.NewsFragment

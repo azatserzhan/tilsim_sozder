@@ -1,7 +1,7 @@
 package kz.tilsimsozder.bots.presenter
 
 import android.content.Context
-import kz.azatserzhanov.test.common.BasePresenter
+import kz.tilsimsozder.common.BasePresenter
 import kz.tilsimsozder.R
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.bots.contract.BotContract

@@ -1,6 +1,6 @@
 package kz.tilsimsozder.news
 
-import kz.azatserzhanov.test.common.InjectionModule
+import kz.tilsimsozder.common.InjectionModule
 import kz.tilsimsozder.news.presenter.NewsPresenter
 import org.koin.dsl.module
 

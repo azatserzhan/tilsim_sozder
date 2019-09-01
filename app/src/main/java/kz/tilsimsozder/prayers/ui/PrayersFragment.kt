@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_prayers.bodyTextView
 import kotlinx.android.synthetic.main.fragment_prayers.prayerListRecyclerView
 import kotlinx.android.synthetic.main.fragment_prayers.shareImageView
 import kotlinx.android.synthetic.main.fragment_prayers.slidingDrawer
-import kz.azatserzhanov.test.common.BaseFragment
+import kz.tilsimsozder.common.BaseFragment
 import kz.tilsimsozder.R
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.prayers.adapter.PrayerAdapter

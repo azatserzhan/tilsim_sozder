@@ -1,10 +1,7 @@
 package kz.tilsimsozder.tilsim.presenter
 
 import android.content.Context
-import android.content.Intent
-import com.afollestad.materialdialogs.MaterialDialog
-import com.afollestad.materialdialogs.bottomsheets.BottomSheet
-import kz.azatserzhanov.test.common.BasePresenter
+import kz.tilsimsozder.common.BasePresenter
 import kz.tilsimsozder.R
 import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsim.contract.TilsimContract

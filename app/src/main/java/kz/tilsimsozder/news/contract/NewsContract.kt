@@ -1,7 +1,7 @@
 package kz.tilsimsozder.news.contract
 
-import kz.azatserzhanov.test.common.MvpPresenter
-import kz.azatserzhanov.test.common.MvpView
+import kz.tilsimsozder.common.MvpPresenter
+import kz.tilsimsozder.common.MvpView
 
 interface NewsContract {
 
