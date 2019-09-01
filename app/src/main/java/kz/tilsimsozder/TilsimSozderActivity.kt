@@ -32,17 +32,17 @@ class TilsimSozderActivity : BaseActivity() {
         SharedPreference(baseContext).setIsTilsimPage(true)
         setupService()
 
-        when (SharedPreference(baseContext).getCurrentFragmentName()){
+        isThemeDark = SharedPreference(this).getIsThemeDark()
+        setupStyle()
+        setupNavMenu()
+
+        when (SharedPreference(baseContext).getCurrentFragmentName()) {
             FragmentName.PRAYER.ordinal -> replaceFragment(PrayersFragment.create())
             FragmentName.TILSIM.ordinal -> replaceFragment(TilsimFragment.create())
             FragmentName.BOT.ordinal -> replaceFragment(BotFragment.create())
             FragmentName.NEWS.ordinal -> replaceFragment(NewsFragment.create())
             else -> replaceFragment(TilsimFragment.create())
         }
-
-        isThemeDark = SharedPreference(this).getIsThemeDark()
-        setupStyle()
-        setupNavMenu()
     }
 
     override fun onCreateView(name: String?, context: Context?, attrs: AttributeSet?): View? {
@@ -73,13 +73,13 @@ class TilsimSozderActivity : BaseActivity() {
         }
     }
 
-    private fun setupService(){
+    private fun setupService() {
         val service = Intent(baseContext, TilsimService::class.java)
         stopService(service)
         startService(service)
     }
 
-    private fun setupNavMenu(){
+    private fun setupNavMenu() {
         nav_view.setNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_prayer -> {
@@ -120,8 +120,7 @@ class TilsimSozderActivity : BaseActivity() {
                         SharedPreference(this.baseContext).setTheme(true)
                     }
 
-                    finish()
-                    startActivity(intent)
+                    recreate()
                 }
             }
             tilsimDrawerLayout.closeDrawer(GravityCompat.START)
