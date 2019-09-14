@@ -9,10 +9,10 @@ android {
         applicationId "kz.tilsimsozder"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 17
-        versionName '1.1.17'
+        versionCode 18
+        versionName '1.1.18'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        multiDexEnabled = true
+        multiDexEnabled = false
     }
     buildTypes {
         release {
@@ -29,6 +29,10 @@ android {
     }
     androidExtensions {
         experimental = true
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
     }
 }
 
@@ -65,7 +69,7 @@ dependencies {
     implementation "org.koin:koin-androidx-viewmodel:2.0.1"
 
     //mockk
-    implementation "io.mockk:mockk:1.9.3"
+    // implementation "io.mockk:mockk:1.9.3"
 
     //ui
     implementation 'com.xw.repo:bubbleseekbar:3.20'

@@ -49,7 +49,7 @@ class TilsimSozderActivity : BaseActivity() {
         return super.onCreateView(name, context, attrs)
 
         // setSupportActionBar(toolbar)
-        tilsimDrawerLayout.openDrawer(Gravity.LEFT)
+        // tilsimDrawerLayout.openDrawer(Gravity.LEFT)
     }
 
     override fun onBackPressed() {

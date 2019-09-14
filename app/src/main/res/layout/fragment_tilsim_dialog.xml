@@ -24,16 +24,21 @@
         android:layout_height="1dp"
         android:background="?attr/divider_style" />
 
-    <TextView
-        android:id="@+id/bodyTextView"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/bg_primary"
-        android:justificationMode="inter_word"
-        android:padding="16dp"
-        android:text="Description"
-        android:textAlignment="center"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="?attr/text_header" />
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/bodyTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/bg_primary"
+            android:justificationMode="inter_word"
+            android:padding="16dp"
+            android:text="Description"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="?attr/text_header" />
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>
