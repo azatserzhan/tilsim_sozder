@@ -3,16 +3,14 @@ package kz.tilsimsozder.prayers.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.select_prayer.view.prayerNameTextView
-import kotlinx.android.synthetic.main.select_prayer.view.selectPrayerLinearLayout
+import kotlinx.android.synthetic.main.select_prayer.view.*
 import kz.tilsimsozder.R
 import kz.tilsimsozder.prayers.model.Prayer
 
-/**
- * Created by azatserzhanov on 13.12.15.
- */
+
 class PrayerAdapter(
-        private val clickListener: (position: Int) -> Unit
+        private val textClickListener: (position: Int) -> Unit,
+        private val favouriteClickListener: (position: Int) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val prayers = mutableListOf<Prayer>()
@@ -25,7 +23,11 @@ class PrayerAdapter(
     override fun getItemCount(): Int = prayers.size
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        (holder as SelectPrayerViewHolder).bind(prayers[position], clickListener)
+        (holder as SelectPrayerViewHolder).bind(
+                prayers[position],
+                textClickListener,
+                favouriteClickListener
+        )
     }
 
     fun addItems(list: List<Prayer>) {
@@ -37,11 +39,19 @@ class PrayerAdapter(
             RecyclerView.ViewHolder(inflater.inflate(R.layout.select_prayer, parent, false)) {
         private val prayerNameTextView = itemView.prayerNameTextView
         private val selectPrayerLinearLayout = itemView.selectPrayerLinearLayout
+        private val favouriteImageView = itemView.favouriteImageView
 
-        fun bind(prayer: Prayer, clickListener: (position: Int) -> Unit) {
+        fun bind(
+                prayer: Prayer,
+                textClickListener: (position: Int) -> Unit,
+                favouriteClickListener: (position: Int) -> Unit
+        ) {
             prayerNameTextView.text = prayer.title
             selectPrayerLinearLayout.setOnClickListener {
-                clickListener(adapterPosition)
+                textClickListener(adapterPosition)
+            }
+            favouriteImageView.setOnClickListener {
+                favouriteClickListener(adapterPosition)
             }
         }
     }

@@ -59,8 +59,11 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
 
 
         prayerAdapter = PrayerAdapter(
-                clickListener = {
+                textClickListener = {
                     selectPrayer(it)
+                },
+                favouriteClickListener = {
+
                 })
 
         val selectPrayerManager = LinearLayoutManager(context)
