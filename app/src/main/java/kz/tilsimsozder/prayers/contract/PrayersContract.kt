@@ -16,10 +16,11 @@ interface PrayersContract {
 
     interface Presenter : MvpPresenter<View> {
         fun loadPrayers()
-        fun selectedPrayer(position: Int)
+        fun selectedPrayer(title: String, body: String)
         fun setAdapter(prayers: List<Prayer>)
         fun sharePrayer()
         fun nextPrayer()
         fun prevPrayer()
+        fun sortPrayer(newText: String)
     }
 }

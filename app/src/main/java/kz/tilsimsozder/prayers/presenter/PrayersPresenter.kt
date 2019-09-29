@@ -1,5 +1,6 @@
 package kz.tilsimsozder.prayers.presenter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import kz.tilsimsozder.common.BasePresenter
 import kz.tilsimsozder.R
@@ -14,28 +15,28 @@ class PrayersPresenter(private val analytics: Analytics, val context: Context) :
 
     private var prayersTitle = listOf<String>()
     private var prayersBody = listOf<String>()
+    private var prayers = mutableListOf<Prayer>()
     private var positionPrayer = 0
 
     override fun loadPrayers() {
         prayersTitle = context.applicationContext.resources.getStringArray(R.array.prayer_name).toList()
         prayersBody = context.applicationContext.resources.getStringArray(R.array.prayer_value).toList()
 
-        val prayers = prayersTitle
+        prayers = prayersTitle
                 .map { Prayer(it, "") }
                 .toList()
                 .apply {
                     this.forEachIndexed { index, tilsimsoz ->
-                        tilsimsoz.content = prayersBody[index]
+                        tilsimsoz.body = prayersBody[index]
                     }
                 }
+                .toMutableList()
+
         view?.showPrayers(prayers)
     }
 
-    override fun selectedPrayer(position: Int) {
-        view?.showPrayerDialog(prayersTitle[position], prayersBody[position])
-        //view?.updatePrayer(prayersTitle[position], prayersBody[position])
-        //analytics.showPrayer(prayersTitle[position])
-        positionPrayer = position
+    override fun selectedPrayer(title: String, body: String) {
+        view?.showPrayerDialog(title, body)
     }
 
     override fun setAdapter(prayers: List<Prayer>) {
@@ -63,6 +64,14 @@ class PrayersPresenter(private val analytics: Analytics, val context: Context) :
 
         view?.showPrayer(prayersTitle[positionPrayer], prayersBody[positionPrayer])
         analytics.showPrayer(prayersTitle[positionPrayer])
+    }
+
+    @SuppressLint("DefaultLocale")
+    override fun sortPrayer(newText: String) {
+        val sorted: List<Prayer> = prayers.filter {
+            newText.toLowerCase() in it.title.toLowerCase() ||  newText.toLowerCase() in it.body.toLowerCase()
+        }
+        view?.showPrayers(sorted)
     }
 
 }

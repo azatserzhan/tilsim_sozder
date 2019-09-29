@@ -62,8 +62,8 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
 
 
         prayerAdapter = PrayerAdapter(
-                textClickListener = {
-                    selectPrayer(it)
+                textClickListener = {title, body ->
+                    presenter.selectedPrayer(title, body)
                 },
                 favouriteClickListener = {
 
@@ -103,6 +103,7 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
 
             override fun onQueryTextChange(newText: String): Boolean {
                 Log.d("azat", newText)
+                presenter.sortPrayer(newText)
                 return false
             }
         })
@@ -110,10 +111,6 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
         searchPrayer.setOnClickListener{
             searchPrayer.onActionViewExpanded()
         }
-    }
-
-    private fun selectPrayer(position: Int) {
-        presenter.selectedPrayer(position)
     }
 
     override fun showPrayers(prayers: List<Prayer>) {

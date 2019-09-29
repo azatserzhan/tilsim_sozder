@@ -9,7 +9,7 @@ import kz.tilsimsozder.prayers.model.Prayer
 
 
 class PrayerAdapter(
-        private val textClickListener: (position: Int) -> Unit,
+        private val textClickListener: (title: String, body: String) -> Unit,
         private val favouriteClickListener: (position: Int) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -31,6 +31,7 @@ class PrayerAdapter(
     }
 
     fun addItems(list: List<Prayer>) {
+        prayers.clear()
         prayers.addAll(list)
         notifyDataSetChanged()
     }
@@ -43,12 +44,12 @@ class PrayerAdapter(
 
         fun bind(
                 prayer: Prayer,
-                textClickListener: (position: Int) -> Unit,
+                textClickListener: (title: String, body: String) -> Unit,
                 favouriteClickListener: (position: Int) -> Unit
         ) {
             prayerNameTextView.text = prayer.title
             selectPrayerLinearLayout.setOnClickListener {
-                textClickListener(adapterPosition)
+                textClickListener(prayer.title, prayer.body)
             }
             favouriteImageView.setOnClickListener {
                 favouriteClickListener(adapterPosition)
