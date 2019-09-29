@@ -46,7 +46,7 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
     override val presenter: TilsimContract.Presenter
         get() = presenterImpl
 
-    private var cardAdapter: TilsimAdapter? = null
+    private var adapter: TilsimAdapter? = null
     private val analytics = Analytics()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,7 +66,7 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
         presenter.setupBubbleSeekBar()
 
         randomButton.setOnClickListener {
-            cardAdapter?.setRandomPosition()
+            adapter?.setRandomPosition()
             analytics.randomButtonClicked()
             changeTilsimBubbleSeekBar.setProgress(TilsimService.RANDOM_TILSIM.toFloat())
         }
@@ -78,7 +78,7 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
 
     /*Tilsim*/
     override fun showTilsim(tilsimList: List<Tilsim>) {
-        cardAdapter?.addItems(tilsimList)
+        adapter?.addItems(tilsimList)
         Log.d("azat", "showTilsim")
     }
 
@@ -168,7 +168,7 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
         cardManager.setCanScrollHorizontal(true)
         cardManager.setCanScrollVertical(true)
 
-        cardAdapter = TilsimAdapter(
+        adapter = TilsimAdapter(
                 counterListener = {
                     changeTilsimLinearLayout.isVisible = true
                 },
@@ -179,7 +179,7 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
                     presenter.shareTilsim(it)
                 })
 
-        card_stack_view.adapter = cardAdapter
+        card_stack_view.adapter = adapter
         card_stack_view.layoutManager = cardManager
         card_stack_view.itemAnimator.apply {
             if (this is DefaultItemAnimator) {

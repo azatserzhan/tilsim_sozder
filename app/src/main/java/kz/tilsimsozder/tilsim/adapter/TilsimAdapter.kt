@@ -37,6 +37,7 @@ class TilsimAdapter(
     override fun getItemCount(): Int = tilsimList.size
 
     fun addItems(list: List<Tilsim>) {
+        tilsimList.clear()
         tilsimList.addAll(list)
         notifyDataSetChanged()
     }
