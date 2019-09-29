@@ -34,6 +34,7 @@ class TilsimSozderActivity : BaseActivity() {
         setContentView(R.layout.tilsim_sozder_activity)
 
         SharedPreference(baseContext).setIsTilsimPage(true)
+        SharedPreference(baseContext).setTheme(false)
         setupService()
 
         isThemeDark = SharedPreference(this).getIsThemeDark()
