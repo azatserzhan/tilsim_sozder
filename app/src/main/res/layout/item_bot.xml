@@ -1,32 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="170dp"
-    android:layout_height="170dp"
-    android:layout_margin="12dp"
-    android:background="?attr/bg_primary"
-    app:cardCornerRadius="12dp">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:layout_marginStart="24dp"
+    android:layout_marginEnd="24dp"
+    android:background="@drawable/bubble_service"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:orientation="horizontal"
+    android:padding="8dp">
 
-    <ImageView
-        android:id="@+id/botImageView"
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:background="@drawable/bubble_service"
+        android:padding="1dp"
+        app:cardCornerRadius="12dp">
+
+        <ImageView
+            android:id="@+id/botImageView"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            tools:background="@drawable/bot" />
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:foreground="?android:attr/selectableItemBackground"
-        android:scaleType="centerCrop"
-        tools:background="@drawable/bot" />
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/botTitleTextView"
-        android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/botTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:background="?attr/bg_active"
+            android:fontFamily="sans-serif"
+            android:padding="10dp"
+            android:text="Astana"
+            android:textColor="?attr/text_body"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/botDescriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:background="?attr/bg_active"
+            android:fontFamily="sans-serif"
+            android:padding="10dp"
+            android:text="Description"
+            android:textColor="?attr/text_body"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/shareImageView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="?attr/bg_active"
-        android:fontFamily="sans-serif"
-        android:padding="10dp"
-        android:text="Astana"
-        android:textColor="?attr/text_body"
-        android:textSize="18sp" />
+        android:background="@drawable/ic_share" />
 
-</androidx.cardview.widget.CardView>
+</LinearLayout>

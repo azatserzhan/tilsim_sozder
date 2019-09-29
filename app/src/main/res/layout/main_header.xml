@@ -3,9 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?attr/bg_primary"
+    android:orientation="horizontal"
     android:paddingTop="24dp"
-    android:paddingBottom="14dp"
-    android:orientation="horizontal">
+    android:paddingBottom="14dp">
+
 
     <TextView
         android:id="@+id/mainHeaderTextView"
@@ -18,15 +20,13 @@
         android:textSize="28sp"
         tools:text="Бахаи дұғалары" />
 
-
     <ImageView
         android:id="@+id/settingsImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="6dp"
         android:layout_gravity="center"
         android:layout_marginEnd="24dp"
+        android:padding="6dp"
         android:src="@drawable/ic_settings" />
-
 
 </LinearLayout>
