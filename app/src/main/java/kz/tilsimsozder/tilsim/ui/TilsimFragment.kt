@@ -26,6 +26,7 @@ import kz.tilsimsozder.tilsim.contract.TilsimContract
 import kz.tilsimsozder.tilsim.model.Tilsim
 import kz.tilsimsozder.tilsim.presenter.TilsimPresenter
 import kz.tilsimsozder.tilsim.adapter.TilsimAdapter
+import kz.tilsimsozder.tilsim.ui.TilsimDialogFragment.Companion.TILSIM_DIALOG_FRAGMENT
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 private const val CARD_VISIBLE_ITEM_COUNT = 3
@@ -33,7 +34,6 @@ private const val CARD_TRANSLATION_INTERVAL = 4.0f
 private const val CARD_SCALE_INTERVAL = 0.95f
 private const val CARD_SWIPE_THRESHOLD = 0.3f
 private const val CARD_MAX_DEGREE = -30.0f
-private const val TILSIM_DIALOG_FRAGMENT = "TILSIM_DIALOG_FRAGMENT"
 
 class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presenter>(),
         TilsimContract.View, CardStackListener {

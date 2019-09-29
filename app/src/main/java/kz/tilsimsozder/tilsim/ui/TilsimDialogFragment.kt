@@ -14,6 +14,7 @@ private const val TILSIM_BODY = "TILSIM_BODY"
 class TilsimDialogFragment : Fragment() {
 
     companion object {
+        const val TILSIM_DIALOG_FRAGMENT = "TILSIM_DIALOG_FRAGMENT"
         fun create(title: String, body: String) = TilsimDialogFragment().apply {
             arguments = Bundle().apply {
                 putString(TILSIM_TITLE, title)

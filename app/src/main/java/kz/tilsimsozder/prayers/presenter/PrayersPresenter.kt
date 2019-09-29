@@ -32,8 +32,9 @@ class PrayersPresenter(private val analytics: Analytics, val context: Context) :
     }
 
     override fun selectedPrayer(position: Int) {
-        view?.updatePrayer(prayersTitle[position], prayersBody[position])
-        analytics.showPrayer(prayersTitle[position])
+        view?.showPrayerDialog(prayersTitle[position], prayersBody[position])
+        //view?.updatePrayer(prayersTitle[position], prayersBody[position])
+        //analytics.showPrayer(prayersTitle[position])
         positionPrayer = position
     }
 
