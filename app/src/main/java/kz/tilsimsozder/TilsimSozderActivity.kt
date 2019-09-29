@@ -18,6 +18,7 @@ import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsim.ui.TilsimFragment
 import androidx.viewpager.widget.ViewPager
+import kotlinx.android.synthetic.main.main_header.mainHeaderTextView
 
 private const val PRAYER_PAGE_ID = 0
 private const val TILSIM_PAGE_ID = 1
@@ -41,6 +42,8 @@ class TilsimSozderActivity : BaseActivity() {
         setupStyle()
         setupNavMenu()
         setupViewPager()
+        setupIconMenu(PRAYER_PAGE_ID)
+        setupHeader(PRAYER_PAGE_ID)
 
         when (SharedPreference(baseContext).getCurrentFragmentName()) {
             FragmentName.PRAYER.ordinal -> replaceFragment(PrayersFragment.create())
@@ -139,6 +142,7 @@ class TilsimSozderActivity : BaseActivity() {
 
                 override fun onPageSelected(position: Int) {
                     setupIconMenu(position)
+                    setupHeader(position)
                 }
 
                 override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
@@ -176,6 +180,15 @@ class TilsimSozderActivity : BaseActivity() {
             SERVICE_PAGE_ID -> menuItemService.background = getDrawable(R.drawable.ic_service_active)
         }
 
+    }
+
+    private fun setupHeader(position: Int){
+        when(position){
+            PRAYER_PAGE_ID -> mainHeaderTextView.text = getText(R.string.prayer_title)
+            TILSIM_PAGE_ID -> mainHeaderTextView.text = getText(R.string.tilsim_sozder_title)
+            NEWS_PAGE_ID -> mainHeaderTextView.text = getText(R.string.news_title)
+            SERVICE_PAGE_ID -> mainHeaderTextView.text = getText(R.string.service_title)
+        }
     }
 }
 

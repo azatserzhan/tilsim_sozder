@@ -24,7 +24,7 @@
     <color name="bg_active_light">#FFFFFF</color>
     <color name="bg_active_dark">#302F2F</color>
 
-    <color name="text_header_light">#214446</color>
+    <color name="text_header_light">#3D3D3D</color>
     <color name="text_header_dark">#ffffff</color>
 
     <color name="text_body_light">#000000</color>

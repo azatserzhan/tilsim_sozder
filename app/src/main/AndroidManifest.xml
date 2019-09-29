@@ -21,7 +21,7 @@
         <activity
             android:name=".TilsimSozderActivity"
             android:label="@string/app_name"
-            android:theme="@style/CustomThemeDark">
+            android:theme="@style/CustomThemeLight">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

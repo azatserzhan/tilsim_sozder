@@ -20,7 +20,7 @@
         Бұл – иззат* патшалығынан келіп түскен, құдiрет пен қуат тiлiмен, бағзы заманның Пайғамбарларына ашылған. Олар Құдай Өсиетiне адал болып, өз өмiрлерiнде Оның аманатын орындап, рух патшалығында Тәңірлік* қасиеттің асыл тасына жетулері үшін Біз оның негізгі мәнін ғана алып, тақуаларға* деген рақымдылық нышаны ретінде ықшамдық желеңіне орадық.
     </string>
 
-    <string name="prayer_title">БАҺАИ ДҰҒАЛАРЫ</string>
+    <string name="prayer_title">Баһаи дұғалары</string>
     <string name="prayer_content">Баһаулланың, Бабтың және Абдул-Баһаның ашқан таңдамалы дұғалары
         \n\nҚұдайды еске алып, Оны мақтан еткен жер мен үй, мекен, шаһар мен жүрек, тау мен тас, үңгір менен баспана, кең алқап пен шөл дала, теңіз бен арал, көкорай шалғынға нұр жаусын!\n
         \nБаһаулла
@@ -40,5 +40,7 @@
     <string name="nav_header_subtitle">azatserzhan@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="news_title">Жаңалықтар</string>
+    <string name="service_title">Сервистер</string>
 
 </resources>
