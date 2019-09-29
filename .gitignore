@@ -2,6 +2,9 @@
 *.apk
 *.ap_
 *.aab
+*.bin
+*.lock
+*.ser
 
 # Files for the ART/Dalvik VM
 *.dex
