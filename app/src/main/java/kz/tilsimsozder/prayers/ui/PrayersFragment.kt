@@ -2,9 +2,11 @@ package kz.tilsimsozder.prayers.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_prayers.*
@@ -83,6 +85,24 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
             navigationFrameLayout.isVisible = !navigationFrameLayout.isVisible
             bottomMenuButton.isVisible = !bottomMenuButton.isVisible
             seekBarMain.isVisible = !seekBarMain.isVisible
+        }
+
+        /*new*/
+        searchPrayer.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
+                androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                Log.d("azat", query)
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                Log.d("azat", newText)
+                return false
+            }
+        })
+
+        searchPrayer.setOnClickListener{
+            searchPrayer.onActionViewExpanded()
         }
     }
 

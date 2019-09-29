@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.select_prayer.view.prayerNameTextView
-import kotlinx.android.synthetic.main.select_prayer.view.prayerNumberTextView
 import kotlinx.android.synthetic.main.select_prayer.view.selectPrayerLinearLayout
 import kz.tilsimsozder.R
 import kz.tilsimsozder.prayers.model.Prayer
@@ -36,13 +35,11 @@ class PrayerAdapter(
 
     private class SelectPrayerViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
             RecyclerView.ViewHolder(inflater.inflate(R.layout.select_prayer, parent, false)) {
-        private val prayerNumberTextView = itemView.prayerNumberTextView
         private val prayerNameTextView = itemView.prayerNameTextView
         private val selectPrayerLinearLayout = itemView.selectPrayerLinearLayout
 
         fun bind(prayer: Prayer, clickListener: (position: Int) -> Unit) {
             prayerNameTextView.text = prayer.title
-            prayerNumberTextView.text = adapterPosition.toString()
             selectPrayerLinearLayout.setOnClickListener {
                 clickListener(adapterPosition)
             }

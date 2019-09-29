@@ -4,34 +4,48 @@
     android:id="@+id/selectPrayerLinearLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bubble_select_prayer"
     android:clickable="true"
     android:elevation="3dp"
     android:focusable="true"
     android:gravity="center"
+    android:orientation="vertical"
     tools:ignore="UnusedAttribute">
 
-    <TextView
-        android:id="@+id/prayerNumberTextView"
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
-        android:textColor="?attr/text_body"
-        android:layout_gravity="right|center"
-        android:gravity="right|center"
-        android:text="1"
-        android:textSize="17sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bubble_select_prayer"
+        tools:ignore="UseCompoundDrawables">
 
-    <TextView
-        android:id="@+id/prayerNameTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:paddingLeft="30dp"
-        android:textColor="?attr/text_body"
-        android:paddingTop="20dp"
-        android:paddingRight="30dp"
-        android:paddingBottom="20dp"
-        android:text="@string/prayer_title"
-        android:textSize="17sp" />
+        <TextView
+            android:id="@+id/prayerNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingLeft="24dp"
+            android:paddingTop="20dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="20dp"
+            android:text="@string/prayer_title"
+            android:textColor="?attr/text_header"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="14dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_star" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@color/divider_prayer" />
 
 </LinearLayout>
