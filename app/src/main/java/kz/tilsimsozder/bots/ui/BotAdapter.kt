@@ -37,6 +37,7 @@ class BotAdapter(
     private class BotViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
             RecyclerView.ViewHolder(inflater.inflate(R.layout.item_bot, parent, false)) {
         private val botTitleTextView = itemView.botTitleTextView
+        private val botDescriptionTextView = itemView.botDescriptionTextView
         private val botImageView = itemView.botImageView
         private val serviceContainer = itemView.serviceContainer
         private val shareImageView = itemView.shareImageView
@@ -47,6 +48,7 @@ class BotAdapter(
                 shareListener: (url: String) -> Unit
         ) {
             botTitleTextView.text = bot.title
+            botDescriptionTextView.text = bot.description
             botImageView.setBackgroundResource(bot.imageRes)
             serviceContainer.setOnClickListener { clickListener(adapterPosition) }
             shareImageView.setOnClickListener { shareListener("${bot.title}\n ${bot.url}") }
