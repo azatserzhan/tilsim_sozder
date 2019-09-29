@@ -45,10 +45,13 @@ class BotFragment : BaseFragment<BotContract.View, BotContract.Presenter>(),
         botAdapter = BotAdapter(
                 clickListener = {
                     openBot(botAdapter?.getItem(it))
+                },
+                shareListener = {
+                    share(it)
                 }
         )
 
-        var botManager = FlexboxLayoutManager(context)
+        val botManager = FlexboxLayoutManager(context)
         botManager.flexDirection = FlexDirection.ROW
         botManager.justifyContent = JustifyContent.CENTER
 
@@ -67,5 +70,13 @@ class BotFragment : BaseFragment<BotContract.View, BotContract.Presenter>(),
     private fun openBot(bot: Bot?) {
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(bot?.url))
         startActivity(intent)
+    }
+
+    private fun share(url: String) {
+        val shareIntent = Intent()
+        shareIntent.action = Intent.ACTION_SEND
+        shareIntent.putExtra(Intent.EXTRA_TEXT, url)
+        shareIntent.type = "text/plain"
+        context?.startActivity(shareIntent)
     }
 }

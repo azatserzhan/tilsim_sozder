@@ -9,7 +9,8 @@ import kz.tilsimsozder.bots.model.Bot
 
 
 class BotAdapter(
-        private val clickListener: (position: Int) -> Unit
+        private val clickListener: (position: Int) -> Unit,
+        private val shareListener: (url: String) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val bots = mutableListOf<Bot>()
@@ -22,7 +23,7 @@ class BotAdapter(
     override fun getItemCount(): Int = bots.size
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        (holder as BotViewHolder).bind(bots[position], clickListener)
+        (holder as BotViewHolder).bind(bots[position], clickListener, shareListener)
     }
 
     fun addItems(list: List<Bot>) {
@@ -37,13 +38,20 @@ class BotAdapter(
             RecyclerView.ViewHolder(inflater.inflate(R.layout.item_bot, parent, false)) {
         private val botTitleTextView = itemView.botTitleTextView
         private val botImageView = itemView.botImageView
+        private val serviceContainer = itemView.serviceContainer
+        private val shareImageView = itemView.shareImageView
 
-        fun bind(bot: Bot, clickListener: (position: Int) -> Unit) {
+        fun bind(
+                bot: Bot,
+                clickListener: (position: Int) -> Unit,
+                shareListener: (url: String) -> Unit
+        ) {
             botTitleTextView.text = bot.title
             botImageView.setBackgroundResource(bot.imageRes)
-            botImageView.setOnClickListener {
-                clickListener(adapterPosition)
-            }
+            serviceContainer.setOnClickListener { clickListener(adapterPosition) }
+            shareImageView.setOnClickListener { shareListener("${bot.title}\n ${bot.url}") }
+
+
         }
     }
 }
