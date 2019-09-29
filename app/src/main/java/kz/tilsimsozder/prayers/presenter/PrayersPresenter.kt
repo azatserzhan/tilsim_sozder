@@ -7,6 +7,7 @@ import kz.tilsimsozder.R
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.prayers.contract.PrayersContract
 import kz.tilsimsozder.prayers.model.Prayer
+import kz.tilsimsozder.preference.SharedPreference
 
 private const val URL_APP = "https://play.google.com/store/apps/details?id=kz.tilsimsozder"
 
@@ -34,6 +35,12 @@ class PrayersPresenter(
                     }
                 }
                 .toMutableList()
+
+        val favouriteIds = SharedPreference(context).getFavourites()
+        favouriteIds?.forEach { id ->
+            prayers.firstOrNull { it.id == id }?.isFavourite = true
+        }
+        prayers.sortBy { !it.isFavourite }
 
         view?.showPrayers(prayers)
     }
@@ -85,7 +92,11 @@ class PrayersPresenter(
         }
         prayers.sortBy { !it.isFavourite }
 
+        val favouriteIds = prayers.filter { it.isFavourite }.map { it.id }
+        SharedPreference(context).setFavourites(favouriteIds)
+
         view?.showPrayers(prayers)
+        view?.scrollToTop()
     }
 
 }

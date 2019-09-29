@@ -144,4 +144,8 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
                 ))
         bottomSheetDialogFragment.show(childFragmentManager, TILSIM_DIALOG_FRAGMENT)
     }
+
+    override fun scrollToTop() {
+        prayerListRecyclerView.smoothScrollToPosition(0)
+    }
 }

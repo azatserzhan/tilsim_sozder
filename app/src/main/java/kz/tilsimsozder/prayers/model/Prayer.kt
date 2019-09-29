@@ -1,9 +1,9 @@
 package kz.tilsimsozder.prayers.model
 
-import java.util.*
+private var idCounter = 0
 
 data class Prayer(
-        var id: String = UUID.randomUUID().toString(),
+        var id: String = (idCounter ++).toString(),
         val title: String,
         var body: String,
         var isFavourite: Boolean = false

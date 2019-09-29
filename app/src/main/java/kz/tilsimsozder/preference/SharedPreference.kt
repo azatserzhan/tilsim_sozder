@@ -6,6 +6,7 @@ import android.preference.PreferenceManager
 private const val PREF_KEY_IS_TILSIM_PAGE = "PREF_KEY_IS_TILSIM_PAGE"
 private const val PREF_KEY_IS_DARK_THEME = "PREF_KEY_IS_DARK_THEME"
 private const val PREF_KEY_CURRENT_FRAGMENT_NAME = "PREF_KEY_CURRENT_FRAGMENT_NAME"
+private const val PREF_KEY_FAVOURITE_IDS = "PREF_KEY_FAVOURITE_IDS"
 
 class SharedPreference(context: Context) {
     private val prefs = PreferenceManager.getDefaultSharedPreferences(context)
@@ -33,6 +34,16 @@ class SharedPreference(context: Context) {
     }
 
     fun getCurrentFragmentName(): Int = prefs.getInt(PREF_KEY_CURRENT_FRAGMENT_NAME, 0)
+
+    fun setFavourites(favouriteIds: List<String>) {
+        val editor = prefs.edit()
+        val set = HashSet<String>()
+        set.addAll(favouriteIds)
+        editor.putStringSet(PREF_KEY_FAVOURITE_IDS, set)
+        editor.apply()
+    }
+
+    fun getFavourites() = prefs.getStringSet(PREF_KEY_FAVOURITE_IDS, null)
 }
 
 enum class FragmentName {

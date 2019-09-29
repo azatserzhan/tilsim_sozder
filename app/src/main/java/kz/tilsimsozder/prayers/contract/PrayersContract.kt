@@ -12,6 +12,7 @@ interface PrayersContract {
         fun sharePrayer(urlApp: String, title: String, body: String)
         fun showPrayer(title: String, body: String)
         fun showPrayerDialog(title: String, body: String)
+        fun scrollToTop()
     }
 
     interface Presenter : MvpPresenter<View> {
