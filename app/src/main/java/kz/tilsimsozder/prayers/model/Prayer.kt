@@ -1,3 +1,10 @@
 package kz.tilsimsozder.prayers.model
 
-data class Prayer(val title: String, var body: String)
+import java.util.*
+
+data class Prayer(
+        var id: String = UUID.randomUUID().toString(),
+        val title: String,
+        var body: String,
+        var isFavourite: Boolean = false
+)

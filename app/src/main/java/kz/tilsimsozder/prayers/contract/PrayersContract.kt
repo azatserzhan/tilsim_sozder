@@ -22,5 +22,6 @@ interface PrayersContract {
         fun nextPrayer()
         fun prevPrayer()
         fun sortPrayer(newText: String)
+        fun setFavourite(id: String)
     }
 }

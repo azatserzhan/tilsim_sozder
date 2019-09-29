@@ -65,8 +65,8 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
                 textClickListener = {title, body ->
                     presenter.selectedPrayer(title, body)
                 },
-                favouriteClickListener = {
-
+                favouriteClickListener = { id ->
+                    presenter.setFavourite(id)
                 })
 
         val selectPrayerManager = LinearLayoutManager(context)
