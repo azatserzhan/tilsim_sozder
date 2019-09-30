@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <com.androidessence.pinchzoomtextview.PinchZoomTextView
                 android:id="@+id/bodyTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
