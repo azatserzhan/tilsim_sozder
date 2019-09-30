@@ -1,12 +1,11 @@
 package kz.tilsimsozder.tilsim.presenter
 
 import android.content.Context
-import kz.tilsimsozder.common.BasePresenter
 import kz.tilsimsozder.R
+import kz.tilsimsozder.common.BasePresenter
 import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsim.contract.TilsimContract
 import kz.tilsimsozder.tilsim.model.Tilsim
-
 
 class TilsimPresenter(private val context: Context) : BasePresenter<TilsimContract.View>(),
         TilsimContract.Presenter {
@@ -16,7 +15,7 @@ class TilsimPresenter(private val context: Context) : BasePresenter<TilsimContra
     private var notesTitle = listOf<String>()
     private var notesBody = listOf<String>()
     private var tilsimList = mutableListOf<Tilsim>()
-    private var positionTilsim = 0
+    private var counter = 0
 
     override fun loadTilsim() {
         tilsimTitle = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_title).toList()
@@ -24,8 +23,10 @@ class TilsimPresenter(private val context: Context) : BasePresenter<TilsimContra
         notesTitle = context.applicationContext.resources.getStringArray(R.array.notes_title).toList()
         notesBody = context.applicationContext.resources.getStringArray(R.array.notes_value).toList()
 
+        tilsimList.clear()
+        counter = 0
         tilsimList.addAll(
-                tilsimTitle.map { Tilsim(it, "") }
+                tilsimTitle.map { Tilsim(it, "", position = counter++) }
                         .toList()
                         .apply {
                             this.forEachIndexed { index, tilsimsoz ->
