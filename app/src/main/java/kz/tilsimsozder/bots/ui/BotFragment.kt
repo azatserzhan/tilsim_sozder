@@ -6,9 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.android.flexbox.FlexDirection
-import com.google.android.flexbox.FlexboxLayoutManager
-import com.google.android.flexbox.JustifyContent
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_bots.*
 import kz.tilsimsozder.common.BaseFragment
 import kz.tilsimsozder.R
@@ -51,10 +49,7 @@ class BotFragment : BaseFragment<BotContract.View, BotContract.Presenter>(),
                 }
         )
 
-        val botManager = FlexboxLayoutManager(context)
-        botManager.flexDirection = FlexDirection.ROW
-        botManager.justifyContent = JustifyContent.CENTER
-
+        val botManager = LinearLayoutManager(context)
         botRecyclerView.apply {
             layoutManager = botManager
             adapter = botAdapter

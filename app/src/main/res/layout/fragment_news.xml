@@ -8,8 +8,10 @@
     android:background="@color/menu_text_white"
     tools:context="kz.tilsimsozder.TilsimSozderActivity">
 
-    <WebView
-        android:id="@+id/newsWebView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/newsRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:background="?attr/bg_primary"
+        tools:listitem="@layout/item_bot" />
 </FrameLayout>

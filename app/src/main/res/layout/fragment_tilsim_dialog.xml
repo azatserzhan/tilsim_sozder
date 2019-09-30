@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/bg_dialog"
     android:orientation="vertical"
     android:padding="1dp">
@@ -12,12 +13,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        tools:text="Header"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="?attr/text_header"
         android:textSize="22sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:text="Header" />
 
 
     <View
@@ -31,8 +32,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/bodyTextView"
@@ -44,15 +45,15 @@
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="?attr/text_header"
-                tools:text="Description"
-                tools:ignore="UnusedAttribute" />
+                tools:ignore="UnusedAttribute"
+                tools:text="Description" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:background="?attr/divider_style"/>
+                android:background="?attr/divider_style" />
 
             <LinearLayout
                 android:id="@+id/shareContainer"
@@ -65,12 +66,12 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="?attr/text_body"
-                    android:textSize="17sp"
                     android:paddingTop="18dp"
-                    android:textAlignment="textEnd"
                     android:paddingBottom="18dp"
-                    android:text="@string/dialog_share" />
+                    android:text="@string/dialog_share"
+                    android:textAlignment="textEnd"
+                    android:textColor="?attr/text_body"
+                    android:textSize="17sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -79,7 +80,6 @@
                     android:src="@drawable/ic_share"
                     tools:ignore="ContentDescription" />
             </LinearLayout>
-
 
 
             <LinearLayout
@@ -93,12 +93,12 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="?attr/text_body"
-                    android:textSize="17sp"
                     android:paddingTop="18dp"
-                    android:textAlignment="textEnd"
                     android:paddingBottom="18dp"
-                    android:text="@string/dialog_copy" />
+                    android:text="@string/dialog_copy"
+                    android:textAlignment="textEnd"
+                    android:textColor="?attr/text_body"
+                    android:textSize="17sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -119,12 +119,12 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="?attr/text_body"
-                    android:textSize="17sp"
-                    android:textAlignment="textEnd"
                     android:paddingTop="18dp"
                     android:paddingBottom="18dp"
-                    android:text="@string/dialog_abuse" />
+                    android:text="@string/dialog_abuse"
+                    android:textAlignment="textEnd"
+                    android:textColor="?attr/text_body"
+                    android:textSize="17sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
