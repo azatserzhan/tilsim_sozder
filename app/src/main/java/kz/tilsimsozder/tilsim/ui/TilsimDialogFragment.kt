@@ -1,5 +1,6 @@
 package kz.tilsimsozder.tilsim.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -35,5 +36,22 @@ class TilsimDialogFragment : Fragment() {
 
         titleTextView.text = title
         bodyTextView.text = body
+
+        shareContainer.setOnClickListener {
+            val shareIntent = Intent()
+            val shareText = "$title + \n $body \n https://play.google.com/store/apps/details?id=kz.tilsimsozder"
+            shareIntent.action = Intent.ACTION_SEND
+            shareIntent.putExtra(Intent.EXTRA_TEXT, shareText)
+            shareIntent.type = "text/plain"
+            context?.startActivity(shareIntent)
+        }
+
+        sendErrorContainer.setOnClickListener {
+            //TODO: отправь в группу Telegram
+        }
+
+        copyContainer.setOnClickListener {
+            //TODO: скопируй
+        }
     }
 }

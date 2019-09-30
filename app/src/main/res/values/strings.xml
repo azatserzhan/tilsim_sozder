@@ -42,5 +42,8 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="news_title">Жаңалықтар</string>
     <string name="service_title">Сервистер</string>
+    <string name="dialog_share">Бөлісу</string>
+    <string name="dialog_copy">Көшіру</string>
+    <string name="dialog_abuse">Қате туралы хабар беру</string>
 
 </resources>
