@@ -27,6 +27,8 @@
         android:layout_gravity="center"
         android:layout_marginEnd="24dp"
         android:padding="6dp"
+        android:visibility="gone"
+        tools:visibility="visible"
         android:src="@drawable/ic_settings" />
 
 </LinearLayout>
