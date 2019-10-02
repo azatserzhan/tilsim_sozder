@@ -1,12 +1,20 @@
 package kz.tilsimsozder.tilsim.ui
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context.CLIPBOARD_SERVICE
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.fragment_tilsim_dialog.*
+import kotlinx.android.synthetic.main.fragment_tilsim_dialog.bodyTextView
+import kotlinx.android.synthetic.main.fragment_tilsim_dialog.copyContainer
+import kotlinx.android.synthetic.main.fragment_tilsim_dialog.sendErrorContainer
+import kotlinx.android.synthetic.main.fragment_tilsim_dialog.shareContainer
+import kotlinx.android.synthetic.main.fragment_tilsim_dialog.titleTextView
 import kz.tilsimsozder.R
 
 private const val TILSIM_TITLE = "TILSIM_TITLE"
@@ -51,7 +59,15 @@ class TilsimDialogFragment : Fragment() {
         }
 
         copyContainer.setOnClickListener {
-            //TODO: скопируй
+            val myClipboard = context?.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+            val myClip = ClipData.newPlainText("text", title + body)
+            myClipboard.primaryClip = myClip
+
+            val text = requireContext().getString(R.string.dialog_copied)
+            val duration = Toast.LENGTH_SHORT
+
+            val toast = Toast.makeText(requireContext(), text, duration)
+            toast.show()
         }
     }
 }
