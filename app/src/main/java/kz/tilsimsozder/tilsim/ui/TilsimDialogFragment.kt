@@ -4,6 +4,7 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context.CLIPBOARD_SERVICE
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -55,7 +56,11 @@ class TilsimDialogFragment : Fragment() {
         }
 
         sendErrorContainer.setOnClickListener {
-            //TODO: отправь в группу Telegram
+            val emailIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                "mailto", "azatserzhan@gmail.com", null))
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, requireContext().getString(R.string.dialog_abuse))
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "$title \n $body")
+            startActivity(Intent.createChooser(emailIntent, "Хат жазу..."))
         }
 
         copyContainer.setOnClickListener {
