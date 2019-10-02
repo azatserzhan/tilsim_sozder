@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import kotlinx.android.synthetic.main.fragment_news_dialog.exitImageView
 import kotlinx.android.synthetic.main.fragment_news_dialog.newsWebView
-import kotlinx.android.synthetic.main.fragment_tilsim_dialog.*
+import kotlinx.android.synthetic.main.fragment_tilsim_dialog.titleTextView
 import kz.tilsimsozder.R
 
 private const val URL_TITLE = "URL_TITLE"
@@ -42,5 +44,9 @@ class NewsDialogFragment : Fragment() {
         newsWebView.loadUrl(url)
         newsWebView.settings.javaScriptEnabled = true
         newsWebView.webViewClient = WebViewClient()
+
+        exitImageView.setOnClickListener {
+            (parentFragment as? BottomSheetDialogFragment)?.dialog?.cancel()
+        }
     }
 }

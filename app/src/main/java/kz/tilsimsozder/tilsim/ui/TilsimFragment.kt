@@ -13,19 +13,21 @@ import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.Direction
 import com.yuyakaido.android.cardstackview.StackFrom
-import kotlinx.android.synthetic.main.fragment_tilsim.*
-import kotlinx.android.synthetic.main.item_change_tilsim.*
-import kz.tilsimsozder.common.BaseFragment
+import kotlinx.android.synthetic.main.fragment_tilsim.card_stack_view
+import kotlinx.android.synthetic.main.fragment_tilsim.randomButton
+import kotlinx.android.synthetic.main.item_change_tilsim.changeTilsimBubbleSeekBar
+import kotlinx.android.synthetic.main.item_change_tilsim.changeTilsimLinearLayout
 import kz.tilsimsozder.R
 import kz.tilsimsozder.common.BaseBottomSheetDialog
+import kz.tilsimsozder.common.BaseFragment
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.preference.FragmentName
 import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.service.TilsimService
+import kz.tilsimsozder.tilsim.adapter.TilsimAdapter
 import kz.tilsimsozder.tilsim.contract.TilsimContract
 import kz.tilsimsozder.tilsim.model.Tilsim
 import kz.tilsimsozder.tilsim.presenter.TilsimPresenter
-import kz.tilsimsozder.tilsim.adapter.TilsimAdapter
 import kz.tilsimsozder.tilsim.ui.TilsimDialogFragment.Companion.TILSIM_DIALOG_FRAGMENT
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -164,8 +166,7 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
         cardManager.setScaleInterval(CARD_SCALE_INTERVAL)
         cardManager.setSwipeThreshold(CARD_SWIPE_THRESHOLD)
         cardManager.setMaxDegree(CARD_MAX_DEGREE)
-        cardManager.setDirections(Direction.FREEDOM)
-        cardManager.setCanScrollHorizontal(true)
+        cardManager.setDirections(Direction.VERTICAL)
         cardManager.setCanScrollVertical(true)
 
         adapter = TilsimAdapter(
