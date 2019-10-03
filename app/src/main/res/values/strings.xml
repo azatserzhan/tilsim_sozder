@@ -46,5 +46,6 @@
     <string name="dialog_copy">Көшіру</string>
     <string name="dialog_abuse">Қате туралы хабар беру</string>
     <string name="dialog_copied">Көшірілді</string>
+    <string name="tilsim_choose">Тылсым сөзді таңдау</string>
 
 </resources>

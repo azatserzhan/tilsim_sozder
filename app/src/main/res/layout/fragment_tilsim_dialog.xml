@@ -42,7 +42,6 @@
                 android:background="?attr/bg_primary"
                 android:justificationMode="inter_word"
                 android:padding="16dp"
-                android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="?attr/text_header"
                 tools:ignore="UnusedAttribute"

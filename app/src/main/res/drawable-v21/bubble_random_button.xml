@@ -12,10 +12,9 @@
     </item>
     <item android:id="@android:id/background">
         <shape android:shape="rectangle">
-            <solid android:color="?attr/bg_active" />
+            <solid android:color="@color/colorPrimary" />
             <corners
-                android:radius="18dp"
-                android:topRightRadius="4dp" />
+                android:radius="12dp" />
         </shape>
     </item>
 </ripple>
