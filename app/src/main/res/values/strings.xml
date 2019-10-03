@@ -47,5 +47,10 @@
     <string name="dialog_abuse">Қате туралы хабар беру</string>
     <string name="dialog_copied">Көшірілді</string>
     <string name="tilsim_choose">Тылсым сөзді таңдау</string>
-
+    <string name="title_activity_settings">Settings</string>
+    <string name="settings_night">Түнгі стильді қосу</string>
+    <string name="settings_language">Тілді өзгерту</string>
+    <string name="settings_share">Қосымшамен бөлісу</string>
+    <string name="settings_feature">Қосымшаға қатысты өзгерістер ұсыну</string>
+    <string name="settings_play_market">Play Market-те баға беру</string>
 </resources>

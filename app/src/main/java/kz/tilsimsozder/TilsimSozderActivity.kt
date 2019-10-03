@@ -7,18 +7,24 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import kotlinx.android.synthetic.main.tilsim_sozder_activity.*
-import kz.tilsimsozder.common.BaseActivity
+import androidx.viewpager.widget.ViewPager
+import kotlinx.android.synthetic.main.main_header.mainHeaderTextView
+import kotlinx.android.synthetic.main.main_header.settingsImageView
+import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemNews
+import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemPrayer
+import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemService
+import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemTilsim
+import kotlinx.android.synthetic.main.tilsim_sozder_activity.nav_view
+import kotlinx.android.synthetic.main.tilsim_sozder_activity.tilsimDrawerLayout
+import kotlinx.android.synthetic.main.tilsim_sozder_activity.viewPager
 import kz.tilsimsozder.bots.ui.BotFragment
+import kz.tilsimsozder.common.BaseActivity
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.news.ui.NewsFragment
 import kz.tilsimsozder.prayers.ui.PrayersFragment
-import kz.tilsimsozder.preference.FragmentName
 import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsim.ui.TilsimFragment
-import androidx.viewpager.widget.ViewPager
-import kotlinx.android.synthetic.main.main_header.mainHeaderTextView
 
 private const val PRAYER_PAGE_ID = 0
 private const val TILSIM_PAGE_ID = 1
@@ -35,7 +41,7 @@ class TilsimSozderActivity : BaseActivity() {
         setContentView(R.layout.tilsim_sozder_activity)
 
         SharedPreference(baseContext).setIsTilsimPage(true)
-        SharedPreference(baseContext).setTheme(false)
+        // SharedPreference(baseContext).setTheme(false)
         setupService()
 
         isThemeDark = SharedPreference(this).getIsThemeDark()
@@ -45,12 +51,9 @@ class TilsimSozderActivity : BaseActivity() {
         setupIconMenu(PRAYER_PAGE_ID)
         setupHeader(PRAYER_PAGE_ID)
 
-        when (SharedPreference(baseContext).getCurrentFragmentName()) {
-            FragmentName.PRAYER.ordinal -> replaceFragment(PrayersFragment.create())
-            FragmentName.TILSIM.ordinal -> replaceFragment(TilsimFragment.create())
-            FragmentName.BOT.ordinal -> replaceFragment(BotFragment.create())
-            FragmentName.NEWS.ordinal -> replaceFragment(NewsFragment.create())
-            else -> replaceFragment(TilsimFragment.create())
+        settingsImageView.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -100,8 +103,8 @@ class TilsimSozderActivity : BaseActivity() {
                     val sendIntent = Intent()
                     sendIntent.action = Intent.ACTION_SEND
                     sendIntent.putExtra(
-                            Intent.EXTRA_TEXT,
-                            "https://play.google.com/store/apps/details?id=kz.tilsimsozder"
+                        Intent.EXTRA_TEXT,
+                        "https://play.google.com/store/apps/details?id=kz.tilsimsozder"
                     )
                     sendIntent.type = "text/plain"
                     startActivity(sendIntent)
@@ -109,7 +112,7 @@ class TilsimSozderActivity : BaseActivity() {
                 }
                 R.id.nav_send -> {
                     val emailIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                            "mailto", "azatserzhan@gmail.com", null))
+                        "mailto", "azatserzhan@gmail.com", null))
                     emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Бахаи дұғалары жайлы пікір")
                     emailIntent.putExtra(Intent.EXTRA_TEXT, "Осында хатыңызды жазыңыз")
                     startActivity(Intent.createChooser(emailIntent, "Хат жазу..."))
@@ -179,11 +182,10 @@ class TilsimSozderActivity : BaseActivity() {
             NEWS_PAGE_ID -> menuItemNews.background = getDrawable(R.drawable.ic_news_active)
             SERVICE_PAGE_ID -> menuItemService.background = getDrawable(R.drawable.ic_service_active)
         }
-
     }
 
-    private fun setupHeader(position: Int){
-        when(position){
+    private fun setupHeader(position: Int) {
+        when (position) {
             PRAYER_PAGE_ID -> mainHeaderTextView.text = getText(R.string.prayer_title)
             TILSIM_PAGE_ID -> mainHeaderTextView.text = getText(R.string.tilsim_sozder_title)
             NEWS_PAGE_ID -> mainHeaderTextView.text = getText(R.string.news_title)
@@ -193,7 +195,7 @@ class TilsimSozderActivity : BaseActivity() {
 }
 
 internal class ViewPagerAdapter(
-        fragmentManager: FragmentManager
+    fragmentManager: FragmentManager
 ) : FragmentPagerAdapter(fragmentManager) {
     private var count = 4
 

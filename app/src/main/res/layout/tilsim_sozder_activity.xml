@@ -6,89 +6,91 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.drawerlayout.widget.DrawerLayout
-        android:id="@+id/tilsimDrawerLayout"
+    <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"
-        android:fitsSystemWindows="true"
-        tools:context=".TilsimSozderActivity"
-        tools:openDrawer="start">
+        android:layout_height="match_parent">
 
-        <FrameLayout
-            android:id="@+id/container"
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/tilsimDrawerLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/nav_view"
-            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="start"
+            android:visibility="gone"
             android:fitsSystemWindows="true"
-            app:headerLayout="@layout/nav_header_main"
-            app:menu="@menu/activity_main_drawer" />
+            tools:context=".TilsimSozderActivity"
+            tools:openDrawer="start">
 
-    </androidx.drawerlayout.widget.DrawerLayout>
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/nav_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:fitsSystemWindows="true"
+                app:headerLayout="@layout/nav_header_main"
+                app:menu="@menu/activity_main_drawer" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <include layout="@layout/main_header"/>
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-        </androidx.viewpager.widget.ViewPager>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/menu_divider"/>
+        </androidx.drawerlayout.widget.DrawerLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:gravity="center"
-            android:layout_height="50dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/menuItemPrayer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:layout_marginEnd="60dp"
-                android:background="@drawable/ic_prayer"
-                tools:ignore="ContentDescription" />
+            <include layout="@layout/main_header"/>
 
-            <ImageView
-                android:id="@+id/menuItemTilsim"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:layout_marginEnd="60dp"
-                android:background="@drawable/ic_tilsim"
-                tools:ignore="ContentDescription" />
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+            </androidx.viewpager.widget.ViewPager>
 
-            <ImageView
-                android:id="@+id/menuItemNews"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:layout_marginEnd="60dp"
-                android:background="@drawable/ic_news"
-                tools:ignore="ContentDescription" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/menu_divider"/>
 
-            <ImageView
-                android:id="@+id/menuItemService"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/ic_service"
-                tools:ignore="ContentDescription" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/menuItemPrayer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginEnd="60dp"
+                    android:background="@drawable/ic_prayer"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/menuItemTilsim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginEnd="60dp"
+                    android:background="@drawable/ic_tilsim"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/menuItemNews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginEnd="60dp"
+                    android:background="@drawable/ic_news"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/menuItemService"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@drawable/ic_service"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+
+    </FrameLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
