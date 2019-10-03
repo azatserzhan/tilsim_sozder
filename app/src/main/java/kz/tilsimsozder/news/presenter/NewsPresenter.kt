@@ -10,7 +10,7 @@ import kz.tilsimsozder.news.contract.NewsContract
 private const val URL_NEWS = "http://bahai.kz/?page_id=19&lang=kk"
 
 class NewsPresenter(private val analytics: Analytics, val context: Context) : BasePresenter<NewsContract.View>(),
-        NewsContract.Presenter {
+    NewsContract.Presenter {
 
     override fun loadNews() {
         val bots = listOf(
@@ -30,7 +30,13 @@ class NewsPresenter(private val analytics: Analytics, val context: Context) : Ba
                     "Орыс тілінде",
                 "https://bicentenary.bahai.org/ru/the-bab/",
                 R.drawable.ic_bab
-            )
+            ),
+            Bot("YouTube: Бахаи Казахстана",
+                "",
+                "https://www.youtube.com/channel/UCSOVNuKVx_HovSbTpRZnt3Q", R.drawable.youtube_bahai_channel),
+            Bot("Instagram: kazakhstan_bahai",
+                "",
+                "https://www.instagram.com/kazakhstan_bahai/", R.drawable.insta_bahai_channel)
         )
 
         view?.showNews(bots)
