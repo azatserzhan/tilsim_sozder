@@ -30,8 +30,9 @@ class SettingsActivity : AppCompatActivity() {
             adapter = settingsAdapter
         }
 
+        val isDarkTheme = SharedPreference(this).getIsThemeDark()
         val items = listOf(
-            SettingsItem(getString(R.string.settings_night), R.drawable.ic_night, true),
+            SettingsItem(getString(R.string.settings_night), R.drawable.ic_night, true, isDarkTheme),
             SettingsItem(getString(R.string.settings_language), R.drawable.ic_language, false),
             SettingsItem(getString(R.string.settings_share), R.drawable.ic_share_blue, false),
             SettingsItem(getString(R.string.settings_feature), R.drawable.ic_telegram, false),

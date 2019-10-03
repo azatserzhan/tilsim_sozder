@@ -43,9 +43,11 @@ class SettingsAdapter(
 
         fun bind(settings: SettingsItem, textClickListener: (position: Int) -> Unit) {
             settingsContainer.setOnClickListener { textClickListener(adapterPosition) }
+            switchView.setOnClickListener { textClickListener(adapterPosition) }
             contentTextView.text = settings.title
             thumbImageView.setImageDrawable(itemView.context.getDrawable(settings.icon))
             switchView.isVisible = settings.isSwitchVisible
+            switchView.isChecked = settings.isDarkTheme
         }
     }
 }
