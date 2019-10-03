@@ -1,7 +1,6 @@
 package kz.tilsimsozder
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
@@ -14,7 +13,6 @@ import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemNews
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemPrayer
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemService
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemTilsim
-import kotlinx.android.synthetic.main.tilsim_sozder_activity.nav_view
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.tilsimDrawerLayout
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.viewPager
 import kz.tilsimsozder.bots.ui.BotFragment
@@ -46,7 +44,6 @@ class TilsimSozderActivity : BaseActivity() {
 
         isThemeDark = SharedPreference(this).getIsThemeDark()
         setupStyle()
-        setupNavMenu()
         setupViewPager()
         setupIconMenu(PRAYER_PAGE_ID)
         setupHeader(PRAYER_PAGE_ID)
@@ -82,57 +79,6 @@ class TilsimSozderActivity : BaseActivity() {
         val service = Intent(baseContext, TilsimService::class.java)
         stopService(service)
         startService(service)
-    }
-
-    private fun setupNavMenu() {
-        nav_view.setNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_prayer -> {
-                    replaceFragment(PrayersFragment.create())
-                }
-                R.id.nav_tilsim_sozder -> {
-                    replaceFragment(TilsimFragment.create())
-                }
-                R.id.nav_news -> {
-                    replaceFragment(NewsFragment.create())
-                }
-                R.id.nav_bots -> {
-                    replaceFragment(BotFragment.create())
-                }
-                R.id.nav_share -> {
-                    val sendIntent = Intent()
-                    sendIntent.action = Intent.ACTION_SEND
-                    sendIntent.putExtra(
-                        Intent.EXTRA_TEXT,
-                        "https://play.google.com/store/apps/details?id=kz.tilsimsozder"
-                    )
-                    sendIntent.type = "text/plain"
-                    startActivity(sendIntent)
-                    analytics.shareApp()
-                }
-                R.id.nav_send -> {
-                    val emailIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                        "mailto", "azatserzhan@gmail.com", null))
-                    emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Бахаи дұғалары жайлы пікір")
-                    emailIntent.putExtra(Intent.EXTRA_TEXT, "Осында хатыңызды жазыңыз")
-                    startActivity(Intent.createChooser(emailIntent, "Хат жазу..."))
-                    analytics.sendEmail()
-                }
-                R.id.nav_change_theme -> {
-                    if (isThemeDark) {
-                        SharedPreference(this.baseContext).setTheme(false)
-                    } else {
-                        SharedPreference(this.baseContext).setTheme(true)
-                    }
-
-                    recreate()
-                }
-            }
-            tilsimDrawerLayout.closeDrawer(GravityCompat.START)
-            item.isChecked = true
-            true
-
-        }
     }
 
     private fun setupViewPager() {
