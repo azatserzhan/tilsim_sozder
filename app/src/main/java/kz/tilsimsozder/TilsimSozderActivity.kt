@@ -35,6 +35,12 @@ class TilsimSozderActivity : BaseActivity() {
     private var isThemeDark: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.setTheme(
+            if (SharedPreference(this).getIsThemeDark()) {
+                R.style.CustomThemeDark
+            } else {
+                R.style.CustomThemeLight
+            })
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tilsim_sozder_activity)
 
@@ -43,7 +49,7 @@ class TilsimSozderActivity : BaseActivity() {
         setupService()
 
         isThemeDark = SharedPreference(this).getIsThemeDark()
-        setupStyle()
+        // setupStyle()
         setupViewPager()
         setupIconMenu(PRAYER_PAGE_ID)
         setupHeader(PRAYER_PAGE_ID)
