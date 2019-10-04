@@ -26,7 +26,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="CustomThemeLight" parent="Theme.AppCompat">
+    <style name="CustomThemeLight" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="bg_primary">@color/bg_primary_light</item>
         <item name="bg_active">@color/bg_active_light</item>
         <item name="text_body">@color/text_body_light</item>

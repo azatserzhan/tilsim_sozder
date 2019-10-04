@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ripple
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="?attr/colorPrimary">
+    android:color="?attr/color_primary">
     <item android:id="@android:id/background">
         <shape android:shape="rectangle">
             <solid android:color="?attr/bg_primary" />
