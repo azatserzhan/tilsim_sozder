@@ -73,14 +73,6 @@ class TilsimSozderActivity : BaseActivity() {
         SharedPreference(baseContext).setIsTilsimPage(false)
     }
 
-    private fun setupStyle() {
-        if (isThemeDark) {
-            this.setTheme(R.style.CustomThemeDark)
-        } else {
-            this.setTheme(R.style.CustomThemeLight)
-        }
-    }
-
     private fun setupService() {
         val service = Intent(baseContext, TilsimService::class.java)
         stopService(service)

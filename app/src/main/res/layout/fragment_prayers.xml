@@ -24,6 +24,7 @@
         android:id="@+id/prayerListRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="?attr/bg_primary"
         tools:listitem="@layout/select_prayer"/>
 
 

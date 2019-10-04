@@ -15,6 +15,9 @@
         <item name="divider_style">@color/divider_style_dark</item>
         <item name="seek_bar_style">@color/seek_bar_style_dark</item>
         <item name="seek_bar_active_style">@color/seek_bar_active_style_dark</item>
+        <item name="menu_icon">@color/menu_icon_dark</item>
+        <item name="color_primary">@color/gold</item>
+        <item name="color_star">@android:color/white</item>
 
 
 
@@ -23,7 +26,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="CustomThemeLight" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <style name="CustomThemeLight" parent="Theme.AppCompat">
         <item name="bg_primary">@color/bg_primary_light</item>
         <item name="bg_active">@color/bg_active_light</item>
         <item name="text_body">@color/text_body_light</item>
@@ -31,6 +34,9 @@
         <item name="divider_style">@color/divider_style_light</item>
         <item name="seek_bar_style">@color/seek_bar_style_light</item>
         <item name="seek_bar_active_style">@color/seek_bar_active_style_light</item>
+        <item name="menu_icon">@color/menu_icon_light</item>
+        <item name="color_primary">@color/colorPrimary</item>
+        <item name="color_star">@android:color/black</item>
 
 
 

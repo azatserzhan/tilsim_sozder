@@ -7,4 +7,7 @@
     <attr name="divider_style" format="reference|color" />
     <attr name="seek_bar_style" format="reference|color" />
     <attr name="seek_bar_active_style" format="reference|color" />
+    <attr name="menu_icon" format="reference|color" />
+    <attr name="color_primary" format="reference|color" />
+    <attr name="color_star" format="reference|color" />
 </resources>

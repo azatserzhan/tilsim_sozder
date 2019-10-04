@@ -5,6 +5,7 @@
     <color name="colorAccent">#d0f2f8</color>
     <color name="colorNotification">#ed731c</color>
     <color name="menu_divider">#B4B4B4</color>
+    <color name="gold">#FFEB3B</color>
 
     <color name="text_blackMode">#ffffff</color>
     <color name="bg_blackMode">#75000000</color>
@@ -39,4 +40,7 @@
 
     <color name="seek_bar_active_style_light">#ed731c</color>
     <color name="seek_bar_active_style_dark">#FFEB3B</color>
+
+    <color name="menu_icon_light">#000000</color>
+    <color name="menu_icon_dark">#F2F2F2</color>
 </resources>

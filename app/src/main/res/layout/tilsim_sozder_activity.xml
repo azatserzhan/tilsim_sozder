@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="?attr/bg_primary">
 
     <FrameLayout
         android:id="@+id/container"
@@ -15,8 +16,8 @@
             android:id="@+id/tilsimDrawerLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone"
             android:fitsSystemWindows="true"
+            android:visibility="gone"
             tools:context=".TilsimSozderActivity"
             tools:openDrawer="start">
 
@@ -36,58 +37,58 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <include layout="@layout/main_header"/>
+            <include layout="@layout/main_header" />
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewPager"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
-            </androidx.viewpager.widget.ViewPager>
+                android:layout_weight="1" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/menu_divider"/>
+                android:background="@color/menu_divider" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:gravity="center"
-                android:layout_height="50dp">
+                android:layout_height="50dp"
+                android:background="?attr/bg_primary"
+                android:gravity="center">
 
                 <ImageView
                     android:id="@+id/menuItemPrayer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
                     android:layout_marginEnd="60dp"
                     android:background="@drawable/ic_prayer"
+                    android:padding="10dp"
                     tools:ignore="ContentDescription" />
 
                 <ImageView
                     android:id="@+id/menuItemTilsim"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
                     android:layout_marginEnd="60dp"
                     android:background="@drawable/ic_tilsim"
+                    android:padding="10dp"
                     tools:ignore="ContentDescription" />
 
                 <ImageView
                     android:id="@+id/menuItemNews"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
                     android:layout_marginEnd="60dp"
                     android:background="@drawable/ic_news"
+                    android:padding="10dp"
                     tools:ignore="ContentDescription" />
 
                 <ImageView
                     android:id="@+id/menuItemService"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
                     android:background="@drawable/ic_service"
+                    android:padding="10dp"
                     tools:ignore="ContentDescription" />
             </LinearLayout>
         </LinearLayout>
