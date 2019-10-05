@@ -10,7 +10,7 @@
             <corners android:radius="12dp" />
             <stroke
                 android:width="2dp"
-                android:color="@color/colorPrimary" />
+                android:color="?attr/color_primary" />
         </shape>
     </item>
 </ripple>

@@ -6,14 +6,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/bubble_tilsim"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/bubble_tilsim">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        tools:ignore="UselessLeaf">
 
     </LinearLayout>
 
@@ -37,13 +38,13 @@
         android:id="@+id/top_overlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"></FrameLayout>
+        android:visibility="visible" />
 
     <FrameLayout
         android:id="@+id/bottom_overlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"></FrameLayout>
+        android:visibility="visible" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cardStackRelativeLayout"
@@ -83,14 +84,14 @@
             android:layout_marginBottom="8dp"
             android:justificationMode="inter_word"
             android:paddingTop="5dp"
-            android:text="Content big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text"
             android:textAppearance="?android:attr/textAppearanceListItemSmall"
             android:textColor="?attr/text_body"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/cardCounterTextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+            tools:text="Content big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text big text" />
 
         <TextView
             android:id="@+id/cardCounterTextView"
@@ -128,7 +129,7 @@
             android:src="@drawable/ic_share_blue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="RtlHardcoded" />
+            tools:ignore="ContentDescription,RtlHardcoded" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
