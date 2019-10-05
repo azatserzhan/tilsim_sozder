@@ -38,6 +38,7 @@
         <item name="colorPrimaryDark">@color/bg_primary_dark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowLightStatusBar">false</item>
+        <item name="android:editTextColor">@color/gold</item>
     </style>
 
     <style name="CustomThemeLight" parent="Theme.AppCompat.Light.NoActionBar">
@@ -59,6 +60,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:statusBarColor">@color/bg_primary_light</item>
         <item name="android:windowLightStatusBar">true</item>
+        <item name="android:editTextColor">@color/text_body_light</item>
     </style>
 
     <style name="BaseBottomSheetDialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
