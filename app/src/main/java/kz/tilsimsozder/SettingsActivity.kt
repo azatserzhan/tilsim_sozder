@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.main_header.mainHeaderTextView
 import kotlinx.android.synthetic.main.main_header.settingsImageView
 import kz.tilsimsozder.prayers.model.SettingsItem
 import kz.tilsimsozder.preference.SharedPreference
-import kz.tilsimsozder.settings.adapter.SettingsAdapter
+import kz.tilsimsozder.settings.ui.SettingsAdapter
 
 class SettingsActivity : AppCompatActivity() {
 

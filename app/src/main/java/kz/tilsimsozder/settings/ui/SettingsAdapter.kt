@@ -1,4 +1,4 @@
-package kz.tilsimsozder.settings.adapter
+package kz.tilsimsozder.settings.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

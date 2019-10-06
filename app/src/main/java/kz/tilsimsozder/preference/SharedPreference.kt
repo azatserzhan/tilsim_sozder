@@ -7,8 +7,14 @@ private const val PREF_KEY_IS_TILSIM_PAGE = "PREF_KEY_IS_TILSIM_PAGE"
 private const val PREF_KEY_IS_DARK_THEME = "PREF_KEY_IS_DARK_THEME"
 private const val PREF_KEY_CURRENT_FRAGMENT_NAME = "PREF_KEY_CURRENT_FRAGMENT_NAME"
 private const val PREF_KEY_FAVOURITE_IDS = "PREF_KEY_FAVOURITE_IDS"
+private const val PREF_KEY_LANGUAGE = "PREF_KEY_LANGUAGE"
 
 class SharedPreference(context: Context) : PreferenceContract {
+    companion object{
+        const val KZ = 0
+        const val RU = 1
+        const val UZ = 2
+    }
     private val prefs = PreferenceManager.getDefaultSharedPreferences(context)
 
     override fun setIsTilsimPage(state: Boolean) {
@@ -44,6 +50,14 @@ class SharedPreference(context: Context) : PreferenceContract {
     }
 
     override fun getFavourites(): MutableSet<String>? = prefs.getStringSet(PREF_KEY_FAVOURITE_IDS, null)
+
+    override fun setLanguage(code: Int) {
+        val editor = prefs.edit()
+        editor.putInt(PREF_KEY_LANGUAGE, code)
+        editor.apply()
+    }
+
+    override fun getLanguageCode(): Int = prefs.getInt(PREF_KEY_LANGUAGE, 0)
 }
 
 enum class FragmentName {

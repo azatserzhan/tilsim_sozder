@@ -3,12 +3,18 @@ package kz.tilsimsozder.tilsim.presenter
 import android.content.Context
 import kz.tilsimsozder.R
 import kz.tilsimsozder.common.BasePresenter
+import kz.tilsimsozder.preference.PreferenceContract
+import kz.tilsimsozder.preference.SharedPreference.Companion.KZ
+import kz.tilsimsozder.preference.SharedPreference.Companion.RU
+import kz.tilsimsozder.preference.SharedPreference.Companion.UZ
 import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsim.contract.TilsimContract
 import kz.tilsimsozder.tilsim.model.Tilsim
 
-class TilsimPresenter(private val context: Context) : BasePresenter<TilsimContract.View>(),
-        TilsimContract.Presenter {
+class TilsimPresenter(
+    private val context: Context,
+    private val preference: PreferenceContract) : BasePresenter<TilsimContract.View>(),
+    TilsimContract.Presenter {
 
     private var tilsimTitle = listOf<String>()
     private var tilsimBody = listOf<String>()
@@ -18,21 +24,37 @@ class TilsimPresenter(private val context: Context) : BasePresenter<TilsimContra
     private var counter = 0
 
     override fun loadTilsim() {
-        tilsimTitle = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_title).toList()
-        tilsimBody = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_content).toList()
-        notesTitle = context.applicationContext.resources.getStringArray(R.array.notes_title).toList()
-        notesBody = context.applicationContext.resources.getStringArray(R.array.notes_value).toList()
+        when (preference.getLanguageCode()) {
+            KZ -> {
+                tilsimTitle = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_title).toList()
+                tilsimBody = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_content).toList()
+                notesTitle = context.applicationContext.resources.getStringArray(R.array.notes_title).toList()
+                notesBody = context.applicationContext.resources.getStringArray(R.array.notes_value).toList()
+            }
+            RU -> {
+                tilsimTitle = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_title).toList()
+                tilsimBody = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_content).toList()
+                notesTitle = context.applicationContext.resources.getStringArray(R.array.notes_title).toList()
+                notesBody = context.applicationContext.resources.getStringArray(R.array.notes_value).toList()
+            }
+            UZ -> {
+                tilsimTitle = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_title).toList()
+                tilsimBody = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_content).toList()
+                notesTitle = context.applicationContext.resources.getStringArray(R.array.notes_title).toList()
+                notesBody = context.applicationContext.resources.getStringArray(R.array.notes_value).toList()
+            }
+        }
 
         tilsimList.clear()
         counter = 0
         tilsimList.addAll(
-                tilsimTitle.map { Tilsim(it, "", position = counter++) }
-                        .toList()
-                        .apply {
-                            this.forEachIndexed { index, tilsimsoz ->
-                                tilsimsoz.body = tilsimBody[index]
-                            }
-                        })
+            tilsimTitle.map { Tilsim(it, "", position = counter++) }
+                .toList()
+                .apply {
+                    this.forEachIndexed { index, tilsimsoz ->
+                        tilsimsoz.body = tilsimBody[index]
+                    }
+                })
 
         tilsimList.map {
             val bodyText: MutableList<String> = it.body.split(" ").toMutableList()

@@ -8,4 +8,6 @@ interface PreferenceContract {
     fun setCurrentFragmentName(name: Int)
     fun setFavourites(favouriteIds: List<String>)
     fun getFavourites(): MutableSet<String>?
+    fun setLanguage(code: Int)
+    fun getLanguageCode(): Int
 }
