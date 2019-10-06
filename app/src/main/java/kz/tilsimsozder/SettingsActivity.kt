@@ -7,11 +7,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_settings.menuRecyclerView
 import kotlinx.android.synthetic.main.main_header.mainHeaderTextView
 import kotlinx.android.synthetic.main.main_header.settingsImageView
+import kotlinx.android.synthetic.main.settings_language.kazakhLanguage
+import kotlinx.android.synthetic.main.settings_language.russianLanguage
+import kotlinx.android.synthetic.main.settings_language.settingsLanguageContainer
+import kotlinx.android.synthetic.main.settings_language.uzbekLanguage
 import kz.tilsimsozder.common.BaseActivity
 import kz.tilsimsozder.prayers.model.SettingsItem
 import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.settings.ui.SettingsAdapter
-import kz.tilsimsozder.settings.ui.SettingsFragment
 
 class SettingsActivity : BaseActivity() {
 
@@ -27,7 +30,6 @@ class SettingsActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_settings)
-        replaceFragment(SettingsFragment.create())
 
         settingsAdapter = SettingsAdapter(
             menuItemListener = { openMenu(it) }
@@ -51,6 +53,16 @@ class SettingsActivity : BaseActivity() {
         settingsAdapter?.addItems(items)
         mainHeaderTextView.text = "Баптау"
         settingsImageView.isVisible = false
+
+        setupLanguages()
+
+    }
+
+    override fun onBackPressed() {
+        finish()
+        val intent = Intent(this, TilsimSozderActivity::class.java)
+        startActivity(intent)
+        super.onBackPressed()
     }
 
     private fun openMenu(position: Int) {
@@ -61,15 +73,31 @@ class SettingsActivity : BaseActivity() {
                 this.onBackPressed()
             }
             1 -> {
-                this.onBackPressed()
+                settingsLanguageContainer.isVisible = true
             }
         }
     }
 
-    override fun onBackPressed() {
-        finish()
-        val intent = Intent(this, TilsimSozderActivity::class.java)
-        startActivity(intent)
-        super.onBackPressed()
+    private fun setupLanguages(){
+        settingsLanguageContainer.setOnClickListener {
+            settingsLanguageContainer.isVisible = false
+            onBackPressed()
+        }
+
+        kazakhLanguage.setOnClickListener {
+            SharedPreference(this).setLanguage(0)
+            onBackPressed()
+        }
+
+        russianLanguage.setOnClickListener {
+            SharedPreference(this).setLanguage(1)
+            onBackPressed()
+        }
+
+        uzbekLanguage.setOnClickListener {
+            SharedPreference(this).setLanguage(2)
+            onBackPressed()
+        }
+
     }
 }
