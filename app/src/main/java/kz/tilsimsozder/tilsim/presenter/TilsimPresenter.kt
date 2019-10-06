@@ -1,5 +1,6 @@
 package kz.tilsimsozder.tilsim.presenter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import kz.tilsimsozder.R
 import kz.tilsimsozder.common.BasePresenter
@@ -23,6 +24,7 @@ class TilsimPresenter(
     private var tilsimList = mutableListOf<Tilsim>()
     private var counter = 0
 
+    @SuppressLint("DefaultLocale")
     override fun loadTilsim() {
         when (preference.getLanguageCode()) {
             KZ -> {
