@@ -5,6 +5,7 @@ import kz.tilsimsozder.bots.BotModule
 import kz.tilsimsozder.news.NewsModule
 import kz.tilsimsozder.prayers.PrayerModule
 import kz.tilsimsozder.preference.PreferenceModule
+import kz.tilsimsozder.settings.SettingsModule
 import kz.tilsimsozder.tilsim.TilsimModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -21,6 +22,7 @@ class App : Application() {
             modules(NewsModule.create())
             modules(BotModule.create())
             modules(PreferenceModule.create())
+            modules(SettingsModule.create())
         }
     }
 }
