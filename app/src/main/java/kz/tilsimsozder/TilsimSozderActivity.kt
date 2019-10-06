@@ -2,7 +2,6 @@ package kz.tilsimsozder
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -13,7 +12,6 @@ import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemNews
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemPrayer
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemService
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemTilsim
-import kotlinx.android.synthetic.main.tilsim_sozder_activity.tilsimDrawerLayout
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.viewPager
 import kz.tilsimsozder.bots.ui.BotFragment
 import kz.tilsimsozder.common.BaseActivity
@@ -56,14 +54,6 @@ class TilsimSozderActivity : BaseActivity() {
             finish()
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
-        }
-    }
-
-    override fun onBackPressed() {
-        if (tilsimDrawerLayout.isDrawerOpen(GravityCompat.START)) {
-            tilsimDrawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
         }
     }
 

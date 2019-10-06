@@ -6,6 +6,6 @@ import org.koin.dsl.module
 
 object TilsimModule : InjectionModule {
     override fun create() = module {
-        single { TilsimPresenter(get()) }
+        single { TilsimPresenter(get(), get()) }
     }
 }

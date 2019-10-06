@@ -7,7 +7,6 @@ import kz.tilsimsozder.common.BasePresenter
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.prayers.contract.PrayersContract
 import kz.tilsimsozder.prayers.model.Prayer
-import kz.tilsimsozder.preference.PreferenceContract
 import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.preference.SharedPreference.Companion.KZ
 import kz.tilsimsozder.preference.SharedPreference.Companion.RU
@@ -18,7 +17,7 @@ private const val URL_APP = "https://play.google.com/store/apps/details?id=kz.ti
 class PrayersPresenter(
     private val analytics: Analytics,
     private val context: Context,
-    private val preference: PreferenceContract
+    private val preference: SharedPreference
 ) : BasePresenter<PrayersContract.View>(),
     PrayersContract.Presenter {
 

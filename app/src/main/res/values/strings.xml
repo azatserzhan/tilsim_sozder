@@ -2,44 +2,12 @@
     <string name="app_name">Тылсым сөздер</string>
     <string name="action_settings">Settings</string>
     <string name="tilsim_sozder_title">Тылсым сөздер</string>
-    <string name="tilsim_sozder_content">\nБаһаулла \n
-        \n
-        •      •      •\n
-        Мазмұны\n
-        Бірінші бөлім: Араб тілінен\n
-        Екінші бөлім: Парсы тілінен\n
-        \n
-        •      •      •\n
-        \n
-        Бірінші бөлім\n
-        \n
-        Араб тілінен\n
-        \n
-        Ол – Даңқтылардың Даңқтысы!\n
-        \n
-        Бұл – иззат* патшалығынан келіп түскен, құдiрет пен қуат тiлiмен, бағзы заманның Пайғамбарларына ашылған. Олар Құдай Өсиетiне адал болып, өз өмiрлерiнде Оның аманатын орындап, рух патшалығында Тәңірлік* қасиеттің асыл тасына жетулері үшін Біз оның негізгі мәнін ғана алып, тақуаларға* деген рақымдылық нышаны ретінде ықшамдық желеңіне орадық.
-    </string>
-
     <string name="prayer_title">Баһаи дұғалары</string>
-    <string name="prayer_content">Баһаулланың, Бабтың және Абдул-Баһаның ашқан таңдамалы дұғалары
-        \n\nҚұдайды еске алып, Оны мақтан еткен жер мен үй, мекен, шаһар мен жүрек, тау мен тас, үңгір менен баспана, кең алқап пен шөл дала, теңіз бен арал, көкорай шалғынға нұр жаусын!\n
-        \nБаһаулла
-        \n\n
-        Шырқа, Уа пендем, өзіңе қазір жеткен Құдайдың Аян сөзін шырқай түс, Оған жақындап табынғандар шырқағандай шарықтата айт, сенің әуеніңнің тәтті сазы жаныңды елжіретсін және адамдардың жүректерін өзіне баурасын. 
-        \nКімде-кім Алланың ашқан сөздерін өз баспанасында оңаша оқыса, Құдіреттінің періштелері оның сөздерінің жұпар иісін жан˗жаққа таратып, 
-        әр адал жүрекке сезіммен толқуға әмір етеді. 
-        \nБасында бұл сөздердің әсері оған білінбесе де, берілген игіліктің қуаты ертелі˗кеш оның жан дүниесінен көрініс табады. 
-        \nКүш пен даналықтың Бастауы Кім болса, Соның Еркімен Құдай Аянының құпиясы ашылған.\n
-        \n\n
-        Баһаулла
-    </string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">azatserzhan@gmail.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="section_format">Hello World from section: %1$d</string>
     <string name="news_title">Жаңалықтар</string>
     <string name="service_title">Сервистер</string>
     <string name="dialog_share">Бөлісу</string>
