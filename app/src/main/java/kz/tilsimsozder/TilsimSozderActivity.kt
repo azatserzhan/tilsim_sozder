@@ -32,7 +32,6 @@ private const val SERVICE_PAGE_ID = 3
 class TilsimSozderActivity : BaseActivity() {
 
     private val analytics = Analytics()
-    private var isThemeDark: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.setTheme(
@@ -48,13 +47,13 @@ class TilsimSozderActivity : BaseActivity() {
         // SharedPreference(baseContext).setTheme(false)
         setupService()
 
-        isThemeDark = SharedPreference(this).getIsThemeDark()
         // setupStyle()
         setupViewPager()
         setupIconMenu(PRAYER_PAGE_ID)
         setupHeader(PRAYER_PAGE_ID)
 
         settingsImageView.setOnClickListener {
+            finish()
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
         }

@@ -8,9 +8,7 @@ interface PrayersContract {
 
     interface View : MvpView {
         fun showPrayers(prayers: List<Prayer>)
-        fun updatePrayer(title: String, body: String)
         fun sharePrayer(urlApp: String, title: String, body: String)
-        fun showPrayer(title: String, body: String)
         fun showPrayerDialog(title: String, body: String)
         fun scrollToTop()
     }
@@ -20,8 +18,6 @@ interface PrayersContract {
         fun selectedPrayer(title: String, body: String)
         fun setAdapter(prayers: List<Prayer>)
         fun sharePrayer()
-        fun nextPrayer()
-        fun prevPrayer()
         fun sortPrayer(newText: String)
         fun setFavourite(id: String)
     }

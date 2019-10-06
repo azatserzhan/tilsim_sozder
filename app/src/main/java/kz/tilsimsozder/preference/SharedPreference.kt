@@ -8,26 +8,26 @@ private const val PREF_KEY_IS_DARK_THEME = "PREF_KEY_IS_DARK_THEME"
 private const val PREF_KEY_CURRENT_FRAGMENT_NAME = "PREF_KEY_CURRENT_FRAGMENT_NAME"
 private const val PREF_KEY_FAVOURITE_IDS = "PREF_KEY_FAVOURITE_IDS"
 
-class SharedPreference(context: Context) {
+class SharedPreference(context: Context) : PreferenceContract {
     private val prefs = PreferenceManager.getDefaultSharedPreferences(context)
 
-    fun setIsTilsimPage(state: Boolean) {
+    override fun setIsTilsimPage(state: Boolean) {
         val editor = prefs.edit()
         editor.putBoolean(PREF_KEY_IS_TILSIM_PAGE, state)
         editor.apply()
     }
 
-    fun getIsTilsimPage(): Boolean = prefs.getBoolean(PREF_KEY_IS_TILSIM_PAGE, false)
+    override fun getIsTilsimPage(): Boolean = prefs.getBoolean(PREF_KEY_IS_TILSIM_PAGE, false)
 
-    fun setTheme(isDark: Boolean) {
+    override fun setTheme(isDark: Boolean) {
         val editor = prefs.edit()
         editor.putBoolean(PREF_KEY_IS_DARK_THEME, isDark)
         editor.apply()
     }
 
-    fun getIsThemeDark(): Boolean = prefs.getBoolean(PREF_KEY_IS_DARK_THEME, false)
+    override fun getIsThemeDark(): Boolean = prefs.getBoolean(PREF_KEY_IS_DARK_THEME, false)
 
-    fun setCurrentFragmentName(name: Int) {
+    override fun setCurrentFragmentName(name: Int) {
         val editor = prefs.edit()
         editor.putInt(PREF_KEY_CURRENT_FRAGMENT_NAME, name)
         editor.apply()
@@ -35,7 +35,7 @@ class SharedPreference(context: Context) {
 
     fun getCurrentFragmentName(): Int = prefs.getInt(PREF_KEY_CURRENT_FRAGMENT_NAME, 0)
 
-    fun setFavourites(favouriteIds: List<String>) {
+    override fun setFavourites(favouriteIds: List<String>) {
         val editor = prefs.edit()
         val set = HashSet<String>()
         set.addAll(favouriteIds)
@@ -43,7 +43,7 @@ class SharedPreference(context: Context) {
         editor.apply()
     }
 
-    fun getFavourites() = prefs.getStringSet(PREF_KEY_FAVOURITE_IDS, null)
+    override fun getFavourites(): MutableSet<String>? = prefs.getStringSet(PREF_KEY_FAVOURITE_IDS, null)
 }
 
 enum class FragmentName {

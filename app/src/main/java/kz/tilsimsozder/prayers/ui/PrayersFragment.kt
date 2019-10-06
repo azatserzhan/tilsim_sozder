@@ -1,23 +1,17 @@
 package kz.tilsimsozder.prayers.ui
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.fragment_prayers.*
-import kotlinx.android.synthetic.main.fragment_prayers.TextViewHeader
-import kotlinx.android.synthetic.main.fragment_prayers.bodyTextView
 import kotlinx.android.synthetic.main.fragment_prayers.prayerListRecyclerView
-import kotlinx.android.synthetic.main.fragment_prayers.shareImageView
-import kz.tilsimsozder.common.BaseFragment
+import kotlinx.android.synthetic.main.fragment_prayers.searchPrayer
 import kz.tilsimsozder.R
 import kz.tilsimsozder.common.BaseBottomSheetDialog
+import kz.tilsimsozder.common.BaseFragment
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.prayers.adapter.PrayerAdapter
 import kz.tilsimsozder.prayers.contract.PrayersContract
@@ -30,7 +24,7 @@ import kz.tilsimsozder.tilsim.ui.TilsimDialogFragment.Companion.TILSIM_DIALOG_FR
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Presenter>(),
-        PrayersContract.View {
+    PrayersContract.View {
 
     companion object {
         fun create() = PrayersFragment()
@@ -43,7 +37,7 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
     private val analytics = Analytics()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
-            inflater.inflate(R.layout.fragment_prayers, container, false)
+        inflater.inflate(R.layout.fragment_prayers, container, false)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,12 +56,12 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
 
 
         prayerAdapter = PrayerAdapter(
-                textClickListener = {title, body ->
-                    presenter.selectedPrayer(title, body)
-                },
-                favouriteClickListener = { id ->
-                    presenter.setFavourite(id)
-                })
+            textClickListener = { title, body ->
+                presenter.selectedPrayer(title, body)
+            },
+            favouriteClickListener = { id ->
+                presenter.setFavourite(id)
+            })
 
         val selectPrayerManager = LinearLayoutManager(context)
         prayerListRecyclerView.apply {
@@ -75,52 +69,26 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
             adapter = prayerAdapter
         }
 
-        shareImageView.setOnClickListener {
-            presenter.sharePrayer()
-        }
-
-        prayerNextImageButton.setOnClickListener {
-            presenter.nextPrayer()
-        }
-
-        prayerBackImageButton.setOnClickListener {
-            presenter.prevPrayer()
-        }
-
-        bodyTextView.setOnClickListener {
-            navigationFrameLayout.isVisible = !navigationFrameLayout.isVisible
-            bottomMenuButton.isVisible = !bottomMenuButton.isVisible
-            seekBarMain.isVisible = !seekBarMain.isVisible
-        }
-
         /*new*/
         searchPrayer.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
-                androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
-                Log.d("azat", query)
                 return false
             }
 
             override fun onQueryTextChange(newText: String): Boolean {
-                Log.d("azat", newText)
                 presenter.sortPrayer(newText)
                 return false
             }
         })
 
-        searchPrayer.setOnClickListener{
+        searchPrayer.setOnClickListener {
             searchPrayer.onActionViewExpanded()
         }
     }
 
     override fun showPrayers(prayers: List<Prayer>) {
         prayerAdapter?.addItems(prayers)
-    }
-
-    @SuppressLint("DefaultLocale")
-    override fun updatePrayer(title: String, body: String) {
-        TextViewHeader.text = title.toUpperCase()
-        bodyTextView.text = body
     }
 
     override fun sharePrayer(urlApp: String, title: String, body: String) {
@@ -131,17 +99,12 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
         context?.startActivity(shareIntent)
     }
 
-    override fun showPrayer(title: String, body: String) {
-        TextViewHeader.text = title
-        bodyTextView.text = body
-    }
-
     override fun showPrayerDialog(title: String, body: String) {
         val bottomSheetDialogFragment =
-                BaseBottomSheetDialog.create(TilsimDialogFragment.create(
-                        title,
-                        body
-                ))
+            BaseBottomSheetDialog.create(TilsimDialogFragment.create(
+                title,
+                body
+            ))
         bottomSheetDialogFragment.show(childFragmentManager, TILSIM_DIALOG_FRAGMENT)
     }
 

@@ -17,6 +17,12 @@ class SettingsActivity : AppCompatActivity() {
     private var settingsAdapter: SettingsAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.setTheme(
+            if (SharedPreference(this).getIsThemeDark()) {
+                R.style.CustomThemeDark
+            } else {
+                R.style.CustomThemeLight
+            })
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
 
@@ -50,9 +56,14 @@ class SettingsActivity : AppCompatActivity() {
                 val isDarkTheme = SharedPreference(this).getIsThemeDark()
                 SharedPreference(this).setTheme(!isDarkTheme)
                 this.onBackPressed()
-                val intent = Intent(this, TilsimSozderActivity::class.java)
-                startActivity(intent)
             }
         }
+    }
+
+    override fun onBackPressed() {
+        finish()
+        val intent = Intent(this, TilsimSozderActivity::class.java)
+        startActivity(intent)
+        super.onBackPressed()
     }
 }
