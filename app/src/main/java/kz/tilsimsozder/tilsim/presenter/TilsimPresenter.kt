@@ -30,22 +30,18 @@ class TilsimPresenter(
             KZ -> {
                 tilsimTitle = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_title).toList()
                 tilsimBody = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_content).toList()
-                notesTitle = context.applicationContext.resources.getStringArray(R.array.notes_title).toList()
-                notesBody = context.applicationContext.resources.getStringArray(R.array.notes_value).toList()
             }
             RU -> {
                 tilsimTitle = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_title).toList()
                 tilsimBody = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_content).toList()
-                notesTitle = context.applicationContext.resources.getStringArray(R.array.notes_title).toList()
-                notesBody = context.applicationContext.resources.getStringArray(R.array.notes_value).toList()
             }
             UZ -> {
-                tilsimTitle = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_title).toList()
-                tilsimBody = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_content).toList()
-                notesTitle = context.applicationContext.resources.getStringArray(R.array.notes_title).toList()
-                notesBody = context.applicationContext.resources.getStringArray(R.array.notes_value).toList()
+                tilsimTitle = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_title_uz).toList()
+                tilsimBody = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_content_uz).toList()
             }
         }
+        notesTitle = context.applicationContext.resources.getStringArray(R.array.notes_title).toList()
+        notesBody = context.applicationContext.resources.getStringArray(R.array.notes_value).toList()
 
         tilsimList.clear()
         counter = 0
