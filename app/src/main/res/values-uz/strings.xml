@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Тылсым сөздер</string>
+    <string name="dialog_abuse">Xatolik haqida xabar bering</string>
+    <string name="dialog_copied">Nusxalangan</string>
+    <string name="dialog_copy">Nusxalash</string>
+    <string name="dialog_share">Ulashish</string>
+    <string name="news_title">Yangiliklar</string>
+    <string name="prayer_title">Baho namozlari</string>
+    <string name="service_title">Xizmatlar</string>
+    <string name="settings_feature">Ilovaga o\'zgartirishlar kiritish</string>
+    <string name="settings_language">Tilni o\'zgartirish</string>
+    <string name="settings_night">Tungi uslubni yoqish</string>
+    <string name="settings_play_market">Play Marketda baho bering</string>
+    <string name="settings_share">Ulashuv ilovasi</string>
+    <string name="tilsim_choose">Kulgili so\'zni tanlang</string>
+    <string name="tilsim_sozder_title">Masxarabozlar</string>
+</resources>
