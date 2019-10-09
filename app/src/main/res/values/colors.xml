@@ -43,4 +43,7 @@
 
     <color name="menu_icon_light">#000000</color>
     <color name="menu_icon_dark">#F2F2F2</color>
+
+    <color name="divider_list_light">#EDF1F8</color>
+    <color name="divider_list_dark">#525252</color>
 </resources>

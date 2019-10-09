@@ -10,4 +10,5 @@
     <attr name="menu_icon" format="reference|color" />
     <attr name="color_primary" format="reference|color" />
     <attr name="color_star" format="reference|color" />
+    <attr name="divider_list" format="reference|color" />
 </resources>
