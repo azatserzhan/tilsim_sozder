@@ -8,6 +8,7 @@ import kz.tilsimsozder.preference.PreferenceContract
 import kz.tilsimsozder.preference.SharedPreference.Companion.KZ
 import kz.tilsimsozder.preference.SharedPreference.Companion.RU
 import kz.tilsimsozder.preference.SharedPreference.Companion.UZ
+import kz.tilsimsozder.preference.SupportLanguage
 import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsim.contract.TilsimContract
 import kz.tilsimsozder.tilsim.model.Tilsim
@@ -27,15 +28,15 @@ class TilsimPresenter(
     @SuppressLint("DefaultLocale")
     override fun loadTilsim() {
         when (preference.getLanguageCode()) {
-            KZ -> {
+            SupportLanguage.KZ.code -> {
                 tilsimTitle = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_title).toList()
                 tilsimBody = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_content).toList()
             }
-            RU -> {
+            SupportLanguage.RU.code -> {
                 tilsimTitle = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_title).toList()
                 tilsimBody = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_content).toList()
             }
-            UZ -> {
+            SupportLanguage.UZ.code -> {
                 tilsimTitle = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_title_uz).toList()
                 tilsimBody = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_content_uz).toList()
             }

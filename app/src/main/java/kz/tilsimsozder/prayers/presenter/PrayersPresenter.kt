@@ -11,6 +11,7 @@ import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.preference.SharedPreference.Companion.KZ
 import kz.tilsimsozder.preference.SharedPreference.Companion.RU
 import kz.tilsimsozder.preference.SharedPreference.Companion.UZ
+import kz.tilsimsozder.preference.SupportLanguage
 
 private const val URL_APP = "https://play.google.com/store/apps/details?id=kz.tilsimsozder"
 
@@ -28,15 +29,15 @@ class PrayersPresenter(
 
     override fun loadPrayers() {
         when (preference.getLanguageCode()) {
-            KZ -> {
+            SupportLanguage.KZ.code -> {
                 prayersTitle = context.applicationContext.resources.getStringArray(R.array.prayer_name).toList()
                 prayersBody = context.applicationContext.resources.getStringArray(R.array.prayer_value).toList()
             }
-            RU -> {
+            SupportLanguage.RU.code -> {
                 prayersTitle = context.applicationContext.resources.getStringArray(R.array.prayer_name).toList()
                 prayersBody = context.applicationContext.resources.getStringArray(R.array.prayer_value).toList()
             }
-            UZ -> {
+            SupportLanguage.UZ.code -> {
                 prayersTitle = context.applicationContext.resources.getStringArray(R.array.prayer_name_uz).toList()
                 prayersBody = context.applicationContext.resources.getStringArray(R.array.prayer_value_uz).toList()
             }
