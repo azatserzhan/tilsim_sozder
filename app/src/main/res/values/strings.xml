@@ -21,6 +21,7 @@
     <string name="settings_share">Қосымшамен бөлісу</string>
     <string name="settings_feature">Қосымшаға қатысты өзгерістер ұсыну</string>
     <string name="settings_play_market">Play Market-те баға беру</string>
+    <string name="search_hint">Іздеу</string>
     <string name="language_kz" translatable="false">Қазақша</string>
     <string name="language_ru" translatable="false">Русский</string>
     <string name="language_uz" translatable="false">Uzbekche</string>

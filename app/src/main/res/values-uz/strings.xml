@@ -15,4 +15,5 @@
     <string name="settings_share">Ulashuv ilovasi</string>
     <string name="tilsim_choose">Kulgili so\'zni tanlang</string>
     <string name="tilsim_sozder_title">Masxarabozlar</string>
+    <string name="search_hint">Izlash</string>
 </resources>

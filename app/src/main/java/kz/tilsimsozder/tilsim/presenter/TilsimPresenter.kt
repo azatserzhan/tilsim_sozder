@@ -5,9 +5,6 @@ import android.content.Context
 import kz.tilsimsozder.R
 import kz.tilsimsozder.common.BasePresenter
 import kz.tilsimsozder.preference.PreferenceContract
-import kz.tilsimsozder.preference.SharedPreference.Companion.KZ
-import kz.tilsimsozder.preference.SharedPreference.Companion.RU
-import kz.tilsimsozder.preference.SharedPreference.Companion.UZ
 import kz.tilsimsozder.preference.SupportLanguage
 import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsim.contract.TilsimContract

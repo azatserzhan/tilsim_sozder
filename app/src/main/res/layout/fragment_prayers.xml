@@ -12,7 +12,7 @@
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchPrayer"
         android:layout_width="match_parent"
-        app:queryHint="Іздеу"
+        app:queryHint="@string/search_hint"
         app:searchHintIcon="@drawable/ic_search"
         app:searchIcon="@drawable/ic_search"
         app:closeIcon="@drawable/ic_close"
