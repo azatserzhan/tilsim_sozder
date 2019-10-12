@@ -1,7 +1,11 @@
 package kz.tilsimsozder
 
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
+import android.os.Build
 import android.os.Bundle
+import android.os.LocaleList
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -21,6 +25,7 @@ import kz.tilsimsozder.prayers.ui.PrayersFragment
 import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsim.ui.TilsimFragment
+import java.util.Locale
 
 private const val PRAYER_PAGE_ID = 0
 private const val TILSIM_PAGE_ID = 1
@@ -33,7 +38,7 @@ class TilsimSozderActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.setTheme(
-            if (SharedPreference(this).getIsThemeDark()) {
+            if (SharedPreference(baseContext).getIsThemeDark()) {
                 R.style.CustomThemeDark
             } else {
                 R.style.CustomThemeLight
@@ -60,6 +65,27 @@ class TilsimSozderActivity : BaseActivity() {
     override fun onDestroy() {
         super.onDestroy()
         SharedPreference(baseContext).setIsTilsimPage(false)
+    }
+
+    override fun attachBaseContext(newBase: Context) {
+        val updatedContext = getLocalizedContext(newBase)
+        super.attachBaseContext(updatedContext)
+    }
+
+    private fun getLocalizedContext(context: Context): Context {
+        val languageStrCode = SharedPreference(context).getLanguageStrCode()
+        val locale = Locale(languageStrCode)
+        Locale.setDefault(locale)
+        val configuration = Configuration()
+
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
+            @Suppress("DEPRECATION")
+            configuration.locale = locale
+        } else {
+            configuration.locales = LocaleList(locale)
+        }
+
+        return context.createConfigurationContext(configuration)
     }
 
     private fun setupService() {

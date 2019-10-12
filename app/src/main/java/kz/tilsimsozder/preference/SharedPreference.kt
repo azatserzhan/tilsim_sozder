@@ -58,8 +58,22 @@ class SharedPreference(context: Context) : PreferenceContract {
     }
 
     override fun getLanguageCode(): Int = prefs.getInt(PREF_KEY_LANGUAGE, 0)
+
+    override fun getLanguageStrCode(): String =
+        when (prefs.getInt(PREF_KEY_LANGUAGE, 0)) {
+            SupportLanguage.KZ.code -> SupportLanguage.KZ.strCode
+            SupportLanguage.RU.code -> SupportLanguage.RU.strCode
+            SupportLanguage.UZ.code -> SupportLanguage.UZ.strCode
+            else -> SupportLanguage.KZ.strCode
+        }
 }
 
 enum class FragmentName {
     PRAYER, TILSIM, NEWS, BOT
+}
+
+enum class SupportLanguage(val strCode: String, val code: Int) {
+    KZ("kz", 0),
+    RU("ru", 1),
+    UZ("uz", 2)
 }

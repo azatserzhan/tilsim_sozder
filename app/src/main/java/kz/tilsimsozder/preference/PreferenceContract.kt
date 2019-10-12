@@ -10,4 +10,5 @@ interface PreferenceContract {
     fun getFavourites(): MutableSet<String>?
     fun setLanguage(code: Int)
     fun getLanguageCode(): Int
+    fun getLanguageStrCode(): String
 }
