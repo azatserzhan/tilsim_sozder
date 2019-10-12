@@ -23,9 +23,9 @@ class NewsPresenter(private val analytics: Analytics, val context: Context) : Ba
                         "http://www.bahai.kz",
                         R.drawable.ic_bahai_kz
                     ),
-                    Bot("https://www.bahai.org/ru/",
+                    Bot("www.bahai.org/ru/",
                         "Бүкл әлемдегі бахаиларының ресми сайты",
-                        "https:https://www.bahai.org/ru/",
+                        "https://www.bahai.org/ru/",
                         R.drawable.ic_bahai_org
                     ),
                     Bot("Восхождение света",
@@ -47,19 +47,18 @@ class NewsPresenter(private val analytics: Analytics, val context: Context) : Ba
             SupportLanguage.UZ.code -> {
                 val bots = listOf(
                     Bot(
-                        "https://baxoi.uz/uzl/",
+                        "baxoi.uz",
                         "O'zbekiston Bahoiy jamoasining rasmiy sayti",
-                        "http://www.bahai.kz",
+                        "https://baxoi.uz/uzl/",
                         R.drawable.ic_bahai_kz
                     ),
-                    Bot("https://www.bahai.org/ru/",
+                    Bot("www.bahai.org",
                         "Вебсайт всемирной общины бахаи",
-                        "https:https://www.bahai.org/ru/",
+                        "https://www.bahai.org/ru/",
                         R.drawable.ic_bahai_org
                     ),
                     Bot("Восхождение света",
-                        "СПЕЦИАЛЬНО ПОДГОТОВЛЕННЫЙ ФИЛЬМ\n" +
-                            "подготовленный к двухсотлетию",
+                        "Cпециально подготовленный фильм к двухсотлетию",
                         "https://bicentenary.bahai.org/ru/the-bab/",
                         R.drawable.ic_bab
                     )
