@@ -3,6 +3,7 @@ package kz.tilsimsozder
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.LocaleList
@@ -18,6 +19,7 @@ import kotlinx.android.synthetic.main.settings_language.uzbekLanguage
 import kz.tilsimsozder.common.BaseActivity
 import kz.tilsimsozder.prayers.model.SettingsItem
 import kz.tilsimsozder.preference.SharedPreference
+import kz.tilsimsozder.preference.SupportLanguage
 import kz.tilsimsozder.settings.ui.SettingsAdapter
 import java.util.Locale
 
@@ -106,29 +108,47 @@ class SettingsActivity : BaseActivity() {
             1 -> {
                 settingsLanguageContainer.isVisible = true
             }
+            2 -> {
+                val shareIntent = Intent()
+                val shareText = "https://play.google.com/store/apps/details?id=kz.tilsimsozder"
+                shareIntent.action = Intent.ACTION_SEND
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareText)
+                shareIntent.type = "text/plain"
+                startActivity(shareIntent)
+            }
+            3 -> {
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/tilsim_sozder"))
+                startActivity(intent)
+            }
+            4 -> {
+                val intent = Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://play.google.com/store/apps/details?id=kz.tilsimsozder")
+                )
+                startActivity(intent)
+            }
         }
     }
 
-    private fun setupLanguages(){
+    private fun setupLanguages() {
         settingsLanguageContainer.setOnClickListener {
             settingsLanguageContainer.isVisible = false
             onBackPressed()
         }
 
         kazakhLanguage.setOnClickListener {
-            SharedPreference(this).setLanguage(0)
+            SharedPreference(this).setLanguage(SupportLanguage.KZ.code)
             onBackPressed()
         }
 
         russianLanguage.setOnClickListener {
-            SharedPreference(this).setLanguage(1)
+            SharedPreference(this).setLanguage(SupportLanguage.RU.code)
             onBackPressed()
         }
 
         uzbekLanguage.setOnClickListener {
-            SharedPreference(this).setLanguage(2)
+            SharedPreference(this).setLanguage(SupportLanguage.UZ.code)
             onBackPressed()
         }
-
     }
 }
