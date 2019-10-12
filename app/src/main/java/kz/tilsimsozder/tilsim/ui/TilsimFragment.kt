@@ -38,7 +38,7 @@ private const val CARD_SWIPE_THRESHOLD = 0.3f
 private const val CARD_MAX_DEGREE = -30.0f
 
 class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presenter>(),
-        TilsimContract.View, CardStackListener {
+    TilsimContract.View, CardStackListener {
 
     companion object {
         fun create() = TilsimFragment()
@@ -90,32 +90,32 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
 
     override fun showBubbleSeekBar(max: Int) {
         changeTilsimBubbleSeekBar.configBuilder
-                .max(max.toFloat())
-                .progress(TilsimService.RANDOM_TILSIM.toFloat())
-                .build()
+            .max(max.toFloat())
+            .progress(TilsimService.RANDOM_TILSIM.toFloat())
+            .build()
 
         changeTilsimBubbleSeekBar.onProgressChangedListener = object : BubbleSeekBar.OnProgressChangedListener {
             override fun getProgressOnActionUp(
-                    bubbleSeekBar: BubbleSeekBar?,
-                    progress: Int,
-                    progressFloat: Float
+                bubbleSeekBar: BubbleSeekBar?,
+                progress: Int,
+                progressFloat: Float
             ) {
                 changeTilsimLinearLayout.visibility = View.GONE
             }
 
             override fun getProgressOnFinally(
-                    bubbleSeekBar: BubbleSeekBar?,
-                    progress: Int,
-                    progressFloat: Float,
-                    fromUser: Boolean
+                bubbleSeekBar: BubbleSeekBar?,
+                progress: Int,
+                progressFloat: Float,
+                fromUser: Boolean
             ) {
             }
 
             override fun onProgressChanged(
-                    bubbleSeekBar: BubbleSeekBar?,
-                    progress: Int,
-                    progressFloat: Float,
-                    fromUser: Boolean
+                bubbleSeekBar: BubbleSeekBar?,
+                progress: Int,
+                progressFloat: Float,
+                fromUser: Boolean
             ) {
                 card_stack_view.scrollToPosition(progress)
             }
@@ -136,10 +136,10 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
 
     override fun showDialog(tilsim: Tilsim) {
         val bottomSheetDialogFragment =
-                BaseBottomSheetDialog.create(TilsimDialogFragment.create(
-                        tilsim.title,
-                        tilsim.body + "\n" + tilsim.note
-                ))
+            BaseBottomSheetDialog.create(TilsimDialogFragment.create(
+                tilsim.title,
+                tilsim.body + "\n" + tilsim.note
+            ))
         bottomSheetDialogFragment.show(childFragmentManager, TILSIM_DIALOG_FRAGMENT)
     }
 
@@ -170,15 +170,15 @@ class TilsimFragment : BaseFragment<TilsimContract.View, TilsimContract.Presente
         cardManager.setCanScrollVertical(true)
 
         adapter = TilsimAdapter(
-                counterListener = {
-                    changeTilsimLinearLayout.isVisible = true
-                },
-                bodyListner = {
-                    presenter.setBottomSheetDialog(it)
-                },
-                shareListner = {
-                    presenter.shareTilsim(it)
-                })
+            counterListener = {
+                changeTilsimLinearLayout.isVisible = true
+            },
+            bodyListner = {
+                presenter.setBottomSheetDialog(it)
+            },
+            shareListner = {
+                presenter.shareTilsim(it)
+            })
 
         card_stack_view.adapter = adapter
         card_stack_view.layoutManager = cardManager

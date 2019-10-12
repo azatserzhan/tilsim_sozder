@@ -1,6 +1,7 @@
 package kz.tilsimsozder.common
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -34,6 +35,11 @@ class BaseBottomSheetDialog(private val fragment: Fragment) : BottomSheetDialogF
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog =
             createDialog(super.onCreateDialog(savedInstanceState) as BottomSheetDialog)
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        parentFragment?.onActivityResult(requestCode, resultCode, data)
+    }
 
     private fun createDialog(dialog: BottomSheetDialog): Dialog {
 

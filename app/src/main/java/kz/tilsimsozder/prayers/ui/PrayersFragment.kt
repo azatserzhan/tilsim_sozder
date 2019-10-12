@@ -1,5 +1,6 @@
 package kz.tilsimsozder.prayers.ui
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_prayers.prayerListRecyclerView
 import kotlinx.android.synthetic.main.fragment_prayers.searchPrayer
 import kz.tilsimsozder.R
+import kz.tilsimsozder.TilsimSozderActivity
 import kz.tilsimsozder.common.BaseBottomSheetDialog
 import kz.tilsimsozder.common.BaseFragment
 import kz.tilsimsozder.firebase.Analytics
@@ -19,6 +21,7 @@ import kz.tilsimsozder.prayers.model.Prayer
 import kz.tilsimsozder.prayers.presenter.PrayersPresenter
 import kz.tilsimsozder.preference.FragmentName
 import kz.tilsimsozder.preference.SharedPreference
+import kz.tilsimsozder.preference.SupportLanguage
 import kz.tilsimsozder.tilsim.ui.TilsimDialogFragment
 import kz.tilsimsozder.tilsim.ui.TilsimDialogFragment.Companion.TILSIM_DIALOG_FRAGMENT
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -49,6 +52,22 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
 
         setupView()
         presenter.loadPrayers()
+        presenter.checkLanguage()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK) {
+            when (requestCode) {
+                SupportLanguage.KZ.code, SupportLanguage.UZ.code -> restart()
+            }
+        }
+    }
+
+    override fun showLanguageDialog() {
+        val bottomSheetDialogFragment =
+            BaseBottomSheetDialog.create(LanguageDialogFragment.create())
+        bottomSheetDialogFragment.show(childFragmentManager, LanguageDialogFragment.LANGUAGE_DIALOG_FRAGMENT)
     }
 
     private fun setupView() {
@@ -110,5 +129,11 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
 
     override fun scrollToTop() {
         prayerListRecyclerView.smoothScrollToPosition(0)
+    }
+
+    private fun restart() {
+        activity?.finish()
+        val intent = Intent(requireContext(), TilsimSozderActivity::class.java)
+        startActivity(intent)
     }
 }

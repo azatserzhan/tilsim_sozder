@@ -8,6 +8,7 @@ private const val PREF_KEY_IS_DARK_THEME = "PREF_KEY_IS_DARK_THEME"
 private const val PREF_KEY_CURRENT_FRAGMENT_NAME = "PREF_KEY_CURRENT_FRAGMENT_NAME"
 private const val PREF_KEY_FAVOURITE_IDS = "PREF_KEY_FAVOURITE_IDS"
 private const val PREF_KEY_LANGUAGE = "PREF_KEY_LANGUAGE"
+private const val PREF_KEY_IS_LANGUAGE_DIALOG_SHOWN = "PREF_KEY_IS_LANGUAGE_DIALOG_SHOWN"
 
 class SharedPreference(context: Context) : PreferenceContract {
     private val prefs = PreferenceManager.getDefaultSharedPreferences(context)
@@ -61,6 +62,14 @@ class SharedPreference(context: Context) : PreferenceContract {
             SupportLanguage.UZ.code -> SupportLanguage.UZ.strCode
             else -> SupportLanguage.KZ.strCode
         }
+
+    override fun getIsLanguageDialogShow(): Boolean = prefs.getBoolean(PREF_KEY_IS_LANGUAGE_DIALOG_SHOWN, false)
+
+    override fun setLanguageDialogShow(isShow: Boolean) {
+        val editor = prefs.edit()
+        editor.putBoolean(PREF_KEY_IS_LANGUAGE_DIALOG_SHOWN, isShow)
+        editor.apply()
+    }
 }
 
 enum class FragmentName {

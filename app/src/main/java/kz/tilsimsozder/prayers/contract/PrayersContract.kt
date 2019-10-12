@@ -11,6 +11,7 @@ interface PrayersContract {
         fun sharePrayer(urlApp: String, title: String, body: String)
         fun showPrayerDialog(title: String, body: String)
         fun scrollToTop()
+        fun showLanguageDialog()
     }
 
     interface Presenter : MvpPresenter<View> {
@@ -20,5 +21,6 @@ interface PrayersContract {
         fun sharePrayer()
         fun sortPrayer(newText: String)
         fun setFavourite(id: String)
+        fun checkLanguage()
     }
 }

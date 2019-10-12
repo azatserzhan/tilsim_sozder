@@ -93,4 +93,11 @@ class PrayersPresenter(
         view?.showPrayers(prayers)
         view?.scrollToTop()
     }
+
+    override fun checkLanguage() {
+        if (!SharedPreference(context).getIsLanguageDialogShow()) {
+            view?.showLanguageDialog()
+            SharedPreference(context).setLanguageDialogShow(true)
+        }
+    }
 }

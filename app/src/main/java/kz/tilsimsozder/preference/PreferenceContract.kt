@@ -11,4 +11,6 @@ interface PreferenceContract {
     fun setLanguage(code: Int)
     fun getLanguageCode(): Int
     fun getLanguageStrCode(): String
+    fun getIsLanguageDialogShow(): Boolean
+    fun setLanguageDialogShow(isShow: Boolean)
 }
