@@ -25,4 +25,5 @@
     <string name="language_kz" translatable="false">Қазақша</string>
     <string name="language_ru" translatable="false">Русский</string>
     <string name="language_uz" translatable="false">Uzbekche</string>
+    <string name="settings_title">Баптау</string>
 </resources>

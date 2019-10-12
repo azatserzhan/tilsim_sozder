@@ -1,7 +1,11 @@
 package kz.tilsimsozder
 
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
+import android.os.Build
 import android.os.Bundle
+import android.os.LocaleList
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_settings.menuRecyclerView
@@ -15,6 +19,7 @@ import kz.tilsimsozder.common.BaseActivity
 import kz.tilsimsozder.prayers.model.SettingsItem
 import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.settings.ui.SettingsAdapter
+import java.util.Locale
 
 class SettingsActivity : BaseActivity() {
 
@@ -51,7 +56,7 @@ class SettingsActivity : BaseActivity() {
         )
 
         settingsAdapter?.addItems(items)
-        mainHeaderTextView.text = "Баптау"
+        mainHeaderTextView.text = getString(R.string.settings_title)
         settingsImageView.isVisible = false
 
         setupLanguages()
@@ -63,6 +68,27 @@ class SettingsActivity : BaseActivity() {
         val intent = Intent(this, TilsimSozderActivity::class.java)
         startActivity(intent)
         super.onBackPressed()
+    }
+
+    override fun attachBaseContext(newBase: Context) {
+        val updatedContext = getLocalizedContext(newBase)
+        super.attachBaseContext(updatedContext)
+    }
+
+    private fun getLocalizedContext(context: Context): Context {
+        val languageStrCode = SharedPreference(context).getLanguageStrCode()
+        val locale = Locale(languageStrCode)
+        Locale.setDefault(locale)
+        val configuration = Configuration()
+
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
+            @Suppress("DEPRECATION")
+            configuration.locale = locale
+        } else {
+            configuration.locales = LocaleList(locale)
+        }
+
+        return context.createConfigurationContext(configuration)
     }
 
     private fun openMenu(position: Int) {
