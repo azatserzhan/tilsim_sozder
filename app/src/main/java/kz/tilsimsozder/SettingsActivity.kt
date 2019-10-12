@@ -40,9 +40,9 @@ class SettingsActivity : BaseActivity() {
             menuItemListener = { openMenu(it) }
         )
 
-        val manager = LinearLayoutManager(this)
+        val menuManager = LinearLayoutManager(this)
         menuRecyclerView.apply {
-            layoutManager = manager
+            layoutManager = menuManager
             adapter = settingsAdapter
         }
 
@@ -60,7 +60,7 @@ class SettingsActivity : BaseActivity() {
         settingsImageView.isVisible = false
 
         setupLanguages()
-
+        SharedPreference(baseContext).setIsTilsimPage(true)
     }
 
     override fun onBackPressed() {
@@ -73,6 +73,11 @@ class SettingsActivity : BaseActivity() {
     override fun attachBaseContext(newBase: Context) {
         val updatedContext = getLocalizedContext(newBase)
         super.attachBaseContext(updatedContext)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        SharedPreference(baseContext).setIsTilsimPage(false)
     }
 
     private fun getLocalizedContext(context: Context): Context {
