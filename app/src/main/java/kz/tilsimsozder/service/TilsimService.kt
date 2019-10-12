@@ -16,8 +16,9 @@ import android.os.IBinder
 import android.util.Log
 import android.widget.RemoteViews
 import kz.tilsimsozder.R
-import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.TilsimSozderActivity
+import kz.tilsimsozder.preference.SharedPreference
+import kz.tilsimsozder.preference.SupportLanguage
 
 @Suppress("DEPRECATION")
 class TilsimService : Service() {
@@ -48,8 +49,17 @@ class TilsimService : Service() {
     }
 
     private fun getData() {
-        LIST_TITLE_DATA_TILSIM = this.resources.getStringArray(R.array.tilsim_sozder_title).toMutableList()
-        LIST_CONTENT_DATA_TILSIM = this.resources.getStringArray(R.array.tilsim_sozder_content).toMutableList()
+        LIST_TITLE_DATA_TILSIM = when (SharedPreference(baseContext).getLanguageCode()) {
+            SupportLanguage.KZ.code -> this.resources.getStringArray(R.array.tilsim_sozder_title).toMutableList()
+            SupportLanguage.UZ.code -> this.resources.getStringArray(R.array.tilsim_sozder_title_uz).toMutableList()
+            else -> this.resources.getStringArray(R.array.tilsim_sozder_title).toMutableList()
+        }
+
+        LIST_CONTENT_DATA_TILSIM = when (SharedPreference(baseContext).getLanguageCode()) {
+            SupportLanguage.KZ.code -> this.resources.getStringArray(R.array.tilsim_sozder_content).toMutableList()
+            SupportLanguage.UZ.code -> this.resources.getStringArray(R.array.tilsim_sozder_content_uz).toMutableList()
+            else -> this.resources.getStringArray(R.array.tilsim_sozder_content).toMutableList()
+        }
     }
 
     @SuppressLint("NewApi")
