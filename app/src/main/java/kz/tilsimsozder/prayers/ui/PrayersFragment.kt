@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_prayers.prayerListRecyclerView
 import kotlinx.android.synthetic.main.fragment_prayers.searchPrayer
 import kz.tilsimsozder.R
-import kz.tilsimsozder.TilsimSozderActivity
 import kz.tilsimsozder.common.BaseBottomSheetDialog
 import kz.tilsimsozder.common.BaseFragment
 import kz.tilsimsozder.firebase.Analytics
@@ -132,8 +131,18 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
     }
 
     private fun restart() {
-        activity?.finish()
-        val intent = Intent(requireContext(), TilsimSozderActivity::class.java)
-        startActivity(intent)
+        val launcherIntent = activity?.let { it.packageManager?.getLaunchIntentForPackage(it.packageName) }
+        launcherIntent?.let {
+            activity?.startActivity(
+                launcherIntent
+                    .addFlags(
+                        Intent.FLAG_ACTIVITY_CLEAR_TASK or
+                            Intent.FLAG_ACTIVITY_NEW_TASK or
+                            Intent.FLAG_ACTIVITY_NO_ANIMATION
+                    )
+            )
+            activity?.finish()
+            Runtime.getRuntime().exit(0)
+        }
     }
 }
