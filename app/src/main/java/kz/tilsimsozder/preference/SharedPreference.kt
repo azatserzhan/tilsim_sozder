@@ -77,7 +77,7 @@ enum class FragmentName {
 }
 
 enum class SupportLanguage(val strCode: String, val code: Int) {
-    KZ("kz", 0),
+    KZ("kk", 0),
     RU("ru", 1),
     UZ("uz", 2)
 }

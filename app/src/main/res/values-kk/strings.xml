@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tilsim sozder</string>
+    <string name="tilsim_sozder_title">Тылсым сөздер</string>
+    <string name="prayer_title">Баһаи дұғалары</string>
+    <string name="news_title">Жаңалықтар</string>
+    <string name="service_title">Сервистер</string>
+    <string name="dialog_share">Бөлісу</string>
+    <string name="dialog_copy">Көшіру</string>
+    <string name="dialog_abuse">Қате туралы хабар беру</string>
+    <string name="dialog_copied">Көшірілді</string>
+    <string name="tilsim_choose">Тылсым сөзді таңдау</string>
+    <string name="title_activity_settings" translatable="false">Settings</string>
+    <string name="settings_night">Түнгі стильді қосу</string>
+    <string name="settings_language">Тілді өзгерту</string>
+    <string name="settings_share">Қосымшамен бөлісу</string>
+    <string name="settings_feature">Қосымшаға қатысты өзгерістер ұсыну</string>
+    <string name="settings_play_market">Play Market-те баға беру</string>
+    <string name="search_hint">Іздеу</string>
+    <string name="settings_title">Баптау</string>
+</resources>

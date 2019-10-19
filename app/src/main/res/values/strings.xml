@@ -1,29 +1,29 @@
 <resources>
     <string name="app_name">Tilsim sozder</string>
     <string name="action_settings" translatable="false">Settings</string>
-    <string name="tilsim_sozder_title">Тылсым сөздер</string>
-    <string name="prayer_title">Баһаи дұғалары</string>
+    <string name="tilsim_sozder_title">Сокровенные слова</string>
+    <string name="prayer_title">Молитвы Бахаи</string>
     <string name="title_activity_main" translatable="false">MainActivity</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
     <string name="nav_header_title" translatable="false">Android Studio</string>
     <string name="nav_header_subtitle" translatable="false">azatserzhan@gmail.com</string>
-    <string name="news_title">Жаңалықтар</string>
-    <string name="service_title">Сервистер</string>
-    <string name="dialog_share">Бөлісу</string>
-    <string name="dialog_copy">Көшіру</string>
-    <string name="dialog_abuse">Қате туралы хабар беру</string>
-    <string name="dialog_copied">Көшірілді</string>
-    <string name="tilsim_choose">Тылсым сөзді таңдау</string>
+    <string name="news_title">Новости</string>
+    <string name="service_title">Сервисы</string>
+    <string name="dialog_share">Поделиться</string>
+    <string name="dialog_copy">Скопировать</string>
+    <string name="dialog_abuse">Сообщить об ошибке</string>
+    <string name="dialog_copied">Скопирована</string>
+    <string name="tilsim_choose">Выбрать сокровенное слово</string>
     <string name="title_activity_settings" translatable="false">Settings</string>
-    <string name="settings_night">Түнгі стильді қосу</string>
-    <string name="settings_language">Тілді өзгерту</string>
-    <string name="settings_share">Қосымшамен бөлісу</string>
-    <string name="settings_feature">Қосымшаға қатысты өзгерістер ұсыну</string>
-    <string name="settings_play_market">Play Market-те баға беру</string>
-    <string name="search_hint">Іздеу</string>
+    <string name="settings_night">Включить ночной режим</string>
+    <string name="settings_language">Изменить язык</string>
+    <string name="settings_share">Поделиться</string>
+    <string name="settings_feature">Предложить улучшение</string>
+    <string name="settings_play_market">Дать оценку в Play Market</string>
+    <string name="search_hint">Поиск</string>
     <string name="language_kz" translatable="false">Қазақша</string>
     <string name="language_ru" translatable="false">Русский</string>
     <string name="language_uz" translatable="false">Uzbek</string>
-    <string name="settings_title">Баптау</string>
+    <string name="settings_title">Настройки</string>
 </resources>
