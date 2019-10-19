@@ -15,7 +15,7 @@ class NewsPresenter(private val analytics: Analytics, val context: Context) : Ba
 
     override fun loadNews() {
         when(SharedPreference(context).getLanguageCode()) {
-            SupportLanguage.KZ.code -> {
+            SupportLanguage.KZ.code, SupportLanguage.RU.code -> {
                 val bots = listOf(
                     Bot(
                         "www.bahai.kz",

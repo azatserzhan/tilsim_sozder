@@ -31,8 +31,8 @@ class PrayersPresenter(
                 prayersBody = context.applicationContext.resources.getStringArray(R.array.prayer_value).toList()
             }
             SupportLanguage.RU.code -> {
-                prayersTitle = context.applicationContext.resources.getStringArray(R.array.prayer_name).toList()
-                prayersBody = context.applicationContext.resources.getStringArray(R.array.prayer_value).toList()
+                prayersTitle = context.applicationContext.resources.getStringArray(R.array.prayer_name_ru).toList()
+                prayersBody = context.applicationContext.resources.getStringArray(R.array.prayer_value_ru).toList()
             }
             SupportLanguage.UZ.code -> {
                 prayersTitle = context.applicationContext.resources.getStringArray(R.array.prayer_name_uz).toList()

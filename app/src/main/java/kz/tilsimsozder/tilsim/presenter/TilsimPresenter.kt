@@ -30,8 +30,8 @@ class TilsimPresenter(
                 tilsimBody = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_content).toList()
             }
             SupportLanguage.RU.code -> {
-                tilsimTitle = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_title).toList()
-                tilsimBody = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_content).toList()
+                tilsimTitle = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_title_ru).toList()
+                tilsimBody = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_content_ru).toList()
             }
             SupportLanguage.UZ.code -> {
                 tilsimTitle = context.applicationContext.resources.getStringArray(R.array.tilsim_sozder_title_uz).toList()

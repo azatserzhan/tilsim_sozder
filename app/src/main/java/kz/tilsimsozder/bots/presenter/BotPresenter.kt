@@ -14,7 +14,7 @@ class BotPresenter(private val analytics: Analytics, val context: Context) : Bas
 
     override fun loadBots() {
         when (SharedPreference(context).getLanguageCode()) {
-            SupportLanguage.KZ.code -> {
+            SupportLanguage.KZ.code, SupportLanguage.RU.code -> {
                 val bots = listOf(
                     Bot(
                         "Бот: Астана",
