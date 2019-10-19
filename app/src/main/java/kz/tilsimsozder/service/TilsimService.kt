@@ -52,12 +52,14 @@ class TilsimService : Service() {
         LIST_TITLE_DATA_TILSIM = when (SharedPreference(baseContext).getLanguageCode()) {
             SupportLanguage.KZ.code -> this.resources.getStringArray(R.array.tilsim_sozder_title).toMutableList()
             SupportLanguage.UZ.code -> this.resources.getStringArray(R.array.tilsim_sozder_title_uz).toMutableList()
+            SupportLanguage.RU.code -> this.resources.getStringArray(R.array.tilsim_sozder_title_ru).toMutableList()
             else -> this.resources.getStringArray(R.array.tilsim_sozder_title).toMutableList()
         }
 
         LIST_CONTENT_DATA_TILSIM = when (SharedPreference(baseContext).getLanguageCode()) {
             SupportLanguage.KZ.code -> this.resources.getStringArray(R.array.tilsim_sozder_content).toMutableList()
             SupportLanguage.UZ.code -> this.resources.getStringArray(R.array.tilsim_sozder_content_uz).toMutableList()
+            SupportLanguage.RU.code -> this.resources.getStringArray(R.array.tilsim_sozder_content_ru).toMutableList()
             else -> this.resources.getStringArray(R.array.tilsim_sozder_content).toMutableList()
         }
     }
