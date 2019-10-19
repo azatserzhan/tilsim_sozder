@@ -37,7 +37,6 @@ class LanguageDialogFragment : Fragment() {
             SharedPreference(requireContext()).setLanguage(SupportLanguage.UZ.code)
             sendRequest(SupportLanguage.UZ.code)
             (parentFragment as? BottomSheetDialogFragment)?.dialog?.cancel()
-
         }
     }
 
