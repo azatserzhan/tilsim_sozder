@@ -20,7 +20,7 @@ class NewsPresenter(private val analytics: Analytics, val context: Context) : Ba
                     Bot(
                         "www.bahai.kz",
                         "Қазақстан бахаиларының ресими сайтынан жаңалықтар",
-                        "http://www.bahai.kz",
+                        "http://bahai.kz/?page_id=13&lang=kk",
                         R.drawable.ic_bahai_kz
                     ),
                     Bot("www.bahai.org/ru/",

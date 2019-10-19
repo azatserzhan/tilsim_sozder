@@ -11,8 +11,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.bodyTextView
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.copyContainer
+import kotlinx.android.synthetic.main.fragment_tilsim_dialog.exitImageView
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.sendErrorContainer
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.shareContainer
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.titleTextView
@@ -73,6 +75,10 @@ class TilsimDialogFragment : Fragment() {
 
             val toast = Toast.makeText(requireContext(), text, duration)
             toast.show()
+        }
+
+        exitImageView.setOnClickListener {
+            (parentFragment as? BottomSheetDialogFragment)?.dialog?.cancel()
         }
     }
 }
