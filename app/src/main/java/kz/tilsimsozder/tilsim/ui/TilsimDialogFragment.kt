@@ -19,6 +19,7 @@ import kotlinx.android.synthetic.main.fragment_tilsim_dialog.sendErrorContainer
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.shareContainer
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.titleTextView
 import kz.tilsimsozder.R
+import kz.tilsimsozder.firebase.Analytics
 
 private const val TILSIM_TITLE = "TILSIM_TITLE"
 private const val TILSIM_BODY = "TILSIM_BODY"
@@ -37,6 +38,7 @@ class TilsimDialogFragment : Fragment() {
 
     private val title: String by lazy { arguments?.getString(TILSIM_TITLE) ?: "" }
     private val body: String by lazy { arguments?.getString(TILSIM_BODY) ?: "" }
+    private val analytics = Analytics()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return inflater.inflate(R.layout.fragment_tilsim_dialog, container, false)
@@ -55,6 +57,7 @@ class TilsimDialogFragment : Fragment() {
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareText)
             shareIntent.type = "text/plain"
             context?.startActivity(shareIntent)
+            analytics.shareTilsim(title)
         }
 
         sendErrorContainer.setOnClickListener {

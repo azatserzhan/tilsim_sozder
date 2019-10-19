@@ -51,6 +51,7 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
         setupView()
         presenter.loadPrayers()
         presenter.checkLanguage()
+        analytics.openPrayerPage()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -75,6 +76,7 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
         prayerAdapter = PrayerAdapter(
             textClickListener = { title, body ->
                 presenter.selectedPrayer(title, body)
+                analytics.showPrayer(title)
             },
             favouriteClickListener = { id ->
                 presenter.setFavourite(id)

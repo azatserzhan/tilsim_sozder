@@ -17,6 +17,7 @@ import kotlinx.android.synthetic.main.settings_language.russianLanguage
 import kotlinx.android.synthetic.main.settings_language.settingsLanguageContainer
 import kotlinx.android.synthetic.main.settings_language.uzbekLanguage
 import kz.tilsimsozder.common.BaseActivity
+import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.prayers.model.SettingsItem
 import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.preference.SupportLanguage
@@ -26,6 +27,7 @@ import java.util.Locale
 class SettingsActivity : BaseActivity() {
 
     private var settingsAdapter: SettingsAdapter? = null
+    private val analytics = Analytics()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.setTheme(
@@ -115,10 +117,12 @@ class SettingsActivity : BaseActivity() {
                 shareIntent.putExtra(Intent.EXTRA_TEXT, shareText)
                 shareIntent.type = "text/plain"
                 startActivity(shareIntent)
+                analytics.shareApp()
             }
             3 -> {
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/tilsim_sozder"))
                 startActivity(intent)
+                analytics.sendEmail()
             }
             4 -> {
                 val intent = Intent(
