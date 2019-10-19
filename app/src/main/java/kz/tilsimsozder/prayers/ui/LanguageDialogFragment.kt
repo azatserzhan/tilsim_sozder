@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.fragment_language_dialog.kazakhLanguage
+import kotlinx.android.synthetic.main.fragment_language_dialog.russianLanguage
 import kotlinx.android.synthetic.main.fragment_language_dialog.uzbekLanguage
 import kz.tilsimsozder.R
 import kz.tilsimsozder.preference.SharedPreference
@@ -30,6 +31,12 @@ class LanguageDialogFragment : Fragment() {
         kazakhLanguage.setOnClickListener {
             SharedPreference(requireContext()).setLanguage(SupportLanguage.KZ.code)
             sendRequest(SupportLanguage.KZ.code)
+            (parentFragment as? BottomSheetDialogFragment)?.dialog?.cancel()
+        }
+
+        russianLanguage.setOnClickListener {
+            SharedPreference(requireContext()).setLanguage(SupportLanguage.RU.code)
+            sendRequest(SupportLanguage.RU.code)
             (parentFragment as? BottomSheetDialogFragment)?.dialog?.cancel()
         }
 
