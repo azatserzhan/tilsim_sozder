@@ -58,7 +58,7 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
             when (requestCode) {
-                SupportLanguage.KZ.code, SupportLanguage.UZ.code -> restart()
+                SupportLanguage.KZ.code, SupportLanguage.UZ.code,  SupportLanguage.RU.code-> restart()
             }
         }
     }
