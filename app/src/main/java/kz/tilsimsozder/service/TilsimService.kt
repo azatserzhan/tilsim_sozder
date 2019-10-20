@@ -21,9 +21,12 @@ import kz.tilsimsozder.preference.SupportLanguage
 
 class TilsimService : Service() {
 
+    companion object{
+        var RANDOM_TILSIM: Int = 0
+    }
+
     private var tilsimsTitle: MutableList<String> = mutableListOf()
     private var tilsimsBody: MutableList<String> = mutableListOf()
-    private var randomTilsim: Int = 0
 
     override fun onBind(intent: Intent): IBinder? {
         return null
@@ -84,10 +87,10 @@ class TilsimService : Service() {
         )
         val contentView = RemoteViews(packageName, R.layout.notification_layout)
         val listLength = tilsimsBody.size - 1
-        randomTilsim = (0..listLength).shuffled().last()
+        RANDOM_TILSIM = (0..listLength).shuffled().last()
 
-        contentView.setTextViewText(R.id.tv_title, tilsimsTitle[randomTilsim])
-        contentView.setTextViewText(R.id.tv_content, tilsimsBody[randomTilsim])
+        contentView.setTextViewText(R.id.tv_title, tilsimsTitle[RANDOM_TILSIM])
+        contentView.setTextViewText(R.id.tv_content, tilsimsBody[RANDOM_TILSIM])
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             notificationChannel = NotificationChannel(channelId, description, NotificationManager.IMPORTANCE_HIGH)
