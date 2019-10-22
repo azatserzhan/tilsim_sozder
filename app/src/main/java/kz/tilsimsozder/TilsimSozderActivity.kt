@@ -6,10 +6,14 @@ import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.os.LocaleList
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import com.google.android.play.core.install.model.AppUpdateType
+import com.google.android.play.core.install.model.UpdateAvailability
 import kotlinx.android.synthetic.main.main_header.mainHeaderTextView
 import kotlinx.android.synthetic.main.main_header.settingsImageView
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemNews
@@ -59,6 +63,27 @@ class TilsimSozderActivity : BaseActivity() {
             finish()
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
+        }
+
+        val appUpdateManager = AppUpdateManagerFactory.create(this)
+        val appUpdateInfoTask = appUpdateManager?.appUpdateInfo
+
+        appUpdateInfoTask?.addOnSuccessListener { appUpdateInfo ->
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+                Log.d("azat", appUpdateInfo.packageName())
+
+                appUpdateManager.startUpdateFlowForResult(
+                    null,
+                    AppUpdateType.IMMEDIATE,
+                    this,
+                    0
+                )
+            }
+            Log.d("azat version:", appUpdateInfo.availableVersionCode().toString())
+            Log.d("azat update", appUpdateInfo.updateAvailability().toString())
+            Log.d("azat Allowed", appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE).toString())
+            Log.d("azat Allowed", BuildConfig.VERSION_NAME)
         }
     }
 
