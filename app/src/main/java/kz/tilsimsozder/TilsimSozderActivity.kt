@@ -6,7 +6,6 @@ import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.os.LocaleList
-import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -65,26 +64,7 @@ class TilsimSozderActivity : BaseActivity() {
             startActivity(intent)
         }
 
-        val appUpdateManager = AppUpdateManagerFactory.create(this)
-        val appUpdateInfoTask = appUpdateManager?.appUpdateInfo
-
-        appUpdateInfoTask?.addOnSuccessListener { appUpdateInfo ->
-            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-                && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
-                Log.d("azat", appUpdateInfo.packageName())
-
-                appUpdateManager.startUpdateFlowForResult(
-                    null,
-                    AppUpdateType.IMMEDIATE,
-                    this,
-                    0
-                )
-            }
-            Log.d("azat version:", appUpdateInfo.availableVersionCode().toString())
-            Log.d("azat update", appUpdateInfo.updateAvailability().toString())
-            Log.d("azat Allowed", appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE).toString())
-            Log.d("azat Allowed", BuildConfig.VERSION_NAME)
-        }
+        forceUpdate()
     }
 
     override fun onDestroy() {
@@ -175,6 +155,23 @@ class TilsimSozderActivity : BaseActivity() {
             NEWS_PAGE_ID -> mainHeaderTextView.text = getText(R.string.news_title)
             SERVICE_PAGE_ID -> mainHeaderTextView.text = getText(R.string.service_title)
         }
+    }
+
+    private fun forceUpdate() {
+        val appUpdateManager = AppUpdateManagerFactory.create(this)
+        appUpdateManager
+            .appUpdateInfo
+            .addOnSuccessListener { appUpdateInfo ->
+                if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                    && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE)) {
+                    appUpdateManager.startUpdateFlowForResult(
+                        appUpdateInfo,
+                        AppUpdateType.FLEXIBLE,
+                        this,
+                        0
+                    )
+                }
+            }
     }
 }
 
