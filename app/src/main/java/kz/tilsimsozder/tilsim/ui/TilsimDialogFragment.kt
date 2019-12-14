@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -83,5 +84,7 @@ class TilsimDialogFragment : Fragment() {
         exitImageView.setOnClickListener {
             (parentFragment as? BottomSheetDialogFragment)?.dialog?.cancel()
         }
+
+        activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
     }
 }
