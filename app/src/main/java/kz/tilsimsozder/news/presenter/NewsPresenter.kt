@@ -9,12 +9,11 @@ import kz.tilsimsozder.news.contract.NewsContract
 import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.preference.SupportLanguage
 
-
 class NewsPresenter(private val analytics: Analytics, val context: Context) : BasePresenter<NewsContract.View>(),
     NewsContract.Presenter {
 
     override fun loadNews() {
-        when(SharedPreference(context).getLanguageCode()) {
+        when (SharedPreference(context).getLanguageCode()) {
             SupportLanguage.KZ.code, SupportLanguage.RU.code -> {
                 val bots = listOf(
                     Bot(
@@ -66,6 +65,5 @@ class NewsPresenter(private val analytics: Analytics, val context: Context) : Ba
                 view?.showNews(bots)
             }
         }
-
     }
 }
