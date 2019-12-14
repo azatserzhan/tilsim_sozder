@@ -41,6 +41,7 @@
         android:background="?attr/divider_style" />
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -60,6 +61,39 @@
                 android:textColor="?attr/text_header"
                 tools:ignore="UnusedAttribute"
                 tools:text="Description" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="18dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/zoomOutButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/zoom_out_button"
+                    android:text="-"
+                    android:textColor="?attr/color_primary"
+                    tools:ignore="ButtonStyle" />
+
+                <Button
+                    android:id="@+id/zoomInButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="-1dp"
+                    android:layout_marginEnd="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/zoom_in_button"
+                    android:text="+"
+                    android:textColor="?attr/color_primary"
+                    android:textStyle="bold"
+                    tools:ignore="ButtonStyle" />
+
+            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"

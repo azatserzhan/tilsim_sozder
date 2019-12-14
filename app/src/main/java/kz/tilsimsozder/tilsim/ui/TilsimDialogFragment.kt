@@ -16,14 +16,21 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.bodyTextView
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.copyContainer
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.exitImageView
+import kotlinx.android.synthetic.main.fragment_tilsim_dialog.scrollContainer
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.sendErrorContainer
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.shareContainer
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.titleTextView
+import kotlinx.android.synthetic.main.fragment_tilsim_dialog.zoomInButton
+import kotlinx.android.synthetic.main.fragment_tilsim_dialog.zoomOutButton
 import kz.tilsimsozder.R
 import kz.tilsimsozder.firebase.Analytics
+import kz.tilsimsozder.preference.PreferenceContract
+import org.koin.android.ext.android.inject
 
 private const val TILSIM_TITLE = "TILSIM_TITLE"
 private const val TILSIM_BODY = "TILSIM_BODY"
+private const val CONTENT_TEXT_MAX_SIZE = 26
+private const val CONTENT_TEXT_MIN_SIZE = 12
 
 class TilsimDialogFragment : Fragment() {
 
@@ -40,6 +47,8 @@ class TilsimDialogFragment : Fragment() {
     private val title: String by lazy { arguments?.getString(TILSIM_TITLE) ?: "" }
     private val body: String by lazy { arguments?.getString(TILSIM_BODY) ?: "" }
     private val analytics = Analytics()
+    private val sharedPreferences: PreferenceContract by inject()
+    private var contentTextSize = 16
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return inflater.inflate(R.layout.fragment_tilsim_dialog, container, false)
@@ -50,6 +59,8 @@ class TilsimDialogFragment : Fragment() {
 
         titleTextView.text = title
         bodyTextView.text = body
+        contentTextSize = sharedPreferences.getDialogTextSize()
+        bodyTextView.textSize = contentTextSize.toFloat()
 
         shareContainer.setOnClickListener {
             val shareIntent = Intent()
@@ -83,6 +94,26 @@ class TilsimDialogFragment : Fragment() {
 
         exitImageView.setOnClickListener {
             (parentFragment as? BottomSheetDialogFragment)?.dialog?.cancel()
+        }
+
+        zoomOutButton.setOnClickListener {
+            if (contentTextSize > CONTENT_TEXT_MIN_SIZE) {
+                contentTextSize--
+                bodyTextView.textSize = contentTextSize.toFloat()
+                sharedPreferences.setDialogTextSize(contentTextSize)
+            }
+        }
+
+        zoomInButton.setOnClickListener {
+            if (contentTextSize < CONTENT_TEXT_MAX_SIZE) {
+                contentTextSize++
+                bodyTextView.textSize = contentTextSize.toFloat()
+                sharedPreferences.setDialogTextSize(contentTextSize)
+
+                scrollContainer.post {
+                    scrollContainer.fullScroll(View.FOCUS_DOWN)
+                }
+            }
         }
 
         activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)

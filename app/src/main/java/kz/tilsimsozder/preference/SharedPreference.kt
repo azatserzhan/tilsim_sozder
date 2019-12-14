@@ -9,6 +9,7 @@ private const val PREF_KEY_CURRENT_FRAGMENT_NAME = "PREF_KEY_CURRENT_FRAGMENT_NA
 private const val PREF_KEY_FAVOURITE_IDS = "PREF_KEY_FAVOURITE_IDS"
 private const val PREF_KEY_LANGUAGE = "PREF_KEY_LANGUAGE"
 private const val PREF_KEY_IS_LANGUAGE_DIALOG_SHOWN = "PREF_KEY_IS_LANGUAGE_DIALOG_SHOWN"
+private const val PREF_KEY_DIALOG_TEXT_SIZE = "PREF_KEY_DIALOG_TEXT_SIZE"
 
 class SharedPreference(context: Context) : PreferenceContract {
     private val prefs = PreferenceManager.getDefaultSharedPreferences(context)
@@ -68,6 +69,14 @@ class SharedPreference(context: Context) : PreferenceContract {
     override fun setLanguageDialogShow(isShow: Boolean) {
         val editor = prefs.edit()
         editor.putBoolean(PREF_KEY_IS_LANGUAGE_DIALOG_SHOWN, isShow)
+        editor.apply()
+    }
+
+    override fun getDialogTextSize(): Int = prefs.getInt(PREF_KEY_DIALOG_TEXT_SIZE, 16)
+
+    override fun setDialogTextSize(size: Int) {
+        val editor = prefs.edit()
+        editor.putInt(PREF_KEY_DIALOG_TEXT_SIZE, size)
         editor.apply()
     }
 }
