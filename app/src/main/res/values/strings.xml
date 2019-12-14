@@ -26,4 +26,8 @@
     <string name="language_ru" translatable="false">Русский</string>
     <string name="language_uz" translatable="false">Uzbek</string>
     <string name="settings_title">Настройки</string>
+    <string name="bot_ovd_name">Бот: Для остальных городов</string>
+    <string name="bot_ovd_description">Данный бот собирает статистику по основным видам деятельности</string>
+    <string name="bot_telegram_media_channel_bahai">Telegram: Медиа Канал Бахаи</string>
+    <string name="bot_telegram_words_bahai">Telegram: Цитаты Бахаи</string>
 </resources>

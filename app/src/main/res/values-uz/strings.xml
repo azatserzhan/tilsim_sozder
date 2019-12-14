@@ -17,4 +17,6 @@
     <string name="tilsim_sozder_title">Ниҳон калималар</string>
     <string name="search_hint">Izlash</string>
     <string name="settings_title">Menyu</string>
+    <string name="bot_telegram_media_channel_bahai">Telegram: Bahai media kanali</string>
+    <string name="bot_telegram_words_bahai">Telegram: Iqtiboslar</string>
 </resources>

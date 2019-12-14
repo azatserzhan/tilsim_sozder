@@ -18,17 +18,23 @@ class BotPresenter(private val analytics: Analytics, val context: Context) : Bas
                 val bots = listOf(
                     Bot(
                         "Бот: Астана",
-                        "Астана қаласы бойынша Дұғалық кездесу немесе басқа да проекттердің статистикасын жүргізетін сервис",
+                        context.getString(R.string.bot_ovd_description),
                         "https://t.me/Astana_bahai_bot",
                         R.drawable.astana_bot
                     ),
                     Bot("Бот: Алматы",
-                        "Алматы қаласы бойынша Дұғалық кездесу немесе басқа да проекттердің статистикасын жүргізетін сервис",
+                        context.getString(R.string.bot_ovd_description),
                         "https://t.me/bahai_almaty_bot", R.drawable.almaty_bot),
-                    Bot("Telegram: Медиа Канал Бахаи",
+                    Bot(
+                        context.getString(R.string.bot_ovd_name),
+                        context.getString(R.string.bot_ovd_description),
+                        "https://t.me/bahai_kz_bot",
+                        R.drawable.icon
+                    ),
+                    Bot(context.getString(R.string.bot_telegram_media_channel_bahai),
                         "",
                         "https://t.me/mediabahai", R.drawable.bot),
-                    Bot("Telegram: Цитаты Бахаи",
+                    Bot(context.getString(R.string.bot_telegram_words_bahai),
                         "",
                         "https://t.me/bahaiwisdom", R.drawable.bot)
                 )
@@ -37,10 +43,10 @@ class BotPresenter(private val analytics: Analytics, val context: Context) : Bas
             }
             SupportLanguage.UZ.code -> {
                 val bots = listOf(
-                    Bot("Telegram: Медиа Канал Бахаи",
+                    Bot(context.getString(R.string.bot_telegram_media_channel_bahai),
                         "",
                         "https://t.me/mediabahai", R.drawable.bot),
-                    Bot("Telegram: Цитаты Бахаи",
+                    Bot(context.getString(R.string.bot_telegram_words_bahai),
                         "",
                         "https://t.me/bahaiwisdom", R.drawable.bot)
                 )
