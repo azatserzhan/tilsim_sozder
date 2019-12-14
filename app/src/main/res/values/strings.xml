@@ -30,4 +30,8 @@
     <string name="bot_ovd_description">Данный бот собирает статистику по основным видам деятельности</string>
     <string name="bot_telegram_media_channel_bahai">Telegram: Медиа Канал Бахаи</string>
     <string name="bot_telegram_words_bahai">Telegram: Цитаты Бахаи</string>
+    <string name="news_kz_oficial_site">Официальный сайт бахаи Казахстана</string>
+    <string name="news_worl_bahai">Вебсайт всемирной общины бахаи</string>
+    <string name="film_bab_description">Фильм про Баб</string>
+    <string name="youtube_kz_bahai">YouTube: Бахаи Казахстана</string>
 </resources>
