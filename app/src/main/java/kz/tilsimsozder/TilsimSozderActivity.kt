@@ -3,6 +3,7 @@ package kz.tilsimsozder
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
+import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
 import android.os.LocaleList
@@ -75,7 +76,16 @@ class TilsimSozderActivity : BaseActivity() {
     override fun attachBaseContext(newBase: Context) {
         val updatedContext = getLocalizedContext(newBase)
         super.attachBaseContext(updatedContext)
+        updateConfigurationIfNeededAndGetLanguage(resources, updatedContext.resources)
     }
+
+    private fun updateConfigurationIfNeededAndGetLanguage(oldResources: Resources, newResources: Resources): String =
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
+            oldResources.updateConfiguration(newResources.configuration, newResources.displayMetrics)
+            oldResources.configuration.locale.language
+        } else {
+            oldResources.configuration.locales[0].language
+        }
 
     private fun getLocalizedContext(context: Context): Context {
         val languageStrCode = SharedPreference(context).getLanguageStrCode()
