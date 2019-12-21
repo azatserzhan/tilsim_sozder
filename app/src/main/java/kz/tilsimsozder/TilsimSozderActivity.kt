@@ -185,7 +185,7 @@ class TilsimSozderActivity : BaseActivity() {
     }
 }
 
-internal class ViewPagerAdapter(
+class ViewPagerAdapter(
     fragmentManager: FragmentManager
 ) : FragmentPagerAdapter(fragmentManager) {
     private var count = 4
