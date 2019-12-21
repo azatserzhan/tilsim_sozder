@@ -17,6 +17,12 @@ class BotPresenter(private val analytics: Analytics, val context: Context) : Bas
             SupportLanguage.KZ.code, SupportLanguage.RU.code -> {
                 val bots = listOf(
                     Bot(
+                        "Calendar",
+                        context.getString(R.string.calendar_description),
+                        "https://calendar.google.com/calendar?cid=cjRiMnFjOXBvZ3U5bXY1OGE2Z25hYTB2ZG9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ",
+                        R.drawable.calendar
+                    ),
+                    Bot(
                         "Бот: Астана",
                         context.getString(R.string.bot_ovd_description),
                         "https://t.me/Astana_bahai_bot",
