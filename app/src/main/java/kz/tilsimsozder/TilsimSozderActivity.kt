@@ -160,10 +160,10 @@ class TilsimSozderActivity : BaseActivity() {
 
     private fun setupHeader(position: Int) {
         when (position) {
-            PRAYER_PAGE_ID -> mainHeaderTextView.text = getText(R.string.prayer_title)
-            TILSIM_PAGE_ID -> mainHeaderTextView.text = getText(R.string.tilsim_sozder_title)
-            NEWS_PAGE_ID -> mainHeaderTextView.text = getText(R.string.news_title)
-            SERVICE_PAGE_ID -> mainHeaderTextView.text = getText(R.string.service_title)
+            PRAYER_PAGE_ID -> mainHeaderTextView.text = getString(R.string.prayer_title)
+            TILSIM_PAGE_ID -> mainHeaderTextView.text = getString(R.string.tilsim_sozder_title)
+            NEWS_PAGE_ID -> mainHeaderTextView.text = getString(R.string.news_title)
+            SERVICE_PAGE_ID -> mainHeaderTextView.text = getString(R.string.service_title)
         }
     }
 

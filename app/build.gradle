@@ -9,8 +9,8 @@ android {
         applicationId "kz.tilsimsozder"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 29
-        versionName '1.1.29'
+        versionCode 30
+        versionName '1.1.30'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled = false
     }
