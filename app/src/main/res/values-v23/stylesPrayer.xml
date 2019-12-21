@@ -24,6 +24,7 @@
         <item name="bg_primary">@color/bg_primary_dark</item>
         <item name="bg_active">@color/bg_active_dark</item>
         <item name="text_body">@color/text_body_dark</item>
+        <item name="text_body_second">@color/text_body_second_dark</item>
         <item name="text_header">@color/text_header_dark</item>
         <item name="divider_style">@color/divider_style_dark</item>
         <item name="seek_bar_style">@color/seek_bar_style_dark</item>
@@ -46,6 +47,7 @@
         <item name="bg_primary">@color/bg_primary_light</item>
         <item name="bg_active">@color/bg_active_light</item>
         <item name="text_body">@color/text_body_light</item>
+        <item name="text_body_second">@color/text_body_second_light</item>
         <item name="text_header">@color/text_header_light</item>
         <item name="divider_style">@color/divider_style_light</item>
         <item name="seek_bar_style">@color/seek_bar_style_light</item>

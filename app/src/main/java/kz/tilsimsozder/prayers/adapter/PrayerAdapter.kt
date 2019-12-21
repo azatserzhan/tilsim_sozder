@@ -3,6 +3,7 @@ package kz.tilsimsozder.prayers.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.select_prayer.view.descriptionTextView
 import kotlinx.android.synthetic.main.select_prayer.view.favouriteImageView
 import kotlinx.android.synthetic.main.select_prayer.view.prayerNameTextView
 import kotlinx.android.synthetic.main.select_prayer.view.selectPrayerLinearLayout
@@ -40,6 +41,7 @@ class PrayerAdapter(
     private class SelectPrayerViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         RecyclerView.ViewHolder(inflater.inflate(R.layout.select_prayer, parent, false)) {
         private val prayerNameTextView = itemView.prayerNameTextView
+        private val descriptionTextView = itemView.descriptionTextView
         private val selectPrayerLinearLayout = itemView.selectPrayerLinearLayout
         private val favouriteImageView = itemView.favouriteImageView
 
@@ -49,6 +51,7 @@ class PrayerAdapter(
             favouriteClickListener: (id: String) -> Unit
         ) {
             prayerNameTextView.text = prayer.title
+            descriptionTextView.text = prayer.body
             if (prayer.isFavourite) {
                 favouriteImageView.setImageDrawable(itemView.context.getDrawable(R.drawable.ic_favorite_active))
             } else {
