@@ -1,10 +1,13 @@
 package kz.tilsimsozder.news.ui
 
 import android.annotation.SuppressLint
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebChromeClient
+import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -43,7 +46,12 @@ class NewsDialogFragment : Fragment() {
 
         newsWebView.loadUrl(url)
         newsWebView.settings.javaScriptEnabled = true
-        newsWebView.webViewClient = WebViewClient()
+        newsWebView.webChromeClient = object: WebChromeClient(){
+            override fun getDefaultVideoPoster(): Bitmap? {
+                val poster = super.getDefaultVideoPoster()
+                return poster ?: Bitmap.createBitmap(1, 1, Bitmap.Config.ALPHA_8)
+            }
+        }
 
         exitImageView.setOnClickListener {
             (parentFragment as? BottomSheetDialogFragment)?.dialog?.cancel()
