@@ -2,53 +2,28 @@ package kz.tilsimsozder.prayers.presenter
 
 import android.annotation.SuppressLint
 import android.content.Context
-import kz.tilsimsozder.R
 import kz.tilsimsozder.common.BasePresenter
 import kz.tilsimsozder.firebase.Analytics
+import kz.tilsimsozder.prayers.api.PrayersApi
 import kz.tilsimsozder.prayers.contract.PrayersContract
 import kz.tilsimsozder.prayers.model.Prayer
 import kz.tilsimsozder.preference.SharedPreference
-import kz.tilsimsozder.preference.SupportLanguage
 
 private const val URL_APP = "https://play.google.com/store/apps/details?id=kz.tilsimsozder"
 
 class PrayersPresenter(
     private val analytics: Analytics,
     private val context: Context,
-    private val preference: SharedPreference
+    private val prayersApi: PrayersApi
 ) : BasePresenter<PrayersContract.View>(),
     PrayersContract.Presenter {
 
-    private var prayersTitle = listOf<String>()
-    private var prayersBody = listOf<String>()
     private var prayers = mutableListOf<Prayer>()
     private var positionPrayer = 0
 
     override fun loadPrayers() {
-        when (preference.getLanguageCode()) {
-            SupportLanguage.KZ.code -> {
-                prayersTitle = context.applicationContext.resources.getStringArray(R.array.prayer_name).toList()
-                prayersBody = context.applicationContext.resources.getStringArray(R.array.prayer_value).toList()
-            }
-            SupportLanguage.RU.code -> {
-                prayersTitle = context.applicationContext.resources.getStringArray(R.array.prayer_name_ru).toList()
-                prayersBody = context.applicationContext.resources.getStringArray(R.array.prayer_value_ru).toList()
-            }
-            SupportLanguage.UZ.code -> {
-                prayersTitle = context.applicationContext.resources.getStringArray(R.array.prayer_name_uz).toList()
-                prayersBody = context.applicationContext.resources.getStringArray(R.array.prayer_value_uz).toList()
-            }
-        }
-
-        prayers = prayersTitle
-            .map { Prayer(title = it, body = "") }
-            .toList()
-            .apply {
-                this.forEachIndexed { index, tilsimsoz ->
-                    tilsimsoz.body = prayersBody[index]
-                }
-            }
-            .toMutableList()
+        prayers.clear()
+        prayers.addAll(prayersApi.getPrayers())
 
         val favouriteIds = SharedPreference(context).getFavourites()
         favouriteIds?.forEach { id ->
@@ -67,8 +42,8 @@ class PrayersPresenter(
     }
 
     override fun sharePrayer() {
-        analytics.sharePrayer(prayersTitle[positionPrayer])
-        view?.sharePrayer(URL_APP, prayersTitle[positionPrayer], prayersBody[positionPrayer])
+        analytics.sharePrayer(prayers[positionPrayer].title)
+        view?.sharePrayer(URL_APP, prayers[positionPrayer].title, prayers[positionPrayer].body)
     }
 
     @SuppressLint("DefaultLocale")

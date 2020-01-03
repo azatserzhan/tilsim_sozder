@@ -16,17 +16,18 @@ import android.util.Log
 import android.widget.RemoteViews
 import kz.tilsimsozder.R
 import kz.tilsimsozder.TilsimSozderActivity
+import kz.tilsimsozder.prayers.api.PrayersApi
 import kz.tilsimsozder.preference.SharedPreference
-import kz.tilsimsozder.preference.SupportLanguage
+import kz.tilsimsozder.tilsim.model.Tilsim
+import org.koin.android.ext.android.inject
 
 class TilsimService : Service() {
 
-    companion object{
+    companion object {
         var RANDOM_TILSIM: Int = 0
     }
 
-    private var tilsimsTitle: MutableList<String> = mutableListOf()
-    private var tilsimsBody: MutableList<String> = mutableListOf()
+    private val tilsimList = mutableListOf<Tilsim>()
 
     override fun onBind(intent: Intent): IBinder? {
         return null
@@ -54,19 +55,9 @@ class TilsimService : Service() {
     }
 
     private fun getData() {
-        tilsimsTitle = when (SharedPreference(baseContext).getLanguageCode()) {
-            SupportLanguage.KZ.code -> this.resources.getStringArray(R.array.tilsim_sozder_title).toMutableList()
-            SupportLanguage.UZ.code -> this.resources.getStringArray(R.array.tilsim_sozder_title_uz).toMutableList()
-            SupportLanguage.RU.code -> this.resources.getStringArray(R.array.tilsim_sozder_title_ru).toMutableList()
-            else -> this.resources.getStringArray(R.array.tilsim_sozder_title).toMutableList()
-        }
-
-        tilsimsBody = when (SharedPreference(baseContext).getLanguageCode()) {
-            SupportLanguage.KZ.code -> this.resources.getStringArray(R.array.tilsim_sozder_content).toMutableList()
-            SupportLanguage.UZ.code -> this.resources.getStringArray(R.array.tilsim_sozder_content_uz).toMutableList()
-            SupportLanguage.RU.code -> this.resources.getStringArray(R.array.tilsim_sozder_content_ru).toMutableList()
-            else -> this.resources.getStringArray(R.array.tilsim_sozder_content).toMutableList()
-        }
+        tilsimList.clear()
+        val prayersApi: PrayersApi by inject()
+        tilsimList.addAll(prayersApi.getTilsimList())
     }
 
     private fun showNotification(context: Context) {
@@ -86,11 +77,11 @@ class TilsimService : Service() {
             PendingIntent.FLAG_UPDATE_CURRENT
         )
         val contentView = RemoteViews(packageName, R.layout.notification_layout)
-        val listLength = tilsimsBody.size - 1
+        val listLength = tilsimList.size - 1
         RANDOM_TILSIM = (0..listLength).shuffled().last()
 
-        contentView.setTextViewText(R.id.tv_title, tilsimsTitle[RANDOM_TILSIM])
-        contentView.setTextViewText(R.id.tv_content, tilsimsBody[RANDOM_TILSIM])
+        contentView.setTextViewText(R.id.tv_title, tilsimList[RANDOM_TILSIM].title)
+        contentView.setTextViewText(R.id.tv_content, tilsimList[RANDOM_TILSIM].body)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             notificationChannel = NotificationChannel(channelId, description, NotificationManager.IMPORTANCE_HIGH)
