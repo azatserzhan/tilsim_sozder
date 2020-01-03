@@ -11,6 +11,7 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_settings.menuRecyclerView
 import kotlinx.android.synthetic.main.main_header.mainHeaderTextView
+import kotlinx.android.synthetic.main.main_header.nightModeImageView
 import kotlinx.android.synthetic.main.main_header.settingsImageView
 import kotlinx.android.synthetic.main.settings_language.kazakhLanguage
 import kotlinx.android.synthetic.main.settings_language.russianLanguage
@@ -62,6 +63,7 @@ class SettingsActivity : BaseActivity() {
         settingsAdapter?.addItems(items)
         mainHeaderTextView.text = getString(R.string.settings_title)
         settingsImageView.isVisible = false
+        nightModeImageView.isVisible = false
 
         setupLanguages()
         SharedPreference(baseContext).setIsTilsimPage(true)

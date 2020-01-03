@@ -19,8 +19,19 @@
         android:paddingStart="24dp"
         android:textColor="?attr/text_header"
         android:textSize="28sp"
+        android:maxLines="1"
         tools:ignore="RtlSymmetry"
         tools:text="Бахаи дұғалары" />
+
+    <ImageView
+        android:id="@+id/nightModeImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="16dp"
+        android:padding="6dp"
+        tools:src="@drawable/ic_night"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/settingsImageView"
