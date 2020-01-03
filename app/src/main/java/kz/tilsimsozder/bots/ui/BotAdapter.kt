@@ -50,8 +50,8 @@ class BotAdapter(
             clickListener: (position: Int) -> Unit,
             shareListener: (url: String) -> Unit
         ) {
-            botTitleTextView.text = bot.title
-            botDescriptionTextView.text = bot.description
+            botTitleTextView.text = if (bot.title != 0) botTitleTextView.context.getString(bot.title) else ""
+            botDescriptionTextView.text = if (bot.description != 0) botDescriptionTextView.context.getString(bot.description) else ""
             botImageView.setBackgroundResource(bot.imageRes)
             serviceContainer.setOnClickListener { clickListener(adapterPosition) }
             shareImageView.setOnClickListener { shareListener("${bot.title}\n ${bot.url}") }

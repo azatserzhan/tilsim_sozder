@@ -13,4 +13,6 @@ interface PreferenceContract {
     fun getLanguageStrCode(): String
     fun getIsLanguageDialogShow(): Boolean
     fun setLanguageDialogShow(isShow: Boolean)
+    fun setDialogTextSize(size: Int)
+    fun getDialogTextSize(): Int
 }

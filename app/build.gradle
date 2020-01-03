@@ -9,8 +9,8 @@ android {
         applicationId "kz.tilsimsozder"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 25
-        versionName '1.1.25'
+        versionCode 29
+        versionName '1.1.29'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled = false
     }
@@ -81,4 +81,7 @@ dependencies {
 
     //firebase
     implementation 'com.google.firebase:firebase-core:16.0.1'
+
+    //PlayMarket
+    implementation 'com.google.android.play:core:1.6.3'
 }

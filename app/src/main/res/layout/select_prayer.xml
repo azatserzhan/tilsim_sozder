@@ -16,33 +16,56 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bubble_select_prayer"
+        android:orientation="vertical"
         tools:ignore="UseCompoundDrawables">
 
-        <TextView
-            android:id="@+id/prayerNameTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:paddingLeft="24dp"
-            android:paddingTop="20dp"
-            android:paddingRight="30dp"
-            android:paddingBottom="20dp"
-            android:textColor="?attr/text_header"
-            android:textSize="17sp"
-            tools:text="Title"
-            tools:ignore="RtlHardcoded" />
 
-        <ImageView
-            android:id="@+id/favouriteImageView"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginEnd="14dp"
-            android:padding="10dp"
-            android:src="@drawable/ic_favorite"
-            tools:ignore="ContentDescription" />
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:id="@+id/prayerNameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingLeft="24dp"
+                android:paddingTop="20dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="4dp"
+                android:textColor="?attr/text_header"
+                android:textSize="17sp"
+                tools:ignore="RtlHardcoded"
+                tools:text="Title" />
+
+            <ImageView
+                android:id="@+id/favouriteImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="14dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_favorite"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingLeft="24dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="6dp"
+            android:textColor="?attr/text_body_second"
+            android:textSize="16sp"
+            tools:ignore="RtlHardcoded"
+            tools:text="Title" />
     </LinearLayout>
 
     <View

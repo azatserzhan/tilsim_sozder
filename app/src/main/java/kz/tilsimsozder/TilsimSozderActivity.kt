@@ -3,6 +3,7 @@ package kz.tilsimsozder
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
+import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
 import android.os.LocaleList
@@ -10,6 +11,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import com.google.android.play.core.install.model.AppUpdateType
+import com.google.android.play.core.install.model.UpdateAvailability
 import kotlinx.android.synthetic.main.main_header.mainHeaderTextView
 import kotlinx.android.synthetic.main.main_header.settingsImageView
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemNews
@@ -60,6 +64,8 @@ class TilsimSozderActivity : BaseActivity() {
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
         }
+
+        forceUpdate()
     }
 
     override fun onDestroy() {
@@ -70,7 +76,16 @@ class TilsimSozderActivity : BaseActivity() {
     override fun attachBaseContext(newBase: Context) {
         val updatedContext = getLocalizedContext(newBase)
         super.attachBaseContext(updatedContext)
+        updateConfigurationIfNeededAndGetLanguage(resources, updatedContext.resources)
     }
+
+    private fun updateConfigurationIfNeededAndGetLanguage(oldResources: Resources, newResources: Resources): String =
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
+            oldResources.updateConfiguration(newResources.configuration, newResources.displayMetrics)
+            oldResources.configuration.locale.language
+        } else {
+            oldResources.configuration.locales[0].language
+        }
 
     private fun getLocalizedContext(context: Context): Context {
         val languageStrCode = SharedPreference(context).getLanguageStrCode()
@@ -151,9 +166,26 @@ class TilsimSozderActivity : BaseActivity() {
             SERVICE_PAGE_ID -> mainHeaderTextView.text = getText(R.string.service_title)
         }
     }
+
+    private fun forceUpdate() {
+        val appUpdateManager = AppUpdateManagerFactory.create(this)
+        appUpdateManager
+            .appUpdateInfo
+            .addOnSuccessListener { appUpdateInfo ->
+                if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                    && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE)) {
+                    appUpdateManager.startUpdateFlowForResult(
+                        appUpdateInfo,
+                        AppUpdateType.FLEXIBLE,
+                        this,
+                        0
+                    )
+                }
+            }
+    }
 }
 
-internal class ViewPagerAdapter(
+class ViewPagerAdapter(
     fragmentManager: FragmentManager
 ) : FragmentPagerAdapter(fragmentManager) {
     private var count = 4

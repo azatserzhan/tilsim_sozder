@@ -67,7 +67,7 @@ class NewsFragment : BaseFragment<NewsContract.View, NewsContract.Presenter>(),
         bot?.let {
             val bottomSheetDialogFragment =
                 BaseBottomSheetDialog.create(NewsDialogFragment.create(
-                    bot.title,
+                    requireContext().getString(bot.title),
                     bot.url
                 ))
             bottomSheetDialogFragment.show(childFragmentManager, NewsDialogFragment.NEWS_DIALOG_FRAGMENT)
