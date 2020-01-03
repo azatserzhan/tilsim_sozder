@@ -16,10 +16,10 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="sans-serif-medium"
+        android:maxLines="1"
         android:paddingStart="24dp"
         android:textColor="?attr/text_header"
         android:textSize="28sp"
-        android:maxLines="1"
         tools:ignore="RtlSymmetry"
         tools:text="Бахаи дұғалары" />
 
@@ -30,8 +30,8 @@
         android:layout_gravity="center"
         android:layout_marginEnd="16dp"
         android:padding="6dp"
-        tools:src="@drawable/ic_night"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/ic_night" />
 
     <ImageView
         android:id="@+id/settingsImageView"
