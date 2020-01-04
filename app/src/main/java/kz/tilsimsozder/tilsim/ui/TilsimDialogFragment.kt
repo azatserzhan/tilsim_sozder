@@ -4,6 +4,7 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context.CLIPBOARD_SERVICE
 import android.content.Intent
+import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,11 +12,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.bodyTextView
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.copyContainer
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.exitImageView
+import kotlinx.android.synthetic.main.fragment_tilsim_dialog.playImageButton
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.scrollContainer
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.sendErrorContainer
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.shareContainer
@@ -29,6 +32,7 @@ import org.koin.android.ext.android.inject
 
 private const val TILSIM_TITLE = "TILSIM_TITLE"
 private const val TILSIM_BODY = "TILSIM_BODY"
+private const val TILSIM_URL = "TILSIM_URL"
 private const val CONTENT_TEXT_MAX_SIZE = 26
 private const val CONTENT_TEXT_MIN_SIZE = 12
 
@@ -36,19 +40,22 @@ class TilsimDialogFragment : Fragment() {
 
     companion object {
         const val TILSIM_DIALOG_FRAGMENT = "TILSIM_DIALOG_FRAGMENT"
-        fun create(title: String, body: String) = TilsimDialogFragment().apply {
+        fun create(title: String, body: String, url: String = "") = TilsimDialogFragment().apply {
             arguments = Bundle().apply {
                 putString(TILSIM_TITLE, title)
                 putString(TILSIM_BODY, body)
+                putString(TILSIM_URL, url)
             }
         }
     }
 
     private val title: String by lazy { arguments?.getString(TILSIM_TITLE) ?: "" }
     private val body: String by lazy { arguments?.getString(TILSIM_BODY) ?: "" }
+    private val url: String by lazy { arguments?.getString(TILSIM_URL) ?: "" }
     private val analytics = Analytics()
     private val sharedPreferences: PreferenceContract by inject()
     private var contentTextSize = 16
+    private val player = MediaPlayer()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return inflater.inflate(R.layout.fragment_tilsim_dialog, container, false)
@@ -116,6 +123,31 @@ class TilsimDialogFragment : Fragment() {
             }
         }
 
+        setupAudio()
+
         activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+    }
+
+    private fun setupAudio() {
+        if (url.isNotEmpty()) {
+            playImageButton.isVisible = url.isNotEmpty()
+            player.setDataSource(requireContext(), Uri.parse(url))
+            player.prepare()
+        }
+
+        playImageButton.setOnClickListener {
+            if (player.isPlaying) {
+                player.pause()
+                playImageButton.setBackgroundResource(R.drawable.ic_play_button)
+            } else {
+                playImageButton.setBackgroundResource(R.drawable.ic_pause_button)
+                player.start()
+            }
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        player.stop()
     }
 }

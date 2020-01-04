@@ -2,16 +2,18 @@ package kz.tilsimsozder.prayers.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.select_prayer.view.descriptionTextView
 import kotlinx.android.synthetic.main.select_prayer.view.favouriteImageView
+import kotlinx.android.synthetic.main.select_prayer.view.musicImageView
 import kotlinx.android.synthetic.main.select_prayer.view.prayerNameTextView
 import kotlinx.android.synthetic.main.select_prayer.view.selectPrayerLinearLayout
 import kz.tilsimsozder.R
 import kz.tilsimsozder.prayers.model.Prayer
 
 class PrayerAdapter(
-    private val textClickListener: (title: String, body: String) -> Unit,
+    private val textClickListener: (title: String, body: String, url: String) -> Unit,
     private val favouriteClickListener: (id: String) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -44,25 +46,30 @@ class PrayerAdapter(
         private val descriptionTextView = itemView.descriptionTextView
         private val selectPrayerLinearLayout = itemView.selectPrayerLinearLayout
         private val favouriteImageView = itemView.favouriteImageView
+        private val musicImageView = itemView.musicImageView
 
         fun bind(
             prayer: Prayer,
-            textClickListener: (title: String, body: String) -> Unit,
+            textClickListener: (title: String, body: String, url: String) -> Unit,
             favouriteClickListener: (id: String) -> Unit
         ) {
             prayerNameTextView.text = prayer.title
             descriptionTextView.text = prayer.body
+            val url = prayer.url ?: ""
+
             if (prayer.isFavourite) {
                 favouriteImageView.setImageDrawable(itemView.context.getDrawable(R.drawable.ic_favorite_active))
             } else {
                 favouriteImageView.setImageDrawable(itemView.context.getDrawable(R.drawable.ic_favorite))
             }
             selectPrayerLinearLayout.setOnClickListener {
-                textClickListener(prayer.title, prayer.body)
+                textClickListener(prayer.title, prayer.body, url)
             }
             favouriteImageView.setOnClickListener {
                 favouriteClickListener(prayer.id)
             }
+
+            musicImageView.isVisible = prayer.url != null
         }
     }
 }

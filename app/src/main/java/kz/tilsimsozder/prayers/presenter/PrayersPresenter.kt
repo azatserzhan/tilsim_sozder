@@ -34,8 +34,8 @@ class PrayersPresenter(
         view?.showPrayers(prayers)
     }
 
-    override fun selectedPrayer(title: String, body: String) {
-        view?.showPrayerDialog(title, body)
+    override fun selectedPrayer(title: String, body: String, url: String) {
+        view?.showPrayerDialog(title, body, url)
     }
 
     override fun setAdapter(prayers: List<Prayer>) {

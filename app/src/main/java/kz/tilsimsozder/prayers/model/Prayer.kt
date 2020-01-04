@@ -11,5 +11,7 @@ data class Prayer(
         @SerializedName("content")
         var body: String,
 
-        var isFavourite: Boolean = false
+        var isFavourite: Boolean = false,
+
+        val url: String? = null
 )
