@@ -17,6 +17,7 @@
         android:layout_weight="1"
         android:fontFamily="sans-serif-medium"
         android:maxLines="1"
+        android:ellipsize="end"
         android:paddingStart="24dp"
         android:textColor="?attr/text_header"
         android:textSize="28sp"
@@ -29,6 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:padding="6dp"
         tools:ignore="ContentDescription"
         tools:src="@drawable/ic_night" />
