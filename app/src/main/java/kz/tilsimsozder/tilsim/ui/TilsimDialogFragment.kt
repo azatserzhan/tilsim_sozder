@@ -2,9 +2,11 @@ package kz.tilsimsozder.tilsim.ui
 
 import android.content.ClipData
 import android.content.ClipboardManager
+import android.content.Context
 import android.content.Context.CLIPBOARD_SERVICE
 import android.content.Intent
 import android.media.MediaPlayer
+import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -123,13 +125,16 @@ class TilsimDialogFragment : Fragment() {
             }
         }
 
-        setupAudio()
-
         activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
     }
 
+    override fun onStart() {
+        super.onStart()
+        setupAudio()
+    }
+
     private fun setupAudio() {
-        if (url.isNotEmpty()) {
+        if (url.isNotEmpty() && haveNetworkConnection()) {
             playImageButton.isVisible = url.isNotEmpty()
             player.setDataSource(requireContext(), Uri.parse(url))
             player.prepare()
@@ -144,6 +149,23 @@ class TilsimDialogFragment : Fragment() {
                 player.start()
             }
         }
+    }
+
+    private fun haveNetworkConnection(): Boolean {
+        var haveConnectedWifi = false
+        var haveConnectedMobile = false
+
+        val cm = activity?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
+        val netInfo = cm!!.allNetworkInfo
+        for (ni in netInfo) {
+            if (ni.typeName.equals("WIFI", ignoreCase = true))
+                if (ni.isConnected)
+                    haveConnectedWifi = true
+            if (ni.typeName.equals("MOBILE", ignoreCase = true))
+                if (ni.isConnected)
+                    haveConnectedMobile = true
+        }
+        return haveConnectedWifi || haveConnectedMobile
     }
 
     override fun onDestroy() {
