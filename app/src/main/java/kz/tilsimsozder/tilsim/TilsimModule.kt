@@ -7,6 +7,6 @@ import org.koin.dsl.module
 
 object TilsimModule : InjectionModule {
     override fun create() = module {
-        viewModel { TilsimPresenter(get(), get()) }
+        viewModel { TilsimPresenter(get()) }
     }
 }

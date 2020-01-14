@@ -15,6 +15,7 @@ import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
 import kotlinx.android.synthetic.main.main_header.mainHeaderTextView
+import kotlinx.android.synthetic.main.main_header.nightModeImageView
 import kotlinx.android.synthetic.main.main_header.settingsImageView
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemNews
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemPrayer
@@ -41,8 +42,9 @@ class TilsimSozderActivity : BaseActivity() {
     private val analytics = Analytics()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val isThemeDark = SharedPreference(baseContext).getIsThemeDark()
         super.setTheme(
-            if (SharedPreference(baseContext).getIsThemeDark()) {
+            if (isThemeDark) {
                 R.style.CustomThemeDark
             } else {
                 R.style.CustomThemeLight
@@ -64,6 +66,14 @@ class TilsimSozderActivity : BaseActivity() {
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
         }
+
+        nightModeImageView.setOnClickListener {
+            SharedPreference(baseContext).setTheme(!isThemeDark)
+            finish()
+            val intent = Intent(this, TilsimSozderActivity::class.java)
+            startActivity(intent)
+        }
+        nightModeImageView.setBackgroundResource(if (!isThemeDark) R.drawable.ic_sunny_day else R.drawable.ic_night)
 
         forceUpdate()
     }

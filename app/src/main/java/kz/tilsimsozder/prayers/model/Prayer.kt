@@ -1,10 +1,17 @@
 package kz.tilsimsozder.prayers.model
 
-private var idCounter = 0
+import com.google.gson.annotations.SerializedName
 
 data class Prayer(
-        var id: String = (idCounter ++).toString(),
+        var id: String = "",
+
+        @SerializedName("title")
         val title: String,
+
+        @SerializedName("content")
         var body: String,
-        var isFavourite: Boolean = false
+
+        var isFavourite: Boolean = false,
+
+        val url: String? = null
 )

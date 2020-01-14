@@ -58,7 +58,7 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
             when (requestCode) {
-                SupportLanguage.KZ.code, SupportLanguage.UZ.code,  SupportLanguage.RU.code-> restart()
+                SupportLanguage.KZ.code, SupportLanguage.UZ.code, SupportLanguage.RU.code -> restart()
             }
         }
     }
@@ -74,8 +74,8 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
 
 
         prayerAdapter = PrayerAdapter(
-            textClickListener = { title, body ->
-                presenter.selectedPrayer(title, body)
+            textClickListener = { title, body, url ->
+                presenter.selectedPrayer(title, body, url)
                 analytics.showPrayer(title)
             },
             favouriteClickListener = { id ->
@@ -118,11 +118,12 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
         context?.startActivity(shareIntent)
     }
 
-    override fun showPrayerDialog(title: String, body: String) {
+    override fun showPrayerDialog(title: String, body: String, url: String) {
         val bottomSheetDialogFragment =
             BaseBottomSheetDialog.create(TilsimDialogFragment.create(
                 title,
-                body
+                body,
+                url
             ))
         bottomSheetDialogFragment.show(childFragmentManager, TILSIM_DIALOG_FRAGMENT)
     }

@@ -1,8 +1,15 @@
 package kz.tilsimsozder.tilsim.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Tilsim(
-        val title: String,
-        var body: String,
-        var note: String = "",
-        var position: Int
+    @SerializedName("title")
+    val title: String,
+
+    @SerializedName("content")
+    var body: String,
+
+    var note: String = "",
+
+    var position: Int
 )

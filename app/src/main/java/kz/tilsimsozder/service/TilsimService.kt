@@ -1,6 +1,5 @@
 package kz.tilsimsozder.service
 
-import android.annotation.SuppressLint
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -17,11 +16,18 @@ import android.util.Log
 import android.widget.RemoteViews
 import kz.tilsimsozder.R
 import kz.tilsimsozder.TilsimSozderActivity
+import kz.tilsimsozder.prayers.api.PrayersApi
 import kz.tilsimsozder.preference.SharedPreference
-import kz.tilsimsozder.preference.SupportLanguage
+import kz.tilsimsozder.tilsim.model.Tilsim
+import org.koin.android.ext.android.inject
 
-@Suppress("DEPRECATION")
 class TilsimService : Service() {
+
+    companion object {
+        var RANDOM_TILSIM: Int = 0
+    }
+
+    private val tilsimList = mutableListOf<Tilsim>()
 
     override fun onBind(intent: Intent): IBinder? {
         return null
@@ -49,23 +55,12 @@ class TilsimService : Service() {
     }
 
     private fun getData() {
-        LIST_TITLE_DATA_TILSIM = when (SharedPreference(baseContext).getLanguageCode()) {
-            SupportLanguage.KZ.code -> this.resources.getStringArray(R.array.tilsim_sozder_title).toMutableList()
-            SupportLanguage.UZ.code -> this.resources.getStringArray(R.array.tilsim_sozder_title_uz).toMutableList()
-            SupportLanguage.RU.code -> this.resources.getStringArray(R.array.tilsim_sozder_title_ru).toMutableList()
-            else -> this.resources.getStringArray(R.array.tilsim_sozder_title).toMutableList()
-        }
-
-        LIST_CONTENT_DATA_TILSIM = when (SharedPreference(baseContext).getLanguageCode()) {
-            SupportLanguage.KZ.code -> this.resources.getStringArray(R.array.tilsim_sozder_content).toMutableList()
-            SupportLanguage.UZ.code -> this.resources.getStringArray(R.array.tilsim_sozder_content_uz).toMutableList()
-            SupportLanguage.RU.code -> this.resources.getStringArray(R.array.tilsim_sozder_content_ru).toMutableList()
-            else -> this.resources.getStringArray(R.array.tilsim_sozder_content).toMutableList()
-        }
+        tilsimList.clear()
+        val prayersApi: PrayersApi by inject()
+        tilsimList.addAll(prayersApi.getTilsimList())
     }
 
-    @SuppressLint("NewApi")
-    fun showNotification(context: Context) {
+    private fun showNotification(context: Context) {
         getData()
 
         val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -82,11 +77,11 @@ class TilsimService : Service() {
             PendingIntent.FLAG_UPDATE_CURRENT
         )
         val contentView = RemoteViews(packageName, R.layout.notification_layout)
-        val listLength = LIST_CONTENT_DATA_TILSIM.size - 1
+        val listLength = tilsimList.size - 1
         RANDOM_TILSIM = (0..listLength).shuffled().last()
 
-        contentView.setTextViewText(R.id.tv_title, LIST_TITLE_DATA_TILSIM[RANDOM_TILSIM])
-        contentView.setTextViewText(R.id.tv_content, LIST_CONTENT_DATA_TILSIM[RANDOM_TILSIM])
+        contentView.setTextViewText(R.id.tv_title, tilsimList[RANDOM_TILSIM].title)
+        contentView.setTextViewText(R.id.tv_content, tilsimList[RANDOM_TILSIM].body)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             notificationChannel = NotificationChannel(channelId, description, NotificationManager.IMPORTANCE_HIGH)
@@ -108,11 +103,5 @@ class TilsimService : Service() {
         }
 
         notificationManager.notify(1234, builder.build())
-    }
-
-    companion object {
-        var LIST_TITLE_DATA_TILSIM: MutableList<String> = mutableListOf()
-        var LIST_CONTENT_DATA_TILSIM: MutableList<String> = mutableListOf()
-        var RANDOM_TILSIM: Int = 0
     }
 }
