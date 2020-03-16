@@ -9,18 +9,21 @@ import android.media.MediaPlayer
 import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.core.view.isVisible
+import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.bodyTextView
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.copyContainer
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.exitImageView
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.playImageButton
+import kotlinx.android.synthetic.main.fragment_tilsim_dialog.progressBar
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.scrollContainer
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.sendErrorContainer
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.shareContainer
@@ -123,6 +126,13 @@ class TilsimDialogFragment : Fragment() {
                     scrollContainer.fullScroll(View.FOCUS_DOWN)
                 }
             }
+        }
+
+        scrollContainer.setOnScrollChangeListener { v: NestedScrollView?, _: Int, scrollY: Int, _: Int, _: Int ->
+            var measure = v?.getChildAt(0)?.measuredHeight ?: 0
+            measure -= v?.height ?: 0
+            progressBar.max = measure
+            progressBar.progress = scrollY
         }
 
         activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)

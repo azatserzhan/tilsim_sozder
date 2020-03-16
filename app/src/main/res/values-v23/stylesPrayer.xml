@@ -77,4 +77,11 @@
         <item name="android:background">@android:color/transparent</item>
     </style>
 
+    <!-- ProgressBar -->
+    <style name="CustomProgressBar" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:minHeight">2dp</item>
+        <item name="android:maxHeight">2dp</item>
+        <item name="android:progressDrawable">@drawable/bg_two_dp_progress</item>
+    </style>
+
 </resources>

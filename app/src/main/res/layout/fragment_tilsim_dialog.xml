@@ -9,6 +9,7 @@
     android:padding="1dp">
 
     <LinearLayout
+        android:id="@+id/headerContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -39,6 +40,12 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="?attr/divider_style" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/CustomProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollContainer"
