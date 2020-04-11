@@ -11,9 +11,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.google.android.play.core.appupdate.AppUpdateManagerFactory
-import com.google.android.play.core.install.model.AppUpdateType
-import com.google.android.play.core.install.model.UpdateAvailability
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.main_header.mainHeaderTextView
 import kotlinx.android.synthetic.main.main_header.nightModeImageView
 import kotlinx.android.synthetic.main.main_header.settingsImageView
@@ -21,15 +21,20 @@ import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemNews
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemPrayer
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemService
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemTilsim
+import kotlinx.android.synthetic.main.tilsim_sozder_activity.statusTextView
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.viewPager
 import kz.tilsimsozder.bots.ui.BotFragment
 import kz.tilsimsozder.common.BaseActivity
 import kz.tilsimsozder.firebase.Analytics
+import kz.tilsimsozder.inappupdates.InAppUpdateManager
+import kz.tilsimsozder.inappupdates.UpdateState
 import kz.tilsimsozder.news.ui.NewsFragment
 import kz.tilsimsozder.prayers.ui.PrayersFragment
 import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.service.TilsimService
 import kz.tilsimsozder.tilsim.ui.TilsimFragment
+import org.koin.android.ext.android.inject
+import timber.log.Timber
 import java.util.Locale
 
 private const val PRAYER_PAGE_ID = 0
@@ -40,6 +45,8 @@ private const val SERVICE_PAGE_ID = 3
 class TilsimSozderActivity : BaseActivity() {
 
     private val analytics = Analytics()
+    private val inAppUpdateManager: InAppUpdateManager by inject()
+    private var updateManagerStateDisposable: Disposable? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val isThemeDark = SharedPreference(baseContext).getIsThemeDark()
@@ -56,7 +63,6 @@ class TilsimSozderActivity : BaseActivity() {
         // SharedPreference(baseContext).setTheme(false)
         setupService()
 
-        // setupStyle()
         setupViewPager()
         setupIconMenu(PRAYER_PAGE_ID)
         setupHeader(PRAYER_PAGE_ID)
@@ -74,13 +80,20 @@ class TilsimSozderActivity : BaseActivity() {
             startActivity(intent)
         }
         nightModeImageView.setBackgroundResource(if (!isThemeDark) R.drawable.ic_sunny_day else R.drawable.ic_night)
-
-        forceUpdate()
+        checkInAppUpdate()
     }
 
     override fun onDestroy() {
         super.onDestroy()
         SharedPreference(baseContext).setIsTilsimPage(false)
+        updateManagerStateDisposable?.dispose()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == InAppUpdateManager.REQUEST_CODE) {
+            inAppUpdateManager.onActivityResult(resultCode)
+        }
     }
 
     override fun attachBaseContext(newBase: Context) {
@@ -177,40 +190,46 @@ class TilsimSozderActivity : BaseActivity() {
         }
     }
 
-    private fun forceUpdate() {
-        val appUpdateManager = AppUpdateManagerFactory.create(this)
-        appUpdateManager
-            .appUpdateInfo
-            .addOnSuccessListener { appUpdateInfo ->
-                if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-                    && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE)) {
-                    appUpdateManager.startUpdateFlowForResult(
-                        appUpdateInfo,
-                        AppUpdateType.FLEXIBLE,
-                        this,
-                        0
-                    )
-                }
+    private fun checkInAppUpdate() {
+        updateManagerStateDisposable?.dispose()
+        updateManagerStateDisposable = inAppUpdateManager.observeState()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe {
+                Timber.d("update: isLoading")
+                statusTextView.text = "isLoading"
             }
+            .subscribe(
+                { state ->
+                    if (state == UpdateState.READY_FOR_DOWNLOAD) {
+                        inAppUpdateManager.startUpdate(this)
+                        Timber.d("update: READY_FOR_DOWNLOAD")
+                    }
+                    inAppUpdateManager.startUpdate(this)
+                    statusTextView.text = state.name
+                },
+                {
+                    statusTextView.text = "Error"
+                    Timber.e(it, "update: Error to get update state")
+                }
+            )
+        inAppUpdateManager.start()
     }
 }
 
 class ViewPagerAdapter(
     fragmentManager: FragmentManager
-) : FragmentPagerAdapter(fragmentManager) {
+) : FragmentPagerAdapter(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
     private var count = 4
 
-    override fun getItem(position: Int): Fragment? {
-        var fragment: Fragment? = null
+    override fun getItem(position: Int): Fragment =
         when (position) {
-            PRAYER_PAGE_ID -> fragment = PrayersFragment.create()
-            TILSIM_PAGE_ID -> fragment = TilsimFragment.create()
-            NEWS_PAGE_ID -> fragment = NewsFragment.create()
-            SERVICE_PAGE_ID -> fragment = BotFragment.create()
+            PRAYER_PAGE_ID -> PrayersFragment.create()
+            TILSIM_PAGE_ID -> TilsimFragment.create()
+            NEWS_PAGE_ID -> NewsFragment.create()
+            SERVICE_PAGE_ID -> BotFragment.create()
+            else -> PrayersFragment.create()
         }
-
-        return fragment
-    }
 
     override fun getCount(): Int {
         return count

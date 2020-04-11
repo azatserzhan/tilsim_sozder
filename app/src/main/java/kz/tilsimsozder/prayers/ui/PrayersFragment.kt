@@ -42,7 +42,9 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        context?.let { SharedPreference(it).setCurrentFragmentName(FragmentName.PRAYER.ordinal) }
+        context?.let {
+            SharedPreference(it).setCurrentFragmentName(FragmentName.PRAYER.ordinal)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -58,7 +60,9 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
             when (requestCode) {
-                SupportLanguage.KZ.code, SupportLanguage.UZ.code, SupportLanguage.RU.code -> restart()
+                SupportLanguage.KZ.code,
+                SupportLanguage.UZ.code,
+                SupportLanguage.RU.code -> restart()
             }
         }
     }

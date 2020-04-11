@@ -47,7 +47,7 @@ class BaseBottomSheetDialog(private val fragment: Fragment) : BottomSheetDialogF
             val dialogView = dialogInterface as BottomSheetDialog
 
             val bottomSheet =
-                    dialogView.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet) as FrameLayout?
+                    dialogView.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet) as FrameLayout
             val behavior = BottomSheetBehavior.from(bottomSheet)
             behavior.state = BottomSheetBehavior.STATE_EXPANDED
         }
