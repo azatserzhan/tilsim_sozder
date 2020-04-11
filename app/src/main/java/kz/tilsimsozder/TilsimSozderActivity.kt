@@ -21,7 +21,6 @@ import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemNews
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemPrayer
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemService
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemTilsim
-import kotlinx.android.synthetic.main.tilsim_sozder_activity.statusTextView
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.viewPager
 import kz.tilsimsozder.bots.ui.BotFragment
 import kz.tilsimsozder.common.BaseActivity
@@ -197,7 +196,6 @@ class TilsimSozderActivity : BaseActivity() {
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe {
                 Timber.d("update: isLoading")
-                statusTextView.text = "isLoading"
             }
             .subscribe(
                 { state ->
@@ -206,10 +204,8 @@ class TilsimSozderActivity : BaseActivity() {
                         Timber.d("update: READY_FOR_DOWNLOAD")
                     }
                     inAppUpdateManager.startUpdate(this)
-                    statusTextView.text = state.name
                 },
                 {
-                    statusTextView.text = "Error"
                     Timber.e(it, "update: Error to get update state")
                 }
             )
