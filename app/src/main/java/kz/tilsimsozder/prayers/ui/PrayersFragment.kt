@@ -3,6 +3,7 @@ package kz.tilsimsozder.prayers.ui
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,8 @@ import kotlinx.android.synthetic.main.fragment_prayers.prayerListRecyclerView
 import kotlinx.android.synthetic.main.fragment_prayers.searchPrayer
 import kz.tilsimsozder.R
 import kz.tilsimsozder.TilsimSozderActivity
+import kz.tilsimsozder.auth.AuthManager
+import kz.tilsimsozder.auth.model.AuthType
 import kz.tilsimsozder.common.BaseBottomSheetDialog
 import kz.tilsimsozder.common.BaseFragment
 import kz.tilsimsozder.firebase.Analytics
@@ -25,6 +28,7 @@ import kz.tilsimsozder.preference.SupportLanguage
 import kz.tilsimsozder.tilsim.ui.TilsimDialogFragment
 import kz.tilsimsozder.tilsim.ui.TilsimDialogFragment.Companion.TILSIM_DIALOG_FRAGMENT
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import timber.log.Timber
 
 class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Presenter>(),
     PrayersContract.View {
@@ -35,6 +39,7 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
 
     override val presenter: PrayersPresenter by viewModel()
     private var prayerAdapter: PrayerAdapter? = null
+    private val authManager = AuthManager(this)
     private val analytics = Analytics()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
@@ -54,6 +59,7 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
         presenter.loadPrayers()
         presenter.checkLanguage()
         analytics.openPrayerPage()
+        //authManager.signIn(AuthType.GOOGLE, onComplete = { _, _ -> }) TODO: Авторизаци с Google
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -65,6 +71,13 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
                 SupportLanguage.RU.code -> restart()
             }
         }
+        authManager.onActivityResult(requestCode, resultCode, data,
+            onComplete = { currentUser, type ->
+                //TODO: save user
+            },
+            onError = { err, _ ->
+                Log.e("Error to sign in: ", err)
+            })
     }
 
     override fun showLanguageDialog() {
