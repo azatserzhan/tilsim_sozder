@@ -48,6 +48,9 @@ class GoogleAuth(private val fragment: Fragment) : SocialNetworkAuthorization {
             firebaseAuth?.signInWithCredential(credential)?.addOnCompleteListener { authResult ->
                 if (authResult.isSuccessful) {
                     firebaseAuth?.currentUser?.let {
+                        it.getIdToken(true).addOnCompleteListener { result ->
+                            result.result
+                        }
                         onComplete(CurrentUser(id = it.uid, displayName = it.displayName,
                                 email = it.email, photoUrl = it.photoUrl.toString()),
                                 AuthType.GOOGLE)
