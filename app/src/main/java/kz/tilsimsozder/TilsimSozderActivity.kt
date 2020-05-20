@@ -22,6 +22,8 @@ import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemPrayer
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemService
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemTilsim
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.viewPager
+import kz.tilsimsozder.auth.OKAuth
+import kz.tilsimsozder.auth.VKAuth
 import kz.tilsimsozder.bots.ui.BotFragment
 import kz.tilsimsozder.common.BaseActivity
 import kz.tilsimsozder.firebase.Analytics
@@ -92,6 +94,9 @@ class TilsimSozderActivity : BaseActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == InAppUpdateManager.REQUEST_CODE) {
             inAppUpdateManager.onActivityResult(resultCode)
+        }
+        if (requestCode == VKAuth.VK_SIGN_IN || requestCode == OKAuth.OK_SIGN_IN) {
+            //fragment.onActivityResult(requestCode, resultCode, data)
         }
     }
 

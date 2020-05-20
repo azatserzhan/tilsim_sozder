@@ -96,4 +96,9 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:4.7.1'
     implementation 'com.google.firebase:firebase-auth:19.3.1'
     implementation 'com.google.android.gms:play-services-auth:18.0.0'
+
+    //Social Network
+    implementation 'com.facebook.android:facebook-login:5.0.0'
+    implementation 'com.vk:androidsdk:1.6.5'
+    implementation 'ru.ok:odnoklassniki-android-sdk:2.0.3'
 }

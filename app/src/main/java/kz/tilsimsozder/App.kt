@@ -1,6 +1,7 @@
 package kz.tilsimsozder
 
 import android.app.Application
+import com.vk.sdk.VKSdk
 import kz.tilsimsozder.bots.BotModule
 import kz.tilsimsozder.inappupdates.InAppUpdatesModule
 import kz.tilsimsozder.news.NewsModule
@@ -24,5 +25,7 @@ class App : Application() {
             modules(PreferenceModule.create())
             modules(InAppUpdatesModule.create())
         }
+        VKSdk.initialize(applicationContext)
+        //Odnoklassniki.createInstance(this, getString(R.string.ok_sdk_app_Id), getString(R.string.ok_sdk_app_key))
     }
 }

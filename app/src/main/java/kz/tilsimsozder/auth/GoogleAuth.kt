@@ -22,7 +22,8 @@ class GoogleAuth(private val fragment: Fragment) : SocialNetworkAuthorization {
     override fun requestCode() = GOOGLE_SIGN_IN
 
     override fun signIn(
-        onComplete: (currentUser: CurrentUser, type: AuthType) -> Unit
+        onComplete: (currentUser: CurrentUser, type: AuthType) -> Unit,
+        onError: (message: String, type: AuthType) -> Unit
     ) {
         firebaseAuth = FirebaseAuth.getInstance()
         val options = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -47,17 +48,18 @@ class GoogleAuth(private val fragment: Fragment) : SocialNetworkAuthorization {
 
             firebaseAuth?.signInWithCredential(credential)?.addOnCompleteListener { authResult ->
                 if (authResult.isSuccessful) {
-                    firebaseAuth?.currentUser?.let {
-                        it.getIdToken(true).addOnCompleteListener { result ->
-                            result.result
-                        }
-                        onComplete(CurrentUser(id = it.uid, displayName = it.displayName,
-                                email = it.email, photoUrl = it.photoUrl.toString()),
+                    firebaseAuth?.currentUser?.let { user ->
+                        user.getIdToken(true).addOnCompleteListener { result ->
+                            onComplete(CurrentUser(id = result.result?.token ?: "", displayName = user.displayName,
+                                email = user.email, photoUrl = user.photoUrl.toString()),
                                 AuthType.GOOGLE)
+                        }
+
                     }
                 } else {
-                    onError("${authResult.exception} Failure signInWithCredential",
-                            AuthType.GOOGLE)
+                    onError(
+                        "${authResult.exception} Failure signInWithCredential",
+                        AuthType.GOOGLE)
                 }
             }
         } catch (e: ApiException) {
