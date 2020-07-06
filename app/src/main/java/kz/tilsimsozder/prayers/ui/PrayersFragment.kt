@@ -27,6 +27,7 @@ import kz.tilsimsozder.preference.SupportLanguage
 import kz.tilsimsozder.tilsim.ui.TilsimDialogFragment
 import kz.tilsimsozder.tilsim.ui.TilsimDialogFragment.Companion.TILSIM_DIALOG_FRAGMENT
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
 class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Presenter>(),
     PrayersContract.View {
@@ -35,9 +36,9 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
         fun create() = PrayersFragment()
     }
 
-    override val presenter: PrayersPresenter by viewModel()
+    override val presenter: PrayersPresenter by viewModel { parametersOf(requireContext())}
     private var prayerAdapter: PrayerAdapter? = null
-    private var authManager: AuthManager? = null
+    //private var authManager: AuthManager? = null
     private val analytics = Analytics()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
@@ -57,14 +58,14 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
         presenter.loadPrayers()
         presenter.checkLanguage()
         analytics.openPrayerPage()
-        authManager = AuthManager(
+/*        authManager = AuthManager(
             this,
             onComplete = { currentUser, type ->
                 //TODO: save user
             },
             onError = { err, _ ->
                 Log.e("Error to sign in: ", err)
-            })
+            })*/
         //authManager.signIn(AuthType.GOOGLE, onComplete = { _, _ -> }) TODO: Авторизаци с Google
     }
 
@@ -77,7 +78,7 @@ class PrayersFragment : BaseFragment<PrayersContract.View, PrayersContract.Prese
                 SupportLanguage.RU.code -> restart()
             }
         }
-        authManager?.onActivityResult(requestCode, resultCode, data)
+        //authManager?.onActivityResult(requestCode, resultCode, data)
     }
 
     override fun showLanguageDialog() {

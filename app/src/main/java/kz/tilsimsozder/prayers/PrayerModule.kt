@@ -1,5 +1,6 @@
 package kz.tilsimsozder.prayers
 
+import android.content.Context
 import kz.tilsimsozder.common.InjectionModule
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.prayers.api.PrayersApi
@@ -9,7 +10,9 @@ import org.koin.dsl.module
 
 object PrayerModule : InjectionModule {
     override fun create() = module {
-        viewModel { PrayersPresenter(get(), get(), get()) }
+        viewModel {(context: Context) ->
+            PrayersPresenter(context, get(), get())
+        }
         single { Analytics() }
         single { PrayersApi(get(), get()) }
     }

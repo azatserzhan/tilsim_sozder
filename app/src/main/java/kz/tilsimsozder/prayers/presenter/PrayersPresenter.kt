@@ -12,8 +12,8 @@ import kz.tilsimsozder.preference.SharedPreference
 private const val URL_APP = "https://play.google.com/store/apps/details?id=kz.tilsimsozder"
 
 class PrayersPresenter(
-    private val analytics: Analytics,
     private val context: Context,
+    private val analytics: Analytics,
     private val prayersApi: PrayersApi
 ) : BasePresenter<PrayersContract.View>(),
     PrayersContract.Presenter {
