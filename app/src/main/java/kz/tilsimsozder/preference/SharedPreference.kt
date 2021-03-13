@@ -7,6 +7,7 @@ private const val PREF_KEY_IS_TILSIM_PAGE = "PREF_KEY_IS_TILSIM_PAGE"
 private const val PREF_KEY_IS_DARK_THEME = "PREF_KEY_IS_DARK_THEME"
 private const val PREF_KEY_CURRENT_FRAGMENT_NAME = "PREF_KEY_CURRENT_FRAGMENT_NAME"
 private const val PREF_KEY_FAVOURITE_IDS = "PREF_KEY_FAVOURITE_IDS"
+private const val PREF_KEY_FAVOURITE_MESSAGE_IDS = "PREF_KEY_FAVOURITE_MESSAGE_IDS"
 private const val PREF_KEY_LANGUAGE = "PREF_KEY_LANGUAGE"
 private const val PREF_KEY_IS_LANGUAGE_DIALOG_SHOWN = "PREF_KEY_IS_LANGUAGE_DIALOG_SHOWN"
 private const val PREF_KEY_DIALOG_TEXT_SIZE = "PREF_KEY_DIALOG_TEXT_SIZE"
@@ -47,6 +48,18 @@ class SharedPreference(context: Context) : PreferenceContract {
     }
 
     override fun getFavourites(): MutableSet<String>? = prefs.getStringSet(PREF_KEY_FAVOURITE_IDS, null)
+
+
+
+    override fun setFavouriteMessages(favouriteIds: List<String>) {
+        val editor = prefs.edit()
+        val set = HashSet<String>()
+        set.addAll(favouriteIds)
+        editor.putStringSet(PREF_KEY_FAVOURITE_MESSAGE_IDS, set)
+        editor.apply()
+    }
+
+    override fun getFavouriteMessages(): MutableSet<String>? = prefs.getStringSet(PREF_KEY_FAVOURITE_MESSAGE_IDS, null)
 
     override fun setLanguage(code: Int) {
         val editor = prefs.edit()

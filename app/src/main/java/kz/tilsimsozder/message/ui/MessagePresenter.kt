@@ -1,11 +1,77 @@
 package kz.tilsimsozder.message.ui
 
+import android.annotation.SuppressLint
+import android.content.Context
 import kz.tilsimsozder.common.BasePresenter
-import kz.tilsimsozder.news.contract.NewsContract
+import kz.tilsimsozder.firebase.Analytics
+import kz.tilsimsozder.message.api.MessageApi
+import kz.tilsimsozder.prayers.model.Prayer
+import kz.tilsimsozder.preference.SharedPreference
 
-class MessagePresenter : BasePresenter<MessageContract.View>(),
+private const val URL_APP = "https://play.google.com/store/apps/details?id=kz.tilsimsozder"
+
+class MessagePresenter(
+    private val context: Context,
+    private val analytics: Analytics,
+    private val messageApi: MessageApi
+) : BasePresenter<MessageContract.View>(),
     MessageContract.Presenter {
-    override fun load() {
-        TODO("Not yet implemented")
+
+    private var prayers = mutableListOf<Prayer>()
+    private var positionPrayer = 0
+
+    override fun loadPrayers() {
+        prayers.clear()
+        prayers.addAll(messageApi.getMessage())
+
+        val favouriteIds = SharedPreference(context).getFavouriteMessages()
+        favouriteIds?.forEach { id ->
+            prayers.firstOrNull { it.id == id }?.isFavourite = true
+        }
+        prayers.sortBy { !it.isFavourite }
+
+        view?.showPrayers(prayers)
+    }
+
+    override fun selectedPrayer(title: String, body: String, url: String) {
+        view?.showPrayerDialog(title, body, url)
+    }
+
+    override fun setAdapter(prayers: List<Prayer>) {
+    }
+
+    override fun sharePrayer() {
+        analytics.sharePrayer(prayers[positionPrayer].title)
+        view?.sharePrayer(URL_APP, prayers[positionPrayer].title, prayers[positionPrayer].body)
+    }
+
+    @SuppressLint("DefaultLocale")
+    override fun sortPrayer(newText: String) {
+        val sorted: List<Prayer> = prayers.filter {
+            newText.toLowerCase() in it.title.toLowerCase() || newText.toLowerCase() in it.body.toLowerCase()
+        }
+        view?.showPrayers(sorted)
+    }
+
+    override fun setFavourite(id: String) {
+        val isFavorite: Boolean? = prayers.firstOrNull { it.id == id }?.isFavourite
+
+        isFavorite?.let { state ->
+            prayers.firstOrNull { it.id == id }?.isFavourite = !state
+        }
+        prayers.sortBy { !it.isFavourite }
+
+        val favouriteIds = prayers.filter { it.isFavourite }.map { it.id }
+        SharedPreference(context).setFavouriteMessages(favouriteIds)
+
+        view?.showPrayers(prayers)
+        view?.scrollToTop()
+    }
+
+    override fun checkLanguage() {
+        if (!SharedPreference(context).getIsLanguageDialogShow()) {
+            view?.showLanguageDialog()
+            SharedPreference(context).setLanguageDialogShow(true)
+        }
     }
 }

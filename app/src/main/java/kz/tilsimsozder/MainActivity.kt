@@ -29,6 +29,7 @@ import kz.tilsimsozder.common.BaseActivity
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.inappupdates.InAppUpdateManager
 import kz.tilsimsozder.inappupdates.UpdateState
+import kz.tilsimsozder.message.ui.MessageFragment
 import kz.tilsimsozder.news.ui.NewsFragment
 import kz.tilsimsozder.prayers.ui.PrayersFragment
 import kz.tilsimsozder.preference.SharedPreference
@@ -175,13 +176,13 @@ class TilsimSozderActivity : BaseActivity() {
         menuItemPrayer.background = getDrawable(R.drawable.ic_prayer)
         menuItemTilsim.background = getDrawable(R.drawable.ic_tilsim)
         menuItemNews.background = getDrawable(R.drawable.ic_news)
-        menuItemService.background = getDrawable(R.drawable.ic_service)
+        menuItemService.background = getDrawable(R.drawable.ic_message)
 
         when (position) {
             PRAYER_PAGE_ID -> menuItemPrayer.background = getDrawable(R.drawable.ic_prayer_active)
             TILSIM_PAGE_ID -> menuItemTilsim.background = getDrawable(R.drawable.ic_tilsim_active)
             NEWS_PAGE_ID -> menuItemNews.background = getDrawable(R.drawable.ic_news_active)
-            SERVICE_PAGE_ID -> menuItemService.background = getDrawable(R.drawable.ic_service_active)
+            SERVICE_PAGE_ID -> menuItemService.background = getDrawable(R.drawable.ic_message_active)
         }
     }
 
@@ -228,7 +229,7 @@ class ViewPagerAdapter(
             PRAYER_PAGE_ID -> PrayersFragment.create()
             TILSIM_PAGE_ID -> TilsimFragment.create()
             NEWS_PAGE_ID -> NewsFragment.create()
-            SERVICE_PAGE_ID -> BotFragment.create()
+            SERVICE_PAGE_ID -> MessageFragment.create()
             else -> PrayersFragment.create()
         }
 

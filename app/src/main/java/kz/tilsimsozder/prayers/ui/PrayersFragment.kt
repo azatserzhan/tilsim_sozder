@@ -3,7 +3,6 @@ package kz.tilsimsozder.prayers.ui
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,14 +12,11 @@ import kotlinx.android.synthetic.main.fragment_prayers.prayerListRecyclerView
 import kotlinx.android.synthetic.main.fragment_prayers.searchPrayer
 import kz.tilsimsozder.R
 import kz.tilsimsozder.TilsimSozderActivity
-import kz.tilsimsozder.auth.AuthManager
 import kz.tilsimsozder.common.BaseBottomSheetDialog
 import kz.tilsimsozder.common.BaseFragment
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.prayers.adapter.PrayerAdapter
-import kz.tilsimsozder.prayers.contract.PrayersContract
 import kz.tilsimsozder.prayers.model.Prayer
-import kz.tilsimsozder.prayers.presenter.PrayersPresenter
 import kz.tilsimsozder.preference.FragmentName
 import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.preference.SupportLanguage

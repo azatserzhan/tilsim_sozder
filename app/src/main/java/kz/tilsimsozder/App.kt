@@ -4,6 +4,7 @@ import android.app.Application
 import com.vk.sdk.VKSdk
 import kz.tilsimsozder.bots.BotModule
 import kz.tilsimsozder.inappupdates.InAppUpdatesModule
+import kz.tilsimsozder.message.MessageModule
 import kz.tilsimsozder.news.NewsModule
 import kz.tilsimsozder.prayers.PrayerModule
 import kz.tilsimsozder.preference.PreferenceModule
@@ -24,6 +25,7 @@ class App : Application() {
             modules(BotModule.create())
             modules(PreferenceModule.create())
             modules(InAppUpdatesModule.create())
+            modules(MessageModule.create())
         }
         //VKSdk.initialize(applicationContext)
         //Odnoklassniki.createInstance(this, getString(R.string.ok_sdk_app_Id), getString(R.string.ok_sdk_app_key))

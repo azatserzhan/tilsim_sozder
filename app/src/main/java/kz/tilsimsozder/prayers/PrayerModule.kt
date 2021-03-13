@@ -4,7 +4,7 @@ import android.content.Context
 import kz.tilsimsozder.common.InjectionModule
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.prayers.api.PrayersApi
-import kz.tilsimsozder.prayers.presenter.PrayersPresenter
+import kz.tilsimsozder.prayers.ui.PrayersPresenter
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

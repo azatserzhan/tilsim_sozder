@@ -1,4 +1,4 @@
-package kz.tilsimsozder.prayers.contract
+package kz.tilsimsozder.prayers.ui
 
 import kz.tilsimsozder.common.MvpPresenter
 import kz.tilsimsozder.common.MvpView

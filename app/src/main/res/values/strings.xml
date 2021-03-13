@@ -9,7 +9,7 @@
     <string name="nav_header_title" translatable="false">Android Studio</string>
     <string name="nav_header_subtitle" translatable="false">azatserzhan@gmail.com</string>
     <string name="news_title">Новости</string>
-    <string name="service_title">Сервисы</string>
+    <string name="service_title">Послания</string>
     <string name="dialog_share">Поделиться</string>
     <string name="dialog_copy">Скопировать</string>
     <string name="dialog_abuse">Сообщить об ошибке</string>

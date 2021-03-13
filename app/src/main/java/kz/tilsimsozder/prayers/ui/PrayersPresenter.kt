@@ -1,11 +1,10 @@
-package kz.tilsimsozder.prayers.presenter
+package kz.tilsimsozder.prayers.ui
 
 import android.annotation.SuppressLint
 import android.content.Context
 import kz.tilsimsozder.common.BasePresenter
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.prayers.api.PrayersApi
-import kz.tilsimsozder.prayers.contract.PrayersContract
 import kz.tilsimsozder.prayers.model.Prayer
 import kz.tilsimsozder.preference.SharedPreference
 
