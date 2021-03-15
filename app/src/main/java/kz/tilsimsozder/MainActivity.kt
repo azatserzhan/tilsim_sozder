@@ -125,7 +125,7 @@ class TilsimSozderActivity : BaseActivity() {
             @Suppress("DEPRECATION")
             configuration.locale = locale
         } else {
-            configuration.locales = LocaleList(locale)
+            configuration.setLocale(locale)
         }
 
         return context.createConfigurationContext(configuration)

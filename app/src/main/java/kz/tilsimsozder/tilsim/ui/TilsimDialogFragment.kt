@@ -95,7 +95,7 @@ class TilsimDialogFragment : Fragment() {
         copyContainer.setOnClickListener {
             val myClipboard = context?.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
             val myClip = ClipData.newPlainText("text", title + body)
-            myClipboard.primaryClip = myClip
+            myClipboard.setPrimaryClip(myClip)
 
             val text = requireContext().getString(R.string.dialog_copied)
             val duration = Toast.LENGTH_SHORT
