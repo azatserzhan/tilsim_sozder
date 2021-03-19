@@ -10,8 +10,8 @@ android {
         applicationId "kz.tilsimsozder"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 38
-        versionName '1.1.38'
+        versionCode 39
+        versionName '1.1.39'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled = true
     }
@@ -85,8 +85,14 @@ dependencies {
     //firebase
     implementation 'com.google.firebase:firebase-core:18.0.2'
     implementation 'com.google.firebase:firebase-database-ktx:19.7.0'
-    implementation 'com.google.firebase:firebase-analytics:18.0.2'
-    implementation 'com.google.firebase:firebase-crashlytics:17.4.0'
+
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:26.7.0')
+
+    // Declare the dependencies for the Crashlytics and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
     //PlayMarket
     implementation 'com.google.android.play:core:1.10.0'

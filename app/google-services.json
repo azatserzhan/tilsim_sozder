@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "211583867123-96pbop71o67ro7ivs93juvugfkoh73ue.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kz.tilsimsozder",
+            "certificate_hash": "6bea111a3073baff79709688e96e0ab444816c97"
+          }
+        },
+        {
           "client_id": "211583867123-c6ua3kr6a9rbufgm4aj11l3vl2gudktd.apps.googleusercontent.com",
           "client_type": 3
         }
