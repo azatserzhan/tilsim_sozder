@@ -13,7 +13,6 @@ class AuthManager(
 
     private var googleAuth = GoogleAuth(fragment)
     private var facebookAuth = FacebookAuth(fragment)
-    private var vkAuth = VKAuth(fragment)
     private var okAuth = OKAuth(fragment)
 
     fun onActivityResult(
@@ -26,8 +25,6 @@ class AuthManager(
                 googleAuth.onResult(requestCode, resultCode, data, onComplete, onError)
             facebookAuth.requestCode() ->
                 facebookAuth.onResult(requestCode, resultCode, data, onComplete, onError)
-            vkAuth.requestCode() ->
-                vkAuth.onResult(requestCode, resultCode, data, onComplete, onError)
             okAuth.requestCode() ->
                 okAuth.onResult(requestCode, resultCode, data, onComplete, onError)
         }
@@ -39,7 +36,6 @@ class AuthManager(
         when (type) {
             AuthType.GOOGLE -> googleAuth.signIn(onComplete, onError)
             AuthType.FACEBOOK -> facebookAuth.signIn(onComplete, onError)
-            AuthType.VK -> vkAuth.signIn(onComplete, onError)
             AuthType.OK -> okAuth.signIn(onComplete, onError)
         }
     }

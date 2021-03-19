@@ -6,7 +6,6 @@ import android.content.res.Configuration
 import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
-import android.os.LocaleList
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -23,8 +22,6 @@ import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemService
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemTilsim
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.viewPager
 import kz.tilsimsozder.auth.OKAuth
-import kz.tilsimsozder.auth.VKAuth
-import kz.tilsimsozder.bots.ui.BotFragment
 import kz.tilsimsozder.common.BaseActivity
 import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.inappupdates.InAppUpdateManager
@@ -96,7 +93,7 @@ class TilsimSozderActivity : BaseActivity() {
         if (requestCode == InAppUpdateManager.REQUEST_CODE) {
             inAppUpdateManager.onActivityResult(resultCode)
         }
-        if (requestCode == VKAuth.VK_SIGN_IN || requestCode == OKAuth.OK_SIGN_IN) {
+        if (requestCode == OKAuth.OK_SIGN_IN) {
             //fragment.onActivityResult(requestCode, resultCode, data)
         }
     }

@@ -1,7 +1,6 @@
 package kz.tilsimsozder
 
 import android.app.Application
-import com.vk.sdk.VKSdk
 import kz.tilsimsozder.bots.BotModule
 import kz.tilsimsozder.inappupdates.InAppUpdatesModule
 import kz.tilsimsozder.message.MessageModule
