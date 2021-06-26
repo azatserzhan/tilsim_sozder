@@ -15,7 +15,7 @@ import android.os.IBinder
 import android.util.Log
 import android.widget.RemoteViews
 import kz.tilsimsozder.R
-import kz.tilsimsozder.TilsimSozderActivity
+import kz.tilsimsozder.MainActivity
 import kz.tilsimsozder.prayers.api.PrayersApi
 import kz.tilsimsozder.preference.SharedPreference
 import kz.tilsimsozder.tilsim.model.Tilsim
@@ -69,7 +69,7 @@ class TilsimService : Service() {
         val channelId = "kz.tilsimsozder"
         val description = "Уведомления"
 
-        val intent = Intent(context, TilsimSozderActivity::class.java)
+        val intent = Intent(context, MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(
             context,
             0,

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="?attr/bg_primary"
     android:orientation="vertical"
-    tools:context="kz.tilsimsozder.TilsimSozderActivity">
+    tools:context="kz.tilsimsozder.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/botRecyclerView"

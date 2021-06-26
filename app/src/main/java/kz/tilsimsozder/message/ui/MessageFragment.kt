@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_message.prayerListRecyclerView
 import kotlinx.android.synthetic.main.fragment_message.searchPrayer
 import kz.tilsimsozder.R
-import kz.tilsimsozder.TilsimSozderActivity
+import kz.tilsimsozder.MainActivity
 import kz.tilsimsozder.common.BaseBottomSheetDialog
 import kz.tilsimsozder.common.BaseFragment
 import kz.tilsimsozder.firebase.Analytics
@@ -138,7 +138,7 @@ class MessageFragment: BaseFragment<MessageContract.View, MessageContract.Presen
     private fun restart() {
         activity?.finish()
         activity?.overridePendingTransition(0, 0)
-        val intent = Intent(activity, TilsimSozderActivity::class.java)
+        val intent = Intent(activity, MainActivity::class.java)
         activity?.overridePendingTransition(0, 0)
         activity?.startActivity(intent)
     }

@@ -6,7 +6,6 @@ import android.content.res.Configuration
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.LocaleList
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_settings.menuRecyclerView
@@ -71,7 +70,7 @@ class SettingsActivity : BaseActivity() {
 
     override fun onBackPressed() {
         finish()
-        val intent = Intent(this, TilsimSozderActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         super.onBackPressed()
     }

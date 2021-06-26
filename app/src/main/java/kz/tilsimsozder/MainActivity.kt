@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.google.firebase.messaging.FirebaseMessaging
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
@@ -42,9 +41,8 @@ private const val TILSIM_PAGE_ID = 1
 private const val NEWS_PAGE_ID = 2
 private const val SERVICE_PAGE_ID = 3
 
-class TilsimSozderActivity : BaseActivity() {
+class MainActivity : BaseActivity() {
 
-    private val analytics = Analytics()
     private val inAppUpdateManager: InAppUpdateManager by inject()
     private var updateManagerStateDisposable: Disposable? = null
 
@@ -76,7 +74,7 @@ class TilsimSozderActivity : BaseActivity() {
         nightModeImageView.setOnClickListener {
             SharedPreference(baseContext).setTheme(!isThemeDark)
             finish()
-            val intent = Intent(this, TilsimSozderActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
         nightModeImageView.setBackgroundResource(if (!isThemeDark) R.drawable.ic_sunny_day else R.drawable.ic_night)
