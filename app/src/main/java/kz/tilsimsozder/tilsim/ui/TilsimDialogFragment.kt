@@ -9,7 +9,6 @@ import android.media.MediaPlayer
 import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,6 +25,7 @@ import kotlinx.android.synthetic.main.fragment_tilsim_dialog.playImageButton
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.progressBar
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.scrollContainer
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.sendErrorContainer
+import kotlinx.android.synthetic.main.fragment_tilsim_dialog.sendMessageBotContainer
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.shareContainer
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.titleTextView
 import kotlinx.android.synthetic.main.fragment_tilsim_dialog.zoomInButton
@@ -82,6 +82,11 @@ class TilsimDialogFragment : Fragment() {
             shareIntent.type = "text/plain"
             context?.startActivity(shareIntent)
             analytics.shareTilsim(title)
+        }
+
+        sendMessageBotContainer.setOnClickListener {
+            val telegram = Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/bahai_kz_bot"))
+            startActivity(telegram)
         }
 
         sendErrorContainer.setOnClickListener {

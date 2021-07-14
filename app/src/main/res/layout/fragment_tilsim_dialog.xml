@@ -121,84 +121,65 @@
                 android:layout_marginEnd="16dp"
                 android:background="?attr/divider_style" />
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/sendMessageBotContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bubble_select_prayer"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp"
+                android:paddingEnd="18dp"
+                android:drawablePadding="18dp"
+                android:drawableEnd="@drawable/ic_telegram"
+                android:text="@string/dialog_send_message_bot"
+                android:textAlignment="textEnd"
+                android:textColor="?attr/text_body"
+                android:textSize="17sp" />
+
+            <TextView
                 android:id="@+id/shareContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bubble_select_prayer"
-                tools:ignore="UseCompoundDrawables">
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp"
+                android:paddingEnd="18dp"
+                android:drawablePadding="18dp"
+                android:drawableEnd="@drawable/ic_share"
+                android:text="@string/dialog_share"
+                android:textAlignment="textEnd"
+                android:textColor="?attr/text_body"
+                android:textSize="17sp" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingTop="18dp"
-                    android:paddingBottom="18dp"
-                    android:text="@string/dialog_share"
-                    android:textAlignment="textEnd"
-                    android:textColor="?attr/text_body"
-                    android:textSize="17sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="18dp"
-                    android:src="@drawable/ic_share"
-                    tools:ignore="ContentDescription" />
-            </LinearLayout>
-
-
-            <LinearLayout
+            <TextView
                 android:id="@+id/copyContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp"
                 android:background="@drawable/bubble_select_prayer"
-                tools:ignore="UseCompoundDrawables">
+                android:drawablePadding="18dp"
+                android:paddingEnd="18dp"
+                android:drawableEnd="@drawable/ic_copy"
+                android:text="@string/dialog_copy"
+                android:textAlignment="textEnd"
+                android:textColor="?attr/text_body"
+                android:textSize="17sp" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingTop="18dp"
-                    android:paddingBottom="18dp"
-                    android:text="@string/dialog_copy"
-                    android:textAlignment="textEnd"
-                    android:textColor="?attr/text_body"
-                    android:textSize="17sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="18dp"
-                    android:src="@drawable/ic_copy"
-                    tools:ignore="ContentDescription" />
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
                 android:id="@+id/sendErrorContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bubble_select_prayer"
-                tools:ignore="UseCompoundDrawables">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingTop="18dp"
-                    android:paddingBottom="18dp"
-                    android:text="@string/dialog_abuse"
-                    android:textAlignment="textEnd"
-                    android:textColor="?attr/text_body"
-                    android:textSize="17sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="18dp"
-                    android:src="@drawable/ic_edit"
-                    tools:ignore="ContentDescription" />
-            </LinearLayout>
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp"
+                android:text="@string/dialog_abuse"
+                android:paddingEnd="18dp"
+                android:drawablePadding="18dp"
+                android:drawableEnd="@drawable/ic_edit"
+                android:textAlignment="textEnd"
+                android:textColor="?attr/text_body"
+                android:textSize="17sp" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

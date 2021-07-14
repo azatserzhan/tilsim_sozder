@@ -11,6 +11,7 @@
     <string name="news_title">Новости</string>
     <string name="service_title">Послания</string>
     <string name="dialog_share">Поделиться</string>
+    <string name="dialog_send_message_bot" translatable="false">Bahai Kazakhstan Bot</string>
     <string name="dialog_copy">Скопировать</string>
     <string name="dialog_abuse">Сообщить об ошибке</string>
     <string name="dialog_copied">Скопирована</string>
