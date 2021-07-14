@@ -10,8 +10,8 @@ android {
         applicationId "kz.tilsimsozder"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 40
-        versionName '1.1.40'
+        versionCode 41
+        versionName '1.1.41'
         multiDexEnabled = true
     }
     buildTypes {
