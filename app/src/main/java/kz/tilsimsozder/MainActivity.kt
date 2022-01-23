@@ -21,9 +21,7 @@ import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemPrayer
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemService
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.menuItemTilsim
 import kotlinx.android.synthetic.main.tilsim_sozder_activity.viewPager
-import kz.tilsimsozder.auth.OKAuth
 import kz.tilsimsozder.common.BaseActivity
-import kz.tilsimsozder.firebase.Analytics
 import kz.tilsimsozder.inappupdates.InAppUpdateManager
 import kz.tilsimsozder.inappupdates.UpdateState
 import kz.tilsimsozder.message.ui.MessageFragment
@@ -91,9 +89,6 @@ class MainActivity : BaseActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == InAppUpdateManager.REQUEST_CODE) {
             inAppUpdateManager.onActivityResult(resultCode)
-        }
-        if (requestCode == OKAuth.OK_SIGN_IN) {
-            //fragment.onActivityResult(requestCode, resultCode, data)
         }
     }
 

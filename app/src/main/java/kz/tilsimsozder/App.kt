@@ -26,7 +26,5 @@ class App : Application() {
             modules(InAppUpdatesModule.create())
             modules(MessageModule.create())
         }
-        //VKSdk.initialize(applicationContext)
-        //Odnoklassniki.createInstance(this, getString(R.string.ok_sdk_app_Id), getString(R.string.ok_sdk_app_key))
     }
 }

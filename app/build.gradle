@@ -64,9 +64,9 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.2.0'
 
     //koin
-    implementation "org.koin:koin-android:2.1.6"
-    implementation "org.koin:koin-androidx-scope:2.1.6"
-    implementation "org.koin:koin-androidx-viewmodel:2.1.6"
+    implementation "io.insert-koin:koin-android:2.1.6"
+    implementation "io.insert-koin:koin-androidx-scope:2.1.6"
+    implementation "io.insert-koin:koin-androidx-viewmodel:2.1.6"
 
     //mockk
     // implementation "io.mockk:mockk:1.9.3"
@@ -83,21 +83,14 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:26.7.0')
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.firebase:firebase-analytics-ktx'
-    implementation 'com.google.firebase:firebase-messaging-ktx'
-    implementation 'com.google.firebase:firebase-inappmessaging-display-ktx'
 
     //PlayMarket
-    implementation 'com.google.android.play:core:1.10.0'
+    implementation 'com.google.android.play:core:1.10.3'
 
     //JSON
     implementation 'com.google.code.gson:gson:2.8.6'
 
     implementation 'com.jakewharton.timber:timber:4.7.1'
     implementation 'com.google.firebase:firebase-auth:21.0.1'
-    implementation 'com.google.android.gms:play-services-auth:19.0.0'
-
-    //Social Network
-    implementation 'com.facebook.android:facebook-login:9.0.0'
-    implementation 'com.vk:androidsdk:2.6.0'
-    implementation 'ru.ok:odnoklassniki-android-sdk:2.0.3'
+    implementation 'com.google.android.gms:play-services-auth:20.0.1'
 }
