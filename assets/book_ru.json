@@ -6,7 +6,7 @@
     "tag": "Автор: Бахаулла",
     "image_url": "https://www.bahai.ru/public/uploads/images/books/1000062265.jpg",
     "sort_position": 1,
-    "url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/kitabi_agdas_ru.json",
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/kitabi_agdas_ru.json",
     "version": 1,
     "language": "ru"
   },
@@ -17,7 +17,7 @@
     "tag": "Автор: Бахаулла",
     "image_url": "https://www.bahaiblog.net/wp-content/uploads/2022/04/Introduction-to-the-Kitab-i-Iqan-864x550-1.jpg",
     "sort_position": 2,
-    "url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/kitabi_igan_ru.json",
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/kitabi_igan_ru.json",
     "version": 1,
     "language": "ru"
   },
@@ -29,7 +29,7 @@
     "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/%E2%80%98Abdu%E2%80%99l-Bah%C3%A1_portrait.jpg/220px-%E2%80%98Abdu%E2%80%99l-Bah%C3%A1_portrait.jpg",
     "bold": ["Абдул-Баха"],
     "sort_position": 3,
-    "url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/parizh_ru.json",
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/parizh_ru.json",
     "version": 1,
     "language": "ru"
   },
@@ -40,7 +40,7 @@
     "tag": "Автор: Бахаулла",
     "image_url": "https://www.bahai.ru/public/uploads/images/books/JupEe9voA9.jpg",
     "sort_position": 4,
-    "url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/skrizhali.json",
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/skrizhali.json",
     "version": 1,
     "language": "ru"
   },
@@ -52,7 +52,7 @@
     "image_url": "https://www.bahai.org/chrome/img/beliefs/administrative-order-feature-img.jpg%3F1fc3b20d",
     "bold": ["Ссылки:", "[1]", "[2]", "[3]", "[4]", "[5]"],
     "sort_position": 5,
-    "url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/kosvennie_temi.json",
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/kosvennie_temi.json",
     "version": 1,
     "language": "ru"
   },
@@ -64,7 +64,7 @@
     "image_url": "https://www.bahai.org/chrome/img/beliefs/one-human-family-feature-img.jpg?3490ff92",
     "bold": ["Молитвы", "\nЦитаты из Писаний", "\nИстория", "Вопросы для размышления:","\nАбдул-Баха", "\nБахаулла"],
     "sort_position": 6,
-    "url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/ist_zhiv_vod_ru.json",
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/ist_zhiv_vod_ru.json",
     "version": 1,
     "language": "ru"
   },
@@ -75,7 +75,7 @@
     "tag": "Автор: Бахаулла",
     "image_url": "https://www.bahai.ru/public/uploads/images/books/eUpJ3fPees.jpg",
     "sort_position": 7,
-    "url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/krupici_ru_2.json",
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/krupici_ru_2.json",
     "version": 1,
     "language": "ru"
   }
