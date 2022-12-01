@@ -1,0 +1,13 @@
+[
+  {
+    "bookId": "KI_UZ",
+    "title": "КИТОБИ-ИҚОН",
+    "description": "“Ишонч Китоби” деб аталмиш мазкур асарда Баҳоуллоҳ, Оллоҳ ва Унинг Элчиларининг табиати, ҳамда, инсоният учун руҳий ривожланишнинг мақсад ва моҳияти каби илоҳий сиру-асрорларни ёритади.",
+    "tag": "Muallif: Баҳоуллоҳ",
+    "image_url": "https://www.bahaiblog.net/wp-content/uploads/2022/04/Introduction-to-the-Kitab-i-Iqan-864x550-1.jpg",
+    "sort_position": 1,
+    "url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/2891e653cd02061883116dd6c68c623da3b3c82f/assets/kitabi_igan_uz.json",
+    "version": 1,
+    "language": "uz"
+  }
+]

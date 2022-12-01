@@ -5,7 +5,10 @@
     "description": "Баһаулланың Заңдар кітабы, Кітаб-и-Ағдастан кейінгі маңыздылығы жағынан екінші кітап.  Келешек Құдай Мазһары жайлы Құран мен Інжілдегі сәуегейліктерге қатысты тәпсірге арналған.",
     "tag": "Авторы: Бахаулла",
     "image_url": "https://www.bahaiblog.net/wp-content/uploads/2022/04/Introduction-to-the-Kitab-i-Iqan-864x550-1.jpg",
-    "sort_position": 1
+    "sort_position": 1,
+    "url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/kitabi_igan_kz.json",
+    "version": 1,
+    "language": "kz"
   },
   {
     "bookId": "JA_KZ",
@@ -14,6 +17,9 @@
     "tag": "Жиынтық",
     "image_url": "https://www.bahai.org/chrome/img/beliefs/administrative-order-feature-img.jpg%3F1fc3b20d",
     "bold": ["СІЛТЕМЕЛЕР"],
-    "sort_position": 2
+    "sort_position": 2,
+    "url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/kosvennie_temi_kz.json",
+    "version": 1,
+    "language": "kz"
   }
 ]
