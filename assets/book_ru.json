@@ -22,6 +22,18 @@
     "language": "ru"
   },
   {
+    "bookId": "Sem_doloin_ru",
+    "title": "Семь долин",
+    "description": "Семь долин Бахауллы можно назвать одной из вершин мистической литературы. Это глубокое эссе написано в ответ на вопросы шейха Мухиддина, судьи из города Ханакин, расположенного близ границы с Ираном северо-восточнее Багдада. Очевидно, судья изучал суфийскую философию, разновидность мистицизма, ставшую самостоятельным направлением в Исламе.",
+    "tag": "Бахаулла",
+    "image_url": "	https://pibig.info/uploads/posts/2021-05/1620992534_6-pibig_info-p-dolina-priroda-krasivo-foto-7.jpg",
+    "bold": ["Бахаулла"],
+    "sort_position": 3,
+    "book_url": " https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/9a16ead247a0f66726ae939712ba3fb598497fa5/assets/sem_dolin_ru.json",
+    "version": 1,
+    "language": "ru"
+  },
+  {
     "bookId": "Parizhskie_besedi_ru",
     "title": "Парижские беседы",
     "description": "Выступления Абдул-Баха в Париже в 1911 году",
