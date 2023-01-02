@@ -6,7 +6,7 @@
 			"description": "Описание части 1",
 			"image_url": "https://cdn.mos.cms.futurecdn.net/pD3bsKPrjsqNiFDGRL5oq6-1200-80.jpg",
 			"audio_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/paris/ru/paris_ru_1.mp3",
-			"note": "",
+			"note": ""
 	},
 	{
 			"audio_part_id" : "paris_ru_2",
@@ -15,6 +15,6 @@
 			"description": "Описание части 2",
 			"image_url": "https://www.travelandleisure.com/thmb/SPUPzO88ZXq6P4Sm4mC5Xuinoik=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/eiffel-tower-paris-france-EIFFEL0217-6ccc3553e98946f18c893018d5b42bde.jpg",
 			"audio_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/paris/ru/paris_ru_2.mp3",
-			"note": "",
+			"note": ""
 	}
 ]
