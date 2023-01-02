@@ -45,6 +45,20 @@
     "version": 1,
     "language": "ru"
   },
+
+  {
+    "bookId": "Parizhskie_besedi_audio_ru",
+    "title": "Парижские беседы",
+    "description": "Выступления Абдул-Баха в Париже в 1911 году",
+    "tag": "New",
+    "image_url": "https://cdn.mos.cms.futurecdn.net/pD3bsKPrjsqNiFDGRL5oq6-1200-80.jpg",
+    "bold": ["Абдул-Баха"],
+    "sort_position": 3,
+    "book_url": "",
+    "version": 1,
+    "language": "ru",
+    "book_type": 1
+  },
   {
     "bookId": "5",
     "title": "Скрижали, явленные после Китаб-и-Агдас",
