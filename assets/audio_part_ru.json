@@ -16,5 +16,14 @@
 			"imageUrl": "https://www.travelandleisure.com/thmb/SPUPzO88ZXq6P4Sm4mC5Xuinoik=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/eiffel-tower-paris-france-EIFFEL0217-6ccc3553e98946f18c893018d5b42bde.jpg",
 			"audioUrl": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/paris/ru/paris_ru_2.mp3",
 			"note": ""
+	},
+	{
+			"audioPartId" : "paris_ru_3",
+			"bookId": "Parizhskie_besedi_audio_ru",
+			"title": "Часть 3",
+			"description": "Описание части 3",
+			"imageUrl": "https://www.easyjet.com/ejcms/cache/medialibrary/Images/JSS/Destinations/Hero/France_Paris_3840x2160.jpg?mw=1920&hash=E8AA30B1E85F5D76DD8D14A78D8D9C0AB7DC52C7",
+			"audioUrl": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/paris/ru/paris_ru_3.mp3",
+			"note": ""
 	}
 ]
