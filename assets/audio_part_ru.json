@@ -1,29 +1,56 @@
 [
-	{
-			"audioPartId" : "paris_ru_1",
-			"bookId": "Parizhskie_besedi_audio_ru",
-			"title": "Часть 1",
-			"description": "Описание части 1",
-			"imageUrl": "https://cdn.mos.cms.futurecdn.net/pD3bsKPrjsqNiFDGRL5oq6-1200-80.jpg",
-			"audioUrl": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/paris/ru/paris_ru_1.mp3",
-			"note": ""
-	},
-	{
-			"audioPartId" : "paris_ru_2",
-			"bookId": "Parizhskie_besedi_audio_ru",
-			"title": "Часть 2",
-			"description": "Описание части 2",
-			"imageUrl": "https://www.travelandleisure.com/thmb/SPUPzO88ZXq6P4Sm4mC5Xuinoik=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/eiffel-tower-paris-france-EIFFEL0217-6ccc3553e98946f18c893018d5b42bde.jpg",
-			"audioUrl": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/paris/ru/paris_ru_2.mp3",
-			"note": ""
-	},
-	{
-			"audioPartId" : "paris_ru_3",
-			"bookId": "Parizhskie_besedi_audio_ru",
-			"title": "Часть 3",
-			"description": "Описание части 3",
-			"imageUrl": "https://www.easyjet.com/ejcms/cache/medialibrary/Images/JSS/Destinations/Hero/France_Paris_3840x2160.jpg?mw=1920&hash=E8AA30B1E85F5D76DD8D14A78D8D9C0AB7DC52C7",
-			"audioUrl": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/paris/ru/paris_ru_3.mp3",
-			"note": ""
-	}
+  {
+    "audioPartId": "paris_ru_1",
+    "bookId": "Parizhskie_besedi_audio_ru",
+    "title": "Часть 1",
+    "description": "Содержание этой книги составляют беседы, записанные со слов Абдул-Баха, во время Его пребывания в Париже в 1911 году. В этой книге читатель найдет ответы на многие жизненные вопросы касающиеся понимания нашего мироустройства, причин войн и многое другое. Перед Вами, собрание неоспоримой мудрости!\nЧитает Олег Вадюла\n\n\n00:02         Предисловие \n01:46         Введение\n13:44        (Часть первая)  16-17 октября \n18:20         18 Октября \n20:49         19 Октября\n24:16         20 Октября, Пятница\n27:30         20 Октября, Пятница (вечер)\n36:07         21 Октября\n41:26         22 Октября\n45:56         23 Октября\n49:22         24 Октября\n57:40         25 Октября\n1:00:46      26 Октября",
+    "imageUrl": "https://cdn.mos.cms.futurecdn.net/pD3bsKPrjsqNiFDGRL5oq6-1200-80.jpg",
+    "audioUrl": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/paris/ru/paris_ru_1.mp3",
+    "note": ""
+  },
+  {
+    "audioPartId": "paris_ru_2",
+    "bookId": "Parizhskie_besedi_audio_ru",
+    "title": "Часть 2",
+    "description": "Оглавление:\n00:00        27 октября  Авеню Камоэнса, 4 , Утро, пятница, \n                   ОБЛАКА, ЗАСЛОНЯЮЩИЕ СОЛНЦЕ ИСТИНЫ\n03:42        27 октября  РЕЛИГИОЗНЫЕ ПРЕДУБЕЖДЕНИЯ\n11:23        27 октября  Авеню Камоэнса, 4   БЛАГИЕ ДАРЫ БОГА ЧЕЛОВЕКУ\n15:03        28 октября     КРАСОТА И ГАРМОНИЯ В РАЗНООБРАЗИИ\n20:50        30 октября    ИСТИННЫЙ СМЫСЛ ПРОРОЧЕСТВА О ПРИШЕСТВИИ ХРИСТА\n26:11        31 октября   Авеню Камоэнса, 4\n                   СВЯТОЙ ДУХ — СИЛА, СВЯЗУЮЩАЯ БОГА И ЧЕЛОВЕКА\n29:56         1 ноября   ДВЕ СУЩНОСТИ ЧЕЛОВЕКА\n34:04        2 ноября   МАТЕРИАЛЬНЫЙ ПРОГРЕСС И ДУХОВНОЕ РАЗВИТИЕ\n38:00         3 ноября   ЭВОЛЮЦИЯ МАТЕРИИ И РАЗВИТИЕ ДУШИ\n42:46         4 ноября   ДУХОВНЫЕ ВСТРЕЧИ В ПАРИЖЕ\n45:37         5 ноября   ДВЕ РАЗНОВИДНОСТИ СВЕТА\n48:19         ДУХОВНЫЕ ЧАЯНИЯ НА ЗАПАДЕ \n52:20         6 ноября    БЕСЕДА В ОДНОЙ ИЗ ПАРИЖСКИХ СТУДИЙ\n56:11         7 ноября     БАХАУЛЛА",
+    "imageUrl": "https://www.travelandleisure.com/thmb/SPUPzO88ZXq6P4Sm4mC5Xuinoik=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/eiffel-tower-paris-france-EIFFEL0217-6ccc3553e98946f18c893018d5b42bde.jpg",
+    "audioUrl": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/paris/ru/paris_ru_2.mp3",
+    "note": ""
+  },
+  {
+    "audioPartId": "paris_ru_3",
+    "bookId": "Parizhskie_besedi_audio_ru",
+    "title": "Часть 3",
+    "description": "Оглавление:\n00:00        8 ноября  ХОРОШИЕ ПОМЫСЛЫ ДОЛЖНЫ СТАНОВИТЬСЯ ДЕЛАМИ\n04:00        9 ноября   ИСТИННОЕ ЗНАЧЕНИЕ КРЕЩЕНИЯ ВОДОЙ И ОГНЕМ\n07:25        9 ноября   Саль-де л’Атене, Сен-Жермен, Париж  \n                  ВЫСТУПЛЕНИЕ В ОБЩЕСТВЕ «АЛЬЯНС СПИРИТЮАЛИСТ»\n16:10        10 ноября  Улица Грез, 15, Париж     РАЗВИТИЕ ДУХА\n\n\n27:45         15 ноября     ЖЕЛАНИЯ И МОЛИТВЫ АБДУЛ-БАХА\n29:36         17 ноября    Париж, Авеню Камоэнса, 4  Пятница, утро,\n                   О ТЕЛЕ, ДУШЕ И ДУХЕ",
+    "imageUrl": "https://www.easyjet.com/ejcms/cache/medialibrary/Images/JSS/Destinations/Hero/France_Paris_3840x2160.jpg?mw=1920&hash=E8AA30B1E85F5D76DD8D14A78D8D9C0AB7DC52C7",
+    "audioUrl": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/paris/ru/paris_ru_3.mp3",
+    "note": ""
+  },
+  {
+    "audioPartId": "paris_ru_4",
+    "bookId": "Parizhskie_besedi_audio_ru",
+    "title": "Часть 4",
+    "description": "Оглавление:\n00:10       19 ноября  Бахаи должны всем сердцем и душой стремится улучшить                    положение в мире\n04:05        20 ноября  О клевете\n11:13        21 ноября  Нет истинного счастья и подлинного развития без духовности\n17:00        22 ноября  Боль и страдание\n22:29        23 ноября  Совершенные человеческие чувства и добродетели\n25:44        24 ноября  О бессердечном равнодушии людей к страданиям других народов\n30:00        25 ноября  Мы не должны падать духом из-за того что нас мало\n34:05        26 ноября  Выступление Абдул -Баха в церкви пастора Вагнера",
+    "imageUrl": "",
+    "audioUrl": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/paris/ru/paris_ru_4.mp3",
+    "note": ""
+  },
+  {
+    "audioPartId": "paris_ru_5",
+    "bookId": "Parizhskie_besedi_audio_ru",
+    "title": "Часть 5",
+    "description": "Оглавление:\n00:07   Одиннадцать  принципов  \n03:46  (Кратко) 1-й пр. Поиск истины  \n04:36  (Кратко) 2-й пр. Единство человечества\n05:44  (Кратко) 3-й пр. Религия должна быть источником любви и дружбы\n06:49  (Кратко) 4-й пр. Единство религии и науки\n07:52  (Кратко) 5-й пр. Отказ от предрассудков\n08:55  (Кратко) 6-й пр. Равенство возможностей  в отношении средств к существованию\n09:42  (Кратко) 7-й пр. Равенство людей перед законом \n10:05  (Кратко) 8-й пр. Всеобщий мир\n10:34  (Кратко) 9-й пр. Невмешательство религии и политики в дела друг друга\n11:14  (Кратко) 10-й пр. Равноправие полов. Образование женщин\n11:43  (Кратко) 11-й пр. Сила святого духа\n14:06  (Подробно) 1-й принцип.   10 ноября\n19:36  (Подробно) 2-й принцип.   11 ноября\n25:04  (                   ) 3-й принцип.  \n25:22  (Подробно) 4-й принцип.   12 ноября\n36:16  (Подробно) 5-й принцип.   13 ноября\n44:23  (Подробно) 6-й принцип.  \n50:05  (Подробно) 7-й принцип.   \n51:42  (Подробно) 8-й принцип.",
+    "imageUrl": "",
+    "audioUrl": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/paris/ru/paris_ru_5.mp3",
+    "note": ""
+  },
+  {
+    "audioPartId": "paris_ru_6",
+    "bookId": "Parizhskie_besedi_audio_ru",
+    "title": "Часть 6",
+    "description": "Оглавление:\n00:05   Девятый принцип\n06:04   Десятый принцип\n11:12   Одиннадцатый принцип\n17:00   Это великое и славное дело\n19:40   Последняя встреча\n27:46   Выступление в молитвенном доме друзей в Лондоне\n34:26   Молитва\n36:31   Зло\n37:35   Развитие души\n39:58   Четыре разновидности любви\n44:35   Послание Абдул-Баха",
+    "imageUrl": "",
+    "audioUrl": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/paris/ru/paris_ru_6.mp3",
+    "note": ""
+  }
 ]
