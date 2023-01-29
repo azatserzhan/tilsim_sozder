@@ -1,5 +1,4 @@
 [
-  //Парижские беседы
   {
     "audioPartId": "paris_ru_1",
     "bookId": "Parizhskie_besedi_audio_ru",
@@ -54,7 +53,6 @@
     "audioUrl": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/paris/ru/paris_ru_6.mp3",
     "note": ""
   },
-  // Скрижали Баха-Уллы
   {
     "audioPartId": "skrizhal_1",
     "bookId": "Skrizhali_audio_ru",
