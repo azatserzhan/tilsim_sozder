@@ -39,10 +39,10 @@
     "title": "Повествование Набиля: Вестники Рассвета",
     "description": "Ранние этапы истории Веры Бахаи, столь быстро распространяющейся по всему миру, вызывают большой интерес у ее приверженцев, желающих узнать о тех мужественных людях, которые отдали жизнь за любимое Дело. Трагическая история возлюбленного Баба и Его учеников - неисчерпаемый источник вдохновения для современных бахаи. Именно поэтому и возник замысел этой книги.",
     "tag": "А’зам Набиль-и",
-    "image_url": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/images/book/nabil_book_cover.png",
     "bold": ["Бахаулла"],
     "sort_position": 3,
-    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/9a16ead247a0f66726ae939712ba3fb598497fa5/assets/sem_dolin_ru.json",
+    "book_url": "https://github.com/azatserzhan/tilsim_sozder/raw/02ebf63bfcc56cf7ec0654f3289c6f1cc45194bc/assets/nabil_ru.json",
     "version": 1,
     "language": "ru"
   },
