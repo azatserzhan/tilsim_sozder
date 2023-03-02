@@ -41,12 +41,25 @@
     "tag": "А’зам Набиль-и",
     "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/images/book/nabil_book_cover.png",
     "bold": ["Бахаулла"],
-    "sort_position": 3,
+    "sort_position": 4,
     "book_url": "https://github.com/azatserzhan/tilsim_sozder/raw/bcf63f9dd7cc0e07a1c0d54b232817124430603f/assets/nabil_ru.json",
     "version": 1,
     "language": "ru"
   },
-  
+  {
+    "bookId": "Ti_udevitelni_audio_ru",
+    "title": "Ты - удивительный! - детская познавательная программа",
+    "description": "Подкаст для детей от 4 лет о дружбе, доброте и справедливости. Уникальный проект с атмосферой из нашего детства, когда ведущий со спокойным голосом рассказывает детям нечто важное. Что-то такое, что очень волнует, но ещё так непонятно.\n\nВ каждом выпуске целый океан открытий, эмоций и реальных поступков, которые ребёнок совершает каждый день. Детские песни о добродетелях, кукольные персонажи и поучительные истории на нравственную тематику.\n\nBy WonderfulYou",
+    "tag": "Для детей",
+    "image_url": "https://s3-us-west-2.amazonaws.com/anchor-generated-image-bank/production/podcast_uploaded_nologo400/11314152/11314152-1607797769739-68c8f46079729.jpg",
+    "bold": ["Ты удевительный"],
+    "sort_position": 5,
+    "book_url": "",
+    "version": 1,
+    "language": "ru",
+    "book_type": 1
+  },
+
   {
     "bookId": "Sem_doloin_ru",
     "title": "Семь долин",
@@ -54,7 +67,7 @@
     "tag": "Бахаулла",
     "image_url": "https://pibig.info/uploads/posts/2021-05/1620992534_6-pibig_info-p-dolina-priroda-krasivo-foto-7.jpg",
     "bold": ["Бахаулла"],
-    "sort_position": 3,
+    "sort_position": 6,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/9a16ead247a0f66726ae939712ba3fb598497fa5/assets/sem_dolin_ru.json",
     "version": 1,
     "language": "ru"
@@ -66,7 +79,7 @@
     "tag": "New",
     "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/%E2%80%98Abdu%E2%80%99l-Bah%C3%A1_portrait.jpg/220px-%E2%80%98Abdu%E2%80%99l-Bah%C3%A1_portrait.jpg",
     "bold": ["Абдул-Баха"],
-    "sort_position": 3,
+    "sort_position": 7,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/parizh_ru.json",
     "version": 1,
     "language": "ru"
@@ -78,7 +91,7 @@
     "tag": "New",
     "image_url": "https://cdn.mos.cms.futurecdn.net/pD3bsKPrjsqNiFDGRL5oq6-1200-80.jpg",
     "bold": ["Абдул-Баха"],
-    "sort_position": 3,
+    "sort_position": 8,
     "book_url": "",
     "version": 1,
     "language": "ru",
@@ -90,7 +103,7 @@
     "description": "Примерно за сорок лет Своей пророческой миссии Бахаулла явил много Скрижалей, Посланий и других работ, считающихся Священными Текстами религии Бахаи. В этой книге собраны более поздние Скрижали, в которых Он провозгласил определенные заповеди и принципы Веры Бахаи, уточнил и разъяснил законы, предписанные Им ранее, явил пророчества и предостережения и установил вспомогательные законы в дополнение к Китаб-и-Агдас. Эти Скрижали поражают красотой и выразительностью стиля, и в них, бесспорно, заключены созидательная сила, величие и небесная мудрость, присущие лишь Словам Бога. Данная книга, впервые издающаяся на русском языке,— еще одна капля из бескрайнего океана Откровения Бахауллы, предназначенного для всего человечества.",
     "tag": "Автор: Бахаулла",
     "image_url": "https://www.bahai.ru/public/uploads/images/books/JupEe9voA9.jpg",
-    "sort_position": 4,
+    "sort_position": 9,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/skrizhali.json",
     "version": 1,
     "language": "ru"
@@ -102,7 +115,7 @@
     "tag": "Сборник",
     "image_url": "https://www.bahai.org/chrome/img/beliefs/administrative-order-feature-img.jpg%3F1fc3b20d",
     "bold": ["Ссылки:", "[1]", "[2]", "[3]", "[4]", "[5]"],
-    "sort_position": 5,
+    "sort_position": 10,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/kosvennie_temi.json",
     "version": 1,
     "language": "ru"
@@ -114,7 +127,7 @@
     "tag": "Новое",
     "image_url": "https://www.bahai.org/chrome/img/beliefs/one-human-family-feature-img.jpg?3490ff92",
     "bold": ["Молитвы", "\nЦитаты из Писаний", "\nИстория", "Вопросы для размышления:","\nАбдул-Баха", "\nБахаулла"],
-    "sort_position": 6,
+    "sort_position": 11,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/ist_zhiv_vod_ru.json",
     "version": 1,
     "language": "ru"
@@ -125,7 +138,7 @@
     "description": "Отрывки из различных произведений Бахауллы, собранные и переведённые на английский Шоги Эффенди, Хранителем Веры Бахаи. ",
     "tag": "Автор: Бахаулла",
     "image_url": "https://www.bahai.ru/public/uploads/images/books/eUpJ3fPees.jpg",
-    "sort_position": 7,
+    "sort_position": 12,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/krupici_ru_2.json",
     "version": 1,
     "language": "ru"

@@ -88,5 +88,14 @@
     "imageUrl": "https://github.com/azatserzhan/tilsim_sozder/raw/main/images/book/skrizhali/4.jpeg",
     "audioUrl": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/BahaUlla/Скрижаль Бишарат (Благовести) (128 kbps).mp3",
     "note": ""
+  },
+  {
+    "audioPartId": "ti_udivitelni_1",
+    "bookId": "Ti_udevitelni_audio_ru",
+    "title": "Правдивость",
+    "description": "В этом выпуске мы поговорим о правдивости и о том, как отличить правду от выдумки. А еще о том, почему очень важно не слушать сплетни, то есть когда-то говорит о другом человеке то, чего ты не знаешь. В этом выпуске тебя ждет продолжение истории про собачку Несси, которая попала в новый дом и новая песенка под названием 'Правда'.",
+    "imageUrl": "https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/11314152/11314152-1664073966013-8ef2b5918bf5e.jpg",
+    "audioUrl": "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2022-8-25/fe1cdfbb-4df3-5998-bac4-f34b2f799dce.mp3",
+    "note": ""
   }
 ]
