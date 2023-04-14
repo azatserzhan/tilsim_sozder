@@ -1,0 +1,211 @@
+[
+  {
+    "title": {
+      "kz": "",
+      "ru": "День Завета",
+      "uz": ""
+    },
+    "timestamp": 1700978400000,
+    "badi_name": {
+      "kz": "Каул, 4",
+      "ru": "Каул, 4",
+      "uz": "Каул, 4"
+    },
+    "type": 0
+  },
+  {
+    "title": {
+      "kz": "",
+      "ru": "Вознесение Абдул-Баха",
+      "uz": ""
+    },
+    "description": ""
+    "timestamp": 1701151200000,
+    "badi_name": {
+      "kz": "Каул, 6",
+      "ru": "Каул, 6",
+      "uz": "Каул, 6"
+    },
+    "type": 0
+  },
+  {
+    "title": {
+      "kz": "",
+      "ru": "Пост Бахаи",
+      "uz": ""
+    },
+    "description": ""
+    "timestamp": 1709272800000,
+   "badi_name": {
+      "kz": "Аланың 1 нен 19 дейін",
+      "ru": "с 1 по 19 Ала",
+      "uz": "1 дан 19 Аъло"
+    },
+    "type": 0
+  },
+  {
+    "title": {
+      "kz": "Наурыз",
+      "ru": "Нау-Руз",
+      "uz": "Nau Ruz"
+    },
+    "description": ""
+    "timestamp": 1679378400000,
+   "badi_name": {
+      "kz": "Баха, 1",
+      "ru": "Баха, 1",
+      "uz": "Баҳо, 1"
+    },
+    "type": 1
+  },
+  {
+    "title": {
+      "kz": "Ризванның бірінші күні",
+      "ru": "Первый день Ризвана",
+      "uz": "Rizvonning birinchi kuni"
+    },
+    "description": ""
+    "timestamp": 1682056800000,
+   "badi_name": {
+      "kz": "Джалал, 13",
+      "ru": "Джалал, 13",
+      "uz": "Жалол, 13"
+    },
+    "type": 1
+  },
+  {
+    "title": {
+      "kz": "Ризванның тоғызыншы күні",
+      "ru": "Девятый день Ризвана",
+      "uz": "Rizvonning to‘qqizinchi kuni"
+    },
+    "description": ""
+    "timestamp": 1682748000000,
+   "badi_name": {
+      "kz": "Джамал, 2",
+      "ru": "Джамал, 2",
+      "uz": "Жамол, 2"
+    },
+    "type": 1
+  },
+  {
+    "title": {
+      "kz": "Ризванның он екінші күні",
+      "ru": "Двенадцатый день Ризвана",
+      "uz": "Rizvonning o'n ikkinchi kuni"
+    },
+    "description": ""
+    "timestamp": 1683871200000,
+   "badi_name": {
+      "kz": "Джамал, 5",
+      "ru": "Джамал, 5",
+      "uz": "Жамол, 5"
+    },
+    "type": 1
+  },
+  {
+    "title": {
+      "kz": "Бабтың жариялау күні",
+      "ru": "Возвещение Баба",
+      "uz": "Bobning xabari"
+    },
+    "description": ""
+    "timestamp": 1684908000000,
+   "badi_name": {
+      "kz": "Азамат, 8",
+      "ru": "Азамат, 8",
+      "uz": "Азамат, 8"
+    },
+    "type": 1
+  },
+  {
+    "title": {
+      "kz": "Бахаулланың қайтыс болған күні",
+      "ru": "Вознесение Бахауллы",
+      "uz": "Bahoullohning yuksalishi"
+    },
+    "description": ""
+    "timestamp": 1685340000000,
+   "badi_name": {
+      "kz": "Азамат, 13",
+      "ru": "Азамат, 13",
+      "uz": "Азамат, 13"
+    },
+    "type": 1
+  },
+  {
+    "title": {
+      "kz": "Бабтың азапталып өлтірілген күні",
+      "ru": "Мученическая смерть Баба",
+      "uz": "Boboning shahidligi"
+    },
+    "description": ""
+    "timestamp": 1686376800000,
+   "badi_name": {
+      "kz": "Рахмат, 17",
+      "ru": "Рахмат, 17",
+      "uz": "Раҳмат, 17"
+    },
+    "type": 1
+  },
+  {
+    "title": {
+      "kz": "Бабтың туылған күні",
+      "ru": "Рождество Баба",
+      "uz": "Boboning tug'ilgan kuni"
+    },
+    "description": ""
+    "timestamp": 1697436000000,
+   "badi_name": {
+      "kz": "Ілім, 18",
+      "ru": "Илм, 18",
+      "uz": "Илм, 18"
+    },
+    "type": 1
+  },
+  {
+    "title": {
+      "kz": "Бахаулланың туылған күні",
+      "ru": "Рождество Бахауллы",
+      "uz": "Bahaulloning tug'ilgan kuni"
+    },
+    "description": ""
+    "timestamp": 1697522400000,
+   "badi_name": {
+      "kz": "Ілім, 19",
+      "ru": "Илм, 19",
+      "uz": "Илм, 19"
+    },
+    "type": 1
+  },
+  {
+    "title": {
+      "kz": "Аййам-и Ха",
+      "ru": "Аййам-и Ха",
+      "uz": "Ayyam-i Ha"
+    },
+    "description": "с 26 по 29 февраля 2024 г."
+    "timestamp": 1708927200000,
+   "badi_name": {
+      "kz": "Аййам-и Ха, 1 нен 4 дейін",
+      "ru": "с 1 по 4 Аййам-и Ха",
+      "uz": "1 dan 4 gacha Ayyam-i Ha"
+    },
+    "type": 2
+  },
+  {
+    "title": {
+      "kz": "Ораза айы",
+      "ru": "Месяц поста",
+      "uz": "Ro'za oyi"
+    },
+    "description": "с 1 по 19 марта 2024 г."
+    "timestamp": 1677650400000,
+   "badi_name": {
+      "kz": "Ала, 1 нен 19 дейін",
+      "ru": "с 1 по 19 Ала",
+      "uz": "1 dan 19 gacha Ala"
+    },
+    "type": 2
+  },
+]
