@@ -3,13 +3,15 @@
     "title": {
       "kz": "Өсиет күні",
       "ru": "День Завета",
-      "uz": "Kelishuv kuni"
+      "uz": "Kelishuv kuni",
+      "en": "Day of the Covenant"
     },
     "timestamp": 1700978400000,
     "badi_name": {
       "kz": "Каул, 4",
       "ru": "Каул, 4",
-      "uz": "Каул, 4"
+      "uz": "Каул, 4",
+      "en": "Qawl, 4"
     },
     "type": 0
   },
@@ -17,14 +19,16 @@
     "title": {
       "kz": "Абдул-Баханың қайтыс болған күні",
       "ru": "Вознесение Абдул-Баха",
-      "uz": "Abdul-Bahoning ko'tarilishi"
+      "uz": "Abdul-Bahoning ko'tarilishi",
+      "en": "Ascension of ‘Abdu’l-Bahá"
     },
     "description": "",
     "timestamp": 1701151200000,
     "badi_name": {
       "kz": "Каул, 6",
       "ru": "Каул, 6",
-      "uz": "Каул, 6"
+      "uz": "Каул, 6",
+      "en": "Qawl, 6"
     },
     "type": 0
   },
@@ -32,14 +36,16 @@
     "title": {
       "kz": "Наурыз",
       "ru": "Нау-Руз",
-      "uz": "Nau Ruz"
+      "uz": "Nau Ruz",
+      "en": "Qawl"
     },
     "description": "",
     "timestamp": 1679378400000,
     "badi_name": {
       "kz": "Баха, 1",
       "ru": "Баха, 1",
-      "uz": "Баҳо, 1"
+      "uz": "Баҳо, 1",
+      "en": "Bahá, 1"
     },
     "type": 1
   },
@@ -47,14 +53,16 @@
     "title": {
       "kz": "Ризванның бірінші күні",
       "ru": "Первый день Ризвана",
-      "uz": "Rizvonning birinchi kuni"
+      "uz": "Rizvonning birinchi kuni",
+      "en": "First Day of Riḍván"
     },
     "description": "",
     "timestamp": 1682056800000,
     "badi_name": {
       "kz": "Джалал, 13",
       "ru": "Джалал, 13",
-      "uz": "Жалол, 13"
+      "uz": "Жалол, 13",
+      "en": "Jalál, 13"
     },
     "type": 1
   },
@@ -62,14 +70,16 @@
     "title": {
       "kz": "Ризванның тоғызыншы күні",
       "ru": "Девятый день Ризвана",
-      "uz": "Rizvonning to‘qqizinchi kuni"
+      "uz": "Rizvonning to‘qqizinchi kuni",
+      "en": "Ninth Day of Riḍván"
     },
     "description": "",
     "timestamp": 1682748000000,
     "badi_name": {
       "kz": "Джамал, 2",
       "ru": "Джамал, 2",
-      "uz": "Жамол, 2"
+      "uz": "Жамол, 2",
+      "en": "Jamál, 2"
     },
     "type": 1
   },
@@ -77,14 +87,16 @@
     "title": {
       "kz": "Ризванның он екінші күні",
       "ru": "Двенадцатый день Ризвана",
-      "uz": "Rizvonning o'n ikkinchi kuni"
+      "uz": "Rizvonning o'n ikkinchi kuni",
+      "en": "Twelfth Day of Riḍván"
     },
     "description": "",
     "timestamp": 1683871200000,
     "badi_name": {
       "kz": "Джамал, 5",
       "ru": "Джамал, 5",
-      "uz": "Жамол, 5"
+      "uz": "Жамол, 5",
+      "en": "Jamál, 5"
     },
     "type": 1
   },
@@ -92,14 +104,16 @@
     "title": {
       "kz": "Баб Өзін жариялаған күн",
       "ru": "Возвещение Баба",
-      "uz": "Bobning xabari"
+      "uz": "Bobning xabari",
+      "en": "Declaration of the Báb"
     },
     "description": "",
     "timestamp": 1684908000000,
     "badi_name": {
       "kz": "Азамат, 8",
       "ru": "Азамат, 8",
-      "uz": "Азамат, 8"
+      "uz": "Азамат, 8",
+      "en": "Aẓamat, 8"
     },
     "type": 1
   },
@@ -107,14 +121,16 @@
     "title": {
       "kz": "Бахаулланың қайтыс болған күні",
       "ru": "Вознесение Бахауллы",
-      "uz": "Bahoullohning yuksalishi"
+      "uz": "Bahoullohning yuksalishi",
+      "en": ""
     },
     "description": "",
     "timestamp": 1685340000000,
     "badi_name": {
       "kz": "Азамат, 13",
       "ru": "Азамат, 13",
-      "uz": "Азамат, 13"
+      "uz": "Азамат, 13",
+      "en": "Aẓamat, 13"
     },
     "type": 1
   },
@@ -122,14 +138,16 @@
     "title": {
       "kz": "Бабты азаптап өлтірген күн",
       "ru": "Мученическая смерть Баба",
-      "uz": "Boboning shahidligi"
+      "uz": "Boboning shahidligi",
+      "en": "Martyrdom of the Báb"
     },
     "description": "",
     "timestamp": 1686376800000,
     "badi_name": {
       "kz": "Рахмат, 17",
       "ru": "Рахмат, 17",
-      "uz": "Раҳмат, 17"
+      "uz": "Раҳмат, 17",
+      "en": "Raḥmat, 17"
     },
     "type": 1
   },
@@ -137,14 +155,16 @@
     "title": {
       "kz": "Бабтың туған күні",
       "ru": "Рождество Баба",
-      "uz": "Boboning tug'ilgan kuni"
+      "uz": "Boboning tug'ilgan kuni",
+      "en": "Birth of the Báb"
     },
     "description": "",
     "timestamp": 1697436000000,
     "badi_name": {
       "kz": "Ілім, 18",
       "ru": "Илм, 18",
-      "uz": "Илм, 18"
+      "uz": "Илм, 18",
+      "en": "‘Ilm, 18"
     },
     "type": 1
   },
@@ -152,14 +172,16 @@
     "title": {
       "kz": "Бахаулланың туған күні",
       "ru": "Рождество Бахауллы",
-      "uz": "Bahaulloning tug'ilgan kuni"
+      "uz": "Bahaulloning tug'ilgan kuni",
+      "en": "Birth of Bahá’u’lláh"
     },
     "description": "",
     "timestamp": 1697522400000,
     "badi_name": {
       "kz": "Ілім, 19",
       "ru": "Илм, 19",
-      "uz": "Илм, 19"
+      "uz": "Илм, 19",
+      "en": "‘Ilm, 19"
     },
     "type": 1
   },
@@ -167,14 +189,16 @@
     "title": {
       "kz": "Аййам-и Ха",
       "ru": "Аййам-и Ха",
-      "uz": "Ayyam-i Ha"
+      "uz": "Ayyam-i Ha",
+      "en": "Ayyám-i-Há"
     },
-    "description": "с 26 по 29 февраля 2024 г.",
+    "description": "26 - 29.02.2024",
     "timestamp": 1708927200000,
     "badi_name": {
       "kz": "Аййам-и Ха, 1 нен 4 дейін",
       "ru": "с 1 по 4 Аййам-и Ха",
-      "uz": "1 dan 4 gacha Ayyam-i Ha"
+      "uz": "1 dan 4 gacha Ayyam-i Ha",
+      "en": "1 - 4 Ayyám-i-Há"
     },
     "type": 2
   },
@@ -182,14 +206,16 @@
     "title": {
       "kz": "Ораза айы",
       "ru": "Месяц поста",
-      "uz": "Ro'za oyi"
+      "uz": "Ro'za oyi",
+      "en": "Bahá’í Fast"
     },
-    "description": "с 1 по 19 марта 2024 г.",
+    "description": "1 - 19.03.2024",
     "timestamp": 1677650400000,
     "badi_name": {
       "kz": "Ала, 1 нен 19 дейін",
       "ru": "с 1 по 19 Ала",
-      "uz": "1 dan 19 gacha Ala"
+      "uz": "1 dan 19 gacha Ala",
+      "en": "1 - 19 ‘Alá’"
     },
     "type": 2
   }
