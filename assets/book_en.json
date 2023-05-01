@@ -1,0 +1,13 @@
+[
+  {
+    "bookId": "KI_EN",
+    "title": "Kitab-i-Iqan",
+    "description": "The Book of Certitude (Kitab-i Iqan) is the preeminent doctrinal work of the Bahá'í Faith. Mirza Husayn `Ali Nuri, Bahá'u'lláh (1817-1892), the author, later designated the Iqan as the \"Lord of all books\" (\"sayyid-i kutub\": idem, \"Lawh-i Mubarak dar javab-i `Aridih-'i Jinab-i Abu'l-Fada'il-i Gulpaygani,\" in Ma'ida-yi Asmani, ed. `Abdu'l-Hamid Ishraq-Khavari [Tehran: Bahá'í Publishing Trust, 129 Badi` [Bahá'í Era)/1972-3], Vol. 7, pp. 148-73), reflecting on the text's status as divine revelation and on its historical importance in ideologically propagating the new Faith.",
+    "tag": "Baháʼu'lláh",
+    "image_url": "https://www.bahaiblog.net/wp-content/uploads/2022/04/Introduction-to-the-Kitab-i-Iqan-864x550-1.jpg",
+    "sort_position": 1,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/1270a96dee73b774afd9c9faa49be6bb11e2deae/assets/kitabi_igan_en.json",
+    "version": 1,
+    "language": "en"
+  }
+]
