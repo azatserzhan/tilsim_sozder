@@ -5,8 +5,19 @@
     "description": "The Book of Certitude (Kitab-i Iqan) is the preeminent doctrinal work of the Bahá'í Faith. Mirza Husayn `Ali Nuri, Bahá'u'lláh (1817-1892), the author, later designated the Iqan as the \"Lord of all books\" (\"sayyid-i kutub\": idem, \"Lawh-i Mubarak dar javab-i `Aridih-'i Jinab-i Abu'l-Fada'il-i Gulpaygani,\" in Ma'ida-yi Asmani, ed. `Abdu'l-Hamid Ishraq-Khavari [Tehran: Bahá'í Publishing Trust, 129 Badi` [Bahá'í Era)/1972-3], Vol. 7, pp. 148-73), reflecting on the text's status as divine revelation and on its historical importance in ideologically propagating the new Faith.",
     "tag": "Baháʼu'lláh",
     "image_url": "https://www.bahaiblog.net/wp-content/uploads/2022/04/Introduction-to-the-Kitab-i-Iqan-864x550-1.jpg",
-    "sort_position": 1,
+    "sort_position": 0,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/aba499c10438be429afd130310c783a05d02a76a/assets/kitabi_igan_en.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "KA_EN",
+    "title": "Tablets of Baha'u'llah Revealed after the Kitáb-i-Aqdas",
+    "description": "Bahá’u’lláh’s book of laws, written in Arabic around 1873 while He was still imprisoned within the city of ‘Akká. It was supplemented by later Writings and by Bahá’u’lláh’s replies to a series of questions posed by one of His secretaries. The first authorized English translation was published in 1992, annotated and accompanied by the supplementary Writings and the questions and answers.",
+    "tag": "Author: Bahá’u’lláh",
+    "image_url": "https://www.bahai.ru/public/uploads/images/books/1000062265.jpg",
+    "sort_position": 1,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/dc07c5c96ba4152b64172f118bde632a83553673/assets/Kitabi%20Agdas/kitabi_agdas_en.json",
     "version": 1,
     "language": "en"
   }
