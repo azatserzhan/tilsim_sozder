@@ -21,5 +21,17 @@
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/kosvennie_temi_kz.json",
     "version": 1,
     "language": "kk"
-  }
+  },
+  {
+    "bookId": "Parizhskie_besedi_kk",
+    "title": "Париждегі сұхбаттар",
+    "description": "Абдул-Баһа немесе Аббас Эффендiнiң Еуропаға сапары туралы бiзге дейiн де көп әңгiмелер жазылған. Парижде, Авеню Камоэнс, 4-үйде болғанда, Ол күнде таңертең өзiнiң Iлiмдерi туралы тыңдағысы келген адамдармен қысқаша «сұхбаттар» өткiзетiн.",
+    "tag": "1912 жыл, қаңтар.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/%E2%80%98Abdu%E2%80%99l-Bah%C3%A1_portrait.jpg/220px-%E2%80%98Abdu%E2%80%99l-Bah%C3%A1_portrait.jpg",
+    "bold": ["Абдул-Баха"],
+    "sort_position": 3,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/fa1ca6b1a5099b8e7b0b94a10ae98f1fcd6f18da/assets/Parijskie_besedi/parizh_suhbattari_kz.json",
+    "version": 1,
+    "language": "kk"
+  },
 ]
