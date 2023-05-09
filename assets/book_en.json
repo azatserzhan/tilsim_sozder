@@ -20,5 +20,18 @@
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/3f886b3d6659e62070a2415fc85f65f05d25d4ac/assets/Kitabi%20Agdas/kitabi_agdas_en.json",
     "version": 1,
     "language": "en"
-  }
+  },
+   {
+    "bookId": "History_of_Bab",
+    "title": "History of the Bab",
+    "description": "This very special window from these ageless Windows to the Past will open to the exciting and tragic life of the Bab. The history of the awescme life of the Bab is presented in story form. To convey the spirit of the events, the long Persian names, which have a tendency to overwhelm the Western audience, are avoided.",
+    "tag": "Darius K., Shakhroukh M. D.",
+    "image_url": "https://israeltours.files.wordpress.com/2011/04/bahai-shrine-restored.jpg",
+    "bold": ["Bab", "Ba'b"],
+    "sort_position": 2,
+    "book_url": "",
+    "version": 1,
+    "language": "en",
+    "book_type": 1
+  },
 ]
