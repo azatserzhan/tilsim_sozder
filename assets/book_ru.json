@@ -154,5 +154,16 @@
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/krupici_ru_2.json",
     "version": 1,
     "language": "ru"
+  },
+  {
+    "bookId": "RASSKAZI_OB_ABDUL_BAHA_RU",
+    "title": "Рассказы об Абдул-Баха",
+    "description": "Всередине XIX века, во время разгула религиозного и расового фанатизма, дворянин из Персии, Бахаулла возвестил о Своей Божественной Миссии единения и любви. Он призвал людей всех стран и вероисповеданий забыть о своих разногласиях, принять друг друга как братьев и направить совместные усилия на объединение рода человеческого.",
+    "tag": "Перевод В. А. Макаровой",
+    "image_url":"https://239days.com/wp-content/uploads/2012/11/abdul-baha-profile-paris.jpg",
+    "sort_position": 14,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/36cf98b43d08cf1ba348a1adf00be86b075ef136/assets/History%20about%20Abdul-Baha/History_about_Abdul_Baha_RU.json",
+    "version": 1,
+    "language": "ru"
   }
 ]
