@@ -6,7 +6,7 @@
       "uz": "Kelishuv kuni",
       "en": "Day of the Covenant"
     },
-    "timestamp": 1732492800,
+    "timestamp": 1732492800000,
     "badi_name": {
       "kz": "Каул, 4",
       "ru": "Каул, 4",
@@ -23,7 +23,7 @@
       "en": "Ascension of ‘Abdu’l-Bahá"
     },
     "description": "",
-    "timestamp": 1732665600,
+    "timestamp": 1732665600000,
     "badi_name": {
       "kz": "Каул, 6",
       "ru": "Каул, 6",
