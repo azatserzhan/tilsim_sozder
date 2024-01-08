@@ -6,7 +6,7 @@
       "uz": "Kelishuv kuni",
       "en": "Day of the Covenant"
     },
-    "timestamp": 1732471200000,
+    "timestamp": 1732492800000,
     "badi_name": {
       "kz": "Каул, 4",
       "ru": "Каул, 4",
@@ -34,13 +34,13 @@
   },
   {
     "title": {
-      "kz": "Наурыз",
+      "kz": "Nau Ruz",
       "ru": "Нау-Руз",
       "uz": "Nau Ruz",
       "en": "Qawl"
     },
     "description": "",
-    "timestamp": 1710892800,
+    "timestamp": 1710892800000,
     "badi_name": {
       "kz": "Баха, 1",
       "ru": "Баха, 1",
