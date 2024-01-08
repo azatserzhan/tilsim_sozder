@@ -57,7 +57,7 @@
       "en": "First Day of Riḍván"
     },
     "description": "",
-    "timestamp": 1713571200,
+    "timestamp": 1713571200000,
     "badi_name": {
       "kz": "Джалал, 13",
       "ru": "Джалал, 13",
@@ -74,7 +74,7 @@
       "en": "Ninth Day of Riḍván"
     },
     "description": "",
-    "timestamp": 1714262400,
+    "timestamp": 1714262400000,
     "badi_name": {
       "kz": "Джамал, 2",
       "ru": "Джамал, 2",
@@ -91,7 +91,7 @@
       "en": "Twelfth Day of Riḍván"
     },
     "description": "",
-    "timestamp": 1714521600,
+    "timestamp": 1714521600000,
     "badi_name": {
       "kz": "Джамал, 5",
       "ru": "Джамал, 5",
@@ -108,7 +108,7 @@
       "en": "Declaration of the Báb"
     },
     "description": "",
-    "timestamp": 1716422400,
+    "timestamp": 1716422400000,
     "badi_name": {
       "kz": "Азамат, 8",
       "ru": "Азамат, 8",
@@ -125,7 +125,7 @@
       "en": "Ascension of Bahá’u’lláh"
     },
     "description": "",
-    "timestamp": 1716854400,
+    "timestamp": 1716854400000,
     "badi_name": {
       "kz": "Азамат, 13",
       "ru": "Азамат, 13",
@@ -142,7 +142,7 @@
       "en": "Martyrdom of the Báb"
     },
     "description": "",
-    "timestamp": 1717891200,
+    "timestamp": 1717891200000,
     "badi_name": {
       "kz": "Рахмат, 17",
       "ru": "Рахмат, 17",
@@ -159,7 +159,7 @@
       "en": "Birth of the Báb"
     },
     "description": "",
-    "timestamp": 1730505600,
+    "timestamp": 1730505600000,
     "badi_name": {
       "kz": "Ілім, 18",
       "ru": "Илм, 18",
@@ -176,7 +176,7 @@
       "en": "Birth of Bahá’u’lláh"
     },
     "description": "",
-    "timestamp": 1730592000,
+    "timestamp": 1730592000000,
     "badi_name": {
       "kz": "Ілім, 19",
       "ru": "Илм, 19",
@@ -193,7 +193,7 @@
       "en": "Ayyám-i-Há"
     },
     "description": "26 - 29.02.2024",
-    "timestamp": 1708905600,
+    "timestamp": 1708905600000,
     "badi_name": {
       "kz": "Аййам-и Ха, 1 нен 4 дейін",
       "ru": "с 1 по 4 Аййам-и Ха",
@@ -210,7 +210,7 @@
       "en": "Bahá’í Fast"
     },
     "description": "1 - 19.03.2024",
-    "timestamp": 1709251200,
+    "timestamp": 1709251200000,
     "badi_name": {
       "kz": "Ала, 1 нен 19 дейін",
       "ru": "с 1 по 19 Ала",
@@ -228,7 +228,7 @@
       "en": "Bahá - Splendour"
     },
     "description": "",
-    "timestamp": 1710892800,
+    "timestamp": 1710892800000,
     "badi_name": {
       "kz": "Баха, 1",
       "ru": "Баха, 1",
@@ -245,7 +245,7 @@
       "en": "Jalál - Glory"
     },
     "description": "",
-    "timestamp": 1712534400,
+    "timestamp": 1712534400000,
     "badi_name": {
       "kz": "Джалал, 1",
       "ru": "Джалал, 1",
@@ -262,7 +262,7 @@
       "en": "Jamál - Beauty"
     },
     "description": "",
-    "timestamp": 1714176000,
+    "timestamp": 1714176000000,
     "badi_name": {
       "kz": "Джамал, 1",
       "ru": "Джамал, 1",
@@ -279,7 +279,7 @@
       "en": "Aẓamat - Grandeur"
     },
     "description": "",
-    "timestamp": 1715817600,
+    "timestamp": 1715817600000,
     "badi_name": {
       "kz": "Азамат, 1",
       "ru": "Азамат, 1",
@@ -296,7 +296,7 @@
       "en": "Núr - Light"
     },
     "description": "",
-    "timestamp": 1717459200,
+    "timestamp": 1717459200000,
     "badi_name": {
       "kz": "Нұр, 1",
       "ru": "Нур, 1",
@@ -313,7 +313,7 @@
       "en": "Raḥmat - Mercy"
     },
     "description": "",
-    "timestamp": 1719100800,
+    "timestamp": 1719100800000,
     "badi_name": {
       "kz": "Рахмат, 1",
       "ru": "Рахмат, 1",
@@ -330,7 +330,7 @@
       "en": "Kalimát - Words"
     },
     "description": "",
-    "timestamp": 1720742400,
+    "timestamp": 1720742400000,
     "badi_name": {
       "kz": "Калимат, 1",
       "ru": "Калимат, 1",
@@ -347,7 +347,7 @@
       "en": "Kamál - Perfection"
     },
     "description": "",
-    "timestamp": 1722384000,
+    "timestamp": 1722384000000,
     "badi_name": {
       "kz": "Камал, 1",
       "ru": "Камал, 1",
@@ -364,7 +364,7 @@
       "en": "Asmá - Names"
     },
     "description": "",
-    "timestamp": 1724025600,
+    "timestamp": 1724025600000,
     "badi_name": {
       "kz": "Асма, 1",
       "ru": "Асма, 1",
@@ -381,7 +381,7 @@
       "en": "‘Izzat - Might"
     },
     "description": "",
-    "timestamp": 1725667200,
+    "timestamp": 1725667200000,
     "badi_name": {
       "kz": "Иззат, 1",
       "ru": "Иззат, 1",
@@ -398,7 +398,7 @@
       "en": "Mashíyyat - Will"
     },
     "description": "",
-    "timestamp": 1727308800,
+    "timestamp": 1727308800000,
     "badi_name": {
       "kz": "Машиййат, 1",
       "ru": "Машиййат, 1",
@@ -415,7 +415,7 @@
       "en": "‘Ilm - Knowledge"
     },
     "description": "",
-    "timestamp": 1728950400,
+    "timestamp": 1728950400000,
     "badi_name": {
       "kz": "Ілім, 1",
       "ru": "Илм, 1",
@@ -432,7 +432,7 @@
       "en": "Qudrat - Power"
     },
     "description": "",
-    "timestamp": 1730592000,
+    "timestamp": 1730592000000,
     "badi_name": {
       "kz": "Гудрат, 1",
       "ru": "Могущество, 1",
@@ -449,7 +449,7 @@
       "en": "Qawl - Speech"
     },
     "description": "",
-    "timestamp": 1732233600,
+    "timestamp": 1732233600000,
     "badi_name": {
       "kz": "Гоул, 1",
       "ru": "Гоул, 1",
@@ -466,7 +466,7 @@
       "en": "Masá’il - Questions"
     },
     "description": "",
-    "timestamp": 1733875200,
+    "timestamp": 1733875200000,
     "badi_name": {
       "kz": "Масаил, 1",
       "ru": "Масаил, 1",
@@ -483,7 +483,7 @@
       "en": "Sharaf - Honour"
     },
     "description": "",
-    "timestamp": 1735516800,
+    "timestamp": 1735516800000,
     "badi_name": {
       "kz": "Шараф, 1",
       "ru": "Шараф, 1",
@@ -500,7 +500,7 @@
       "en": "Sulṭán - Sovereignty"
     },
     "description": "",
-    "timestamp": 1737158400,
+    "timestamp": 1737158400000,
     "badi_name": {
       "kz": "Сұлтан, 1`",
       "ru": "Султан, 1",
@@ -517,7 +517,7 @@
       "en": "Mulk - Dominion"
     },
     "description": "",
-    "timestamp": 1738800000,
+    "timestamp": 1738800000000,
     "badi_name": {
       "kz": "Мульк, 1",
       "ru": "Мульк, 1",
@@ -534,7 +534,7 @@
       "en": "‘Alá’ - Loftiness"
     },
     "description": "",
-    "timestamp": 1740787200,
+    "timestamp": 1740787200000,
     "badi_name": {
       "kz": "Ала, 1",
       "ru": "Ала, 1",
