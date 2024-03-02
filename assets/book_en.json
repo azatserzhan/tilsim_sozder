@@ -11,14 +11,25 @@
     "language": "en"
   },
   {
-    "bookId": "KA_EN",
-    "title": "Tablets of Baha'u'llah Revealed after the Kitáb-i-Aqdas",
+    "bookId": "KITABI_AGADS_EN",
+    "title": "Kitáb-i-Aqdas",
     "description": "Bahá’u’lláh’s book of laws, written in Arabic around 1873 while He was still imprisoned within the city of ‘Akká. It was supplemented by later Writings and by Bahá’u’lláh’s replies to a series of questions posed by one of His secretaries. The first authorized English translation was published in 1992, annotated and accompanied by the supplementary Writings and the questions and answers.",
     "tag": "Author: Bahá’u’lláh",
     "image_url": "https://www.bahai.ru/public/uploads/images/books/1000062265.jpg",
     "sort_position": 1,
-    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/3f886b3d6659e62070a2415fc85f65f05d25d4ac/assets/Kitabi%20Agdas/kitabi_agdas_en.json",
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/ae5003108c9d9e57294d0eb1e19a53d7ee41470c/assets/Kitabi%20Agdas/kitabi_agdas_en.json",
     "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "KA_EN",
+    "title": "Tablets of Baha'u'llah Revealed after the Kitáb-i-Aqdas",
+    "description": "Bahá’u’lláh’s book of laws, written in Arabic around 1873 while He was still imprisoned within the city of ‘Akká. It was supplemented by later Writings and by Bahá’u’lláh’s replies to a series of questions posed by one of His secretaries. The first authorized English translation was published in 1992, annotated and accompanied by the supplementary Writings and the questions and answers.",
+    "tag": "Author: Bahá’u’lláh",
+    "image_url": "https://github.com/azatserzhan/tilsim_sozder/raw/main/images/book/skrizhali/4.jpeg",
+    "sort_position": 2,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/579147e97f465fee588e3cab1547d81145371020/assets/Kitabi%20Agdas/tablets_after_kitabi_agdas_en.json",
+    "version": 2,
     "language": "en"
   },
    {
