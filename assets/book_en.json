@@ -44,5 +44,16 @@
     "version": 1,
     "language": "en",
     "book_type": 1
+  },
+  {
+    "bookId": "DIVINE_BELOVED_EN",
+    "title": "The Call of the Divine Beloved",
+    "description": "Seven Tablets revealed by Bahá’u’lláh on mystical themes, including the poem Rashḥ-i-‘Amá and new translations of the Seven Valleys and the Four Valleys.",
+    "tag": "Author: Bahá’u’lláh",
+    "image_url": "https://scontent.fakx4-2.fna.fbcdn.net/v/t1.6435-9/51812040_10156827966922527_3708929608440086528_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=2RrJSufDGvMAX9h2Idj&_nc_ht=scontent.fakx4-2.fna&oh=00_AfBwJgd4Vsi4Ocm2UYqqRJ9y5xyCdf9tzqsQLNFRXNSmyg&oe=660A2810",
+    "sort_position": 3,
+    "book_url": "",
+    "version": 1,
+    "language": "en"
   }
 ]
