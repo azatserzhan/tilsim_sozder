@@ -46,13 +46,26 @@
     "book_type": 1
   },
   {
+    "bookId": "MIGHTY",
+    "title": "MIGHTY",
+    "description": "Mighty - 7 Stories About Abdu'l-Baha for Children Who Want to Serve the World",
+    "tag": "Baha’i Blog’s",
+    "image_url": "https://i1.sndcdn.com/artworks-xTxYvzDRPcZUUn1S-n04FLA-t500x500.jpg",
+    "bold": [" Baha’i Blog’s", "SoundCloud"],
+    "sort_position": 3,
+    "book_url": "",
+    "version": 1,
+    "language": "en",
+    "book_type": 1
+  },
+  {
     "bookId": "History_of_Bab",
     "title": "History of the Bab",
     "description": "This very special window from these ageless Windows to the Past will open to the exciting and tragic life of the Bab. The history of the awescme life of the Bab is presented in story form. To convey the spirit of the events, the long Persian names, which have a tendency to overwhelm the Western audience, are avoided.",
     "tag": "Darius K., Shakhroukh M. D.",
     "image_url": "https://israeltours.files.wordpress.com/2011/04/bahai-shrine-restored.jpg",
     "bold": ["Bab", "Ba'b"],
-    "sort_position": 2,
+    "sort_position": 4,
     "book_url": "",
     "version": 1,
     "language": "en",
@@ -64,7 +77,7 @@
     "description": "Seven Tablets revealed by Bahá’u’lláh on mystical themes, including the poem Rashḥ-i-‘Amá and new translations of the Seven Valleys and the Four Valleys.",
     "tag": "Author: Bahá’u’lláh",
     "image_url": "https://scontent.fakx4-2.fna.fbcdn.net/v/t1.6435-9/51812040_10156827966922527_3708929608440086528_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=2RrJSufDGvMAX9h2Idj&_nc_ht=scontent.fakx4-2.fna&oh=00_AfBwJgd4Vsi4Ocm2UYqqRJ9y5xyCdf9tzqsQLNFRXNSmyg&oe=660A2810",
-    "sort_position": 4,
+    "sort_position": 5,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/d02a52e3407bb9aa2f06bb30275d8886b0203c11/assets/books/en/The%20Call%20of%20the%20Divine%20Beloved.json",
     "version": 1,
     "language": "en"
