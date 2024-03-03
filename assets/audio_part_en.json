@@ -16,5 +16,14 @@
     "imageUrl": "https://www.bahaiblog.net/wp-content/uploads/2022/04/Shrine-of-Bab-Significance-864x550-1.jpg",
     "audioUrl": "https://bahai-library.com/wttp/mp3/11%20History%20of%20The%20Bab%20part%202.mp3",
     "note": ""
+  },
+  {
+    "audioPartId": "STORIES_PART_1",
+    "bookId": "STORIES_FROM_THE_BAHAI_FAITH",
+    "title": "The Promised One - A Story from the Baha'i Faith",
+    "description": "In this reading, we explore a story from early Baha'i history, sourced from famed Baha'i historian Nabil's much celebrated opus \"The Dawn-Breakers\". We hear of the Bab's summoning to a convocation of religious leaders in Tabriz, and the extraordinary pronouncement He made at that gathering.",
+    "imageUrl": "https://i1.sndcdn.com/artworks-stC7dCJKesRY0FgK-kWOUUA-t500x500.jpg",
+    "audioUrl": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/Bahai_Blog/Stories/The%20Promised%20One%20-%20A%20Story%20from%20the%20Bahai%20Faith.mp3",
+    "note": ""
   }
 ]

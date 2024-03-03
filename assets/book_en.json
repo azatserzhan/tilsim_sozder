@@ -29,10 +29,23 @@
     "image_url": "https://github.com/azatserzhan/tilsim_sozder/raw/main/images/book/skrizhali/4.jpeg",
     "sort_position": 2,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/579147e97f465fee588e3cab1547d81145371020/assets/Kitabi%20Agdas/tablets_after_kitabi_agdas_en.json",
-    "version": 2,
+    "version": 3,
     "language": "en"
   },
-   {
+  {
+    "bookId": "STORIES_FROM_THE_BAHAI_FAITH",
+    "title": "Stories from the Baha'i Faith",
+    "description": "Welcome to Baha’i Blog’s SoundCloud channel!\n\nWe are an independent initiative for Australian Baha’is and likeminded friends to connect with personal stories, inspiration, arts and media about the Baha’i Faith, its ideals and transformational impact.\n\nHere on SoundCloud we feature Baha’i-inspired music, resources, talks, and perspectives on the Baha’i Faith. Be sure to subscribe to support the channel and stay up to date.\n\nThe views expressed in our content reflect individual perspectives and do not represent the official views of the Baha’i Faith. The official website of the Baha’i Faith in Australia is: Bahai.org.au, and the global website for the Baha’i Faith is Bahai.org",
+    "tag": "Baha’i Blog’s",
+    "image_url": "",
+    "bold": [" Baha’i Blog’s", "SoundCloud"],
+    "sort_position": 2,
+    "book_url": "",
+    "version": 1,
+    "language": "en",
+    "book_type": 1
+  },
+  {
     "bookId": "History_of_Bab",
     "title": "History of the Bab",
     "description": "This very special window from these ageless Windows to the Past will open to the exciting and tragic life of the Bab. The history of the awescme life of the Bab is presented in story form. To convey the spirit of the events, the long Persian names, which have a tendency to overwhelm the Western audience, are avoided.",
