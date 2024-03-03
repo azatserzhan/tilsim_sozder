@@ -20,10 +20,46 @@
   {
     "audioPartId": "STORIES_PART_1",
     "bookId": "STORIES_FROM_THE_BAHAI_FAITH",
-    "title": "The Promised One - A Story from the Baha'i Faith",
+    "title": "The Promised One",
     "description": "In this reading, we explore a story from early Baha'i history, sourced from famed Baha'i historian Nabil's much celebrated opus \"The Dawn-Breakers\". We hear of the Bab's summoning to a convocation of religious leaders in Tabriz, and the extraordinary pronouncement He made at that gathering.",
     "imageUrl": "https://i1.sndcdn.com/artworks-stC7dCJKesRY0FgK-kWOUUA-t500x500.jpg",
     "audioUrl": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/Bahai_Blog/Stories/The%20Promised%20One%20-%20A%20Story%20from%20the%20Bahai%20Faith.mp3",
+    "note": ""
+  },
+  {
+    "audioPartId": "STORIES_PART_2",
+    "bookId": "STORIES_FROM_THE_BAHAI_FAITH",
+    "title": "Roses of Ridvan",
+    "description": "This is an account from the historian Nabil, one of those present at the Ridvan Garden in Baghdad in 1863 when Baha'u'llah announced His Mission as the Promised One of all religions. This description is quoted in Shoghi Effendi's seminal history of the early years of the Baha'i Faith, God Passes By, and is read beautifully here by Corinne.",
+    "imageUrl": "https://i1.sndcdn.com/artworks-jpjHlmdCxe1ODNt1-Wlqzvw-t500x500.jpg",
+    "audioUrl": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/Bahai_Blog/Stories/Roses%20of%20Ridvan%20-%20A%20Story%20from%20the%20Baha'i%20Faith.mp4",
+    "note": ""
+  },
+  {
+    "audioPartId": "STORIES_PART_3",
+    "bookId": "STORIES_FROM_THE_BAHAI_FAITH",
+    "title": "Nora Crossley",
+    "description": "This is the story of Nora Crossley and her sacrifice of cutting off her long auburn hair to raise money for the construction of the Baha'i Temple in North America, a sacrifice which was heralded by Abdu'l-Baha as an act of \"imperishable glory\".",
+    "imageUrl": "https://i1.sndcdn.com/artworks-zl4QNQ7MXrdWXH1U-3Dhmsw-t500x500.jpg",
+    "audioUrl": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/Bahai_Blog/Stories/Nora%20Crossley%20-%20A%20Story%20from%20the%20Baha'i%20Faith.mp3",
+    "note": ""
+  },
+  {
+    "audioPartId": "STORIES_PART_4",
+    "bookId": "STORIES_FROM_THE_BAHAI_FAITH",
+    "title": "10 Women of Shiraz",
+    "description": "June 18, 2023 will mark 40 years since 10 Baha’i women were hanged in Shiraz. Their only ‘crime’ was their refusal to renounce their beliefs in a faith that promotes the principles of gender equality, unity, justice, and truthfulness.\n\nToday, in the blood, tears and wounds of thousands of young women in Iran fighting for equality, we can see the legacy of the 10 women of Shiraz whose tragic death touched the lives of many.\n\nWith this video, we honour not only the anniversary of these 10 women but we honour all women who have contributed to building a better Iran through their suffering, to say that our story is one.\n\nTo participate in the Our Story is One campaign, visit this special website by the Baha'i International Community: www.ourstoryisone.bic.org/\n\nFor more artistic expressions and resources related to the ongoing persecution of the Baha'is in Iran, visit this Baha'i Blog collection: www.bahaiblog.net/collection/theme…-bahais-in-iran/\n\nNarration: Corinne\n\nPhotos courtesy of the Baha'i International Community sourced from the Archives of Baha'i Persecution in Iran - iranbahaipersecution.bic.org/\n\nMusic:\nLights by Danijel Zambo\nuppbeat.io/t/danijel-zambo/lights\nLicense code: 2SAUUOTJENAKTINN\n\nLament by Arend\nuppbeat.io/t/arend/lament\nLicense code: LZEQ4PKRN01OPQMI",
+    "imageUrl": "https://i1.sndcdn.com/artworks-XuKmwCmQcrq7Jgyn-KaYIUQ-t500x500.jpg",
+    "audioUrl": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/Bahai_Blog/Stories/230702%2010%20Women%20of%20Shiraz%20-%20a%20Chapter%20from%20Baha'i%20(and%20Iranian)%20history.mp3",
+    "note": ""
+  },
+  {
+    "audioPartId": "STORIES_PART_5",
+    "bookId": "STORIES_FROM_THE_BAHAI_FAITH",
+    "title": "Anis",
+    "description": "This is the story of Anis Zunuzi, the youth who was executed alongside the Bab on July 9th, 1850. You can watch this story in animated form on our YouTube channel: www.youtube.com/watch?v=s2fsmrQ38Z0\n\nRead more about Anis in this Baha'i Blog article: www.bahaiblog.net/articles/history…ute-anis-zunuzi/\n\nFind more resources related to the Martyrdom of the Bab and its significance: www.bahaiblog.net/collection/calen…rdom-of-the-bab/\n\nMusic: \"The East Wind\" by Simon Folwar",
+    "imageUrl": "https://i1.sndcdn.com/artworks-x2B0YK0QyqEFzK8D-Se0oeQ-t500x500.jpg",
+    "audioUrl": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/audio/Bahai_Blog/Stories/230930%20Anis%20-%20A%20Story%20from%20Baha'i%20History.mp3",
     "note": ""
   }
 ]
