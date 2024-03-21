@@ -81,5 +81,16 @@
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/d02a52e3407bb9aa2f06bb30275d8886b0203c11/assets/books/en/The%20Call%20of%20the%20Divine%20Beloved.json",
     "version": 1,
     "language": "en"
+  },
+  {
+    "bookId": "DAYS_OF_REMEMBRANCE_EN",
+    "title": "DAYS OF REMEMBRANCE",
+    "description": "Selections from the\nWritings of Bahá’u’lláh\nfor Bahá’í Holy Days",
+    "tag": "Author: Bahá’u’lláh",
+    "image_url": "https://www.bahaibookstore.com/GetImage.ashx?Path=%7e%2fAssets%2fProductImages%2fDOR.jpg&maintainAspectRatio=true",
+    "sort_position": 6,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Days%20of%20Remembrance.json",
+    "version": 1,
+    "language": "en"
   }
 ]
