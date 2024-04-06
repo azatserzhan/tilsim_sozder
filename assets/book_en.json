@@ -125,5 +125,18 @@
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20Summons%20of%20the%20Lord%20of%20Hosts.json",
     "version": 1,
     "language": "en"
+  },
+  {
+    "bookId": "The_Sign_of_God_EN",
+    "title": "Shoghi Effendi - The Sign of God on Earth",
+    "description": "Windows to the Past is a series of audio presentations on\nthe history of the Baha'i Faith, written and presented by Dr. Darius\nShahrokh with the assistance of his wife, Grace Shahrokh. This\nseries was inspired by the author's wish to make available to the\nWestern audience details from a number of histories of the Faith\nunavailable in English. The audio series has become a convenient\nand valuable aid for those with limited time to read who wish to\nbecome acquainted with the history of the Faith and those noble\npersons whose lives are an example to others.",
+    "tag": "by Grace Shahrokh and Darius K. Shahrokh, M.D.",
+    "image_url": "https://9starmedia.com/images/Shoghi%20Effendi%20-%20Film%20Cover.jpg",
+    "bold": ["Shoghi Effend","Ghusn-i-Mumt'az"],
+    "sort_position": 10,
+    "book_url": "",
+    "version": 1,
+    "language": "en",
+    "book_type": 1
   }
 ]
