@@ -26,6 +26,7 @@
       "en": "Ascension of ‘Abdu’l-Bahá"
     },
     "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Abdul%20Baha.jpg",
     "timestamp": 1732665600000,
     "badi_name": {
       "kz": "Каул, 6",
@@ -45,6 +46,7 @@
       "en": "Nau Ruz"
     },
     "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Nau%20Ruz.jpg",
     "timestamp": 1710892800000,
     "badi_name": {
       "kz": "Баха, 1",
@@ -64,6 +66,7 @@
       "en": "First Day of Riḍván"
     },
     "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Rizvan%201.jpg",
     "timestamp": 1713571200000,
     "badi_name": {
       "kz": "Джалал, 13",
@@ -83,6 +86,7 @@
       "en": "Ninth Day of Riḍván"
     },
     "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Rizvan%209.jpg",
     "timestamp": 1714262400000,
     "badi_name": {
       "kz": "Джамал, 2",
@@ -102,6 +106,7 @@
       "en": "Twelfth Day of Riḍván"
     },
     "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Rizvan%2012.jpg",
     "timestamp": 1714521600000,
     "badi_name": {
       "kz": "Джамал, 5",
@@ -121,6 +126,7 @@
       "en": "Declaration of the Báb"
     },
     "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Bab%20vozveshenie.jpg",
     "timestamp": 1716422400000,
     "badi_name": {
       "kz": "Азамат, 8",
@@ -140,6 +146,7 @@
       "en": "Ascension of Bahá’u’lláh"
     },
     "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Voznesenie%20Bahaulli.jpg",
     "timestamp": 1716854400000,
     "badi_name": {
       "kz": "Азамат, 13",
@@ -159,6 +166,7 @@
       "en": "Martyrdom of the Báb"
     },
     "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Muchenicheskaya%20smert%20Baba.jpg",
     "timestamp": 1720483200000,
     "badi_name": {
       "kz": "Рахмат, 17",
@@ -178,6 +186,7 @@
       "en": "Birth of the Báb"
     },
     "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Rojdestvo%20Baba.jpg",
     "timestamp": 1730505600000,
     "badi_name": {
       "kz": "Ілім, 18",
@@ -197,6 +206,7 @@
       "en": "Birth of Bahá’u’lláh"
     },
     "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Rojdestvo%20Bahaulli.jpg",
     "timestamp": 1730592000000,
     "badi_name": {
       "kz": "Ілім, 19",
@@ -216,6 +226,7 @@
       "en": "Ayyám-i-Há"
     },
     "description": "26 - 29.02.2024",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Aiamiha.jpg",
     "timestamp": 1708905600000,
     "badi_name": {
       "kz": "Аййам-и Ха, 1 нен 4 дейін",
@@ -235,6 +246,7 @@
       "en": "Bahá’í Fast"
     },
     "description": "1 - 19.03.2024",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Nau%20Ruz.jpg",
     "timestamp": 1709251200000,
     "badi_name": {
       "kz": "Ала, 1 нен 19 дейін",
