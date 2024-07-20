@@ -150,5 +150,17 @@
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Paris%20Talks.json",
     "version": 1,
     "language": "en"
+  },
+  {
+    "bookId": "The_Promulgation_of_Universal_Peace_EN",
+    "title": "The Promulgation of Universal Peace",
+    "description": "A collection of transcriptions of over one hundred talks delivered by ‘Abdu’l‑Bahá during the nine months in 1912 when He travelled across the United States and Canada. \n Source: https://www.bahai.org/library/authoritative-texts/abdul-baha/promulgation-universal-peace/",
+    "tag": "‘Author: Abdu’l‑Bahá",
+    "image_url": "https://books.bahai.org.uk/cdn/shop/products/promulgation1_x864.jpg?v=1681295426",
+    "bold": ["‘Abdu’l‑Bahá","Baha’i"],
+    "sort_position": 12,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20Promulgation%20of%20Universal%20Peace.json",
+    "version": 1,
+    "language": "en"
   }
 ]
