@@ -162,5 +162,17 @@
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20Promulgation%20of%20Universal%20Peace.json",
     "version": 1,
     "language": "en"
+  },
+  {
+    "bookId": "The_Advent_of_Divine_Justice_EN",
+    "title": "The Advent of Divine Justice",
+    "description": "It would be difficult indeed to adequately express the feelings of irrepressible joy and exultation that flood my heart every time I pause to contemplate the ceaseless evidences of the dynamic energy which animates the stalwart pioneers of the World Order of Bahá’u’lláh in the execution of the Plan committed to their charge.",
+    "tag": "‘Author: Shoghi Effendi",
+    "image_url": "https://m.media-amazon.com/images/I/91u-zaK8p5L._AC_UF1000,1000_QL80_.jpg",
+    "bold": ["Shoghi Effendi","Baha’i"],
+    "sort_position": 13,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20Advent%20of%20Divine%20Justice.json",
+    "version": 1,
+    "language": "en"
   }
 ]
