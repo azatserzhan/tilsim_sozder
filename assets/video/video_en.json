@@ -54,12 +54,75 @@
     "is_youtube": false
   },
   {
-    "title": "Arising to Serve",
-    "video_url": "https://www.bahai.org/video/arising",
-    "video_image": "https://cms.bahai.org/assets/images/bahai-org/site/video/film-page/arising/arising-en.jpg?q=80&auto=0&fm=pjpg&w=560",
-    "avatar_url": "https://www.bahai.org/v2/favicon-32x32.png?v=d378ebad2b4a01918ea1cc629af5c182",
-    "chanel_name": "www.bahai.org",
+    "title": "A beacon of light and hope”: Bahá’í House of Worship inaugurated in Papua New Guinea",
+    "video_url": "https://www.youtube.com/watch?v=OyLFiJWMv5U",
+    "video_image": "https://i3.ytimg.com/vi/OyLFiJWMv5U/maxresdefault.jpg",
+    "avatar_url": "https://yt3.ggpht.com/KJLpbwYVduXqHE9GMCJPTMVpdGK0jPXIX6PSbkzx9CjT1TXeoeGYZdLEnKVe385kh5nBDvKmcQ=s88-c-k-c0x00ffffff-no-rj",
+    "chanel_name": "Bahá’í World News Service",
     "date": 1732346788000,
-    "is_youtube": false
+    "is_youtube": true
+  },
+  {
+    "title": "In conversation: Exploring contributions of the BIC to the betterment of the world",
+    "video_url": "https://www.youtube.com/watch?v=zA--L9rJbXY",
+    "video_image": "https://i3.ytimg.com/vi/zA--L9rJbXY/maxresdefault.jpg",
+    "avatar_url": "https://yt3.ggpht.com/KJLpbwYVduXqHE9GMCJPTMVpdGK0jPXIX6PSbkzx9CjT1TXeoeGYZdLEnKVe385kh5nBDvKmcQ=s88-c-k-c0x00ffffff-no-rj",
+    "chanel_name": "Bahá’í World News Service",
+    "date": 1732346788000,
+    "is_youtube": true
+  },
+  {
+    "title": "Chile Bahá’í Radio: National sound archive of Mapuche culture comes to life",
+    "video_url": "https://www.youtube.com/watch?v=n6hChG4Fblk",
+    "video_image": "https://i3.ytimg.com/vi/n6hChG4Fblk/maxresdefault.jpg",
+    "avatar_url": "https://yt3.ggpht.com/KJLpbwYVduXqHE9GMCJPTMVpdGK0jPXIX6PSbkzx9CjT1TXeoeGYZdLEnKVe385kh5nBDvKmcQ=s88-c-k-c0x00ffffff-no-rj",
+    "chanel_name": "Bahá’í World News Service",
+    "date": 1732346788000,
+    "is_youtube": true
+  },
+  {
+    "title": "In conversation: Podcast explores power of prayer to shape communities",
+    "video_url": "https://www.youtube.com/watch?v=1qgzb9gLLg0",
+    "video_image": "https://i3.ytimg.com/vi/1qgzb9gLLg0/maxresdefault.jpg",
+    "avatar_url": "https://yt3.ggpht.com/KJLpbwYVduXqHE9GMCJPTMVpdGK0jPXIX6PSbkzx9CjT1TXeoeGYZdLEnKVe385kh5nBDvKmcQ=s88-c-k-c0x00ffffff-no-rj",
+    "chanel_name": "Bahá’í World News Service",
+    "date": 1732346788000,
+    "is_youtube": true
+  },
+  {
+    "title": "Family Life",
+    "video_url": "https://www.youtube.com/watch?v=mvSRfjqQ5Ew",
+    "video_image": "https://i3.ytimg.com/vi/mvSRfjqQ5Ew/maxresdefault.jpg",
+    "avatar_url": "https://www.bahai.org/v2/favicon-32x32.png?v=d378ebad2b4a01918ea1cc629af5c182",
+    "chanel_name": "Bahai.org",
+    "date": 1732346788000,
+    "is_youtube": true
+  },
+  {
+    "title": "2023 Year in Review",
+    "video_url": "https://www.youtube.com/watch?v=gHcPWsg75CI",
+    "video_image": "https://i3.ytimg.com/vi/gHcPWsg75CI/maxresdefault.jpg",
+    "avatar_url": "https://yt3.ggpht.com/KJLpbwYVduXqHE9GMCJPTMVpdGK0jPXIX6PSbkzx9CjT1TXeoeGYZdLEnKVe385kh5nBDvKmcQ=s88-c-k-c0x00ffffff-no-rj",
+    "chanel_name": "Bahá’í World News Service",
+    "date": 1732346788000,
+    "is_youtube": true
+  },
+  {
+    "title": "Insights from the field: Podcast explores interplay of technology, values, and society",
+    "video_url": "https://www.youtube.com/watch?v=TIvjWj1HQm8",
+    "video_image": "https://i3.ytimg.com/vi/TIvjWj1HQm8/maxresdefault.jpg",
+    "avatar_url": "https://yt3.ggpht.com/KJLpbwYVduXqHE9GMCJPTMVpdGK0jPXIX6PSbkzx9CjT1TXeoeGYZdLEnKVe385kh5nBDvKmcQ=s88-c-k-c0x00ffffff-no-rj",
+    "chanel_name": "Bahá’í World News Service",
+    "date": 1732346788000,
+    "is_youtube": true
+  },
+  {
+    "title": "Insights from the field: Pursuing social action initiatives in Papua New Guinea",
+    "video_url": "https://www.youtube.com/watch?v=LM-rK57shyw&t=1s",
+    "video_image": "https://i3.ytimg.com/vi/LM-rK57shyw/maxresdefault.jpg",
+    "avatar_url": "https://yt3.ggpht.com/KJLpbwYVduXqHE9GMCJPTMVpdGK0jPXIX6PSbkzx9CjT1TXeoeGYZdLEnKVe385kh5nBDvKmcQ=s88-c-k-c0x00ffffff-no-rj",
+    "chanel_name": "Bahá’í World News Service",
+    "date": 1732346788000,
+    "is_youtube": true
   }
 ]
