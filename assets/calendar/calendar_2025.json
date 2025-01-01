@@ -1,0 +1,621 @@
+[
+  {
+    "title": {
+      "kz": "Өсиет күні",
+      "ru": "День Завета",
+      "uk": "День Завіту",
+      "uz": "Kelishuv kuni",
+      "en": "Day of the Covenant"
+    },
+    "timestamp": 1764057600000,
+    "badi_name": {
+      "kz": "Каул, 4",
+      "ru": "Каул, 4",
+      "uk": "Каул, 4",
+      "uz": "Каул, 4",
+      "en": "Qawl, 4"
+    },
+    "type": 0
+  },
+  {
+    "title": {
+      "kz": "Абдул-Баханың қайтыс болған күні",
+      "ru": "Вознесение Абдул-Баха",
+      "uk": "Вознесіння Абдул-Баха",
+      "uz": "Abdul-Bahoning ko'tarilishi",
+      "en": "Ascension of ‘Abdu’l-Bahá"
+    },
+    "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Abdul%20Baha.jpg",
+    "timestamp": 1764230400000,
+    "badi_name": {
+      "kz": "Каул, 6",
+      "ru": "Каул, 6",
+      "uk": "Каул, 6",
+      "uz": "Каул, 6",
+      "en": "Qawl, 6"
+    },
+    "type": 0
+  },
+  {
+    "title": {
+      "kz": "Nau Ruz",
+      "ru": "Нау-Руз",
+      "uk": "Нау-Руз",
+      "uz": "Nau Ruz",
+      "en": "Nau Ruz"
+    },
+    "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Nau%20Ruz.jpg",
+    "timestamp": 1742428800000,
+    "badi_name": {
+      "kz": "Баха, 1",
+      "ru": "Баха, 1",
+      "uk": "Баха, 1",
+      "uz": "Баҳо, 1",
+      "en": "Bahá, 1"
+    },
+    "type": 1
+  },
+  {
+    "title": {
+      "kz": "Ризванның бірінші күні",
+      "ru": "Первый день Ризвана",
+      "uk": "Перший день Різвана",
+      "uz": "Rizvonning birinchi kuni",
+      "en": "First Day of Riḍván"
+    },
+    "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Rizvan%201.jpg",
+    "timestamp": 1713571200000,
+    "badi_name": {
+      "kz": "Джалал, 13",
+      "ru": "Джалал, 13",
+      "uk": "Джалал, 13",
+      "uz": "Жалол, 13",
+      "en": "Jalál, 13"
+    },
+    "type": 1
+  },
+  {
+    "title": {
+      "kz": "Ризванның тоғызыншы күні",
+      "ru": "Девятый день Ризвана",
+      "uk": "Дев’ятий день Різвана",
+      "uz": "Rizvonning to‘qqizinchi kuni",
+      "en": "Ninth Day of Riḍván"
+    },
+    "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Rizvan%209.jpg",
+    "timestamp": 1714262400000,
+    "badi_name": {
+      "kz": "Джамал, 2",
+      "ru": "Джамал, 2",
+      "uk": "Джамал, 2",
+      "uz": "Жамол, 2",
+      "en": "Jamál, 2"
+    },
+    "type": 1
+  },
+  {
+    "title": {
+      "kz": "Ризванның он екінші күні",
+      "ru": "Двенадцатый день Ризвана",
+      "uk": "Дванадцятий день Різвана",
+      "uz": "Rizvonning o'n ikkinchi kuni",
+      "en": "Twelfth Day of Riḍván"
+    },
+    "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Rizvan%2012.jpg",
+    "timestamp": 1714521600000,
+    "badi_name": {
+      "kz": "Джамал, 5",
+      "ru": "Джамал, 5",
+      "uk": "Джамал, 5",
+      "uz": "Жамол, 5",
+      "en": "Jamál, 5"
+    },
+    "type": 1
+  },
+  {
+    "title": {
+      "kz": "Баб Өзін жариялаған күн",
+      "ru": "Возвещение Баба",
+      "uk": "Повідомлення Баба",
+      "uz": "Bobning xabari",
+      "en": "Declaration of the Báb"
+    },
+    "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Bab%20vozveshenie.jpg",
+    "timestamp": 1716422400000,
+    "badi_name": {
+      "kz": "Азамат, 8",
+      "ru": "Азамат, 8",
+      "uk": "Азамат, 8",
+      "uz": "Азамат, 8",
+      "en": "Aẓamat, 8"
+    },
+    "type": 1
+  },
+  {
+    "title": {
+      "kz": "Бахаулланың қайтыс болған күні",
+      "ru": "Вознесение Бахауллы",
+      "uk": "Вознесіння Бахаулли",
+      "uz": "Bahoullohning yuksalishi",
+      "en": "Ascension of Bahá’u’lláh"
+    },
+    "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Voznesenie%20Bahaulli.jpg",
+    "timestamp": 1716854400000,
+    "badi_name": {
+      "kz": "Азамат, 13",
+      "ru": "Азамат, 13",
+      "uk": "Азамат, 13",
+      "uz": "Азамат, 13",
+      "en": "Aẓamat, 13"
+    },
+    "type": 1
+  },
+  {
+    "title": {
+      "kz": "Бабты азаптап өлтірген күн",
+      "ru": "Мученическая смерть Баба",
+      "uk": "Мученицька смерть Баба",
+      "uz": "Boboning shahidligi",
+      "en": "Martyrdom of the Báb"
+    },
+    "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Muchenicheskaya%20smert%20Baba.jpg",
+    "timestamp": 1720483200000,
+    "badi_name": {
+      "kz": "Рахмат, 17",
+      "ru": "Рахмат, 17",
+      "uk": "Рахмат, 17",
+      "uz": "Раҳмат, 17",
+      "en": "Raḥmat, 17"
+    },
+    "type": 1
+  },
+  {
+    "title": {
+      "kz": "Бабтың туған күні",
+      "ru": "Рождество Баба",
+      "uk": "Різдво Баба",
+      "uz": "Boboning tug'ilgan kuni",
+      "en": "Birth of the Báb"
+    },
+    "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Rojdestvo%20Baba.jpg",
+    "timestamp": 1730505600000,
+    "badi_name": {
+      "kz": "Ілім, 18",
+      "ru": "Илм, 18",
+      "uk": "Ілм, 18",
+      "uz": "Илм, 18",
+      "en": "‘Ilm, 18"
+    },
+    "type": 1
+  },
+  {
+    "title": {
+      "kz": "Бахаулланың туған күні",
+      "ru": "Рождество Бахауллы",
+      "uk": "Різдво Бахаулли",
+      "uz": "Bahaulloning tug'ilgan kuni",
+      "en": "Birth of Bahá’u’lláh"
+    },
+    "description": "",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Rojdestvo%20Bahaulli.jpg",
+    "timestamp": 1730592000000,
+    "badi_name": {
+      "kz": "Ілім, 19",
+      "ru": "Илм, 19",
+      "uk": "Ілм, 19",
+      "uz": "Илм, 19",
+      "en": "‘Ilm, 19"
+    },
+    "type": 1
+  },
+  {
+    "title": {
+      "kz": "Аййам-и Ха",
+      "ru": "Аййам-и Ха",
+      "uk": "Аййам-і Ха",
+      "uz": "Ayyam-i Ha",
+      "en": "Ayyám-i-Há"
+    },
+    "description": "26 - 29.02.2024",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Aiamiha.jpg",
+    "timestamp": 1708905600000,
+    "badi_name": {
+      "kz": "Аййам-и Ха, 1 нен 4 дейін",
+      "ru": "с 1 по 4 Аййам-и Ха",
+      "uk": "з 1 по 4 Аййам-і Ха",
+      "uz": "1 dan 4 gacha Ayyam-i Ha",
+      "en": "1 - 4 Ayyám-i-Há"
+    },
+    "type": 2
+  },
+  {
+    "title": {
+      "kz": "Ораза айы",
+      "ru": "Месяц поста",
+      "uk": "Місяць посту",
+      "uz": "Ro'za oyi",
+      "en": "Bahá’í Fast"
+    },
+    "description": "1 - 19.03.2024",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Nau%20Ruz.jpg",
+    "timestamp": 1709251200000,
+    "badi_name": {
+      "kz": "Ала, 1 нен 19 дейін",
+      "ru": "с 1 по 19 Ала",
+      "uk": "з 1 по 19 Ала",
+      "uz": "1 dan 19 gacha Ala",
+      "en": "1 - 19 ‘Alá’"
+    },
+    "type": 2
+  },
+  {
+    "title": {
+      "kz": "Баха - Әсемдік",
+      "ru": "Баха - Великолепие",
+      "uk": "Баха - Великолеп’я",
+      "uz": "Баха",
+      "en": "Bahá - Splendour"
+    },
+    "description": "",
+    "timestamp": 1742428800000,
+    "badi_name": {
+      "kz": "Баха, 1",
+      "ru": "Баха, 1",
+      "uk": "Баха, 1",
+      "uz": "Баха, 1",
+      "en": "Bahá, 1"
+    },
+    "type": 3
+  },
+  {
+    "title": {
+      "kz": "Джалал - Даңқ",
+      "ru": "Джалал - Слава",
+      "uk": "Джалал - Слава",
+      "uz": "Жалол - Ёғду",
+      "en": "Jalál - Glory"
+    },
+    "description": "",
+    "timestamp": 1744070400000,
+    "badi_name": {
+      "kz": "Джалал, 1",
+      "ru": "Джалал, 1",
+      "uk": "Джалал, 1",
+      "uz": "Жалол, 1",
+      "en": "Jalál, 1"
+    },
+    "type": 3
+  },
+  {
+    "title": {
+      "kz": "Джамал - Сұлулық",
+      "ru": "Джамал - Красота",
+      "uk": "Джамал - Краса",
+      "uz": "Жамол - Чирой",
+      "en": "Jamál - Beauty"
+    },
+    "description": "",
+    "timestamp": 1745712000000,
+    "badi_name": {
+      "kz": "Джамал, 1",
+      "ru": "Джамал, 1",
+      "uk": "Джамал, 1",
+      "uz": "Жамол, 1",
+      "en": "Jamál, 1"
+    },
+    "type": 3
+  },
+  {
+    "title": {
+      "kz": "Азамат - Ұлылық",
+      "ru": "Азамат - Величие",
+      "uk": "Азамат - Велич",
+      "uz": "Азамат - Улуғлик",
+      "en": "Aẓamat - Grandeur"
+    },
+    "description": "",
+    "timestamp": 1747353600000,
+    "badi_name": {
+      "kz": "Азамат, 1",
+      "ru": "Азамат, 1",
+      "uk": "Азамат, 1",
+      "uz": "Азамат, 1",
+      "en": "Aẓamat, 1"
+    },
+    "type": 3
+  },
+  {
+    "title": {
+      "kz": "Нұр",
+      "ru": "Нур - Свет",
+      "uk": "Нур - Світло",
+      "uz": "Нур",
+      "en": "Núr - Light"
+    },
+    "description": "",
+    "timestamp": 1748995200000,
+    "badi_name": {
+      "kz": "Нұр, 1",
+      "ru": "Нур, 1",
+      "uk": "Нур, 1",
+      "uz": "Нур, 1",
+      "en": "Núr, 1"
+    },
+    "type": 3
+  },
+  {
+    "title": {
+      "kz": "Рахмат - Қайырымдылық",
+      "ru": "Рахмат - Милость",
+      "uk": "Рахмат - Милість",
+      "uz": "Раҳмат - Раҳмлилик",
+      "en": "Raḥmat - Mercy"
+    },
+    "description": "",
+    "timestamp": 1750636800000,
+    "badi_name": {
+      "kz": "Рахмат, 1",
+      "ru": "Рахмат, 1",
+      "uk": "Рахмат, 1",
+      "uz": "Раҳмат, 1",
+      "en": "Raḥmat, 1"
+    },
+    "type": 3
+  },
+  {
+    "title": {
+      "kz": "Калимат - Сөз",
+      "ru": "Калимат - Слово",
+      "uk": "Калімат - Слово",
+      "uz": "Калимат - Сўзлар",
+      "en": "Kalimát - Words"
+    },
+    "description": "",
+    "timestamp": 1752278400000,
+    "badi_name": {
+      "kz": "Калимат, 1",
+      "ru": "Калимат, 1",
+      "uk": "Калімат, 1",
+      "uz": "Калимат, 1",
+      "en": "Kalimát, 1"
+    },
+    "type": 3
+  },
+  {
+    "title": {
+      "kz": "Камал - Кемелдік",
+      "ru": "Камал - Совершенство",
+      "uk": "Камал - Досконалість",
+      "uz": "Камол - Комиллик",
+      "en": "Kamál - Perfection"
+    },
+    "description": "",
+    "timestamp": 1753920000000,
+    "badi_name": {
+      "kz": "Камал, 1",
+      "ru": "Камал, 1",
+      "uk": "Камал, 1",
+      "uz": "Камол, 1",
+      "en": "Kamál, 1"
+    },
+    "type": 3
+  },
+  {
+    "title": {
+      "kz": "Асма - Атаулар",
+      "ru": "Асма - Имена",
+      "uk": "Асма - Імена",
+      "uz": "Асмо - Исмлар",
+      "en": "Asmá - Names"
+    },
+    "description": "",
+    "timestamp": 1755561600000,
+    "badi_name": {
+      "kz": "Асма, 1",
+      "ru": "Асма, 1",
+      "uk": "Асма, 1",
+      "uz": "Асмо, 1",
+      "en": "Asmá, 1"
+    },
+    "type": 3
+  },
+  {
+    "title": {
+      "kz": "Иззат - Қуат",
+      "ru": "Иззат - Мощь",
+      "uk": "Іззат - Сила",
+      "uz": "Иззат",
+      "en": "‘Izzat - Might"
+    },
+    "description": "",
+    "timestamp": 1757203200000,
+    "badi_name": {
+      "kz": "Иззат, 1",
+      "ru": "Иззат, 1",
+      "uk": "Іззат, 1",
+      "uz": "Иззат, 1",
+      "en": "‘Izzat, 1"
+    },
+    "type": 3
+  },
+  {
+    "title": {
+      "kz": "Машиййат - Ерік",
+      "ru": "Машиййат - Воля",
+      "uk": "Машійят - Воля",
+      "uz": "Машийят - Ирода",
+      "en": "Mashíyyat - Will"
+    },
+    "description": "",
+    "timestamp": 1758844800000,
+    "badi_name": {
+      "kz": "Машиййат, 1",
+      "ru": "Машиййат, 1",
+      "uk": "Машійят, 1",
+      "uz": "Машийят, 1",
+      "en": "Mashíyyat, 1"
+    },
+    "type": 3
+  },
+  {
+    "title": {
+      "kz": "Ілім - Білім",
+      "ru": "Илм - Знание",
+      "uk": "Ілм - Знання",
+      "uz": "Илм - Билим",
+      "en": "‘Ilm - Knowledge"
+    },
+    "description": "",
+    "timestamp": 1760486400000,
+    "badi_name": {
+      "kz": "Ілім, 1",
+      "ru": "Илм, 1",
+      "uk": "Ілм, 1",
+      "uz": "Илм, 1",
+      "en": "‘Ilm, 1"
+    },
+    "type": 3
+  },
+  {
+    "title": {
+      "kz": "Құдірет",
+      "ru": "Гудрат - Могущество",
+      "uk": "Гудрат - Влада",
+      "uz": "Қудрат",
+      "en": "Qudrat - Power"
+    },
+    "description": "",
+    "timestamp": 1762128000000,
+    "badi_name": {
+      "kz": "Гудрат, 1",
+      "ru": "Могущество, 1",
+      "uk": "Влада, 1",
+      "uz": "Қудрат, 1",
+      "en": "Qudrat, 1"
+    },
+    "type": 3
+  },
+  {
+    "title": {
+      "kz": "Гоул - Тіл",
+      "ru": "Гоул - Речь",
+      "uk": "Гоул - Мова",
+      "uz": "Қавл - Нутқ",
+      "en": "Qawl - Speech"
+    },
+    "description": "",
+    "timestamp": 1763769600000,
+    "badi_name": {
+      "kz": "Гоул, 1",
+      "ru": "Гоул, 1",
+      "uk": "Гоул, 1",
+      "uz": "Қавл, 1",
+      "en": "Qawl, 1"
+    },
+    "type": 3
+  },
+  {
+    "title": {
+      "kz": "Масаил - Сұрақтар",
+      "ru": "Масаил - Вопросы",
+      "uk": "Масаіл - Питання",
+      "uz": "Масоил - Саволлар",
+      "en": "Masá’il - Questions"
+    },
+    "description": "",
+    "timestamp": 1765411200000,
+    "badi_name": {
+      "kz": "Масаил, 1",
+      "ru": "Масаил, 1",
+      "uk": "Масаіл, 1",
+      "uz": "Масоил, 1",
+      "en": "Masá’il, 1"
+    },
+    "type": 3
+  },
+  {
+    "title": {
+      "kz": "Шараф - Ар",
+      "ru": "Шараф - Честь",
+      "uk": "Шараф - Честь",
+      "uz": "Шараф",
+      "en": "Sharaf - Honour"
+    },
+    "description": "",
+    "timestamp": 1767052800000,
+    "badi_name": {
+      "kz": "Шараф, 1",
+      "ru": "Шараф, 1",
+      "uk": "Шараф, 1",
+      "uz": "Шараф, 1",
+      "en": "Sharaf, 1"
+    },
+    "type": 3
+  },
+  {
+    "title": {
+      "kz": "Сұлтан - Қожалық",
+      "ru": "Султан - Владычество",
+      "uk": "Султан - Володарство",
+      "uz": "Султон - Ҳукмронлик",
+      "en": "Sulṭán - Sovereignty"
+    },
+    "description": "",
+    "timestamp": 1737158400000,
+    "badi_name": {
+      "kz": "Сұлтан, 1`",
+      "ru": "Султан, 1",
+      "uk": "Султан, 1",
+      "uz": "Султон, 1",
+      "en": "Sulṭán, 1"
+    },
+    "type": 3
+  },
+  {
+    "title": {
+      "kz": "Мульк - Үстемділік",
+      "ru": "Мульк - Господство",
+      "uk": "Мульк - Панування",
+      "uz": "Мулк - Эгалик",
+      "en": "Mulk - Dominion"
+    },
+    "description": "",
+    "timestamp": 1738800000000,
+    "badi_name": {
+      "kz": "Мульк, 1",
+      "ru": "Мульк, 1",
+      "uk": "Мульк, 1",
+      "uz": "Мулк, 1",
+      "en": "Mulk, 1"
+    },
+    "type": 3
+  },
+  {
+    "title": {
+      "kz": "Ала - Көтеріңкілік",
+      "ru": "Ала - Возвышенность",
+      "uk": "Ала - Возвишеність",
+      "uz": "Аъло - Олийлик",
+      "en": "‘Alá’ - Loftiness"
+    },
+    "description": "",
+    "timestamp": 1740787200000,
+    "badi_name": {
+      "kz": "Ала, 1",
+      "ru": "Ала, 1",
+      "uk": "Ала, 1",
+      "uz": "Аъло, 1",
+      "en": "‘Alá’, 1"
+    },
+    "type": 3
+  }
+]
