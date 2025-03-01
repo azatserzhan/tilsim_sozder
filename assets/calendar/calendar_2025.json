@@ -658,6 +658,26 @@
   },
   {
     "title": {
+      "kz": "Аййам-и Ха",
+      "ru": "Аййам-и Ха",
+      "uk": "Аййам-і Ха",
+      "uz": "Ayyam-i Ha",
+      "en": "Ayyám-i-Há"
+    },
+    "description": "26 - 29.02.2024",
+    "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/calendar/images/Aiamiha.jpg",
+    "timestamp": 1708905600000,
+    "badi_name": {
+      "kz": "Аййам-и Ха, 1 нен 4 дейін",
+      "ru": "с 1 по 4 Аййам-и Ха",
+      "uk": "з 1 по 4 Аййам-і Ха",
+      "uz": "1 dan 4 gacha Ayyam-i Ha",
+      "en": "1 - 4 Ayyám-i-Há"
+    },
+    "type": 3
+  },
+  {
+    "title": {
       "kz": "Ала - Көтеріңкілік",
       "ru": "Ала - Возвышенность",
       "uk": "Ала - Возвишеність",
