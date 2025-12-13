@@ -1,0 +1,129 @@
+{
+  "users": [
+    {
+      "city": "Ташкент",
+      "description": "г.Ташкент",
+      "email": "amigos0305@gmail.com",
+      "imageUrl": "",
+      "name": "Местное Духовное Собрание",
+      "timestamp": 1669460400000,
+      "uuid": "tashkent_mds_UUID"
+    },
+    {
+      "city": "Астана",
+      "description": "Организатор праздника",
+      "imageUrl": "https://marusgroup.kz/wp-content/uploads/2020/10/4793-300x300.png",
+      "name": "Фатима Г.",
+      "phone": "+77769009009",
+      "timestamp": 1669122000000,
+      "uuid": "fati_UUID"
+    },
+    {
+      "city": "Астана",
+      "description": "Организатор конференции",
+      "imageUrl": "https://github.com/azatserzhan/tilsim_sozder/blob/main/images/conference/Anisa.png.png?raw=true",
+      "name": "Аниса Р.",
+      "phone": "87769414196",
+      "showInFeed": true,
+      "timestamp": 1709748000000,
+      "uuid": "anisa_UUID"
+    },
+    {
+      "city": "Астана",
+      "description": "Организатор праздника",
+      "imageUrl": "https://kakoj-segodnja-prazdnik.com/images/img2/3/2/2-prazdnik-Devjatnadcatogo-dnja-mesjaca-Ala.jpg",
+      "name": "Эйнштейн",
+      "phone": "+77780043709",
+      "timestamp": 1669122000000,
+      "uuid": "einstain_UUID"
+    },
+    {
+      "city": "Астана",
+      "description": "Организатор праздника",
+      "imageUrl": "https://scontent.fala4-3.fna.fbcdn.net/v/t1.6435-1/49899397_2773209842904586_2015812285850714112_n.jpg?stp=dst-jpg_p480x480&_nc_cat=100&ccb=1-7&_nc_sid=7206a8&_nc_ohc=nqmU466cdrIAX9q8-5z&_nc_ht=scontent.fala4-3.fna&oh=00_AfDnfIQxt03-JDCXMKvX9AoaFLICGb0TjBAn0_p9tlYdcQ&oe=642644D7",
+      "name": "Мәншүк",
+      "phone": "+77806394936",
+      "timestamp": 1669122000000,
+      "uuid": "maseka_UUID"
+    },
+    {
+      "city": "Астана",
+      "description": "Организатор семинара",
+      "imageUrl": "https://scontent.fala6-1.fna.fbcdn.net/v/t1.18169-9/196661_100892396588020_7196032_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=de6eea&_nc_ohc=2v7pwv1fDpwAX8B8LFM&tn=eIpHY7HvD2wALIny&_nc_ht=scontent.fala6-1.fna&oh=00_AfCRFn4Rh8UhaDCwym84RM2p732IRkGjHT_i0L93qq3k8g&oe=63A13F93",
+      "name": "Динара М.",
+      "phone": "+77471302619",
+      "timestamp": 1668360398,
+      "uuid": "dinara_UUID"
+    },
+    {
+      "city": "Астана",
+      "description": "Организатор праздника",
+      "imageUrl": "https://cdn-icons-png.flaticon.com/512/3773/3773072.png",
+      "name": "Хабиб аға",
+      "phone": "+77786254846",
+      "timestamp": 1668360398,
+      "uuid": "habib_UUID"
+    },
+    {
+      "city": "Астана",
+      "description": "Секретарь учебного совета",
+      "imageUrl": "",
+      "name": "Алма",
+      "phone": "+77474721927",
+      "timestamp": 1668360398,
+      "uuid": "alma_UUID"
+    },
+    {
+      "city": "Астана",
+      "description": "Учитель детского класса.\nКаждое воскресенье в 11:30\nРайон: Қосшы, 20 дом. Учебный центр Мирас",
+      "email": "balzhanym@gmail.com",
+      "imageUrl": "https://scontent.fala6-1.fna.fbcdn.net/v/t39.30808-6/317439033_10167158709285524_7678306751711387634_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=730e14&_nc_ohc=4pnKXEjjbykAX_oeEk6&_nc_ht=scontent.fala6-1.fna&oh=00_AfB8e7y06OHwMyy5ASUsrxa30NDXgxTcRR_t9uOIfVAAEQ&oe=638DF54B",
+      "name": "Тахмина К.",
+      "phone": "+77079946855",
+      "showInFeed": true,
+      "timestamp": 1669890716000,
+      "uuid": "takhmina_UUID"
+    },
+    {
+      "city": "Астана",
+      "description": "Учитель детского класса.\nКаждое воскресенье в 11:00. \nРайон: ЭКСПО",
+      "email": "azatserzhan@gmail.com",
+      "imageUrl": "https://yt3.ggpht.com/ytc/AMLnZu92WpYydhZqwKHWTVj4D_oQifAdu5Bkqc4evD1oqw=s176-c-k-c0x00ffffff-no-rj",
+      "name": "Азат С.",
+      "phone": "+77776142914",
+      "showInFeed": true,
+      "timestamp": 1661997500000,
+      "uuid": "azat_UUID"
+    },
+    {
+      "city": "onLine",
+      "description": "Со ведущий кружка",
+      "email": "erabdi05@gmail.com",
+      "imageUrl": "https://mon.zebraboss.com/200/s/v1/if1/tsbcE435ess8ODa-oBN9j9T9jVPrWMHmVxlyboU2jtGiYW4JxEL-E4PW2yfPgwXinLJcQkHd.jpg?size=200x200&quality=96&crop=0,67,853,853&ava=1",
+      "name": "Айман А.",
+      "phone": "+77023618853",
+      "timestamp": 1661997600000,
+      "uuid": "Aiman_UUID"
+    },
+    {
+      "city": "onLine",
+      "description": "Ведущий кружка по Рухи 12",
+      "email": "",
+      "imageUrl": "https://el.kz/upload/storage_assembly/sites/default/files/u112/img_5004.jpg",
+      "name": "Тоқжан Қ.",
+      "phone": "+77015326433",
+      "timestamp": 1662087600000,
+      "uuid": "tokzhan_UUID"
+    },
+    {
+      "city": "onLine",
+      "description": "Организатор",
+      "email": "",
+      "imageUrl": "https://media-hel3-1.cdn.whatsapp.net/v/t61.24694-24/312271296_706265297514532_6274285651295854795_n.jpg?ccb=11-4&oh=01_Q5AaIC5lrVzyI1zHoot5rcIQLLu5BhyY4eWq99VmV7dx5rJB&oe=672D8D10&_nc_sid=5e03e0&_nc_cat=106",
+      "name": "Раушан ханым",
+      "phone": "+77017241255",
+      "timestamp": 1662087600000,
+      "uuid": "raushan_hanum_UUID"
+    }
+  ]
+}
