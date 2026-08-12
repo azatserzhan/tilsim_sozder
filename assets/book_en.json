@@ -38,7 +38,10 @@
     "description": "Welcome to Baha’i Blog’s SoundCloud channel!\n\nWe are an independent initiative for Australian Baha’is and likeminded friends to connect with personal stories, inspiration, arts and media about the Baha’i Faith, its ideals and transformational impact.\n\nHere on SoundCloud we feature Baha’i-inspired music, resources, talks, and perspectives on the Baha’i Faith. Be sure to subscribe to support the channel and stay up to date.\n\nThe views expressed in our content reflect individual perspectives and do not represent the official views of the Baha’i Faith. The official website of the Baha’i Faith in Australia is: Bahai.org.au, and the global website for the Baha’i Faith is Bahai.org",
     "tag": "Baha’i Blog’s",
     "image_url": "https://i1.sndcdn.com/avatars-000122037539-ss0f2c-t200x200.jpg",
-    "bold": [" Baha’i Blog’s", "SoundCloud"],
+    "bold": [
+      " Baha’i Blog’s",
+      "SoundCloud"
+    ],
     "sort_position": 2,
     "book_url": "",
     "version": 1,
@@ -51,7 +54,10 @@
     "description": "Mighty - 7 Stories About Abdu'l-Baha for Children Who Want to Serve the World",
     "tag": "Baha’i Blog’s",
     "image_url": "https://i1.sndcdn.com/artworks-xTxYvzDRPcZUUn1S-n04FLA-t500x500.jpg",
-    "bold": [" Baha’i Blog’s", "SoundCloud"],
+    "bold": [
+      " Baha’i Blog’s",
+      "SoundCloud"
+    ],
     "sort_position": 3,
     "book_url": "",
     "version": 1,
@@ -64,7 +70,10 @@
     "description": "This very special window from these ageless Windows to the Past will open to the exciting and tragic life of the Bab. The history of the awescme life of the Bab is presented in story form. To convey the spirit of the events, the long Persian names, which have a tendency to overwhelm the Western audience, are avoided.",
     "tag": "Darius K., Shakhroukh M. D.",
     "image_url": "https://israeltours.files.wordpress.com/2011/04/bahai-shrine-restored.jpg",
-    "bold": ["Bab", "Ba'b"],
+    "bold": [
+      "Bab",
+      "Ba'b"
+    ],
     "sort_position": 4,
     "book_url": "",
     "version": 1,
@@ -132,7 +141,10 @@
     "description": "Windows to the Past is a series of audio presentations on\nthe history of the Baha'i Faith, written and presented by Dr. Darius\nShahrokh with the assistance of his wife, Grace Shahrokh. This\nseries was inspired by the author's wish to make available to the\nWestern audience details from a number of histories of the Faith\nunavailable in English. The audio series has become a convenient\nand valuable aid for those with limited time to read who wish to\nbecome acquainted with the history of the Faith and those noble\npersons whose lives are an example to others.",
     "tag": "by Grace Shahrokh and Darius K. Shahrokh, M.D.",
     "image_url": "https://taazakhabarnews.com/wp-content/uploads/2015/08/shoghi-effendi-resting-place-eagle.jpg",
-    "bold": ["Shoghi Effend","Ghusn-i-Mumt'az"],
+    "bold": [
+      "Shoghi Effend",
+      "Ghusn-i-Mumt'az"
+    ],
     "sort_position": 10,
     "book_url": "",
     "version": 1,
@@ -145,7 +157,10 @@
     "description": "A compilation of talks given by ‘Abdu’l‑Bahá during His first stay in Paris, from October to December 1911. Also included are three talks delivered during visits to England in 1912–13 and a Tablet revealed in 1913. \n Source: https://www.bahai.org/library/authoritative-texts/abdul-baha/paris-talks/",
     "tag": "‘Author: Abdu’l‑Bahá",
     "image_url": "https://bahaibooks.com.au/cdn/shop/files/ABDUL_PARIS-AU_x864.png?v=1716814709",
-    "bold": ["‘Abdu’l‑Bahá","Baha’i"],
+    "bold": [
+      "‘Abdu’l‑Bahá",
+      "Baha’i"
+    ],
     "sort_position": 11,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Paris%20Talks.json",
     "version": 1,
@@ -157,7 +172,10 @@
     "description": "A collection of transcriptions of over one hundred talks delivered by ‘Abdu’l‑Bahá during the nine months in 1912 when He travelled across the United States and Canada. \n Source: https://www.bahai.org/library/authoritative-texts/abdul-baha/promulgation-universal-peace/",
     "tag": "‘Author: Abdu’l‑Bahá",
     "image_url": "https://books.bahai.org.uk/cdn/shop/products/promulgation1_x864.jpg?v=1681295426",
-    "bold": ["‘Abdu’l‑Bahá","Baha’i"],
+    "bold": [
+      "‘Abdu’l‑Bahá",
+      "Baha’i"
+    ],
     "sort_position": 12,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20Promulgation%20of%20Universal%20Peace.json",
     "version": 1,
@@ -169,9 +187,243 @@
     "description": "It would be difficult indeed to adequately express the feelings of irrepressible joy and exultation that flood my heart every time I pause to contemplate the ceaseless evidences of the dynamic energy which animates the stalwart pioneers of the World Order of Bahá’u’lláh in the execution of the Plan committed to their charge. \nSource: https://www.bahai.org/library/authoritative-texts/shoghi-effendi/advent-divine-justice/advent-divine-justice.xhtml?02708b9a#551133758",
     "tag": "‘Author: Shoghi Effendi",
     "image_url": "https://m.media-amazon.com/images/I/91u-zaK8p5L._AC_UF1000,1000_QL80_.jpg",
-    "bold": ["Shoghi Effendi","Baha’i"],
+    "bold": [
+      "Shoghi Effendi",
+      "Baha’i"
+    ],
     "sort_position": 13,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20Advent%20of%20Divine%20Justice.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "BAHA_I_SACRED_WRITINGS_EN",
+    "title": "Bahá’í Sacred Writings",
+    "description": "Bahá’í Sacred Writings. Source: https://www.bahai.org/library/",
+    "tag": "Author: Bahá’u’lláh",
+    "image_url": "",
+    "sort_position": 14,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Bah%C3%A1%E2%80%99%C3%AD%20Sacred%20Writings.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "GLEANINGS_FROM_THE_WRITINGS_OF_BAHA_U_LLAH_EN",
+    "title": "Gleanings from the Writings of Bahá’u’lláh",
+    "description": "Gleanings from the Writings of Bahá’u’lláh. Source: https://www.bahai.org/library/",
+    "tag": "Author: Bahá’u’lláh",
+    "image_url": "",
+    "sort_position": 15,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Gleanings%20from%20the%20Writings%20of%20Bah%C3%A1%E2%80%99u%E2%80%99ll%C3%A1h.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "THE_TABERNACLE_OF_UNITY_EN",
+    "title": "The Tabernacle of Unity",
+    "description": "The Tabernacle of Unity. Source: https://www.bahai.org/library/",
+    "tag": "Author: Bahá’u’lláh",
+    "image_url": "",
+    "sort_position": 16,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20Tabernacle%20of%20Unity.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "SELECTIONS_FROM_THE_WRITINGS_OF_THE_BAB_EN",
+    "title": "Selections from the Writings of the Báb",
+    "description": "Selections from the Writings of the Báb. Source: https://www.bahai.org/library/",
+    "tag": "Author: The Báb",
+    "image_url": "",
+    "sort_position": 17,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Selections%20from%20the%20Writings%20of%20the%20B%C3%A1b.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "LIGHT_OF_THE_WORLD_EN",
+    "title": "Light of the World",
+    "description": "Light of the World. Source: https://www.bahai.org/library/",
+    "tag": "Author: ‘Abdu’l‑Bahá",
+    "image_url": "",
+    "sort_position": 18,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Light%20of%20the%20World.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "MEMORIALS_OF_THE_FAITHFUL_EN",
+    "title": "Memorials of the Faithful",
+    "description": "Memorials of the Faithful. Source: https://www.bahai.org/library/",
+    "tag": "Author: ‘Abdu’l‑Bahá",
+    "image_url": "",
+    "sort_position": 19,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Memorials%20of%20the%20Faithful.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "THE_SECRET_OF_DIVINE_CIVILIZATION_EN",
+    "title": "The Secret of Divine Civilization",
+    "description": "The Secret of Divine Civilization. Source: https://www.bahai.org/library/",
+    "tag": "Author: ‘Abdu’l‑Bahá",
+    "image_url": "",
+    "sort_position": 20,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20Secret%20of%20Divine%20Civilization.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "SELECTIONS_FROM_THE_WRITINGS_OF_ABDU_L_BAHA_EN",
+    "title": "Selections from the Writings of ‘Abdu’l‑Bahá",
+    "description": "Selections from the Writings of ‘Abdu’l‑Bahá. Source: https://www.bahai.org/library/",
+    "tag": "Author: ‘Abdu’l‑Bahá",
+    "image_url": "",
+    "sort_position": 21,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Selections%20from%20the%20Writings%20of%20%E2%80%98Abdu%E2%80%99l%E2%80%91Bah%C3%A1.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "SOME_ANSWERED_QUESTIONS_EN",
+    "title": "Some Answered Questions",
+    "description": "Some Answered Questions. Source: https://www.bahai.org/library/",
+    "tag": "Author: ‘Abdu’l‑Bahá",
+    "image_url": "",
+    "sort_position": 22,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Some%20Answered%20Questions.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "TABLET_TO_DR_AUGUSTE_FOREL_EN",
+    "title": "Tablet to Dr. Auguste Forel",
+    "description": "Tablet to Dr. Auguste Forel. Source: https://www.bahai.org/library/",
+    "tag": "Author: ‘Abdu’l‑Bahá",
+    "image_url": "",
+    "sort_position": 23,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Tablet%20to%20Dr.%20Auguste%20Forel.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "TABLETS_OF_THE_DIVINE_PLAN_EN",
+    "title": "Tablets of the Divine Plan",
+    "description": "Tablets of the Divine Plan. Source: https://www.bahai.org/library/",
+    "tag": "Author: ‘Abdu’l‑Bahá",
+    "image_url": "",
+    "sort_position": 24,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Tablets%20of%20the%20Divine%20Plan.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "TABLETS_TO_THE_HAGUE_EN",
+    "title": "Tablets to The Hague",
+    "description": "Tablets to The Hague. Source: https://www.bahai.org/library/",
+    "tag": "Author: ‘Abdu’l‑Bahá",
+    "image_url": "",
+    "sort_position": 25,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Tablets%20to%20The%20Hague.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "A_TRAVELER_S_NARRATIVE_EN",
+    "title": "A Traveler’s Narrative",
+    "description": "A Traveler’s Narrative. Source: https://www.bahai.org/library/",
+    "tag": "Author: ‘Abdu’l‑Bahá",
+    "image_url": "",
+    "sort_position": 26,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/A%20Traveler%E2%80%99s%20Narrative.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "TWELVE_TABLE_TALKS_GIVEN_BY_ABDU_L_BAHA_IN_AKKA_EN",
+    "title": "Twelve Table Talks Given by ‘Abdu’l‑Bahá in ‘Akká",
+    "description": "Twelve Table Talks Given by ‘Abdu’l‑Bahá in ‘Akká. Source: https://www.bahai.org/library/",
+    "tag": "Author: ‘Abdu’l‑Bahá",
+    "image_url": "",
+    "sort_position": 27,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Twelve%20Table%20Talks%20Given%20by%20%E2%80%98Abdu%E2%80%99l%E2%80%91Bah%C3%A1%20in%20%E2%80%98Akk%C3%A1.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "WILL_AND_TESTAMENT_OF_ABDU_L_BAHA_EN",
+    "title": "Will and Testament of ‘Abdu’l‑Bahá",
+    "description": "Will and Testament of ‘Abdu’l‑Bahá. Source: https://www.bahai.org/library/",
+    "tag": "Author: ‘Abdu’l‑Bahá",
+    "image_url": "",
+    "sort_position": 28,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Will%20and%20Testament%20of%20%E2%80%98Abdu%E2%80%99l%E2%80%91Bah%C3%A1.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "BAHA_I_ADMINISTRATION_EN",
+    "title": "Bahá’í Administration",
+    "description": "Bahá’í Administration. Source: https://www.bahai.org/library/",
+    "tag": "Author: Shoghi Effendi",
+    "image_url": "",
+    "sort_position": 29,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Bah%C3%A1%E2%80%99%C3%AD%20Administration.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "CITADEL_OF_FAITH_EN",
+    "title": "Citadel of Faith",
+    "description": "Citadel of Faith. Source: https://www.bahai.org/library/",
+    "tag": "Author: Shoghi Effendi",
+    "image_url": "",
+    "sort_position": 30,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Citadel%20of%20Faith.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "GOD_PASSES_BY_EN",
+    "title": "God Passes By",
+    "description": "God Passes By. Source: https://www.bahai.org/library/",
+    "tag": "Author: Shoghi Effendi",
+    "image_url": "",
+    "sort_position": 31,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/God%20Passes%20By.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "THE_PROMISED_DAY_IS_COME_EN",
+    "title": "The Promised Day Is Come",
+    "description": "The Promised Day Is Come. Source: https://www.bahai.org/library/",
+    "tag": "Author: Shoghi Effendi",
+    "image_url": "",
+    "sort_position": 32,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20Promised%20Day%20Is%20Come.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "THIS_DECISIVE_HOUR_EN",
+    "title": "This Decisive Hour",
+    "description": "This Decisive Hour. Source: https://www.bahai.org/library/",
+    "tag": "Author: Shoghi Effendi",
+    "image_url": "",
+    "sort_position": 33,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/This%20Decisive%20Hour.json",
+    "version": 1,
+    "language": "en"
+  },
+  {
+    "bookId": "THE_WORLD_ORDER_OF_BAHA_U_LLAH_EN",
+    "title": "The World Order of Bahá’u’lláh",
+    "description": "The World Order of Bahá’u’lláh. Source: https://www.bahai.org/library/",
+    "tag": "Author: Shoghi Effendi",
+    "image_url": "",
+    "sort_position": 34,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20World%20Order%20of%20Bah%C3%A1%E2%80%99u%E2%80%99ll%C3%A1h.json",
     "version": 1,
     "language": "en"
   }
