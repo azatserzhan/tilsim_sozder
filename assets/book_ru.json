@@ -27,7 +27,9 @@
     "description": "",
     "tag": "Бахаулла",
     "image_url": "https://github.com/azatserzhan/tilsim_sozder/raw/main/images/book/skrizhali/4.jpeg",
-    "bold": ["Абдул-Баха"],
+    "bold": [
+      "Абдул-Баха"
+    ],
     "sort_position": 3,
     "book_url": "",
     "version": 1,
@@ -40,7 +42,9 @@
     "description": "Ранние этапы истории Веры Бахаи, столь быстро распространяющейся по всему миру, вызывают большой интерес у ее приверженцев, желающих узнать о тех мужественных людях, которые отдали жизнь за любимое Дело. Трагическая история возлюбленного Баба и Его учеников - неисчерпаемый источник вдохновения для современных бахаи. Именно поэтому и возник замысел этой книги.",
     "tag": "А’зам Набиль-и",
     "image_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/images/book/nabil_book_cover.png",
-    "bold": ["Бахаулла"],
+    "bold": [
+      "Бахаулла"
+    ],
     "sort_position": 4,
     "book_url": "https://github.com/azatserzhan/tilsim_sozder/raw/bcf63f9dd7cc0e07a1c0d54b232817124430603f/assets/nabil_ru.json",
     "version": 1,
@@ -52,7 +56,9 @@
     "description": "Лежащая перед вами книга, впервые всесторонне раскрывающая духовные начала истинной цивилизации, принадлежит перу выдающегося мыслителя Абдул-Баха. Оригинал был написан на персидском языке в 1875 году и издан в Бомбее в 1882 году.",
     "tag": "Абдул-Баха",
     "image_url": "https://bahaiarc.org/images/bookspic/SecretDivineCiv.jpg",
-    "bold": ["Бахаулла"],
+    "bold": [
+      "Бахаулла"
+    ],
     "sort_position": 5,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/a2c04bb3121a6d9a157ba36bb99fa7c679966663/assets/Secret%20of%20God%20Civilization/secret_og_God_civilization_ru.json",
     "version": 1,
@@ -64,21 +70,24 @@
     "description": "Подкаст для детей от 4 лет о дружбе, доброте и справедливости. Уникальный проект с атмосферой из нашего детства, когда ведущий со спокойным голосом рассказывает детям нечто важное. Что-то такое, что очень волнует, но ещё так непонятно.\n\nВ каждом выпуске целый океан открытий, эмоций и реальных поступков, которые ребёнок совершает каждый день. Детские песни о добродетелях, кукольные персонажи и поучительные истории на нравственную тематику.\n\nBy WonderfulYou",
     "tag": "Для детей",
     "image_url": "https://s3-us-west-2.amazonaws.com/anchor-generated-image-bank/production/podcast_uploaded_nologo400/11314152/11314152-1607797769739-68c8f46079729.jpg",
-    "bold": ["Ты удевительный"],
+    "bold": [
+      "Ты удевительный"
+    ],
     "sort_position": 6,
     "book_url": "",
     "version": 1,
     "language": "ru",
     "book_type": 1
   },
-
   {
     "bookId": "Sem_doloin_ru",
     "title": "Семь долин",
     "description": "Семь долин Бахауллы можно назвать одной из вершин мистической литературы. Это глубокое эссе написано в ответ на вопросы шейха Мухиддина, судьи из города Ханакин, расположенного близ границы с Ираном северо-восточнее Багдада. Очевидно, судья изучал суфийскую философию, разновидность мистицизма, ставшую самостоятельным направлением в Исламе.",
     "tag": "Бахаулла",
     "image_url": "https://pibig.info/uploads/posts/2021-05/1620992534_6-pibig_info-p-dolina-priroda-krasivo-foto-7.jpg",
-    "bold": ["Бахаулла"],
+    "bold": [
+      "Бахаулла"
+    ],
     "sort_position": 7,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/9a16ead247a0f66726ae939712ba3fb598497fa5/assets/sem_dolin_ru.json",
     "version": 1,
@@ -90,7 +99,9 @@
     "description": "Выступления Абдул-Баха в Париже в 1911 году",
     "tag": "New",
     "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/%E2%80%98Abdu%E2%80%99l-Bah%C3%A1_portrait.jpg/220px-%E2%80%98Abdu%E2%80%99l-Bah%C3%A1_portrait.jpg",
-    "bold": ["Абдул-Баха"],
+    "bold": [
+      "Абдул-Баха"
+    ],
     "sort_position": 8,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/parizh_ru.json",
     "version": 1,
@@ -102,7 +113,9 @@
     "description": "Выступления Абдул-Баха в Париже в 1911 году",
     "tag": "New",
     "image_url": "https://cdn.mos.cms.futurecdn.net/pD3bsKPrjsqNiFDGRL5oq6-1200-80.jpg",
-    "bold": ["Абдул-Баха"],
+    "bold": [
+      "Абдул-Баха"
+    ],
     "sort_position": 9,
     "book_url": "",
     "version": 1,
@@ -126,7 +139,14 @@
     "description": "Этот материал поможет начать разговор на содержательные темы",
     "tag": "Сборник",
     "image_url": "https://www.bahai.org/chrome/img/beliefs/administrative-order-feature-img.jpg%3F1fc3b20d",
-    "bold": ["Ссылки:", "[1]", "[2]", "[3]", "[4]", "[5]"],
+    "bold": [
+      "Ссылки:",
+      "[1]",
+      "[2]",
+      "[3]",
+      "[4]",
+      "[5]"
+    ],
     "sort_position": 11,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/kosvennie_temi.json",
     "version": 1,
@@ -138,7 +158,14 @@
     "description": "Сборник молитв, цитат, истории и вопросов для размышления на разные духовные качества",
     "tag": "Новое",
     "image_url": "https://www.bahai.org/chrome/img/beliefs/one-human-family-feature-img.jpg?3490ff92",
-    "bold": ["Молитвы", "\nЦитаты из Писаний", "\nИстория", "Вопросы для размышления:","\nАбдул-Баха", "\nБахаулла"],
+    "bold": [
+      "Молитвы",
+      "\nЦитаты из Писаний",
+      "\nИстория",
+      "Вопросы для размышления:",
+      "\nАбдул-Баха",
+      "\nБахаулла"
+    ],
     "sort_position": 12,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/20c8975c830e2a899fc42512c6cd23ffb398ebee/assets/ist_zhiv_vod_ru.json",
     "version": 1,
@@ -160,22 +187,22 @@
     "title": "Рассказы об Абдул-Баха",
     "description": "Всередине XIX века, во время разгула религиозного и расового фанатизма, дворянин из Персии, Бахаулла возвестил о Своей Божественной Миссии единения и любви. Он призвал людей всех стран и вероисповеданий забыть о своих разногласиях, принять друг друга как братьев и направить совместные усилия на объединение рода человеческого.",
     "tag": "Перевод В. А. Макаровой",
-    "image_url":"https://239days.com/wp-content/uploads/2012/11/abdul-baha-profile-paris.jpg",
+    "image_url": "https://239days.com/wp-content/uploads/2012/11/abdul-baha-profile-paris.jpg",
     "sort_position": 14,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/40a4866377c66a18dec2efbd30daaa0868f44d04/assets/History%20about%20Abdul-Baha/History_about_Abdul_Baha_RU.json",
     "version": 1,
     "language": "ru"
   },
   {
-   "bookId": "IZBRANNOE_IZ_PISANI_ABDUL_BAHA_RU",
-   "title": "Избранное из Писаний Абдул-Баха",
-   "description": "Толкование Абдул-Баха Откровения Бахаи известно нам из Его трудов, из многочисленных сборников с записями Его изречений, а также из Его переписки. Hаписанные Им труды, такие как «Секрет Божественной Цивилизации», «Повествование Странника», «Воля и Завещание», доступны читателю в английских переводах.",
-   "tag": "Всемирный Дом Справедливости ",
-   "image_url":"https://photos.wikimapia.org/p/00/08/02/60/10_big.jpg",
-   "sort_position": 15,
-   "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/ru/Izbrannoe_pisanie_Abdul_Baha.json",
-   "version": 1,
-   "language": "ru"
+    "bookId": "IZBRANNOE_IZ_PISANI_ABDUL_BAHA_RU",
+    "title": "Избранное из Писаний Абдул-Баха",
+    "description": "Толкование Абдул-Баха Откровения Бахаи известно нам из Его трудов, из многочисленных сборников с записями Его изречений, а также из Его переписки. Hаписанные Им труды, такие как «Секрет Божественной Цивилизации», «Повествование Странника», «Воля и Завещание», доступны читателю в английских переводах.",
+    "tag": "Всемирный Дом Справедливости ",
+    "image_url": "https://photos.wikimapia.org/p/00/08/02/60/10_big.jpg",
+    "sort_position": 15,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/ru/Izbrannoe_pisanie_Abdul_Baha.json",
+    "version": 1,
+    "language": "ru"
   },
   {
     "bookId": "Bescennaya_zhemchujina_ru",
@@ -183,8 +210,22 @@
     "description": "Шоги Эффенди был внуком и преемником Абдул-Баха, назначенным на роль хранителя веры бахаи с 1921 года до своей смерти в 1957 году. \nПод руководством Шоги Эффенди уникальная система, задуманная Бахауллой для управления делами общины, стремительно развернулась по всему миру. Он перевел Священные Писания бахаи на английский язык, благоустроил духовный и административный центр Веры на Святой Земле и в тысячах своих писем предложил глубокие озарения, касающиеся духовного аспекта цивилизации и динамики социальных изменений, раскрывая вызывающее благоговение видение будущего, к которому движется человечество.",
     "tag": "Рухийя Раббани",
     "image_url": "https://bahaiarc.org/images/bios/khanum.jpg",
-    "bold": ["Рухийя Раббани"],
+    "bold": [
+      "Рухийя Раббани"
+    ],
     "sort_position": 16,
+    "book_url": "",
+    "version": 1,
+    "language": "ru",
+    "book_type": 1
+  },
+  {
+    "bookId": "Pesni_bahaiblog_ru",
+    "title": "Песни",
+    "description": "Сборник бахаи-вдохновлённой музыки с Baha'i Blog. Хоральные и общинные записи, hip hop sessions, песни исполнителей и студийные сессии со всего мира — часто на словах из Писаний Бахаи.",
+    "tag": "Baha'i Blog",
+    "image_url": "https://www.bahaiblog.net/wp-content/uploads/2022/06/ebuen-clemente-jr-H5Iw3Xz0vxM-unsplash-1-scaled.jpg",
+    "sort_position": 17,
     "book_url": "",
     "version": 1,
     "language": "ru",
