@@ -6,8 +6,8 @@
     "tag": "Baháʼu'lláh",
     "image_url": "https://www.bahaiblog.net/wp-content/uploads/2022/04/Introduction-to-the-Kitab-i-Iqan-864x550-1.jpg",
     "sort_position": 0,
-    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/kitabi_igan_en.json",
-    "version": 1,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20Kit%C3%A1b-i-%C3%8Dq%C3%A1n.json",
+    "version": 2,
     "language": "en"
   },
   {
@@ -17,8 +17,8 @@
     "tag": "Author: Bahá’u’lláh",
     "image_url": "https://www.bahai.ru/public/uploads/images/books/1000062265.jpg",
     "sort_position": 1,
-    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/Kitabi%20Agdas/kitabi_agdas_en.json",
-    "version": 1,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20Kit%C3%A1b-i-Aqdas.json",
+    "version": 2,
     "language": "en"
   },
   {
@@ -88,7 +88,7 @@
     "image_url": "https://scontent.fakx4-2.fna.fbcdn.net/v/t1.6435-9/51812040_10156827966922527_3708929608440086528_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=2RrJSufDGvMAX9h2Idj&_nc_ht=scontent.fakx4-2.fna&oh=00_AfBwJgd4Vsi4Ocm2UYqqRJ9y5xyCdf9tzqsQLNFRXNSmyg&oe=660A2810",
     "sort_position": 5,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20Call%20of%20the%20Divine%20Beloved.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -99,7 +99,7 @@
     "image_url": "https://www.bahaibookstore.com/GetImage.ashx?Path=%7e%2fAssets%2fProductImages%2fDOR.jpg&maintainAspectRatio=true",
     "sort_position": 6,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Days%20of%20Remembrance.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -110,7 +110,7 @@
     "image_url": "https://pictures.abebooks.com/isbn/9788132013280-us.jpg",
     "sort_position": 7,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Epistle%20to%20the%20Son%20of%20the%20Wolf.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -121,7 +121,7 @@
     "image_url": "https://bahaibooks.com.au/cdn/shop/products/BAHAU_TABER-AU_x428.png?v=1675123288",
     "sort_position": 8,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Gems%20of%20Divine%20Mysteries.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -132,7 +132,7 @@
     "image_url": "https://m.media-amazon.com/images/I/61P3h8zoLfL._AC_UF1000,1000_QL80_.jpg",
     "sort_position": 9,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20Summons%20of%20the%20Lord%20of%20Hosts.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -163,7 +163,7 @@
     ],
     "sort_position": 11,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Paris%20Talks.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -178,7 +178,7 @@
     ],
     "sort_position": 12,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20Promulgation%20of%20Universal%20Peace.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -193,7 +193,7 @@
     ],
     "sort_position": 13,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20Advent%20of%20Divine%20Justice.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -204,7 +204,7 @@
     "image_url": "https://bahaibooks.com.au/cdn/shop/files/BSWs.png?v=1782441708",
     "sort_position": 14,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Bah%C3%A1%E2%80%99%C3%AD%20Sacred%20Writings.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -215,7 +215,7 @@
     "image_url": "https://bahaibooks.com.au/cdn/shop/files/BAHAU_GLEAN-AU_aae310c8-0b04-4872-af51-6458b5c6acc6.png?v=1716335427",
     "sort_position": 15,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Gleanings%20from%20the%20Writings%20of%20Bah%C3%A1%E2%80%99u%E2%80%99ll%C3%A1h.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -226,7 +226,7 @@
     "image_url": "https://bahaibooks.com.au/cdn/shop/files/BAHAU_TABER-AU.png?v=1771284411",
     "sort_position": 16,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20Tabernacle%20of%20Unity.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -237,7 +237,7 @@
     "image_url": "https://bahaibooks.com.au/cdn/shop/files/BAB_SELEC-AU_19f03440-79ad-4724-be31-845890b14a51.png?v=1716334880",
     "sort_position": 17,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Selections%20from%20the%20Writings%20of%20the%20B%C3%A1b.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -248,7 +248,7 @@
     "image_url": "https://bahaibooks.com.au/cdn/shop/files/ABDUL_LIGHT-AU.png?v=1716814706",
     "sort_position": 18,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Light%20of%20the%20World.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -259,7 +259,7 @@
     "image_url": "https://bahaibooks.com.au/cdn/shop/files/ABDUL_MEMOR-AU.png?v=1716814808",
     "sort_position": 19,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Memorials%20of%20the%20Faithful.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -270,7 +270,7 @@
     "image_url": "https://bahaibooks.com.au/cdn/shop/files/ABDUL_SECRE-AU.png?v=1716814715",
     "sort_position": 20,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20Secret%20of%20Divine%20Civilization.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -281,7 +281,7 @@
     "image_url": "https://bahaibooks.com.au/cdn/shop/files/ABDUL_SELEC-AU.png?v=1716814718",
     "sort_position": 21,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Selections%20from%20the%20Writings%20of%20%E2%80%98Abdu%E2%80%99l%E2%80%91Bah%C3%A1.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -292,7 +292,7 @@
     "image_url": "https://bahaibooks.com.au/cdn/shop/files/ABDUL_QUEST-AU.png?v=1716814824",
     "sort_position": 22,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Some%20Answered%20Questions.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -303,7 +303,7 @@
     "image_url": "https://cdn.shopify.com/s/files/1/0445/3357/9928/products/auguste_forel.png?v=1615806097",
     "sort_position": 23,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Tablet%20to%20Dr.%20Auguste%20Forel.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -314,7 +314,7 @@
     "image_url": "https://bahaibooks.com.au/cdn/shop/files/ABDUL_PLAN-AU_630004bf-bf2d-4cca-901e-4d239ee49295.png?v=1716814770",
     "sort_position": 24,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Tablets%20of%20the%20Divine%20Plan.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -325,7 +325,7 @@
     "image_url": "https://bahaibooks.com.au/cdn/shop/files/ABDUL_HAGUE-AU.png?v=1716814840",
     "sort_position": 25,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Tablets%20to%20The%20Hague.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -336,7 +336,7 @@
     "image_url": "https://bahaibooks.com.au/cdn/shop/files/ABDUL_TRAVE-AU.png?v=1717627742",
     "sort_position": 26,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/A%20Traveler%E2%80%99s%20Narrative.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -347,7 +347,7 @@
     "image_url": "https://cdn.shopify.com/s/files/1/0445/3357/9928/products/12table_talks.png?v=1615806099",
     "sort_position": 27,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Twelve%20Table%20Talks%20Given%20by%20%E2%80%98Abdu%E2%80%99l%E2%80%91Bah%C3%A1%20in%20%E2%80%98Akk%C3%A1.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -358,7 +358,7 @@
     "image_url": "https://bahaibooks.com.au/cdn/shop/files/ABDUL_WILL-AU.png?v=1716814863",
     "sort_position": 28,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Will%20and%20Testament%20of%20%E2%80%98Abdu%E2%80%99l%E2%80%91Bah%C3%A1.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -369,7 +369,7 @@
     "image_url": "https://cdn.shopify.com/s/files/1/0445/3357/9928/products/BAEP.jpg?v=1608372882",
     "sort_position": 29,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Bah%C3%A1%E2%80%99%C3%AD%20Administration.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -380,7 +380,7 @@
     "image_url": "https://cdn.shopify.com/s/files/1/0445/3357/9928/products/GUARD_CITAD-US_x864_7e123f47-a366-4dee-956f-f7b3970750d3.jpg?v=1644943720",
     "sort_position": 30,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Citadel%20of%20Faith.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -391,7 +391,7 @@
     "image_url": "https://cdn.shopify.com/s/files/1/0445/3357/9928/products/GUARD_PASSE-US.jpg?v=1600344047",
     "sort_position": 31,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/God%20Passes%20By.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -402,7 +402,7 @@
     "image_url": "https://cdn.shopify.com/s/files/1/0445/3357/9928/products/GUARD_PROMI-US_x864_e213db62-afb6-44b0-a864-517bda14d2cd.jpg?v=1652815296",
     "sort_position": 32,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20Promised%20Day%20Is%20Come.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -413,7 +413,7 @@
     "image_url": "https://cdn.shopify.com/s/files/1/0445/3357/9928/products/this_decisive_hour.png?v=1615240268",
     "sort_position": 33,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/This%20Decisive%20Hour.json",
-    "version": 1,
+    "version": 2,
     "language": "en"
   },
   {
@@ -424,6 +424,17 @@
     "image_url": "https://cdn.shopify.com/s/files/1/0445/3357/9928/products/GUARD_WORLD-US_x864_490feb3e-8f52-4baf-8bbd-c3520ccba2cf.jpg?v=1652819609",
     "sort_position": 34,
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/The%20World%20Order%20of%20Bah%C3%A1%E2%80%99u%E2%80%99ll%C3%A1h.json",
+    "version": 2,
+    "language": "en"
+  },
+  {
+    "bookId": "TABLETS_OF_BAHAULLAH_EN",
+    "title": "Tablets of Bahá’u’lláh",
+    "description": "Sixteen Tablets revealed by Bahá’u’lláh during the later years of His life. Source: https://www.bahai.org/library/",
+    "tag": "Author: Bahá’u’lláh",
+    "image_url": "https://github.com/azatserzhan/tilsim_sozder/raw/main/images/book/skrizhali/4.jpeg",
+    "sort_position": 35,
+    "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Tablets%20of%20Bah%C3%A1%E2%80%99u%E2%80%99ll%C3%A1h.json",
     "version": 1,
     "language": "en"
   }
