@@ -437,5 +437,17 @@
     "book_url": "https://raw.githubusercontent.com/azatserzhan/tilsim_sozder/main/assets/books/en/Tablets%20of%20Bah%C3%A1%E2%80%99u%E2%80%99ll%C3%A1h.json",
     "version": 1,
     "language": "en"
+  },
+  {
+    "bookId": "Songs_bahaiblog_en",
+    "title": "Songs",
+    "description": "A collection of Baha'i-inspired music from Baha'i Blog. Choral and community recordings, hip hop sessions, recording artists, and studio sessions from around the world — often setting the Baha'i Writings to music.",
+    "tag": "Baha'i Blog",
+    "image_url": "https://www.bahaiblog.net/wp-content/uploads/2022/06/ebuen-clemente-jr-H5Iw3Xz0vxM-unsplash-1-scaled.jpg",
+    "sort_position": 36,
+    "book_url": "",
+    "version": 1,
+    "language": "en",
+    "book_type": 1
   }
 ]
